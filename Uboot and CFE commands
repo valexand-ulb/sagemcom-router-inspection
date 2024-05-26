@@ -1,0 +1,122 @@
+################## u-boot ##################
+
+f3865 > help
+?       - alias for 'help'
+base    - print or set address offset
+boot    - boot default, i.e., run 'bootcmd'
+bootd   - boot default, i.e., run 'bootcmd'
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+chpart  - change active partition
+cie     - displays the CIE parameter
+cie_set - sets the CIE parameter
+cmp     - memory compare
+cp      - memory copy
+crc32   - checksum calculation
+dfa     - displays the DFA parameter
+dfa_set - sets the DFA parameter
+dhcp    - boot image via network using DHCP/TFTP protocol
+editenv - edit environment variable
+env     - environment handling commands
+flag    - displays the factory flags
+flag_set- sets one factory flag
+fsinfo  - print information about filesystems
+fsload  - load binary file from a filesystem image
+go      - start application at address 'addr'
+help    - print command description/usage
+iminfo  - print header information for application image
+itest   - return true/false on integer compare
+loop    - infinite loop on address range
+ls      - list files in a directory (default /)
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mtdparts- define flash/nand partitions
+mtest   - simple RAM read/write test
+mw      - memory write (fill)
+nand    - NAND sub-system
+nboot   - boot from NAND device
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+sb      - secure boot
+secure_set- sets the bootloader in secure mode
+setenv  - set environment variables
+sleep   - delay execution for some time
+source  - run script from memory
+tftpboot- boot image via network using TFTP protocol
+ubi     - ubi commands
+ubifsload- load file from an UBIFS filesystem
+ubifsls - list files in a directory
+ubifsmount- mount UBIFS volume
+ubifsumount- unmount UBIFS volume
+version - print monitor, compiler and linker version
+waitForMagic- Test WAIT_FOR_MAGIC function
+
+################## u-boot nand commands ##################
+
+f3865 > nand
+nand - NAND sub-system
+
+Usage:
+nand info - show available NAND devices
+nand device [dev] - show or set current device
+nand read - addr off|partition size
+nand write - addr off|partition size
+    read/write 'size' bytes starting at offset 'off'
+    to/from memory address 'addr', skipping bad blocks.
+nand read.raw - addr off|partition
+nand write.raw - addr off|partition
+    Use read.raw/write.raw to avoid ECC and access the page as-is.
+nand erase[.spread] [clean] off size - erase 'size' bytes from offset 'off'
+    With '.spread', erase enough for given file size, otherwise,
+    'size' includes skipped bad blocks.
+nand erase.part [clean] partition - erase entire mtd partition'
+nand erase.chip [clean] - erase entire chip'
+nand bad - show bad blocks
+nand dump[.oob] off - dump page
+nand scrub [-y] off size | scrub.part partition | scrub.chip
+    really clean NAND erasing bad blocks (UNSAFE)
+nand markbad off [...] - mark bad block(s) at offset (UNSAFE)
+nand biterr off - make a bit error at offset (UNSAFE)nand rnderrs n seed- make n random bit errors (UNSAFE)
+nand bbt - show bad blocks table
+nand trace [on|off] - trace NAND access
+
+################## u-boot ubi commands ##################
+
+f3865 > ubi
+ubi - ubi commands
+
+Usage:
+ubi part [part] [offset]
+ - Show or set current partition (with optional VID header offset)
+ubi info [l[ayout]] - Display volume and ubi layout information
+ubi create[vol] volume [size] [type] - create volume name with size
+ubi write[vol] address volume size - Write volume from address with size
+ubi read[vol] address volume [size] - Read volume to address with size
+ubi remove[vol] volume - Remove volume
+[Legends]
+ volume: character name
+ size: specified in bytes
+ type: s[tatic] or d[ynamic] (default=dynamic)
+
+################## CFE COMMANDS ##################
+
+CFE> help
+Available commands:
+
+phy                 Set memory or registers.
+sm                  Set memory or registers.
+dm                  Dump memory or registers.
+w                   Write the whole image start from beginning of the flash
+e                   Erase NAND flash
+r                   Run program from flash image or from host depend on [f/h] flag
+p                   Print boot line and board parameter info
+c                   Change booline parameters
+i                   Erase persistent storage data
+a                   Change board AFE ID
+b                   Change board parameters
+reset               Reset the board
+help                Obtain help for CFE commands

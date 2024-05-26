@@ -1,0 +1,228 @@
+
+U-Boot 2011.12
+Version: 4.3.0-full (Mar 20 2013 - 14:32:35)
+Copyright (C) 2011 - 2012 Sagemcom All rights reserved
+gpio in: 0x40cddf1c
+board type: 00020010
+board memsize : 0x10000000
+CPU: Broadcom BCM63168D0
+DRAM:  256 MiB
+NAND:  handle_acc_control: default CORR ERR threshold  1 bits
+ACC: 16 OOB bytes per 512B ECC step; from ID probe: 16
+reqEccLevel=0, eccLevel=4
+128 MiB
+
+Creating 1 MTD partitions on "nand0":
+0x0000000c0000-0x000007b00000 : "mtd=1"
+
+Creating 5 MTD partitions on "brcmnand.0":
+0x000000000000-0x000000020000 : "bcmfs"
+0x000000020000-0x0000000c0000 : "bcmfs_update"
+0x0000000c0000-0x000007b00000 : "ubi"
+0x000007b00000-0x000007f00000 : "data"
+0x000000000000-0x000000020000 : "nvram"
+
+Creating 3 MTD partitions on "operational":
+0x000000000000-0x00000001f000 : "firm_header"
+0x00000001f000-0x000000307000 : "kernel"
+0x0000002e8000-0x00000239a000 : "rootfs"
+
+Creating 2 MTD partitions on "gui":
+0x000000000000-0x00000001f000 : "gui_header"
+0x00000001f000-0x000000117000 : "guifs
+
+
+Add UBI volume partitions: name=secondaryboot
+Add UBI volume partitions: name=uboot
+Add UBI volume partitions: name=permanent_param
+Add UBI volume partitions: name=rescue
+Add UBI volume partitions: name=operational
+
+CFE> help
+Available commands:
+
+phy                 Set memory or registers.
+sm                  Set memory or registers.
+dm                  Dump memory or registers.
+w                   Write the whole image start from beginning of the flash
+e                   Erase NAND flash
+r                   Run program from flash image or from host depend on [f/h] flag
+p                   Print boot line and board parameter info
+c                   Change booline parameters
+i                   Erase persistent storage data
+a                   Change board AFE ID
+b                   Change board parameters
+reset               Reset the board
+help                Obtain help for CFE commands
+
+CFE> p
+Board IP address                  : 192.168.1.1:ffffff00
+Host IP address                   : 192.168.1.100
+Gateway IP address                :
+Run from flash/host (f/h)         : f
+Default host run file name        : vmlinux
+Default host flash file name      : bcm963xx_fs_kernel
+Boot delay (0-9 seconds)          : 1
+Launch linux/uboot (l/u)          : l
+Board Id (0-6)                    : F@ST3865b
+Number of MAC Addresses (1-32)    : 10
+Base MAC Address                  : 00:10:18:00:00:00
+PSI Size (1-64) KBytes            : 24
+Enable Backup PSI [0|1]           : 0
+System Log Size (0-256) KBytes    : 0
+Main Thread Number [0|1]          : 0
+
+
+
+# When running dm with a legth hex or dec  reapeating
+
+**Exception 32: EPC=00000000, Cause=00000000 (Interrupt)
+                RA=8062F180, VAddr=00000000
+
+        0  ($00) = 00000000     AT ($01) = 80614DC4
+        v0 ($02) = 00000000     v1 ($03) = 00000000
+        a0 ($04) = 00000000     a1 ($05) = 80614F74
+        a2 ($06) = 0376D821     a3 ($07) = 80622E40
+        t0 ($08) = 8062F12D     t1 ($09) = 8061503C
+        t2 ($10) = 00000020     t3 ($11) = 80622BC4
+        t4 ($12) = 00000020     t5 ($13) = 80622BC4
+        t6 ($14) = 806139E8     t7 ($15) = 00639480
+        s0 ($16) = 00639A80     s1 ($17) = 0A002020
+        s2 ($18) = 66702028     s3 ($19) = 203D2036
+        s4 ($20) = 30303020     s5 ($21) = 72612028
+        s6 ($22) = 203D2030     s7 ($23) = 3030300A
+        t8 ($24) = 0A00CA80     t9 ($25) = 0063D080
+        k0 ($26) = 0063D680     k1 ($27) = 0063DC80
+        gp ($28) = 8062F240     sp ($29) = 00000001
+        fp ($30) = 037FD821     ra ($31) = 8062F180
+
+
+
+# On f3865 firmware ??? when help  
+
+f3865 > help
+?       - alias for 'help'
+base    - print or set address offset
+boot    - boot default, i.e., run 'bootcmd'
+bootd   - boot default, i.e., run 'bootcmd'
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+chpart  - change active partition
+cie     - displays the CIE parameter
+cie_set - sets the CIE parameter
+cmp     - memory compare
+cp      - memory copy
+crc32   - checksum calculation
+dfa     - displays the DFA parameter
+dfa_set - sets the DFA parameter
+dhcp    - boot image via network using DHCP/TFTP protocol
+editenv - edit environment variable
+env     - environment handling commands
+flag    - displays the factory flags
+flag_set- sets one factory flag
+fsinfo  - print information about filesystems
+fsload  - load binary file from a filesystem image
+go      - start application at address 'addr'
+help    - print command description/usage
+iminfo  - print header information for application image
+itest   - return true/false on integer compare
+loop    - infinite loop on address range
+ls      - list files in a directory (default /)
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mtdparts- define flash/nand partitions
+mtest   - simple RAM read/write test
+mw      - memory write (fill)
+nand    - NAND sub-system
+nboot   - boot from NAND device
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+sb      - secure boot
+secure_set- sets the bootloader in secure mode
+setenv  - set environment variables
+sleep   - delay execution for some time
+source  - run script from memory
+tftpboot- boot image via network using TFTP protocol
+ubi     - ubi commands
+ubifsload- load file from an UBIFS filesystem
+ubifsls - list files in a directory
+ubifsmount- mount UBIFS volume
+ubifsumount- unmount UBIFS volume
+version - print monitor, compiler and linker version
+waitForMagic- Test WAIT_FOR_MAGIC function
+
+f3865 > printenv
+_platform=sc_bcm63xxx
+_select_boot=ubi part ${part_boot}
+_select_main=ubi part ${part_main}
+_tftp_gsdf_oper=tftpboot ${_platform}.scos.oper.gsdf
+_tftp_gsdf_resc=tftpboot ${_platform}.scos.resc.gsdf
+_tftp_ipl=tftpboot ${_platform}.fboot.fbin
+_tftp_oldipl=tftpboot ${_platform}.oldfboot.fbin
+_tftp_olduboot=tftpboot ${_platform}.oldu-boot.bin
+_tftp_oper=tftpboot ${_platform}.scos.oper.secure
+_tftp_pp=tftpboot ${_platform}.ppBIN
+_tftp_resc=tftpboot ${_platform}.scos.resc.secure
+_tftp_spl=tftpboot ${_platform}.sboot.sbin
+_tftp_uboot=tftpboot ${_platform}.u-boot.bin
+_ubi_eraze=nand erase 0xC0000 0x7A40000; run _select_main
+_ubi_mkvol1=ubi create operational 0x1f00000 static
+_ubi_mkvol2=ubi create permanent_param 0x1f000 static; ubi create rescue 0x1f00000 static
+_write_ipl=nand erase 0x00000 0x20000; nand write 0x80400000 0x00000 0x9000
+_write_oldipl=nand erase 0x00000 0x20000; nand write 0x80400000 0x00000 0x20000
+_write_olduboot=nand erase 0x40000 0x80000; nand write 0x80400000 0x40000 0x60000
+_write_oper=ubi remove operational; ubi create operational 0x1f00000 static; ubi write 0x80400000 operational ${filesize}
+_write_pp=ubi remove permanent_param; ubi create permanent_param 0x1f000 static; ubi write 0x80400000 permanent_param ${filesize}
+_write_resc=ubi remove rescue; ubi create rescue 0x1f00000 static; ubi write 0x80400000 rescue ${filesize}
+_write_spl=ubi remove secondaryboot; ubi create secondaryboot ${filesize} static; ubi write 0x80400000 secondaryboot ${filesize}
+_write_uboot=ubi remove uboot; ubi remove bootenv; ubi create uboot ${filesize} static; ubi write 0x80400000 uboot ${filesize}
+baudrate=115200
+bootargs=### no default boot args ###
+bootcmd=sb
+bootdelay=3
+ethact=BCM63xxx
+ethaddr=00:01:02:03:04:05
+ipaddr=192.168.1.1
+load_allboot=run _select_boot _tftp_uboot _tftp_spl _tftp_ipl _tftp_uboot _write_uboot _tftp_spl _write_spl _tftp_ipl _write_ipl
+load_gsdf_oper=run _select_main _tftp_gsdf_oper _write_oper
+load_gsdf_resc=run _select_main _tftp_gsdf_resc _write_resc
+load_ipl=run _tftp_ipl _write_ipl
+load_oldboot=run _select_boot _tftp_olduboot  _tftp_oldipl _tftp_olduboot _write_olduboot _tftp_oldipl _write_oldipl
+load_oldipl=run _tftp_oldipl _write_oldipl
+load_olduboot=run _tftp_olduboot _write_olduboot
+load_oper=run _select_main _tftp_oper _write_oper
+load_pp=run _select_main _tftp_pp _write_pp
+load_resc=run _select_main _tftp_resc _write_resc
+load_spl=run _select_boot _tftp_spl _write_spl
+load_uboot=run _select_boot _tftp_uboot _write_uboot
+mtdparts=mtdparts=nand:768k(bcm),125184k(partAll),5120k(data)
+netretry=once
+part_boot=partAll
+part_main=partAll
+reset_env=run _select_boot; ubi remove bootenv; ubi create bootenv 0x1f000
+serverip=192.168.1.10
+stderr=serial
+stdin=serial
+stdout=serial
+ubi_init=run _ubi_eraze; run _ubi_mkvol1; run _ubi_mkvol2
+
+
+f3865 > mtdparts
+
+device nand0 <nand>, # parts = 3
+ #: name        size        offset      mask_flags
+ 0: bcm                 0x000c0000  0x00000000  0
+ 1: partAll             0x07a40000  0x000c0000  0
+ 2: data                0x00500000  0x07b00000  0
+
+active partition: nand0,0 - (bcm) 0x000c0000 @ 0x00000000
+
+defaults:
+mtdids  : nand0=nand
+mtdparts: mtdparts=nand:768k(bcm),125184k(partAll),5120k(data)
+
+f3865 > mtdparts
