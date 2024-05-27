@@ -226,13 +226,3 @@ mtdids  : nand0=nand
 mtdparts: mtdparts=nand:768k(bcm),125184k(partAll),5120k(data)
 
 f3865 > mtdparts
-
-# print from address 0x80400000 successfull !
-
-CFE> dm 0x80400000 10
-
-# Exectation dm 0x80400000 0x1f000 -- finally dump give nothing interressing
-CFE > dm 0x80400000 0x1f000
-
-# Other test 
-CFE > dm 0xb8000000 268435456

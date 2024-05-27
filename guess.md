@@ -23,7 +23,17 @@ CFE > dm 0x00000000 0x08000000
 dm 0x8ff00000 0x100000
 ```
 > ⚠️ Size is subjective
-> Dump seems repetitive
+> Dump seems repetitive  (one repeated is only `0xFF`)
+
+once in u-boot (not cfe) test with :
+```
+md 0x8ff00000 0x100000
+```
+> seems responsive, will try with size `0x1f00000` (c.f env_var.md)
+
+```
+md 0x8ff00000 0x1f00000
+```
 
 ### Dump loaded firmware image ?
 ```
