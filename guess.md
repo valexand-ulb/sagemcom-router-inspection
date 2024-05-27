@@ -23,6 +23,7 @@ CFE > dm 0x00000000 0x08000000
 dm 0x8ff00000 0x100000
 ```
 > ⚠️ Size is subjective
+> Dump seems repetitive
 
 ### Dump loaded firmware image ?
 ```
