@@ -314,10 +314,13 @@ ubi_init=
 ```
 
 
+# Conclusion : 
 
-
-
-
-
+UBI volumes :
+- uboot
+- secondaryboot
+- permanent_param
+- operational
+- rescue
 
 
