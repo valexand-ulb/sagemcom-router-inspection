@@ -30,4 +30,3 @@ dm 0x80400000 0x100000
 ```
 > ⚠️ Size is subjective
 >  ❌ does not seems to be that (full of `0xFF`)
-
