@@ -1,0 +1,124 @@
+
+######## variables ########
+
+_platform=sc_bcm63xxx											# hardware platform, [Broadcom BCM63xx](https://openwrt.org/docs/techref/hardware/soc/soc.broadcom.bcm63xx#broadcom_bcm63xx)
+
+baudrate=115200
+bootargs=### no default boot args ###
+bootcmd=sb
+bootdelay=3
+ethact=BCM63xxx
+ethaddr=00:01:02:03:04:05
+
+ipaddr=192.168.1.1
+
+mtdparts=mtdparts=nand:768k(bcm),125184k(partAll),5120k(data)
+netretry=once
+
+part_boot=partAll
+part_main=partAll
+
+serverip=192.168.1.10
+
+stderr=serial
+stdin=serial
+stdout=serial
+
+######## Commands ########
+
+-------- simple commands --------
+
+
+........ ubi related commands ........
+
+_select_boot=ubi part partAll
+_select_main=ubi part partAll
+
+
+........ tftp related commands ........
+
+_tftp_gsdf_oper=tftpboot sc_bcm63xxx.scos.oper.gsdf
+_tftp_gsdf_resc=tftpboot sc_bcm63xxx.scos.resc.gsdf
+_tftp_ipl=tftpboot sc_bcm63xxx.fboot.fbin
+_tftp_oldipl=tftpboot sc_bcm63xxx.oldfboot.fbin
+_tftp_olduboot=tftpboot sc_bcm63xxx.oldu-boot.bin
+_tftp_oper=tftpboot sc_bcm63xxx.scos.oper.secure
+_tftp_pp=tftpboot sc_bcm63xxx.ppBIN
+_tftp_resc=tftpboot sc_bcm63xxx.scos.resc.secure
+_tftp_spl=tftpboot sc_bcm63xxx.sboot.sbin
+_tftp_uboot=tftpboot sc_bcm63xxx.u-boot.bin
+
+-------- composed commands --------
+
+
+........ ubi related commands ........
+
+_ubi_eraze=
+	nand erase 0xC0000 0x7A40000;
+	run _select_main
+
+_ubi_mkvol1=
+	ubi create operational 0x1f00000 static
+
+_ubi_mkvol2=
+	ubi create permanent_param 0x1f000 static;
+	ubi create rescue 0x1f00000 static
+
+_write_oper=
+	ubi remove operational;
+	ubi create operational 0x1f00000 static;
+	ubi write 0x80400000 operational ${filesize}
+
+_write_pp=
+	ubi remove permanent_param;
+	ubi create permanent_param 0x1f000 static;
+	ubi write 0x80400000 permanent_param ${filesize}
+
+_write_resc=
+	ubi remove rescue;
+	ubi create rescue 0x1f00000 static;
+	ubi write 0x80400000 rescue ${filesize}
+
+_write_spl=
+	ubi remove secondaryboot;
+	ubi create secondaryboot ${filesize} static;
+	ubi write 0x80400000 secondaryboot ${filesize}
+
+_write_uboot=
+	ubi remove uboot;
+	ubi remove bootenv;
+	ubi create uboot ${filesize} static;
+	ubi write 0x80400000 uboot ${filesize}
+
+
+........ nand related commands ........
+_write_ipl=
+	nand erase 0x00000 0x20000;
+	nand write 0x80400000 0x00000 0x9000
+
+_write_oldipl=
+	nand erase 0x00000 0x20000;
+	nand write 0x80400000 0x00000 0x20000
+
+_write_olduboot=
+	nand erase 0x40000 0x80000;
+	nand write 0x80400000 0x40000 0x60000
+
+
+load_allboot=run _select_boot _tftp_uboot _tftp_spl _tftp_ipl _tftp_uboot _write_uboot _tftp_spl _write_spl _tftp_ipl _write_ipl
+load_gsdf_oper=run _select_main _tftp_gsdf_oper _write_oper
+load_gsdf_resc=run _select_main _tftp_gsdf_resc _write_resc
+load_ipl=run _tftp_ipl _write_ipl
+load_oldboot=run _select_boot _tftp_olduboot  _tftp_oldipl _tftp_olduboot _write_olduboot _tftp_oldipl _write_oldipl
+load_oldipl=run _tftp_oldipl _write_oldipl
+load_olduboot=run _tftp_olduboot _write_olduboot
+load_oper=run _select_main _tftp_oper _write_oper
+load_pp=run _select_main _tftp_pp _write_pp
+load_resc=run _select_main _tftp_resc _write_resc
+load_spl=run _select_boot _tftp_spl _write_spl
+load_uboot=run _select_boot _tftp_uboot _write_uboot
+
+
+reset_env=run _select_boot; ubi remove bootenv; ubi create bootenv 0x1f000
+
+ubi_init=run _ubi_eraze; run _ubi_mkvol1; run _ubi_mkvol2
