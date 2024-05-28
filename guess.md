@@ -47,3 +47,14 @@ dm 0x80400000 0x100000
 ```
 > ⚠️ Size is subjective
 > ❌ does not seems to be that (full of `0xFF`) to retry with `md` from u-boot
+
+```
+md.b 0x80400000 0x100000
+```
+
+
+## NAND dump pages
+
+With command 
+`nand dump [page_offset]` it is possible to dump one page of the nand at the time. NAND is composed of multiple pages and is readable one at the time. Maybe password is stored somewhere.
+
