@@ -1,120 +1,140 @@
-OK
-
-Starting kernel ...
-
-Linux version 3.4.11-rt19 (rmm-svce-urd2int04@compil-atr-1) (gcc version 4.8.2 (GCC) ) #1 SMP PREEMPT Fri Oct 22 23:23:10 CET 2021
-F@ST3865b prom init
-CPU revision is: 0002a080 (Broadcom BMIPS4350)
-DSL SDRAM reserved: 0x132000
-Determined physical RAM map:
- memory: 0fece000 @ 00000000 (usable)
-Zone PFN ranges:
-  DMA      0x00000000 -> 0x00001000
-  Normal   0x00001000 -> 0x0000fece
-Movable zone start PFN for each node
-Early memory PFN ranges
-    0: 0x00000000 -> 0x0000fece
-On node 0 totalpages: 65230
-free_area_init_node: node 0, pgdat 80579e60, node_mem_map 81000000
-  DMA zone: 32 pages used for memmap
-  DMA zone: 0 pages reserved
-  DMA zone: 4064 pages, LIFO batch:0
-  Normal zone: 478 pages used for memmap
-  Normal zone: 60656 pages, LIFO batch:15
-PERCPU: Embedded 7 pages/cpu @81203000 s5376 r8192 d15104 u32768
-pcpu-alloc: s5376 r8192 d15104 u32768 alloc=8*4096
-pcpu-alloc: [0] 0 [0] 1 
-Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 64720
-Kernel command line: ro noinitrd root=mtd:rootfs init=/etc/preinit ro rootfstype=squashfs console=ttyS0,115200 rootfs_offset=0x002e8000 rootfs_size=0x020b2000 mtdparts=nand:768k(bcm),125184k(partAll),5120k(data) ubi.mtd=ubi part_main=partAll part_boot=partAll image_ubivol=operational board_type=00020010 irqaffinity=0
-UBI image volume: "operational"
-PID hash table entries: 1024 (order: 0, 4096 bytes)
-Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
-Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
-Primary instruction cache 64kB, VIPT, 4-way, linesize 16 bytes.
-Primary data cache 32kB, 2-way, VIPT, cache aliases, linesize 16 bytes
-Memory: 252552k/260920k available (4503k kernel code, 8368k reserved, 1042k data, 208k init, 0k highmem)
-Preemptible hierarchical RCU implementation.
-NR_IRQS:128
-console [ttyS0] enabled
-Calibrating delay loop... 397.31 BogoMIPS (lpj=198656)
-pid_max: default: 32768 minimum: 301
-Mount-cache hash table entries: 512
---Kernel Config--
-  SMP=1
-  PREEMPT=1
-  DEBUG_SPINLOCK=0
-  DEBUG_MUTEXES=0
-Broadcom Logger v0.1 Oct 22 2021 23:17:53
-CPU revision is: 0002a080 (Broadcom BMIPS4350)
-Primary instruction cache 64kB, VIPT, 4-way, linesize 16 bytes.
-Primary data cache 32kB, 2-way, VIPT, cache aliases, linesize 16 bytes
-Brought up 2 CPUs
-NET: Registered protocol family 16
-Internal 1P2 VREG will be shutdown if unused...Unused, turn it off (0000888c-00008893=-7<300)
-registering PCI controller with io_map_base unset
-registering PCI controller with io_map_base unset
-bio: create slab <bio-0> at 0
-SCSI subsystem initialized
-usbcore: registered new interface driver usbfs
-usbcore: registered new interface driver hub
-usbcore: registered new device driver usb
-PCI host bridge to bus 0000:00
-pci_bus 0000:00: root bus resource [mem 0xa0f00000-0xa0ffffff]
-pci_bus 0000:00: root bus resource [io  0xa2000000-0xa200ffff]
-pci 0000:00:00.0: [14e4:435f] type 00 class 0x028000
-pci 0000:00:00.0: reg 10: [mem 0x10004000-0x10005fff]
-pci 0000:00:09.0: [14e4:6300] type 00 class 0x0c0310
-pci 0000:00:09.0: reg 10: [mem 0x10002600-0x100026ff]
-pci 0000:00:0a.0: [14e4:6300] type 00 class 0x0c0320
-pci 0000:00:0a.0: reg 10: [mem 0x10002500-0x100025ff]
-PCI host bridge to bus 0000:01
-pci_bus 0000:01: root bus resource [mem 0x11000000-0x11efffff]
-pci_bus 0000:01: root bus resource [??? 0x00000000 flags 0x0]
-pci 0000:01:00.0: [14e4:6326] type 01 class 0x060400
-pci 0000:01:00.0: PME# supported from D0 D3hot
-pci 0000:01:00.0: PCI bridge to [bus 02-02]
-bcmhs_spi bcmhs_spi.1: master is unqueued, this is deprecated
-bcmleg_spi bcmleg_spi.0: master is unqueued, this is deprecated
-skbFreeTask created successfully
-gbpm_do_work scheduled
-[0;34mBLOG v3.0 Initialized[0m
-BLOG Rule v1.0 Initialized
-Broadcom IQoS v0.1 Oct 22 2021 23:21:46 initialized
-Broadcom GBPM v0.1 Oct 22 2021 23:21:47 initialized
-NET: Registered protocol family 8
-NET: Registered protocol family 20
-Switching to clocksource MIPS
-NET: Registered protocol family 2
-IP route cache hash table entries: 2048 (order: 1, 8192 bytes)
-TCP established hash table entries: 8192 (order: 3, 32768 bytes)
-TCP bind hash table entries: 8192 (order: 4, 65536 bytes)
-TCP: Hash tables configured (established 8192 bind 8192)
-TCP: reno registered
-UDP hash table entries: 128 (order: 0, 4096 bytes)
-UDP-Lite hash table entries: 128 (order: 0, 4096 bytes)
-NET: Registered protocol family 1
-PCI: CLS mismatch (64 != 16), using 16 bytes
-bcm_tstamp initialized, (hpt_freq=200000000 2us_div=200 2ns_mult=5 2ns_shift=0)
-squashfs: version 4.0 (2009/01/31) PhiliUBI: max. sequence number:       307350
-UBI: attached mtd2 to ubi0
-UBI: MTD device name:            "ubi"
-UBI: MTD device size:            122 MiB
-UBI: number of good PEBs:        978
-UBI: number of bad PEBs:         0
-UBI: number of corrupted PEBs:   0
-UBI: max. allowed volumes:       128
-UBI: wear-leveling threshold:    4096
-UBI: number of internal volumes: 1
-UBI: number of user volumes:     7
-UBI: available PEBs:             85
-UBI: total number of reserved PEBs: 893
-UBI: number of PEBs reserved for bad PEB handling: 9
-UBI: max/mean erase counter: 347/314
-UBI: image sequence number:  0
-UBI: background thread "ubi_bgt0d" started, PID 225
-Add UBI volume partitions: name=secondaryboot
-Add UBI volume partitions: name=uboot
-Add UBI volume partitions: name=permanent_param
-Add UBI volume partitions: name=rescue
-Add UBI volume partitions: name=operational
-
+nand dump 0x0
+Page 00000000 dump:
+	10 00 00 1c 00 00 00 00  80 00 3d 00 80 00 3d 00
+	80 00 3d 40 80 00 3d 80  80 00 00 00 80 00 3d 40
+	80 00 bd 10 00 00 00 00  00 00 00 00 00 00 00 00
+	80 00 0b c0 80 00 0c cc  80 00 0c c4 80 00 37 98
+	80 00 38 d4 80 00 38 d4  80 00 38 d4 80 00 38 dc
+	80 00 12 2c 80 00 38 e4  80 00 39 e4 80 00 35 14
+	80 00 34 d8 80 00 34 e0  80 00 0d 18 80 00 34 bc
+	80 00 0e 5c 00 00 e0 21  04 11 00 01 00 00 00 00
+	00 00 00 00 3c 16 1f ff  02 df b0 24 02 c0 20 21
+	3c 1b 80 00 27 7b 00 30  3c 1f 80 00 27 ff 00 ac
+	03 7f d8 22 04 11 00 01  00 00 00 00 03 7f d8 21
+	3c 01 a0 00 03 61 d8 25  8f 7b 00 00 03 76 d8 21
+	3c 01 a0 00 03 61 d8 25  03 60 f8 09 00 00 00 00
+	3c 04 48 45 34 84 4c 4f  3c 1b 80 00 27 7b 00 30
+	3c 1f 80 00 27 ff 00 f4  03 7f d8 22 04 11 00 01
+	00 00 00 00 03 7f d8 21  3c 01 a0 00 03 61 d8 25
+	8f 7b 00 04 03 76 d8 21  3c 01 a0 00 03 61 d8 25
+	03 60 f8 09 00 00 00 00  3c 1b 80 00 27 7b 00 30
+	3c 1f 80 00 27 ff 01 34  03 7f d8 22 04 11 00 01
+	00 00 00 00 03 7f d8 21  3c 01 a0 00 03 61 d8 25
+	8f 7b 00 0c 03 76 d8 21  3c 01 a0 00 03 61 d8 25
+	03 60 f8 09 00 00 00 00  04 11 02 92 00 00 00 00
+	3c 1b 80 00 27 7b 00 30  3c 1f 80 00 27 ff 01 7c
+	03 7f d8 22 04 11 00 01  00 00 00 00 03 7f d8 21
+	8f 7b 00 40 03 76 d8 21  03 60 f8 09 00 00 00 00
+	3c 1b 80 00 27 7b 00 30  3c 1f 80 00 27 ff 01 ac
+	03 7f d8 22 04 11 00 01  00 00 00 00 03 7f d8 21
+	8f 7b 00 38 03 76 d8 21  03 60 f8 09 00 00 00 00
+	3c 04 44 52 34 84 41 4d  3c 1b 80 00 27 7b 00 30
+	3c 1f 80 00 27 ff 01 e4  03 7f d8 22 04 11 00 01
+	00 00 00 00 03 7f d8 21  8f 7b 00 04 03 76 d8 21
+	03 60 f8 09 00 00 00 00  3c 1b 80 00 27 7b 00 30
+	3c 1f 80 00 27 ff 02 14  03 7f d8 22 04 11 00 01
+	00 00 00 00 03 7f d8 21  8f 7b 00 08 03 76 d8 21
+	03 60 f8 09 00 00 00 00  00 40 20 21 3c 1b 80 00
+	27 7b 00 30 3c 1f 80 00  27 ff 02 48 03 7f d8 22
+	04 11 00 01 00 00 00 00  03 7f d8 21 8f 7b 00 20
+	03 76 d8 21 03 60 f8 09  00 00 00 00 3c 1b 80 00
+	27 7b 00 30 3c 1f 80 00  27 ff 02 78 03 7f d8 22
+	04 11 00 01 00 00 00 00  03 7f d8 21 8f 7b 00 3c
+	03 76 d8 21 03 60 f8 09  00 00 00 00 00 40 d0 21
+	17 40 00 11 00 00 00 00  3c 04 52 41 34 84 4d 58
+	3c 1b 80 00 27 7b 00 30  3c 1f 80 00 27 ff 02 bc
+	03 7f d8 22 04 11 00 01  00 00 00 00 03 7f d8 21
+	8f 7b 00 04 03 76 d8 21  03 60 f8 09 00 00 00 00
+	10 00 ff ff 00 00 00 00  24 18 01 00 03 1a 08 2a
+	14 20 00 02 00 00 00 00  03 40 c0 21 00 18 c5 00
+	24 1e 00 00 24 19 00 00  3c 04 80 00 24 84 00 08
+	3c 1f 80 00 27 ff 03 14  00 9f 20 22 04 11 00 01
+	00 00 00 00 00 9f 20 21  8c 9c 00 18 03 9e e0 20
+	3c 04 5a 42 34 84 53 53  3c 1b 80 00 27 7b 00 30
+	3c 1f 80 00 27 ff 03 44  03 7f d8 22 04 11 00 01
+	00 00 00 00 03 7f d8 21  8f 7b 00 04 03 76 d8 21
+	03 60 f8 09 00 00 00 00  3c 04 80 00 24 84 00 08
+	3c 1f 80 00 27 ff 03 74  00 9f 20 22 04 11 00 01
+	00 00 00 00 00 9f 20 21  8c 82 00 14 8c 83 00 0c
+	00 5e 10 20 00 7e 18 20  ac 40 00 00 ac 40 00 04
+	ac 40 00 08 ac 40 00 0c  20 42 00 10 00 43 08 2a
+	14 20 ff f9 00 00 00 00  3c 04 43 4f 34 84 44 45
+	3c 1b 80 00 27 7b 00 30  3c 1f 80 00 27 ff 03 cc
+	03 7f d8 22 04 11 00 01  00 00 00 00 03 7f d8 21
+	8f 7b 00 04 03 76 d8 21  03 60 f8 09 00 00 00 00
+	3c 04 80 00 24 84 00 08  3c 1f 80 00 27 ff 03 fc
+	00 9f 20 22 04 11 00 01  00 00 00 00 00 9f 20 21
+	8c 89 00 10 01 20 b8 21  8c 8a 00 10 01 56 50 21
+	8c 8b 00 00 01 76 58 21  8d 4c 00 00 8d 4d 00 04
+	8d 4e 00 08 8d 4f 00 0c  ad 2c 00 00 ad 2d 00 04
+	ad 2e 00 08 ad 2f 00 0c  21 29 00 10 21 4a 00 10
+	01 4b 08 2b 14 20 ff f4  00 00 00 00 3c 04 44 41
+	34 84 54 41 3c 1b 80 00  27 7b 00 30 3c 1f 80 00
+	27 ff 04 70 03 7f d8 22  04 11 00 01 00 00 00 00
+	03 7f d8 21 8f 7b 00 04  03 76 d8 21 03 60 f8 09
+	00 00 00 00 3c 04 80 00  24 84 00 08 3c 1f 80 00
+	27 ff 04 a0 00 9f 20 22  04 11 00 01 00 00 00 00
+	00 9f 20 21 8c 89 00 04  01 36 48 21 24 08 00 0f
+	01 28 48 20 01 00 40 27  01 28 48 24 8c 8a 00 04
+	8c 8b 00 08 01 5e 50 20  01 7e 58 20 8d 2c 00 00
+	8d 2d 00 04 8d 2e 00 08  8d 2f 00 0c ad 4c 00 00
+	ad 4d 00 04 ad 4e 00 08  ad 4f 00 0c 21 29 00 10
+	21 4a 00 10 01 4b 08 2b  14 20 ff f4 00 00 00 00
+	10 00 01 20 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	63 66 65 2d 76 01 00 26  70 76 00 00 00 00 00 00
+	00 00 00 06 65 3d 31 39  32 2e 31 36 38 2e 31 2e
+	31 3a 66 66 66 66 66 66  30 30 20 68 3d 31 39 32
+	2e 31 36 38 2e 31 2e 31  30 30 20 67 3d 20 72 3d
+	66 20 66 3d 76 6d 6c 69  6e 75 78 20 69 3d 62 63
+	6d 39 36 33 78 78 5f 66  73 5f 6b 65 72 6e 65 6c
+	20 64 3d 31 20 70 3d 30  20 6c 3d 6c 20 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 46 40 53 54  33 38 36 35 62 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 18 00 00 00 0a
+	00 10 18 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+	00 00 00 00 00 00 00 80  00 00 7b 00 00 01 ec 00
+	00 01 fc 00 00 00 00 80  00 00 7a 80 00 00 7a 80
+	00 00 10 00 00 00 04 00  00 00 00 00 00 00 00 00
+OOB:
+	ff 19 85 20 03 00 00 00
+	08 0e f1 b4 c7 c0 1e c3
+	ff ff ff ff ff ff ff ff
+	ff 08 19 be c2 5e 84 10
+	ff ff ff ff ff ff ff ff
+	ff 08 12 c8 83 aa 17 4b
+	ff ff ff ff ff ff ff ff
+	ff 04 37 88 b6 d8 70 05
+f3865 > 

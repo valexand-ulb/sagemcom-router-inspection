@@ -6,7 +6,7 @@ PAGE_SIZE = 2048  # size of each page in bits
 TOTAL_MEMORY = 2097152  # total memory in bits
 NUM_PAGES = TOTAL_MEMORY // PAGE_SIZE  # total number of pages
 
-last_dumped_page = 1023
+last_dumped_page = 0
 
 # Setup serial connection
 ser = serial.Serial(
@@ -30,7 +30,7 @@ def write_page_to_file(page_number, data):
         print(f" -> Dumped page {page_number} into {filename}")
 
 # Iterate over each page
-for page_number in range(last_dumped_page, NUM_PAGES + 10):
+for page_number in range(last_dumped_page, NUM_PAGES):
     print(f"[+] offset :{hex(page_number * PAGE_SIZE)}")
     command = f'nand dump {hex(page_number * PAGE_SIZE)}\n'
     ser.write(command.encode())
