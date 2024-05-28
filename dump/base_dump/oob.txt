@@ -1,8 +1,0 @@
-ff 19 85 20 03 00 00 00
-08 0e f1 b4 c7 c0 1e c3
-ff ff ff ff ff ff ff ff
-ff 08 19 be c2 5e 84 10
-ff ff ff ff ff ff ff ff
-ff 08 12 c8 83 aa 17 4b
-ff ff ff ff ff ff ff ff
-ff 04 37 88 b6 d8 70 05
