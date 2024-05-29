@@ -3,7 +3,7 @@ import time
 
 # Constants
 PAGE_SIZE = 2048  # size of each page in bits
-TOTAL_MEMORY = 2097152  # total memory in bits
+TOTAL_MEMORY = 16777216  # total memory in bits = 2048 KiB ~ 2 MB
 NUM_PAGES = TOTAL_MEMORY // PAGE_SIZE  # total number of pages
 
 last_dumped_page = 0
