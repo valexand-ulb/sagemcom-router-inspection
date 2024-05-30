@@ -6,7 +6,7 @@ PAGE_SIZE = 2048  # size of each page in bits
 TOTAL_MEMORY = 16777216  # total memory in bits = 2048 KiB ~ 2 MB
 NUM_PAGES = TOTAL_MEMORY // PAGE_SIZE  # total number of pages estimated 8192
 
-last_dumped_page = 1023
+last_dumped_page = 5262
 
 # Setup serial connection
 ser = serial.Serial(
@@ -31,7 +31,7 @@ def write_page_to_file(page_number, data):
 
 
 print(f"[!] Going to dump from {last_dumped_page} to {NUM_PAGES}:")
-print(f"estimated times {3 * (NUM_PAGES - last_dumped_page) }s")
+print(f"estimated times {3 * (NUM_PAGES - last_dumped_page) }s (3s per pages with {NUM_PAGES - last_dumped_page}) to dump.")
 # Iterate over each page
 for page_number in range(last_dumped_page, NUM_PAGES):
     print(f"[+] offset :{hex(page_number * PAGE_SIZE)}")
