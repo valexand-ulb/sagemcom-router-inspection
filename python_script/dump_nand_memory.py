@@ -1,12 +1,14 @@
 import serial
 import time
 
+# Max address dumpable 0x7fff800 -> 16 MiB (0x7fff800+0x800)
+
 # Constants
 PAGE_SIZE = 2048  # size of each page in bits
-TOTAL_MEMORY = 33554432  # total memory in bits = 4096 KiB ~ 4 MB
-NUM_PAGES = TOTAL_MEMORY // PAGE_SIZE  # total number of pages estimated 8192
+TOTAL_MEMORY = 134217728  # total memory in bits = 16384 KiB ~ 16 MB
+NUM_PAGES = TOTAL_MEMORY // PAGE_SIZE  # total number of pages estimated 65536
 
-last_dumped_page = 8191
+last_dumped_page = 16383
 
 # Setup serial connection
 ser = serial.Serial(
