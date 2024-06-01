@@ -8,7 +8,7 @@ PAGE_SIZE = 2048  # size of each page in bits
 TOTAL_MEMORY = 134217728  # total memory in bits = 16384 KiB ~ 16 MB
 NUM_PAGES = TOTAL_MEMORY // PAGE_SIZE  # total number of pages estimated 65536
 
-last_dumped_page = 16383
+last_dumped_page = 26646
 
 # Setup serial connection
 ser = serial.Serial(
