@@ -1,0 +1,7 @@
+/bin/test_restore_default.sh
+/usr/lib/libhal-bsp.so.1.0.0
+/usr/lib/libhal-bsp.so.1
+/usr/lib/libbspboard.so.1.0.0
+/usr/lib/libhal-bsp.so
+/usr/lib/libbspboard.so.1
+/usr/lib/libbspboard.so

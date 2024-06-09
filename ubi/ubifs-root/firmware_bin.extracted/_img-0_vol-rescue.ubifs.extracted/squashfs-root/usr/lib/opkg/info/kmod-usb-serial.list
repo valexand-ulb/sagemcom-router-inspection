@@ -1,0 +1,2 @@
+/etc/modules.d/60-usb-serial
+/lib/modules/3.4.11-rt19/usbserial.ko

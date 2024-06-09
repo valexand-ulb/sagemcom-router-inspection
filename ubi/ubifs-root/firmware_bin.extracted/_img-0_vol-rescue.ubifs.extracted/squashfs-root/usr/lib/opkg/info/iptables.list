@@ -1,0 +1,16 @@
+/usr/lib/iptables/libipt_REJECT.so
+/usr/lib/iptables/libxt_tcp.so
+/usr/lib/iptables/libxt_multiport.so
+/usr/lib/iptables/libxt_limit.so
+/usr/lib/iptables/libxt_standard.so
+/usr/lib/iptables/libxt_NFQUEUE.so
+/usr/lib/iptables/libipt_icmp.so
+/usr/lib/iptables/libxt_u32.so
+/usr/lib/iptables/libxt_udp.so
+/usr/lib/iptables/libxt_mac.so
+/usr/lib/iptables/libipt_REDIRECT.so
+/usr/lib/iptables/libxt_comment.so
+/usr/sbin/iptables
+/usr/lib/iptables/libxt_TCPMSS.so
+/usr/lib/iptables/libxt_owner.so
+/usr/lib/iptables/libipt_LOG.so

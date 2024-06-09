@@ -1,0 +1,15 @@
+Package: quantenna
+Version: 1
+Depends: liblogoper
+Provides: 
+Source: feeds/wifi/chipsetter/quantenna
+License: Quantenna
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: 
+Installed-Size: 181
+Description:  Quantenna wireless

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Copyright (C) 2013 Sagemcom
+
+cmdline=`ps | grep testH2alvoice | awk '{ print $1 }' | head -n 1`
+kill $cmdline
+

@@ -1,0 +1,15 @@
+Package: intf-bf2ppp
+Version: v13.128.50-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/smu/network-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/network-smu
+Installed-Size: 11861
+Description:  Interface Bf2ppp

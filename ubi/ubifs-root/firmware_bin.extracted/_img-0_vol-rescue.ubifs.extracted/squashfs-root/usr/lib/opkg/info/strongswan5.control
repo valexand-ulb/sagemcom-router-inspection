@@ -1,0 +1,17 @@
+Package: strongswan5
+Version: 5.5.0-1
+Depends: libpthread, ip, kmod-crypto-authenc, kmod-ipsec, kmod-ipsec4, kmod-ipsec6, kmod-ipt-ipsec, iptables-mod-ipsec
+Provides: 
+Source: feeds/sagemcom/net/strongswan5
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://download.strongswan.org/
+Installed-Size: 142507
+Description:  StrongSwan is an OpenSource IPsec implementation for the Linux operating system.
+ .
+ This package contains shared libraries and scripts.

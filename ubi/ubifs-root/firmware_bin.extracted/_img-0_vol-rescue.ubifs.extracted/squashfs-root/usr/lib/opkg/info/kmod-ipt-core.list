@@ -1,0 +1,11 @@
+/lib/modules/3.4.11-rt19/iptable_raw.ko
+/lib/modules/3.4.11-rt19/ipt_REJECT.ko
+/lib/modules/3.4.11-rt19/xt_TCPMSS.ko
+/lib/modules/3.4.11-rt19/iptable_mangle.ko
+/lib/modules/3.4.11-rt19/iptable_filter.ko
+/etc/modules.d/40-ipt-core
+/lib/modules/3.4.11-rt19/xt_multiport.ko
+/lib/modules/3.4.11-rt19/xt_LOG.ko
+/lib/modules/3.4.11-rt19/xt_mac.ko
+/lib/modules/3.4.11-rt19/xt_limit.ko
+/lib/modules/3.4.11-rt19/ip_tables.ko

@@ -1,0 +1,15 @@
+Package: upnpscand
+Version: v3.2.0-1
+Depends: devel-utils, evlp, smu-utils, evlp-download, libexpat, intf-upnp
+Provides: 
+Source: feeds/sagemcom/net/upnpscand
+License: Sagemcom
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/upnpscan-daemon
+Installed-Size: 12792
+Description:  This package contains the UPnP scanner

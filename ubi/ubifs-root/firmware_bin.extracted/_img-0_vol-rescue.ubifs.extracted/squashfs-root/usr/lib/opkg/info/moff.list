@@ -1,0 +1,5 @@
+/usr/sbin/moff.sh
+/usr/sbin/moff
+/usr/sbin/moff_dsl.sh
+/usr/sbin/moff_backup.sh
+/usr/sbin/moff_backup_dns.sh

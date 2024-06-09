@@ -1,0 +1,15 @@
+Package: libtr69ctl
+Version: v4.32.15-1
+Depends: librt
+Provides: 
+Source: feeds/sagemcom/net/tr69
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/tr69-agent
+Installed-Size: 3224
+Description:  Library providing control access to the tr69 agent daemon

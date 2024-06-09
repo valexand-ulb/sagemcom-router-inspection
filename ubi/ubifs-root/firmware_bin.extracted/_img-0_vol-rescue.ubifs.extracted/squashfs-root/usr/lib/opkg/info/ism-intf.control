@@ -1,0 +1,15 @@
+Package: ism-intf
+Version: v15.7.5-1
+Depends: ism-core
+Provides: 
+Source: feeds/scheduler/libs/ism-intf
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ism-intf
+Installed-Size: 27428
+Description:  Inter Service Message

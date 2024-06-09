@@ -1,0 +1,2 @@
+/etc/modules.d/48-nfnetlink
+/lib/modules/3.4.11-rt19/nfnetlink.ko

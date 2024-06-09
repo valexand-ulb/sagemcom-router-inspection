@@ -1,0 +1,15 @@
+Package: intf-wifiap
+Version: BBOX3_WDR_v2.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/wifi/libs/intf-wifiap
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-wifiap
+Installed-Size: 26973
+Description:  Interface Wifi AccessPoint

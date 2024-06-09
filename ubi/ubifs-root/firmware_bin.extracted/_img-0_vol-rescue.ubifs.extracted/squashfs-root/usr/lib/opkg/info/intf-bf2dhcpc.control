@@ -1,0 +1,15 @@
+Package: intf-bf2dhcpc
+Version: v8.13.4-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/smu/dhcpc-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dhcpc-smu
+Installed-Size: 7323
+Description:  Interface Bf2dhcpc

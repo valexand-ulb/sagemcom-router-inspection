@@ -1,0 +1,15 @@
+Package: libpthread
+Version: 0.9.32-64
+Depends: librt
+Provides: 
+Source: feeds/base/base-files
+License: GPLv2
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 32258
+Description:  POSIX thread library

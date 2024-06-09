@@ -1,0 +1,15 @@
+Package: gateway-dm-wifi
+Version: BBOX3_WDR_v11.0-1
+Depends: gateway-dm
+Provides: 
+Source: feeds/wifi/smu/wifi-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wifi-smu
+Installed-Size: 41023
+Description:  WIFI smu plugin to manage WIFI

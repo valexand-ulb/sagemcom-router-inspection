@@ -1,0 +1,434 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+
+    <div data-role="page" id="WANPage" class="gui-settings gui-internet-page" data-dom-cache="true" >
+
+      <div data-role="header" data-theme="a">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-internet-c.png">
+        </span>
+        <h1 xmsg="HOME_INTERNETCONNECTIVITY">Network Connectivity</h1>
+        <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+		<div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+        <ul id="Menu" >
+          <li class="gui-user-settings" ><a href="network.html" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General Info</a></li>
+          <li style="display: none"><a href="#" class="ui-btn-active" data-transition="none" xmsg="INTERNET_WAN">WAN</a></li>
+          <li style="display: none" id="VLAN10"><a href="vlan.html?vlanid=10" data-transition="none" xmsg="INTERNET_VLAN10">VLAN 10</a></li>
+          <li style="display: none" id="VLAN20"><a href="vlan.html?vlanid=20" data-transition="none" xmsg="INTERNET_VLAN20">VLAN 20</a></li>
+          <li style="display: none" id="VLAN30"><a href="vlan.html?vlanid=30" data-transition="none" xmsg="INTERNET_VLAN30">VLAN 30</a></li>
+          <li style="display: none" id="VLAN2"><a href="vlan.html?vlanid=2" data-transition="none" xmsg="INTERNET_VLAN2">VLAN 2</a></li>
+		  <li style="display: none" id="VLAN4080"><a href="vlan.html?vlanid=4080" data-transition="none" xmsg="INTERNET_VLAN4080">VLAN 4080</a></li>
+		  <li style="display: none" id="VLAN4081"><a href="vlan.html?vlanid=4081" data-transition="none" xmsg="INTERNET_VLAN4081">VLAN 4081</a></li>
+		  <li class="gui-user-settings" style="display: none" id="MPTCP"><a href="mptcp.html" data-transition="none">MPTCP</a></li>
+		  <li class="gui-user-settings" style="display: none" id="WANBACKUP"><a href="wan-backup.html" data-transition="none" xmsg="INTERNET_GENERAL_SERVICE_CONTINUITY">General Service Continuity</a></li>
+          <li class="gui-user-settings gui-internet-disconnected"  style="display: none"><a href="intercepte.html" xmsg="INTERCEPTE_TITLE">Internet disconnected: Help page</a></li>
+        </ul>
+      </div> <!-- header -->
+
+      <div data-role="content"> 
+		<div id="xDSL" >
+
+          <h2>xDSL</h2>
+
+          <ul class="gui-info" >
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/DSL/Lines/Line[@uid='1']/Status" >
+              <h3>DSL Line Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT">Disconnected</option>
+                <option value="UNKNOWN">Disconnected</option>
+                <option value="NOTPRESENT">Disconnected</option>
+                <option value="LOWERLAYERDOWN">Disconnected</option>
+                <option value="ERROR">Disconnected</option>
+                <option value="UP">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3>G.INP (Down/Up)</h3>
+              <p>
+                <span id="GinpDown" class="gui-downstream" >&nbsp;</span>
+                <span>/</span>
+                <span id="GinpUp" class="gui-upstream" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="WAN_DSL_MODE">DSL Mode</h3>
+              <p id="StdUsed" class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="WAN_LINE_RATE">Actual Line Rate (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/DownstreamCurrRate" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/UpstreamCurrRate" >&nbsp;</span>
+                <span>&nbsp;kbps</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="WAN_REACH_LINE_RATE">Reachable Line Rate (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/DownstreamMaxBitRate" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/UpstreamMaxBitRate" >&nbsp;</span>
+                <span>&nbsp;Mbps</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="WAN_INP">INP (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/ACTINP" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/ACTINPus" >&nbsp;</span>
+              </p>
+            </li>     
+            <li data-role="fieldcontain" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin (Down/Up)</span><a href="#" class="gui-noise-btn" >(+)</a></h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/DownstreamNoiseMargin" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/UpstreamNoiseMargin" >&nbsp;</span>
+                <span>&nbsp;dB</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-noise-info" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin</span> U0</h3>
+              <p id="MarginU0" class="gui-status-text" >-</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-noise-info" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin</span> D1</h3>
+              <p id="MarginD1" class="gui-status-text" >-</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-noise-info" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin</span> U1</h3>
+              <p id="MarginU1" class="gui-status-text" >-</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-noise-info" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin</span> D2</h3>
+              <p id="MarginD2" class="gui-status-text" >-</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-noise-info" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin</span> U2</h3>
+              <p id="MarginU2" class="gui-status-text" >-</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-noise-info" >
+              <h3><span xmsg="WAN_NOISE_MARGIN">Noise Margin</span> D3</h3>
+              <p id="MarginD3" class="gui-status-text" >-</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_LOOP_ATTN">Loop Attenuation (Down/Up)</h3>
+              <p>
+                <span id="AttnDown" class="gui-downstream" >&nbsp;</span>
+                <span>/</span>
+                <span id="AttnUp" class="gui-upstream" >&nbsp;</span>
+                <span>&nbsp;dB</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_ESTIMATED_ATTN">Electrical Length Estimated <br/>Attenuation at 1 MHz (Up)</h3>
+              <p> 
+		<span id="Upbokle" class="gui-upstream" >&nbsp;</span>
+                <span>&nbsp;dB</span>
+	      </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_POWER">Power (Down/Up)</h3>
+              <p>
+                <span id="PowerDown" class="gui-downstream" >&nbsp;</span>
+                <span>/</span>
+                <span id="PowerUp" class="gui-upstream" >&nbsp;</span>
+		<span>&nbsp;dBm</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_DELAY">Delay (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/ActualInterleavingDelay" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/ActualInterleavingDelayus" >&nbsp;</span>
+		<span>&nbsp;ms</span>
+	      </p>
+            </li>
+            
+            <li data-role="list-divider" class="gui-advanced-info sub-list-title" xmsg="WAN_PM_COUNT_15M">PM counters (15 min)</li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_ES">ES (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/ErroredSecs" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/TxErroredSecs" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_SES">SES (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/SeverelyErroredSecs" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/TxSeverelyErroredSecs" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_FEC">FEC (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/QuarterHour/XTURFECErrors" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/QuarterHour/XTUCFECErrors" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_CODE_VIOLATION">Code Violation</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/QuarterHour/XTURCRCErrors" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/QuarterHour/XTUCCRCErrors" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_UAS">UAS (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/UnavailableSeconds" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/TxUnavailableSeconds" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/Retries" >
+              <h3 xmsg="WAN_REINIT">Reinitializations</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/QuarterHour/InitErr">
+              <h3 xmsg="WAN_FAIL_INIT">Failed Initializations</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="list-divider" class="gui-advanced-info sub-list-title" xmsg="WAN_PM_COUNT_24H">PM counters (24 h)</li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_ES">ES (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/ErroredSecs" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/TxErroredSecs" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_SES">SES (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/SeverelyErroredSecs" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/TxSeverelyErroredSecs" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_FEC">FEC (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/CurrentDay/XTURFECErrors" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/CurrentDay/XTUCFECErrors" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_CODE_VIOLATION">Code Violation</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/CurrentDay/XTURCRCErrors" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/CurrentDay/XTUCCRCErrors" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_UAS">UAS (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/UnavailableSeconds" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/TxUnavailableSeconds" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/Retries" >
+              <h3 xmsg="WAN_REINIT">Reinitializations</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/CurrentDay/InitErr">
+              <h3 xmsg="WAN_FAIL_INIT">Failed Initializations</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            
+            <li data-role="list-divider" class="gui-advanced-info sub-list-title" xmsg="WAN_PM_COUNT_ST">PM counters (Current show time)</li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_ES">ES (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/ErroredSecs" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/TxErroredSecs" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_SES">SES (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/SeverelyErroredSecs" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/TxSeverelyErroredSecs" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_FEC">FEC (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/Showtime/XTURFECErrors" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/Showtime/XTUCFECErrors" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_CODE_VIOLATION">Code Violation</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/Showtime/XTURCRCErrors" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Channels/Channel[@uid='1']/Stats/Showtime/XTUCCRCErrors" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="WAN_UAS">UAS (Down/Up)</h3>
+              <p>
+                <span class="gui-downstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/UnavailableSeconds" >&nbsp;</span>
+                <span>/</span>
+                <span class="gui-upstream" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/TxUnavailableSeconds" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/Retries" >
+              <h3 xmsg="WAN_REINIT">Reinitializations</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" data-xmo-role="statistic" data-xpath="Device/DSL/Lines/Line[@uid='1']/Stats/Showtime/InitErr">
+              <h3 xmsg="WAN_FAIL_INIT">Failed Initializations</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+          </ul>
+          <a href="#" class="gui-advanced-btn"  xmsg="HOME_ADVANCED">Advanced</a>
+        </div> <!-- #xDSL -->
+
+        <div id="WANEthernet" >
+
+          <h2 xmsg="WAN_WAN_ETH">WAN Ethernet</h2>
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_BYTES">Total Bytes (Sent/Received)</h3>
+              <p>
+                <span id="TotalBytesTX" class="gui-sent" >&nbsp;</span>
+                <span>/</span>
+                <span id="TotalBytesRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_PACKETS">Total packets (Sent/Received)</h3>
+              <p>
+                <span id="TotalPktTX" class="gui-sent" >&nbsp;</span>
+                <span>/</span>
+                <span id="TotalPktRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_ERRORS">Total Errors (Sent/Received)</h3>
+              <p>
+                <span id="TotalErrTX" class="gui-sent">&nbsp;</span>
+                <span>/</span>
+                <span id="TotalErrRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_DISCARD">Total Discard Packets (Sent/Received)</h3>
+              <p>
+                <span id="TotalDiscPktTX" class="gui-sent" >&nbsp;</span>
+                <span>/</span>
+                <span id="TotalDiscPktRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_UNICAST">Total Unicast Packets (Sent/Received)</h3>
+              <p>
+                <span id="TotalUcastPktTX" class="gui-sent" >&nbsp;</span>
+                <span>/</span>
+                <span id="TotalUcastPktRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_MULTICAST">Total Multicast Packets (Sent/Received)</h3>
+              <p>
+                <span id="TotalMcastPktTX" class="gui-sent">&nbsp;</span>
+                <span>/</span>
+                <span id="TotalMcastPktRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+            <li data-role="fieldcontain" >
+              <h3 xmsg="INTERNET_TOTAL_BROADCAST">Total Broadcast Packets (Sent/Received)</h3>
+              <p>
+                <span id="TotalBcastPktTX" class="gui-sent" >&nbsp;</span>
+                <span>/</span>
+                <span id="TotalBcastPktRX" class="gui-received" >&nbsp;</span>
+              </p>
+            </li>
+          </ul>
+
+        </div> <!-- #WANEthernet -->
+
+        <div id="3GBackup" >
+
+          <h2 xmsg="NETWORK_3G_BACKUP">3G Backup</h2>
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" >
+              <label for="WAN3GBackupCheck" xmsg="HOME_ENABLE">Enable</label>
+              <select id="WAN3GBackupCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/WANBackup/Interfaces/Interface[Alias='WANBACKUP_0']/Enable" >
+                <option value="false" xmsg="HOME_OFF">Off</option>
+                <option value="true" xmsg="HOME_ON">On</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="WANSIMPINInput" xmsg="WAN_PIN_CODE">PIN Code</label>
+              <input id="WANSIMPINInput" type="text" data-xmo-role="input" data-control-type="PIN" data-xpath="Device/Hsxpalte/Dongles/Dongle[1]/PIN" />
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="WANSIMAPNInput" xmsg="WAN_ACCESS_POINT">Access Point Name</label>
+              <input id="WANSIMAPNInput" type="text" data-xmo-role="input" data-control-type="URL" data-xpath="Device/Services/WANBackup/Interfaces/Interface[Alias='WANBACKUP_0']/Apn" />
+            </li>
+          </ul>
+
+        </div> <!-- #3GBackup -->
+
+      </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d nav-bar">
+		<a id="FooterRefreshBtn" href="wan.html?" class="ui-btn-left">
+    <span class="glyphicon glyphicon-refresh visible-xs"></span><span class="hidden-xs" xmsg="HOME_CLEAR_DESKTOP">Refresh stats</span></a>
+		<div class="gui-submit">
+			<a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+			<a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+		</div>	
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

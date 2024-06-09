@@ -1,0 +1,15 @@
+Package: gui-core
+Version: v8.6.0-1
+Depends: xtpl, xmt, fcgi
+Provides: 
+Source: feeds/gui/gui-core
+License: Sagemcom
+Section: gui-core
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/gui-core
+Installed-Size: 734704
+Description:  GUI JavaScript XMO API and common libraries

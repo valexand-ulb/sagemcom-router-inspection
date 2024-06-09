@@ -1,0 +1,15 @@
+Package: kmod-broadcom-voicedriver-4.16L
+Version: 3.4.11-rt19+v4.141.0-1
+Depends: kernel (=3.4.11-rt19-1), kmod-hal-bsp
+Provides: 
+Source: feeds/voipHG6/driver/broadcom-voicedriver-4.16L
+License: Broadcom
+Section: kernel
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/broadcom-voicedriver
+Installed-Size: 1282493
+Description:  Broadcom Kernel module for voice processing

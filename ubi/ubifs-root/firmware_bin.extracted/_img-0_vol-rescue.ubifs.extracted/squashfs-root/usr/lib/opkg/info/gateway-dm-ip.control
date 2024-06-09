@@ -1,0 +1,15 @@
+Package: gateway-dm-ip
+Version: v9.159.127.1-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides: 
+Source: feeds/sagemcom/libs/gateway-dm
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/gateway-dm
+Installed-Size: 24138
+Description:  IP

@@ -1,0 +1,15 @@
+Package: bgc-restore-osm
+Version: v1.12.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-managers, gateway-dm-wifi, xmo-server, smu-utils, intf-reboot
+Provides: 
+Source: feeds/sagemcom/osm/bgc-restore-osm
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/bgc-restore-osm
+Installed-Size: 15886
+Description:  SMU managing database backups/restores on bgc gateway

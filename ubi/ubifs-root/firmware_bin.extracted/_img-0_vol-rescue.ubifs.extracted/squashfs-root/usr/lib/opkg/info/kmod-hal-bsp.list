@@ -1,0 +1,3 @@
+/lib/modules/3.4.11-rt19/bsp_gpio_lkm.ko
+/lib/modules/3.4.11-rt19/bsp_gpio_data.ko
+/etc/modules.d/33-hal-bsp

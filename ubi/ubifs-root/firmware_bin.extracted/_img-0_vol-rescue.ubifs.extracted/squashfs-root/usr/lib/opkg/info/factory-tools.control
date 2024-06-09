@@ -1,0 +1,15 @@
+Package: factory-tools
+Version: v4.62.4-1
+Depends: hal-gpio
+Provides: 
+Source: feeds/sagemcom/utils/factory-tools
+License: Sagemcom
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/factory-tools
+Installed-Size: 8090
+Description:  Proprietary tools mainly dedicated to factory and lab usage.

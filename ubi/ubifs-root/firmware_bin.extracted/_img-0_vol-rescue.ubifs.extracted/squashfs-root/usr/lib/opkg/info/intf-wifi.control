@@ -1,0 +1,15 @@
+Package: intf-wifi
+Version: swan_v1.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/wifi/libs/intf-wifi
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-wifi
+Installed-Size: 6868
+Description:  Interface Wifi AccessPoint

@@ -1,0 +1,15 @@
+Package: ppp-mod-pppoe
+Version: v8.21.1-1
+Depends: ppp
+Provides: 
+Source: feeds/sagemcom/net/ppp
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Jo-Philipp Wich <xm@subsignal.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/pppd-deamon
+Installed-Size: 11108
+Description:  This package contains a PPPoE (PPP over Ethernet) plugin for ppp.

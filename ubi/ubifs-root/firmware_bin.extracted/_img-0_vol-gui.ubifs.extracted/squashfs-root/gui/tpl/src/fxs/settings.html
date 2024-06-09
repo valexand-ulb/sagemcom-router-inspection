@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+ <body> 
+
+   <div data-role="page" id="PhoneSettingsPage" class="gui-settings gui-phonesettings-page" data-dom-cache="true" >
+
+      <div data-role="header" data-theme="a">
+            <span class="gui-settings-icon"> 
+              <img src="../../../img/icon-telephone-c.png">
+            </span>
+            <h1 xmsg="SETTINGS_TELEPHONE">Telephones</h1>
+            <ul id="Menu">
+				<li id="Phone1"><a href="settings.html?phone=1" data-prefetch="true" data-transition="none" xmsg="SETTINGS_LINE_ONE">Line 1</a></li>
+				<li id="Phone2"><a href="settings.html?phone=2" data-prefetch="true" data-transition="none" xmsg="SETTINGS_LINE_TWO">Line 2</a></li>
+				<li><a href="../dect/matrix.html" data-prefetch="true" data-transition="none" xmsg="DECT_TELEPHONES_MATRIX">Telephones Matrix</a></li>
+				<li><a href="../dect/call-settings.html" data-prefetch="true" data-transition="none" xmsg="VOICESETTINGS_CALLSETTINGS">Voice Settings</a></li>
+				<li><a href="../dect/base.html" data-prefetch="true" data-transition="none" xmsg="DECTBASE_SETTINGS">Dect Base Settings</a></li>
+            </ul>
+        </div><!-- header -->
+
+      <div data-role="content"> 
+
+        <div id="PhoneSettings" >
+          <h2 id="LineIdSettings">Line x settings</h2>
+           <ul class="gui-info" > 
+           <li data-role="fieldcontain">
+             <label for="PhoneEnableCheck" xmsg="SETTINGS_ENABLE">Enable</label>
+             <select id="PhoneEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallControl/Lines/Line[Alias='#LineAlias#']/Enable" >
+				<option value="false" xmsg="HOME_OFF">Off</option>
+				<option value="true" xmsg="HOME_ON">On</option>
+			 </select>
+           </li>
+           <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='#ClientAlias#']/Status">
+				<h3 xmsg="HOME_STATUS">Status</h3>
+				<p class="gui-status-text">&nbsp;</p>
+				<select>
+					<option value="UP" xmsg="PHONE_UP">Up</option>
+					<option value="INITIALIZING" xmsg="PHONE_INITIALIZING">Initializing</option>
+					<option value="REGISTERING" xmsg="PHONE_REGISTERING">Registering</option>
+					<option value="DEREGISTERING" xmsg="PHONE_DEREGISTERING">Deregistering</option>
+					<option value="ERROR_MISCONFIGURED" xmsg="PHONE_MISCONFIGURED">Error misconfigured</option>
+					<option value="ERROR_NETWORK" xmsg="PHONE_ERROR_NETWORK">Error network</option>
+					<option value="ERROR_REGISTRATION" xmsg="PHONE_ERROR_REGISTRATION">Error registration</option>
+					<option value="QUIESCENT" xmsg="PHONE_QUIESCENT">Quiescent</option>
+					<option value="DISABLED" xmsg="PHONE_DISABLED">Disabled</option>
+				</select>
+			</li>
+          <li data-role="fieldcontain">
+             <label for="TelephoneNumberInput" xmsg="SETTINGS_TELEPHONE_NUMBER">Telephone No</label>
+             <input id="TelephoneNumberInput" data-xmo-role="input" type="text" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='#ClientAlias#']/RegisterURI" />
+           </li>
+           <li data-role="fieldcontain">
+             <label for="UsernameInput" xmsg="SETTINGS_USERNAME">Username</label>
+             <input id="UsernameInput" type="text" data-xmo-role="input" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='#ClientAlias#']/AuthUserName" />
+           </li>
+           <li data-role="fieldcontain">
+             <label for="PasswordInput" xmsg="SETTINGS_PASSWORD">Password</label>
+             <input type="text" style="display:none" />
+             <input type="password" style="display:none" />
+             <input id="PasswordInput" type="password" data-xmo-role="input" data-write-only="true" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='#ClientAlias#']/AuthPassword" autocomplete="new-password"/>
+           </li>
+           <li data-role="fieldcontain">
+             <p xmsg="SETTINGS_WARNING" class="text-danger warning-custom-text">Warning : changes applied to the parameters below will be applied to both lines.</p>
+           </li>
+           <li data-role="fieldcontain">
+			 <label for="OLOEnableCheck" xmsg="SETTINGS_OLO_MODE_ENABLE">OLO mode</label>
+			 <select id="OLOEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/BGCVOIP/OLOMode">
+				<option value="false" xmsg="HOME_OFF">Off</option>
+				<option value="true" xmsg="HOME_ON">On</option>
+			 </select>
+		   </li>
+           <li data-role="fieldcontain">
+             <label for="DomainInput" xmsg="SETTINGS_DOMAIN">Domain</label>
+             <input id="DomainInput" type="text" data-xmo-role="input" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Networks/Network[Alias='NETWORK1']/UserAgentDomain" />
+           </li>
+           <li data-role="fieldcontain">
+             <label for="TransportInput" xmsg="SETTINGS_TRANSPORT">Transport</label>
+             <select id="TransportInput" data-xmo-role="select" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Networks/Network[Alias='NETWORK1']/UserAgentTransport">
+				<option value="UDP">UDP</option>
+				<option value="TCP">TCP</option>
+				<option value="TLS">TLS</option>
+				<option value="SCTP">SCTP</option>
+            </select>
+           </li>
+           <li data-role="fieldcontain">
+             <label for="ProxyServerInput" xmsg="SETTINGS_PROXY_SERVER">Outbound Proxy Server</label>
+             <input id="ProxyServerInput" type="text" data-xmo-role="input" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Networks/Network[Alias='NETWORK1']/OutboundProxy" />
+           </li>
+           <li data-role="fieldcontain">
+             <label for="ProxyPortInput" xmsg="SETTINGS_PROXY_PORT">Outbound Proxy Port</label>
+
+             <input id="ProxyPortInput" type="text" data-xmo-role="input" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Networks/Network[Alias='NETWORK1']/OutboundProxyPort" />
+           </li>
+           <!--<li data-role="fieldcontain">
+             <p xmsg="SETTINGS_NOTE" class="text-danger warning-custom-text">Note : Leave Proxy Server and Registrar Server fields empty if you want the Domain settings to apply in all cases.</p>
+           </li>-->
+         </ul>
+         <!--<a href="#" class="gui-advanced-btn" xmsg="HOME_ADVANCED">Advanced</a>-->
+	    </div>
+
+      </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d">
+		<div class="gui-submit">
+			<a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+			<a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+		</div>
+	</div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

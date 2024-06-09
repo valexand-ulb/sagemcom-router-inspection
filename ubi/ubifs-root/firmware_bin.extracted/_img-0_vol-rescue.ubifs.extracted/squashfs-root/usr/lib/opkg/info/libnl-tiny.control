@@ -1,0 +1,15 @@
+Package: libnl-tiny
+Version: 0.1-1
+Depends: 
+Provides: 
+Source: package/libnl-tiny
+License: GPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 13465
+Description:  This package contains a stripped down version of libnl

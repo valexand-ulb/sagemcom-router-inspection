@@ -1,0 +1,15 @@
+Package: intf-bf2dhcps
+Version: v4.21.0.5-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/smu/dhcps-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dhcps-smu
+Installed-Size: 6947
+Description:  Interface Bf2dhcps

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body>
+    <div data-role="page" id="WiFiPage" class="gui-settings" data-dom-cache="true">
+        <script src="../../../js/jquery.ezpz_hint.js"></script>
+        <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+        <div data-role="header" data-theme="a">
+            <span class="gui-settings-icon"> 
+              <img src="../../../img/icon-wifi.png" style="width: 50px; top: 5px; position: relative;">
+            </span>
+            <h1><span xmsg="WIFI_WIFI_TITLE">Wi-Fi</span> <span class="gui-wifi-radio" >2.4</span> GHz</h1>
+            <ul id="Menu">
+                <li><a href="#" class="ui-btn-active" data-prefetch="true" data-transition="none" xmsg="WIFI_GENERAL">General</a>
+                </li>
+            </ul>
+        </div>
+        <!-- header -->
+        <div data-role="content">
+          <div id="Wifi5GBridgedWarning" style="display: none">
+              <ul class="gui-info">
+                  <li data-role="fieldcontain">
+                      <span xmsg="WIFI_BRIDGED_WARNING" class="gui-status-warning text-danger">Your Modem is in bridged mode, please verify the only devices associated to 5 GHz WiFi are Decoders.</span>
+                  </li>
+              </ul>
+          </div>
+          <!-- #Wifi5GbridgedWarning -->
+          <div id="WiFiActivation">
+              <h2 xmsg="WIFI_ACTIVATION">Activation</h2>
+              <ul class="gui-info">
+                  <li data-role="fieldcontain">
+                      <label for="WiFiEnableCheck" xmsg="HOME_ENABLE">Enable</label>
+                      <select id="WiFiEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/Enable">
+                          <option value="false" xmsg="HOME_OFF">Off</option>
+                          <option value="true" xmsg="HOME_ON">On</option>
+                      </select>
+                      <div id="WiFiButtonEnable" data-xmo-role="item" data-xpath="Device/Services/BGCButton/GuiEnable_2G4" data-write-only="true" />
+                      <div id="WiFiSSIDEnable" data-xmo-role="item" data-xpath="Device/WiFi/SSIDs/SSID[Alias='WL_PRIV']/Enable" data-write-only="true" />
+                  </li>
+              </ul>
+          </div>
+          <!-- #WiFiActivation -->
+          <div id="WiFiConfiguration">
+              <h2 xmsg="WIFI_ACCESS_POINT">Access Point</h2>
+              <div class="gui-info">
+                  <ul>
+                      <li data-role="fieldcontain">
+                          <label for="WiFiSSIDInput" xmsg="WIFI_SSID_NAME">Name (SSID)</label>
+                          <input id="WiFiSSIDInput" class="gui-wifi-config" type="text" data-xmo-role="input" data-control-type="SSID" data-xpath="Device/WiFi/SSIDs/SSID[Alias='WL_PRIV']/SSID" />
+                          <input id="WiFiSSIDInput2" class="gui-wifi-config" type="text" style="display:none" data-xmo-role="input" data-xpath="Device/WiFi/SSIDs/SSID[Alias='WL_VIDEO_5G']/SSID" />
+                      </li>
+                      <li data-role="fieldcontain">
+                          <label for="WiFiSSIDAdvertInput" xmsg="WIFI_BROADCAST_SSID">Broadcast Name (SSID)</label>
+                          <select id="WiFiSSIDAdvertInput" class="gui-wifi-config" data-role="slider" data-xmo-role="select" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/SSIDAdvertisementEnabled">
+                              <option value="false" xmsg="HOME_OFF">Off</option>
+                              <option value="true" xmsg="HOME_ON">On</option>
+                          </select>
+                      </li>
+                      <li data-role="fieldcontain" id="Mode2G4">
+                          <label for="WiFi2G4OnlyModes" xmsg="WIFI_MODE">Mode</label>
+                          <select id="WiFi2G4OnlyModes" class="gui-wifi-config" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/OperatingStandards">
+                              <option value="gn">802.11 gn</option>
+                              <option value="g">802.11 g</option>
+                          </select>
+                      </li>
+                      <li data-role="fieldcontain" id="Mode5G">
+                          <label for="WiFi5GOnlyModes" xmsg="WIFI_MODE">Mode</label>
+                          <p class="gui-status-text">802.11 n</p>
+                      </li>
+                      <li data-role="fieldcontain" class="gui-wifi-channel">
+                          <label for="WiFiChannelSelect" xmsg="WIFI_CHANNEL" class="wifi-no-unified">Channel</label>
+                          <label for="WiFiChannelSelect" xmsg="WIFI_CHANNEL" class="wifi-unified hide" style="padding-top: 30px;">Channel</label>
+                          <div class="hide-channels hide" data-xmo-role="status" data-xpath="Device/Services/EnhancedWiFi/GUI/HideACS"></div>
+                          <select id="WiFiChannelSelect" class="gui-wifi-config gui-wifi-channel wifi-no-unified" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/Channel">
+                              <option value="AUTO">Auto</option>
+                          </select>
+                          <select id="WiFiExtensionChannelSelect" class="gui-wifi-config gui-extension-wifi gui-wifi-channel wifi-no-unified" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/OperatingChannelBandwidth">
+                              <option value="20MHZ">20MHz</option>
+                              <option value="40MHZ">40MHz</option>
+                          </select>
+                          <div class="unified-wifi-channel wifi-unified hide" style="left: 80px; width: 50%; display: inline-block; top: 5px; height: 60px;">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th style="text-align: center; padding-bottom: 4px;">2.4 GHz</th>
+                                  <th style="text-align: center;">5.0 GHz</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <select id="WiFiChannelSelect" class="gui-wifi-config gui-wifi-channel" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/Channel">
+                                        <option value="AUTO">Auto</option>
+                                    </select><select id="WiFiExtensionChannelSelect" class="gui-wifi-config gui-extension-wifi gui-wifi-channel" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/OperatingChannelBandwidth">
+                                        <option value="20MHZ">20MHz</option>
+                                        <option value="40MHZ">40MHz</option>
+                                    </select>
+                                  </td>
+                                  <td  style="padding-left: 5px;">
+                                    <select id="WiFiChannelSelect5G" class="gui-wifi-config gui-wifi-channel" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO5G']/Channel">
+                                        <option value="AUTO">Auto</option>
+                                    </select>
+                                    <div id="WiFiAutoChannel5G" data-xmo-role="item" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO5G']/AutoChannelEnable"></div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div id="WiFiAutoChannel" data-xmo-role="item" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/AutoChannelEnable"></div>
+                      </li>
+                      <li data-role="fieldcontain" class="gui-extension-wifi gui-control-side">
+                          <label for="WiFiExtensionCtrl" xmsg="WIFI_EXT_CHANNEL">Control side band</label>
+                          <select id="WiFiExtensionCtrl" class="gui-wifi-config" data-xmo-role="select" data-xpath="Device/WiFi/Radios/Radio[Alias='RADIO2G4']/ExtensionChannel">
+                              <option value="AUTO">Auto</option>
+                              <option value="ABOVECONTROLCHANNEL">Upper</option>
+                              <option value="BELOWCONTROLCHANNEL">Below</option>
+                          </select>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <!-- WiFiConfiguration -->
+          <div id="WiFiSecurity">
+              <h2 xmsg="WIFI_SECU">Security</h2>
+              <div class="gui-info">
+                  <ul>
+                      <li data-role="fieldcontain">
+                          <label for="WiFiSecurityModeSelect" xmsg="WIFI_SECU">Security</label>
+                          <select id="WiFiSecurityModeSelect" class="gui-wifi-security" data-xmo-role="select" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/Security/ModeEnabled">
+                              <option value="NONE" xmsg="HOME_NONE">None</option>
+                              <option value="WPA_WPA2_PERSONAL">WPA/WPA2</option>
+                              <option value="WPA2_PERSONAL">WPA2</option>
+                          </select>
+                          <p id="WiFiLowSecurityWarning" style="display: none;" class="gui-status-warning text-danger" xmsg="WIFI_SECU_LOW">Warning: Security mode very low</p>
+                      </li>
+                      <li data-role="fieldcontain">
+                          <label for="WiFiPassphraseInput" xmsg="WIFI_PASSPHRASE">Passphrase</label>
+                          <input type="text" style="display:none" />
+                          <input type="password" style="display:none" />
+                          <input id="WiFiPassphraseInput" class="gui-wifi-security" type="password" data-write-only="true" placeholder="************" data-xmo-role="input" data-control-type="PASSPHRASE" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/Security/KeyPassphrase" autocomplete="off"/>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div>
+              <div id="WPS" class="">
+                  <h2 class="wps-info-header">WPS</h2>
+                  <div class="gui-info">
+                      <ul>
+                          <li data-role="fieldcontain" class="wps-info">
+                              <label class="ui-slider unbox-wps unbox-wps-start" xmsg="WIFI_START_WPS">Start WPS</label>
+                              <input id="WiFiWPSStartBtn" class="gui-wifi-security gui-wifi-wps" type="button" xvalue="WIFI_START" value="Start" />
+                          </li>
+                          <li data-role="fieldcontain" class="gui-advanced-info">
+                              <label class="ui-slider unbox-wps" for="WiFiEnableWSPCheck" xmsg="WIFI_ENABLE_WPS">Enable WPS</label>
+                              <select id="WiFiEnableWSPCheck" class="gui-wifi-security gui-wifi-wps" data-role="slider" data-xmo-role="select" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/WPS/Enable">
+                                  <option value="false" xmsg="HOME_OFF">Off</option>
+                                  <option value="true" xmsg="HOME_ON">On</option>
+                              </select>
+                          </li>
+                          <li data-role="fieldcontain" class="gui-advanced-info">
+                              <label for="WiFiWPSModeSelect" xmsg="WIFI_WPS_MODE">WPS Mode</label>
+                              <p class="gui-status-text" xmsg="WIFI_PUSH_BTN">Push Button</p>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div id="WiFiMACFiltering" class="gui-advanced-info">
+                  <h2 xmsg="WIFI_MAC_FILTERING">MAC Filtering</h2>
+                  <div class="gui-info">
+                      <ul>
+                          <li data-role="fieldcontain" id="ulSelect">
+                              <fieldset data-role="controlgroup" id="fieldsetWifi" data-type="horizontal" data-xmo-role="radio" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/MACFiltering/Mode">
+                                  <h3 xmsg="WIFI_MAC_MODE">Mode</h3>
+                                  <label for="WiFiMACFilteringDisabledRadio" xmsg="WIFI_DISABLED">Disabled</label>
+                                  <input name="WiFiMACFilteringMode" type="radio" id="WiFiMACFilteringDisabledRadio" value="DISABLED" />
+                                  <label for="WiFiMACFilteringWhiteRadio" xmsg="WIFI_WHITE_LIST">Allow Listed Devices (White List)</label>
+                                  <input name="WiFiMACFilteringMode" type="radio" id="WiFiMACFilteringWhiteRadio" value="WHITELIST" />
+                                  <label for="WiFiMACFilteringBlackRadio" xmsg="WIFI_BLACK_LIST">Block Listed Devices (Black List)</label>
+                                  <input name="WiFiMACFilteringMode" type="radio" id="WiFiMACFilteringBlackRadio" value="BLACKLIST" />
+                              </fieldset>
+                          </li>
+                          <li data-role="fieldcontain">
+                              <label xmsg="HOME_PRESS_ENTER">Press Enter to confirm changes</label>
+                              <ul id="WiFiMACFilteringList" class="gui-info" data-xmo-role="array" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/MACFiltering/MACAddresses" data-icon="arrow-r" data-iconpos="right">
+                                  <li data-role="list-divider" xmsg="WIFI_HOST_LIST">Hosts list</li>
+                              </ul>
+                              <div class="btn-center-table">
+                                  <a id="WiFiMACFilteringAdd" data-role="button" href="mac-filter.html?radio=2G4" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="WIFI_ADD_FILTER">Add Filter</a>
+                              </div>
+                              <li/>
+                      </ul>
+                  </div>
+              </div>
+              <div id="FactoryReset" class="">
+                  <h2 xmsg="WIFI_FACTORY_RESET">Reset factory settings</h2>
+                  <div class="gui-info">
+                      <ul>
+                          <li data-role="fieldcontain">
+                              <label for="WiFiFactoryReset" xmsg="WIFI_FACTORY_RESET">Factory Reset</label>
+                              <input id="WiFiFactoryReset" class="gui-wifi-config" type="button" xvalue="WIFI_REINIT" value="Reset" />
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <a href="#" class="gui-advanced-btn" xmsg="HOME_ADVANCED">Advanced</a>
+          </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" class="ui-footer ui-bar-d">
+            <div class="gui-submit">
+                <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+                <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script id="MACFilterTmpl" type="text/x-jquery-tmpl">
+            <li data-role="fieldcontain">
+                <a href="${page}" data-transition="slidedown">
+                    <!--div class="SC-Dect"></div-->
+                    <h4>MAC Address: <span class="gui-mac-filter-addr" >${mac}</span></h4>
+                    <p>Nom: <span class="gui-mac-filter-ip" data-xpath="Device/Hosts/Hosts/Host[PhysAddress='${mac}']/UserFriendlyName">none</span>
+                    </p>
+                    <p>IP Address: <span class="gui-mac-filter-ip" data-xpath="Device/Hosts/Hosts/Host[PhysAddress='${mac}']/IPAddress">none</span>
+                    </p>
+                    <p>Status: <span class="gui-mac-filter-status">connected</span>
+                    </p>
+                </a>
+            </li>
+        </script>
+    </div>
+    <!-- /page -->
+</body>
+
+</html>

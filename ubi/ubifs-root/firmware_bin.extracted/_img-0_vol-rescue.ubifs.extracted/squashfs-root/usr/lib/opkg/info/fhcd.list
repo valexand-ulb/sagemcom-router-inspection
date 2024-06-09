@@ -1,0 +1,5 @@
+/usr/bin/fhcd-config_changed
+/usr/bin/fhcd-get_topology
+/usr/bin/fhcd
+/usr/bin/fhcd-set_loglevel
+/usr/bin/fhcd-dump

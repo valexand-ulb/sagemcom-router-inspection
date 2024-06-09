@@ -1,0 +1,15 @@
+Package: gateway-dm-voice-2-0-0
+Version: v14.14.0-1
+Depends: gateway-dm
+Provides: 
+Source: feeds/voipHG6/smu/voice-smu
+License: 
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/voice-smu
+Installed-Size: 108883
+Description:  Voice-TR104I2

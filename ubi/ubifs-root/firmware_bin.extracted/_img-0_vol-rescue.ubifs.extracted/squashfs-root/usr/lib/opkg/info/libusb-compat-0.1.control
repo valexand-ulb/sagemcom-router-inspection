@@ -1,0 +1,16 @@
+Package: libusb-compat-0.1
+Version: 0.1.4-1
+Depends: libusb-1.0
+Provides: 
+Source: feeds/sagemcom/libs/libusb-compat-0.1
+License: LGPLv2.1
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.4
+Installed-Size: 6657
+Description:  API compatible with libusb version 0.1 BUT using libusb-1.0 for real work.
+ Designed for applications needed libusb-0.1 BUT there is a libusb-1.0 installed 

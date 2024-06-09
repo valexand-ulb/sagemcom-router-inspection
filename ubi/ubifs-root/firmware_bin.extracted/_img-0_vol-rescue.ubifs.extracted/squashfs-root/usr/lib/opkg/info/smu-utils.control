@@ -1,0 +1,15 @@
+Package: smu-utils
+Version: v17.43.15.3-1
+Depends: devel-utils, evlp, ism-core, ism-intf, xmt, xmo, gateway-dm, gsdf-libs, intf-confmgmt, intf-rdisc6conf, intf-dhcpc4conf, intf-dhcpc6conf, intf-dhcps6conf, intf-ipconf, liblogoper, intf-systemevents, intf-updninterrupt, intf-startstop, intf-wan, intf-ifcprops, intf-osmglobal
+Provides: 
+Source: feeds/sagemcom/libs/smu-utils
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/smu-utils
+Installed-Size: 113864
+Description:  Smu utility libs

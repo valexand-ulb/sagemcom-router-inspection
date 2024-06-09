@@ -1,0 +1,20 @@
+Package: quantenna-rpecat
+Version: 4.0.3-1
+Depends: 
+Provides: 
+Source: feeds/wifi/chipsetter/quantenna-rpecat
+License: Quantenna
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: http://localhost/
+Installed-Size: 17042
+Description:  rpecat is a daeamon tool acting as netlink/rawlink proxy with qrpe 
+ driver on QTN chip side.
+ It is needed to for BSS Transition Management (802.11v), Probe Reqs
+ monitoring,...
+ rpecat is implemented to support NPU scenario (SONiQ CSM is running 
+ on NPU, while RPE is ruuning on Quantenna standalone chipset).

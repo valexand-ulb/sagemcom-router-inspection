@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+
+    <div id="DevicesPage" data-role="page" class="gui-settings gui-device-settings" data-dom-cache="true" >
+
+      <div data-role="header" data-theme="a">
+
+        <h1 class="gui-devices-ethernet" xmsg="HOME_ETH_DEV">Ethernet Devices</h1>
+        <h1 class="gui-devices-wifi" xmsg="HOME_WIFI_SPAN">Wi-Fi <span class="gui-wifi-radio" >2.4</span> GHz Devices</h1>
+        <h1 class="gui-devices-fxs" xmsg="DEVLIST_PHONE_LINE">Phone Lines</h1>
+        <h1 class="gui-devices-usb" xmsg="DEVLIST_USB_DEV">USB Devices</h1>
+
+      </div> <!-- header -->
+
+      <div data-role="content">
+
+        <ul id="DeviceList" class="gui-device-list" data-role="listview" data-inset="true" >
+          <li data-role="list-divider" >
+            <span xmsg="HOME_CONNECTED_DEV">Connected Devices</span>
+            <span class="gui-devices-fxs" xmsg="LINE">Lines</span>
+          </li>
+        </ul>
+
+      </div> <!-- content -->
+        
+      <div data-role="footer" class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div> <!-- #DevicesPage -->	
+
+  </body>
+</html>

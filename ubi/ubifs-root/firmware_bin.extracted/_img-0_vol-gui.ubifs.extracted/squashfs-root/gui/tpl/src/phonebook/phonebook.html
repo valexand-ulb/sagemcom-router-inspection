@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+    <div data-role="page" id="PhonebookPage" class="gui-settings" data-dom-cache="true" >
+	  <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+	  <script src="../../../js/utils.js"></script>
+	  <script src="https://apis.google.com/js/client.js"></script>
+      <div data-role="header">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/big-icon-phonebook.png">
+        </span>
+        <h1 xmsg="PHONEBOOK_PHONEBOOK">Phonebook</h1>
+
+        <ul id="Menu" >
+          <li class="gui-tab-active"><a class="ui-btn-active" data-prefetch="true" href="#" data-transition="none" xmsg="PHONEBOOK_PHONEBOOK">Phonebook</a></li>
+          <li><a href="call-log.html" data-prefetch="true" data-transition="none" xmsg="CALLLOG_CALLLOG">Call Log</a></li>
+        </ul>
+      </div><!-- /header -->
+
+      <div data-role="content"> 
+            <div id="PhonebookContacts">
+                <h2 xmsg="PHONEBOOK_CONTACTS">Contacts</h2>
+                <div class="gui-info" >
+					<a id="ExportPhonebookContacts" data-role="button" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="PHONEBOOK_EXPORT_CONTACTS">Export Contacts</a>
+					<a id="ImportPhonebookContacts" data-role="button" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="PHONEBOOK_IMPORT_FILE">Import Contacts from File</a>
+					<a id="ImportGoogleContacts" data-role="button" class="gui-add-btn ui-inactive" data-mini="true" data-inline="true" xmsg="PHONEBOOK_IMPORT_GOOGLE">Import from Google Contacts</a>
+					<br>
+					<div style="float:left; margin-top:5px;">
+						<a id="LogoutGoogleAccount" target="_blank" style="float:left;" href="https://accounts.google.com/logout" data-role="button" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="PHONEBOOK_LOGOUT_GOOGLE">Google Account Logout</a>
+						<a id="LogoutGoogleAccountHelp" href="#googleLogoutHelp" data-rel="popup" data-position-to="origin" data-mini="true" data-inline="true">
+							<div id="helpGoogleLogout">?</div>
+						</a>
+					</div>
+					<div style="clear:both;"></div>
+					<label style="float:left" xmsg="PHONEBOOK_SEARCH">Search</label><br><br>
+					<input id="PhonebookSearch" type="text" class="clearable" />
+					<br />
+					<a id="ClearPhonebookContacts" data-role="button" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="PHONEBOOK_CLEAR_ALL">Clear All</a>
+					<br />
+					<label xmsg="HOME_PRESS_ENTER">Press Enter to confirm changes</label>
+                    <ul id="PhonebookContactsList" class="gui-info" data-xmo-role="array" data-xpath="Device/Contacts/Contacts" data-icon="arrow-r" data-iconpos="right">
+						<li data-role="list-divider" xmsg="PHONEBOOK_CONTACTS">Contacts</li>
+                    </ul>
+                    <div id="divAddRule" class="btn-center-table">
+						<a id="PhonebookContactAdd" data-role="button" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="PHONEBOOK_CONTACT_ADD">Add Contact</a>
+					</div>
+                </div>
+            </div>
+            <div data-role="popup" id="googleLogoutHelp" class="ui-corner-all">
+                <div style="padding:10px 20px;">
+                    <ul>
+                        <li data-role="fieldcontain">
+                            <span xmsg="PHONEBOOK_GOOGLE_LOUGOUT_HELP"></span>
+                        </li>
+                    </ul>
+                    <a href="#" data-role="button" data-rel="back" data-theme="b" data-mini="true" data-icon="check" xmsg="LOGIN_CLOSE" style="width:100px">Close</a>
+                </div>
+            </div>
+      </div><!-- /content -->
+
+      <div data-role="footer"  class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+		  <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

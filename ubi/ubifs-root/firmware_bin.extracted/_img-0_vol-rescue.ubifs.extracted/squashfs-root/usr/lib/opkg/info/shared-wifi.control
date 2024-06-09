@@ -1,0 +1,15 @@
+Package: shared-wifi
+Version: 1
+Depends: 
+Provides: 
+Source: feeds/wifi/libs/shared-wifi
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: 
+Installed-Size: 105
+Description:  Export definition shared by hal-wifi and wifi chipsetter daemon

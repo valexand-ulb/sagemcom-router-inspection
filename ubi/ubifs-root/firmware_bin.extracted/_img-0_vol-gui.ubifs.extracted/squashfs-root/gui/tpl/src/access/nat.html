@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+    <div data-role="page" id="NatPage" class="gui-settings gui-device-settings" data-dom-cache="true" >
+        <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+      <div data-role="header">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-access-ctrl-c.png">
+        </span>
+        <h1 xmsg="ACCESS_ACCESSCONTROL">Access Control</h1>
+        <h1 class="gui-device gui-device-ethernet gui-device-wifi gui-device-other" id="DeviceName">Device Name</h1>
+
+        <ul id="Menu" >
+          <li><a href="parental-control.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a></li>
+          <li><a href="#" class="ui-btn-active" xmsg="ACCESS_PORT_FWD">Port Forwarding</a></li>
+          <li><a href="firewall.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a></li>
+          <li><a href="remote-access.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_REMOTE_ACCESS">Remote Access</a></li>
+
+          <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other" ><a href="../ethernet/device.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">Device</a></li>
+          <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/parental-control.html?host=uid&interf=if&radio=freq&type=type" data-transition="none" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a></li>
+          <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other" ><a href="#" class="ui-btn-active" xmsg="ACCESS_PORT_FWD">Port Forwarding</a></li>
+          <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other" ><a href="../access/firewall_device.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a></li>
+        </ul>
+      </div><!-- /header -->
+
+      <div data-role="content"> 
+
+          <div id="NATRules">
+            <div id="IpGateway" data-xmo-role='status' data-xpath="Device/IP/Interfaces/Interface[@uid='1']/IPv4Addresses/IPv4Address[@uid='1']/IPAddress"></div>
+            <div id="DMZEnable" data-xmo-role='status' data-xpath="Device/NAT/PortMappings/PortMapping[Service='DMZ']/Enable" readonly="true"></div>
+            <div id="DMZIp" data-xmo-role='status' data-xpath="Device/NAT/PortMappings/PortMapping[Service='DMZ']/InternalClient" readonly="true"></div>
+            <h2 class="AddressPortTranslation"></h2>
+
+            <div class="gui-info" >
+                <label xmsg="HOME_PRESS_ENTER" id="pressEnter">Press Enter to confirm changes</label>
+                <ul id="NATPortMappingList" class="gui-info" data-xmo-role="array" data-xpath="Device/NAT/PortMappings" data-icon="arrow-r" data-iconpos="right" >
+                <li data-role="list-divider" xmsg="NAT_TITAN_PORT_MAP_RULES"></li>
+                </ul>
+                <br/>
+                <div id="divAddMap"><a id="NATPortMappingAddBtn" data-role="button" href="nat-rule.html" class="gui-add-btn" data-mini="true" data-inline="true"  xmsg="NAT_CREATE_PORT_MAP">Create a New Port Mapping</a></div>
+                <div id="portMappingTable" class="ui-grid-b"></div>
+            </div>
+
+            </div><!-- /#NATRules -->
+
+            <div id="UPnP">
+
+                <h2>IPv4 UPnP</h2>
+                <div class="gui-info" >
+                    <label xmsg="HOME_PRESS_ENTER" id="pressEnter">Press Enter to confirm changes</label>
+                    <ul id="UPnPPortMappingList" class="gui-info" data-xmo-role="array" data-xpath="Device/NAT/PortMappings" data-icon="arrow-r" data-iconpos="right">
+                    <li data-role="list-divider" xmsg="NAT_UPNP_RULES">UPnP Rules</li>
+                    </ul>
+                    <div id="upnpPortMappingTable" class="ui-grid-b"></div>
+                </div>
+            </div><!-- /#UPnP -->
+
+            <div id="PinholesRules">
+              <h2>IPv6 Pinholes</h2>
+              <div class="gui-info" >
+                <label xmsg="HOME_PRESS_ENTER" id="pressEnter">Press Enter to confirm changes</label>
+                <ul id="PinholesPortMappingList" class="gui-info" data-xmo-role="array" data-xpath="Device/Firewall/Chains/Chain/Rules" data-icon="arrow-r" data-iconpos="right" >
+                  <li data-role="list-divider" xmsg="NAT_PINHOLES_PORT_MAP_RULES"></li>
+                </ul>
+                <br/>
+                <div id="divAddPinhole"><a id="PinholesPortMappingAddBtn" data-role="button" href="pinholes-rule.html" class="gui-add-btn" data-mini="true" data-inline="true"  xmsg="NAT_CREATE_PORT_MAP">Create a New Port Mapping</a></div>
+                <div id="pinholingTable" class="ui-grid-b"></div>
+              </div>
+            </div><!-- /#PinholesRules -->
+
+      </div><!-- /content -->
+
+      <div data-role="footer"  class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+          <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

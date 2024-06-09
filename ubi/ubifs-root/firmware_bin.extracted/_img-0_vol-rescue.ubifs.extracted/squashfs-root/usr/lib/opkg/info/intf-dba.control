@@ -1,0 +1,15 @@
+Package: intf-dba
+Version: v0.7.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-dba
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-dba
+Installed-Size: 24377
+Description:  Interface Dba

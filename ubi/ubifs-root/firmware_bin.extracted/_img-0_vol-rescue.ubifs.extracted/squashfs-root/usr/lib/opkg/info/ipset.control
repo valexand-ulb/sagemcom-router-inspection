@@ -1,0 +1,15 @@
+Package: ipset
+Version: 6.16.1-1
+Depends: iptables-mod-ipset, kmod-ipt-ipset, libmnl
+Provides: 
+Source: package/ipset
+License: 
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://ipset.netfilter.org
+Installed-Size: 60558
+Description:  IPset administration utility

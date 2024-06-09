@@ -1,0 +1,15 @@
+Package: intf-wifidr
+Version: v1.25.135-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/smu/wifidoctor-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wifidoctor-smu
+Installed-Size: 23999
+Description:  Interface wifidr

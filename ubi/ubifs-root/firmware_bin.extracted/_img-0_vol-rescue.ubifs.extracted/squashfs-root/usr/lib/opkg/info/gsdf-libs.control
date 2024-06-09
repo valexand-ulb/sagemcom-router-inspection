@@ -1,0 +1,15 @@
+Package: gsdf-libs
+Version: v2.7.0-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/utils/gsdf
+License: BSD
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/gsdf-tools
+Installed-Size: 47532
+Description:  Sign & check firmware image libraries

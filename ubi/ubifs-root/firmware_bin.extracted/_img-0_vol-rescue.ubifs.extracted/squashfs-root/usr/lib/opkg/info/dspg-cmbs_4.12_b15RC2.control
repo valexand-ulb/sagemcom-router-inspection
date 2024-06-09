@@ -1,0 +1,15 @@
+Package: dspg-cmbs_4.12_b15RC2
+Version: v1.16.4-1
+Depends: kmod-hal-bsp
+Provides: 
+Source: feeds/voipHG6/libs/dspg-cmbs_4.12_b15RC2
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dspg-cmbs
+Installed-Size: 1141766
+Description:  DSPG library and cmbs_tcx utility

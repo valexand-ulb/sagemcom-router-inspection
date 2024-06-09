@@ -1,0 +1,5 @@
+/usr/bin/testH2alvoice
+/usr/bin/kill_testH2alvoice
+/usr/lib/libh2alvoice.so.0
+/usr/bin/h2alvoice-cli
+/usr/lib/libh2alvoice.so.0.0.0

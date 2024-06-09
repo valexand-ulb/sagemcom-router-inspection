@@ -1,0 +1,15 @@
+Package: hal-bsp
+Version: v4.158.18-1
+Depends: kmod-hal-bsp
+Provides: 
+Source: feeds/sagemcom/driver/hal-bsp
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hal-bsp
+Installed-Size: 9771
+Description:  Library for board information

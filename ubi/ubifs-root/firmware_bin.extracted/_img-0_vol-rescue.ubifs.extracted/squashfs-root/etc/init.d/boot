@@ -1,0 +1,40 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+START=10
+STOP=98
+
+. /etc/device.conf
+
+start() {
+	[ -f /proc/mounts ] || /sbin/mount_root
+	[ -f /proc/jffs2_bbc ] && echo "S" > /proc/jffs2_bbc
+	[ -f /proc/net/vlan/config ] && vconfig set_name_type DEV_PLUS_VID_NO_PAD
+
+   # Set init date to January 1st 2013
+   date -u -s 2013.01.01-00:00:00
+
+	mkdir -p /var/run
+	mkdir -p /var/log
+	mkdir -p /var/lock
+	mkdir -p /var/state
+        mkdir -p /tmp/mnt
+	touch /var/log/wtmp
+	touch /var/log/lastlog
+	grep -q debugfs /proc/filesystems && mount -t debugfs debugfs /sys/kernel/debug
+	[ "$FAILSAFE" = "true" ] && touch /tmp/.failsafe
+
+	# create /dev/root if it doesn't exist
+	[ -e /dev/root ] || {
+		rootdev=$(awk 'BEGIN { RS=" "; FS="="; } $1 == "root" { print $2 }' < /proc/cmdline)
+		[ -n "$rootdev" ] && ln -s "$rootdev" /dev/root
+	}
+
+	echo $CONFIG_SAGEMCOM_KERNEL_PRINTK_LEVEL > /proc/sys/kernel/printk
+	load_modules /etc/modules.d/*
+}
+
+stop() {
+        killall -9 syslogd 2> /dev/null
+}
+

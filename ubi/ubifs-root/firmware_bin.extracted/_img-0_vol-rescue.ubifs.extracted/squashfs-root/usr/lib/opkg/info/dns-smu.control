@@ -1,0 +1,15 @@
+Package: dns-smu
+Version: v8.12.1-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-dns, smu-utils, xmo-server, firewall-utils, intf-httpd, intf-routingconf, intf-dns
+Provides: 
+Source: feeds/sagemcom/smu/dns-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dns-smu
+Installed-Size: 26859
+Description:  DNS client smu plugin

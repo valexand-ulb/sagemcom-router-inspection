@@ -1,0 +1,15 @@
+Package: network-smu
+Version: v13.128.50-1
+Depends: devel-utils, evlp, hal-network, xmt, xmo, xmo-server, smu-utils, firewall-utils, ip, intf-rdisc6conf, intf-dvcdisc, intf-ipconf, intf-bridge, intf-wifissid, intf-routingconf, intf-ifcprops, gateway-dm, gateway-dm-ip, gateway-dm-ethernet, gateway-dm-gre, intf-radv, intf-dslline, intf-atmlink, intf-usb, intf-devmodem, intf-ppp
+Provides: 
+Source: feeds/sagemcom/smu/network-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/network-smu
+Installed-Size: 181734
+Description:  Various SMU implementations.

@@ -1,0 +1,15 @@
+Package: intf-atmlink
+Version: v0.3.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-atmlink
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-atmlink
+Installed-Size: 9683
+Description:  Interface AtmLink

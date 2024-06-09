@@ -1,0 +1,5 @@
+/etc/strongswan.d/starter.conf
+/usr/lib/ipsec/plugins/libstrongswan-stroke.so
+/usr/lib/ipsec/starter
+/etc/strongswan.d/charon/stroke.conf
+/usr/lib/ipsec/stroke

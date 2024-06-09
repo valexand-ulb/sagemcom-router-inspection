@@ -1,0 +1,15 @@
+Package: mount.ntfs-3g
+Version: 2010.5.22-4-fuseint
+Depends: ntfs-3g
+Provides: 
+Source: feeds/sagemcom/utils/ntfs-3g
+License: GPLv2
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Bud <wrt_buddhay@gmx.net>
+Architecture: sagemcom
+URL: http://www.tuxera.com/opensource/
+Installed-Size: 167
+Description:  ntfs-3g mount helper. You must enable busybox mount helper too.

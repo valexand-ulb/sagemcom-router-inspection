@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+ <body> 
+
+   <div data-role="page" class="gui-settings gui-vlan-page gui-internet-page" data-dom-cache="true" >
+
+     <div data-role="header" data-theme="a">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-internet-c.png">
+        </span>
+       <h1 xmsg="HOME_INTERNETCONNECTIVITY">Network Connectivity</h1>
+       <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+	   <div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+       <ul id="Menu" >
+          <li class="gui-user-settings"><a href="network.html" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General Info</a></li>
+          <li style="display: none"><a href="wan.html" data-prefetch="true" data-transition="none" xmsg="INTERNET_WAN">WAN</a></li>
+          <li style="display: none" id="VLAN10"><a href="vlan.html?vlanid=10" data-prefetch="true" data-transition="none" xmsg="INTERNET_VLAN10">VLAN 10</a></li>
+          <li style="display: none" id="VLAN20"><a href="vlan.html?vlanid=20" data-prefetch="true" data-transition="none" xmsg="INTERNET_VLAN20">VLAN 20</a></li>
+          <li style="display: none" id="VLAN30"><a href="vlan.html?vlanid=30" data-prefetch="true" data-transition="none" xmsg="INTERNET_VLAN30">VLAN 30</a></li>
+          <li style="display: none" id="VLAN2"><a href="vlan.html?vlanid=2" data-prefetch="true" data-transition="none" xmsg="INTERNET_VLAN2">VLAN 2</a></li>
+		  <li style="display: none" id="VLAN4080"><a href="vlan.html?vlanid=4080" data-prefetch="true" data-transition="none" xmsg="INTERNET_VLAN4080">VLAN 4080</a></li>
+		  <li style="display: none" id="VLAN4081"><a href="vlan.html?vlanid=4081" data-prefetch="true" data-transition="none" xmsg="INTERNET_VLAN4081">VLAN 4081</a></li>
+		  <li class="gui-user-settings" style="display: none" id="MPTCP"><a href="mptcp.html" data-prefetch="true" data-transition="none" xmsg="MPTCP_MPTCP">MPTCP</a></li>
+		  <li class="gui-user-settings" style="display: none" id="WANBACKUP"><a href="wan-backup.html" data-prefetch="true" data-transition="none" xmsg="INTERNET_GENERAL_SERVICE_CONTINUITY">General Service Continuity</a></li>
+          <li class="gui-user-settings gui-internet-disconnected" style="display: none"><a href="intercepte.html" data-prefetch="true" xmsg="INTERCEPTE_TITLE">Internet disconnected: Help page</a></li>
+       </ul>
+     </div> <!-- header -->
+
+     <div data-role="content"> 
+
+       <div id="VLANConfiguration" >
+
+         <h2 xmsg="HOME_CONFIG">Configuration</h2>
+
+         <ul class="gui-info" > 
+           <li data-role="fieldcontain" >
+             <label for="VLANEnableCheck" xmsg="HOME_ENABLE">Enable</label>
+             <select id="VLANEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10' and Alias='VLAN_DATA']/Enable" >
+               <option value="false" xmsg="HOME_OFF">Off</option>
+               <option value="true" xmsg="HOME_ON">On</option>
+             </select>
+           </li>
+         </ul>
+
+       </div> <!-- #VLANConfiguration -->
+
+       <div id="VLANStatistics" >
+
+         <h2 xmsg="HOME_STATISTIC">Statistics</h2>
+
+         <ul class="gui-info" > 
+           <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/IPAddress" data-default-value="0.0.0.0">
+             <h3 xmsg="INTERNET_IPV4_ADDR">IPv4 Address</h3>
+             <p class="gui-status-text" >&nbsp;</p>
+           </li>
+           <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/SubnetMask" data-default-value="0.0.0.0">
+             <h3 xmsg="INTERNET_MASK">Subnet Mask</h3>
+             <p class="gui-status-text" >&nbsp;</p>
+           </li>
+           <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/IPGateway" >
+             <h3 xmsg="INTERNET_GATEWAY">Gateway</h3>
+             <p class="gui-status-text" >&nbsp;</p>
+           </li>
+           <li data-role="fieldcontain" id="liIPv6Addr" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv6Addresses/IPv6Address[1]/IPAddress">
+             <h3 xmsg="INTERNET_IPV6_ADDR">IPv6 Address</h3>
+             <p class="gui-status-text">&nbsp;</p>
+           </li>
+
+           <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/Dns" >
+             <h3 xmsg="INTERNET_DNS_SERVER">DNS Servers</h3>
+             <p class="gui-status-text" >&nbsp;</p>
+           </li>
+           <li data-role="fieldcontain" id="dns_ipv6_servers">
+             <h3 xmsg="INTERNET_DNS_IPV6_SERVER">DNS IPv6 Servers</h3>
+             <p class="gui-status-text" ><span data-xmo-role="status" data-xpath="Device/DNS/Relay/Forwardings/Forwarding[Alias='DHCPV6_1']/DNSServer"></span>&nbsp;<span data-xmo-role="status" data-xpath="Device/DNS/Relay/Forwardings/Forwarding[Alias='DHCPV6_2']/DNSServer"></span></p>
+           </li>
+           <li data-role="fieldcontain">
+             <h3 xmsg="INTERNET_NTP_SERVER">NTP Servers</h3>
+             <p class="gui-status-text" ><span data-xmo-role="status" data-xpath="Device/Time/NTPServer1"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer2"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer3"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer4"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer5"></span></p>
+           </li>
+           <li data-role="fieldcontain" >
+             <h3 xmsg="INTERNET_TOTAL_BYTES">Total Bytes</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/BytesSent">&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/BytesReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li>
+             <h3 xmsg="INTERNET_TOTAL_PACKETS">Total Packets (sent/received)</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/PacketsSent">&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/PacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li>
+             <h3 xmsg="INTERNET_TOTAL_ERRORS">Total Errors (sent/received)</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/ErrorsSent" >&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/ErrorsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li>
+             <h3 xmsg="INTERNET_TOTAL_DISCARD">Total Discard Packets (sent/received)</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/DiscardPacketsSent" >&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/DiscardPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li>
+             <h3 xmsg="INTERNET_TOTAL_UNICAST">Total Unicast Packets (sent/received)</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/UnicastPacketsSent" >&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/UnicastPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li>
+             <h3 xmsg="INTERNET_TOTAL_MULTICAST">Total Multicast Packets (sent/received)</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/MulticastPacketsSent" >&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/MulticastPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li>
+             <h3 xmsg="INTERNET_TOTAL_BROADCAST">Total Broadcast Packets (sent/received)</h3>
+             <p>
+               <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/BroadcastPacketsSent" >&nbsp;</span>
+               <span>/</span>
+               <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[VLANID='10']/Stats/BroadcastPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+         </ul>
+
+       </div> <!-- #VLANStatistics -->
+
+     </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d">
+			<a id="FooterRefreshBtn" href="vlan.html?vlanid=XXX" class="ui-btn-left">
+   				 <span class="glyphicon glyphicon-refresh visible-xs"></span><span class="hidden-xs" xmsg="HOME_CLEAR_DESKTOP">Refresh stats</span></a>
+        <div class="gui-submit">
+          <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

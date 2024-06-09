@@ -1,0 +1,15 @@
+Package: wifi-smu
+Version: BBOX3_WDR_v11.0-1
+Depends: devel-utils, evlp, hal-network, hal-wifi, hal-gpio, xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, intf-wifiap, intf-wifiradio, intf-wifissid, intf-wifi, intf-ifcprops, intf-dvcdisc, gateway-dm-dhcp6
+Provides: 
+Source: feeds/wifi/smu/wifi-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wifi-smu
+Installed-Size: 152354
+Description:  WiFi SMU implementations.

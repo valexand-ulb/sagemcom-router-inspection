@@ -1,0 +1,19 @@
+Package: kmod-ipt-ipsec
+Version: 3.4.11-rt19-1
+Depends: kernel (=3.4.11-rt19-1), kmod-ipt-core
+Provides: 
+Source: package/kernel
+License: 
+Section: kernel
+Status: unknown hold not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 3504
+Description:  Netfilter (IPv4) modules for matching IPSec packets
+ Includes:
+ - ah
+ - esp
+ - policy (2.6)

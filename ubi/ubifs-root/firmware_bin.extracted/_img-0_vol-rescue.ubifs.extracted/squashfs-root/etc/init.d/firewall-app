@@ -1,0 +1,21 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+START=12
+
+start() {
+   echo -n "Starting firewall-utils: "
+	start-stop-daemon -S -b -x firewall-app
+   echo "OK"
+}
+
+stop() {
+	echo -n "Stopping firewall-utils: "
+	killall firewall-app
+	echo "OK"
+}
+
+restart() {
+	stop
+	start
+}
+

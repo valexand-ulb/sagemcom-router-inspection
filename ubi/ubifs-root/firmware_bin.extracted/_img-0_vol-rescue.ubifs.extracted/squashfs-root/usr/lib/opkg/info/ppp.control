@@ -1,0 +1,15 @@
+Package: ppp
+Version: v8.21.1-1
+Depends: kmod-ppp
+Provides: 
+Source: feeds/sagemcom/net/ppp
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Jo-Philipp Wich <xm@subsignal.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/pppd-deamon
+Installed-Size: 131262
+Description:  This package contains the PPP (Point-to-Point Protocol) daemon.

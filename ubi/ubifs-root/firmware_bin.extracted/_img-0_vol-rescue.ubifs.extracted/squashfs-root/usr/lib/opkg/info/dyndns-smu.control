@@ -1,0 +1,15 @@
+Package: dyndns-smu
+Version: v3.10.1-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-dyndns, xmo-server, smu-utils, firewall-utils, evlp-download
+Provides: 
+Source: feeds/sagemcom/smu/dyndns-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dyndns-smu
+Installed-Size: 21349
+Description:  DynDNS smu plugin

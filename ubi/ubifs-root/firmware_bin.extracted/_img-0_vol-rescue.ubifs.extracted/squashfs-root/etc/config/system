@@ -1,0 +1,7 @@
+config system
+	option hostname	OpenWrt
+	option timezone	UTC
+	option log_ip 192.168.1.10
+
+config rdate
+	option interface	wan

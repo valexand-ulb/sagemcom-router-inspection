@@ -1,0 +1,15 @@
+Package: xmo-user
+Version: v1.17.0-1
+Depends: xmo-client
+Provides: 
+Source: feeds/sagemcom/libs/xmo-client
+License: Sagemcom
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/xmo-client
+Installed-Size: 9256
+Description:  XMO Client User : XMO command line interface without internal

@@ -1,0 +1,3 @@
+/etc/strongswan.d/starter.conf
+/usr/lib/ipsec/plugins/libstrongswan-hmac.so
+/etc/strongswan.d/charon/hmac.conf

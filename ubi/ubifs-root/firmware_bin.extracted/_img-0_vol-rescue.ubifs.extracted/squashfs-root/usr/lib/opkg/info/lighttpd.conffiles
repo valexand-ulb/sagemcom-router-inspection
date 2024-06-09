@@ -1,0 +1,8 @@
+/etc/lighttpd/lighttpd.conf
+/etc/lighttpd/conf.d/mimetype.conf
+/etc/lighttpd/conf.d/bind.conf
+/etc/lighttpd/conf.d/wan-ip-addr.conf
+/etc/lighttpd/conf.d/redirection.conf
+/etc/lighttpd/conf.d/rest.conf
+/etc/init.d/lighttpd
+/etc/lighttpd/ssl/remote/self-signed.pem

@@ -1,0 +1,3 @@
+/usr/bin/hg6d_start
+/usr/bin/hg6d
+/etc/init.d/hg6d

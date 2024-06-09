@@ -1,0 +1,15 @@
+Package: ladb-xmo
+Version: v1.50.0-1
+Depends: intf-voicepri, intf-voicepub
+Provides: 
+Source: feeds/voipHG6/libs/ladb-xmo
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ladb-xmo
+Installed-Size: 19350
+Description:  Generic Data base Voice XMO

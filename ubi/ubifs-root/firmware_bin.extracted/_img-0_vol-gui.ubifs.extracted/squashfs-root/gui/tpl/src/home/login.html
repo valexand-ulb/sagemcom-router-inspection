@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+
+    <div data-role="page" id="LoginPage" class="gui-login-dialog ui-dialog container-fluid ui-page-active hide" data-dom-cache="false">
+
+        <div data-role="header" data-theme="a" data-position="fixed">
+            <div id="home-header-infos" class="row nopadding">
+                <div class="col-sm-6 col-xs-3 logo">
+                    <img id="logo" src="../../../img/logo.png">
+                </div>
+                <div class="col-sm-6 col-xs-9 pull-right">
+
+                    <a href="#FindPasswdPopup" data-rel="popup" data-position-to="window" data-mini="true" data-inline="true"  class="hidden-xs bgc-help-btn" xtitle="HOME_HELP_HELP"></a>
+
+                    <div class="gui-login">
+                        <div style="display: inline;text-decoration: none" class="gui-login-name hidden-xs" xmsg="LOGIN_USER">Username</div>
+                    </div>
+
+                    <div class="bgc-language">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="LanguageRadio" id="LanguageEN" onclick="changeEN()" value="en" />
+                            <label for="LanguageEN" class="LanguageEN">EN</label>
+                            <input type="radio" name="LanguageRadio" id="LanguageFR" onclick="changeFR()" value="fr" />
+                            <label for="LanguageFR" class="bgc-border-left LanguageFR">FR</label>
+                            <input type="radio" name="LanguageRadio" id="LanguageNL" onclick="changeNL()" value="nl" />
+                            <label for="LanguageNL" class="bgc-border-left LanguageNL">NL</label>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End header -->
+
+        <div class="login-form">
+            <div data-role="header">
+                <div class="gui-login-icon pull-left"></div>
+                <h4 class="gui-login-title gui-status-msg" xmsg="LOGIN_ENTERLOGIN">Enter your credentials</h4>
+            </div>
+            <!-- /header -->
+
+            <div data-role="content" class="ui-body-c">
+                <ul>
+                    <li data-role="fieldcontain" class="gui-msg-login hide">
+                        <span class="text-danger">No error</span>
+                    </li>
+                    <li data-role="fieldcontain" class="username-select-container">
+                        <label for="UserName" xmsg="LOGIN_USER" id="UserNameLabel">Username</label>
+                        <select id="UserName">
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Expert">Expert</option>
+                        </select>
+                    </li>
+                    <li data-role="fieldcontain" id="passwordInput">
+                        <label for="UserPwd" xmsg="LOGIN_PASSWORD" id="UserPwdLabel">Password</label>
+                        <input type="text" style="display:none" />
+                        <input type="password" style="display:none" />
+                        <input type="password" id="UserPwd" maxlength="64" autocomplete="off"/>
+                        <a id="loginHelpLink" href="#FindPasswdPopup" data-rel="popup" data-position-to="window" data-mini="true" data-inline="true">
+                            <div class="gui-icon-interro">?</div>
+                        </a>
+                    </li>
+
+                    <li data-role="fieldcontain" id="submitButton">
+                        <a href="#" id="LoginSubmitBtn">
+                            <input id="LoginSubmit" type="button" xvalue="LOGIN_LOGIN" value="Login" style="opacity:0;" />
+                        </a>
+                    </li>
+                </ul>
+
+                <div data-role="popup" id="FindPasswdPopup" class="ui-corner-all">
+                    <div style="padding:30px;">
+                        <div class="help-header">
+                            <span class="pull-left"><img src="../../../img/icon-help-a.png">
+                            </span>
+                            <h2 class="pull-left" xmsg="LOGIN_HELP_PAGE">Help page</h2>
+                            <a class="pull-right" href="#" data-role="button" data-rel="back" data-icon="delete"></a>
+                        </div>
+                        <div class="help-content">
+                            <div class="row nopadding">
+                                <div class="col-sm-6 nopadding">
+                                    <h3 xmsg="LOGIN_FIND_STICKER">You will find this sticker at the back or bottom of your modem</h3>
+                                </div>
+                                <div class="col-sm-6 nopadding">
+                                    <div class="gui-icon-sticker"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /content -->
+        </div>
+
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

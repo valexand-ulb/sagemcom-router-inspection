@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+	<!-- NOT IN USE -->
+    <div data-role="page" id="StoragePage" class="gui-settings gui-device-settings" data-dom-cache="true" >
+
+      <div data-role="header" data-theme="a">
+
+        <h1 class="gui-device-usb gui-device-storage" >USB Storage</h1>
+
+        <ul id="Menu" >
+          <li class="gui-device-usb gui-device-storage" ><a href="../usb/device.html?host=uid&interf=if&type=type" data-prefetch="true" data-transition="none" >Device</a></li>
+          <li class="gui-device-usb gui-device-storage" ><a href="#" class="ui-btn-active" >Mass Storage</a></li>
+        </ul>
+
+      </div> <!-- header -->
+
+      <div data-role="content"> 
+
+        <div id="usbStorage" >
+
+          <h2>Sharing information</h2>
+          <a href="#" class="gui-gear-btn" >Eject</a>
+          <ul class="gui-info" > 
+            <li>
+            <h3>Capacity</h3>
+            <p>12,16 Gb.</p>
+            </li>
+            <li>
+            <h3>Index Status</h3>
+            <p>In progress</p>
+            </li>
+            <li>
+            <h3>File System</h3>
+            <p>FAT 32</p>
+            </li>
+          </ul>
+          <h3>Icon</h3>
+          <p>            
+          <label class="gui-icon-label" for="select-icon"><img id="device-icon" height="24" alt="PC" src="img/SC-Dect.png" /></label>
+          <select name="select-icon" id="select-icon" data-native-menu="false">
+            <option data-placeholder="true">Choose icon...</option>
+            <option value="PC"><!--img class="ui-li-icon ui-li-thumb" alt="PC" src="pictos/BGC-Pictogram-PC_Fixe-noir.png"/-->PC</option>
+            <option value="Phone"><!--img alt="Phone" src="pictos/BGC-Pictogram-TELEPHONY-noir.png"/-->Phone</option>
+          </select>
+          </p>
+          <h3>Partitions</h3>
+          <table border=1>
+            <tbody>
+              <!-- Results table headers -->
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Size </th>
+                <th>URL</th>
+              </tr>
+              <tr>
+                <td>usb0_1</td>
+                <td>ext2</td>
+                <td>1 Go</td>
+                <td> \\bbox\usb0_1 </td>
+              </tr>
+              <tr>
+                <td>usb0_2</td>
+                <td>fat</td>
+                <td>2 Go</td>
+                <td>\\bbox\usb0_2</td>
+              </tr>
+              <tr>
+                <td>usb0_3</td>
+                <td>unknown</td>
+                <td>16 Go</td>
+                <td>Not mounted</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div> <!-- #xDSL -->
+
+      </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+          <a id="ApplyButton" href="#" data-xmo-role="submit" >Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" >Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+Package: fhcd
+Version: v3.6.0_0.2-1
+Depends: libubox, libdncp, libjson, libblobmsg_json, libopenssl
+Provides: 
+Source: feeds/sagemcom/net/fhc-daemon
+License: 
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/fhc-daemon
+Installed-Size: 205243
+Description:  This package contains the fhcd source.

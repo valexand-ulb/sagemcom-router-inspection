@@ -1,0 +1,189 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+    <div data-role="page" id="PhoneHistoryPage" class="gui-settings gui-phonehistory-settings" data-dom-cache="true" >
+	  <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+      <div data-role="header">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-telephone-c.png">
+        </span>
+        <h1 id="PhoneName">Phone x</h1>
+
+        <ul id="Menu" >
+          <li class="gui-tab-active"><a class="ui-btn-active" href="#" data-prefetch="true" data-transition="none" xmsg="PHONE_GLOBAL_INFORMATION">Global Information</a></li>
+        </ul>
+      </div><!-- /header -->
+
+      <div data-role="content"> 
+            <div id="CallStatusLine1">
+
+                <h2 id="CallStatusPhoneNameLine1" xmsg="PHONE_LINE_ONE">Line 1</h2>
+                <div class="gui-info" >
+					<ul>
+						<li data-role="fieldcontain">
+							<h3 xmsg="PHONE_NUMBER">Number</h3>
+							<div id="RegisterSipUriLine1" data-xmo-role="item" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='CLIENT1']/RegisterURI"></div>
+							<p id="DirectoryNumberLine1" class="gui-status-text">&nbsp;</p>
+						</li>
+						<li data-role="fieldcontain" data-xmo-role="status"  data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallControl/Lines/Line[Alias='LINE1']/Status">
+							<h3 xmsg="HOME_STATUS">Status</h3>
+							<p class="gui-status-text">&nbsp;</p>
+							<select>
+								<option value="DISABLED" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="QUIESCENT" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="TESTING" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="ERROR" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="UP" xmsg="PHONE_ENABLED">Enabled</option>
+							</select>
+					  </li>
+					  <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='CLIENT1']/Status">
+							<h3 xmsg="PHONE_STATUS_REASON">Status Reason</h3>
+							<p class="gui-status-text">&nbsp;</p>
+							<select>
+								<option value="UP" xmsg="PHONE_UP">Up</option>
+								<option value="INITIALIZING" xmsg="PHONE_INITIALIZING">Initializing</option>
+								<option value="REGISTERING" xmsg="PHONE_REGISTERING">Registering</option>
+								<option value="DEREGISTERING" xmsg="PHONE_DEREGISTERING">Deregistering</option>
+								<option value="ERROR_MISCONFIGURED" xmsg="PHONE_MISCONFIGURED">Error misconfigured</option>
+								<option value="ERROR_NETWORK" xmsg="PHONE_ERROR_NETWORK">Error network</option>
+								<option value="ERROR_REGISTRATION" xmsg="PHONE_ERROR_REGISTRATION">Error registration</option>
+								<option value="QUIESCENT" xmsg="PHONE_QUIESCENT">Quiescent</option>
+								<option value="DISABLED" xmsg="PHONE_DISABLED">Disabled</option>
+							</select>
+						</li>
+						<li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallControl/Lines/Line[Alias='LINE1']/CallStatus">
+							<h3 xmsg="PHONE_CALL_STATUS">Call Status</h3>
+							<p class="gui-status-text">&nbsp;</p>
+							<select>
+								<option value="IDLE" xmsg="PHONE_IDLE">Idle</option>
+								<option value="DIALING" xmsg="PHONE_DIALING">Dialing</option>
+								<option value="DELIVERED" xmsg="PHONE_DELIVERED">Delivered</option>
+								<option value="CONNECTED" xmsg="PHONE_CONNECTED">Connected</option>
+								<option value="ALERTING" xmsg="PHONE_ALERTING">Alerting</option>
+								<option value="DISCONNECTED" xmsg="PHONE_DISCONNECTED">Disconnected</option>
+							</select>
+						</li>
+						<li data-role="fieldcontain" >
+						  <label for="StartRingTestButton1" xmsg="PHONE_TEST">Test</label>
+						  <input id="StartRingTestButton1" data-role="button" type="button" xvalue="PHONE_START_TEST" value="Start test" >
+						  <div id="PhoneCallTestStatus1" class="xmo-item xmo-status" style="display: none" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/POTS/FXSs/FXS[Alias='#FXSALIAS#']/DiagTests/DiagnosticsState" data-xmo-role="status">
+							<select style="display: none;">
+								<option value="REQUESTED">REQUESTED</option>
+								<option value="NONE">NONE</option>
+								<option value="COMPLETE">COMPLETE</option>
+							</select>
+						  </div>
+						</li>
+					</ul>
+                </div>
+            </div>
+            <div id="CallStatusLine2">
+
+                <h2 id="CallStatusPhoneNameLine2" xmsg="PHONE_LINE_TWO">Line 2</h2>
+                <div class="gui-info" >
+					<ul>
+						<li data-role="fieldcontain">
+							<h3 xmsg="PHONE_NUMBER">Number</h3>
+							<div id="RegisterSipUriLine2" data-xmo-role="item" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='CLIENT2']/RegisterURI"></div>
+							<p id="DirectoryNumberLine2" class="gui-status-text">&nbsp;</p>
+						</li>
+						<li data-role="fieldcontain" data-xmo-role="status"  data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallControl/Lines/Line[Alias='LINE2']/Status">
+							<h3 xmsg="HOME_STATUS">Status</h3>
+							<p class="gui-status-text">&nbsp;</p>
+							<select>
+								<option value="DISABLED" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="QUIESCENT" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="TESTING" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="ERROR" xmsg="PHONE_DISABLED">Disabled</option>
+								<option value="UP" xmsg="PHONE_ENABLED">Enabled</option>
+							</select>
+					  </li>
+					  <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/SIP/Clients/Client[Alias='CLIENT2']/Status">
+							<h3 xmsg="PHONE_STATUS_REASON">Status Reason</h3>
+							<p class="gui-status-text">&nbsp;</p>
+							<select>
+								<option value="UP" xmsg="PHONE_UP">Up</option>
+								<option value="INITIALIZING" xmsg="PHONE_INITIALIZING">Initializing</option>
+								<option value="REGISTERING" xmsg="PHONE_REGISTERING">Registering</option>
+								<option value="DEREGISTERING" xmsg="PHONE_DEREGISTERING">Deregistering</option>
+								<option value="ERROR_MISCONFIGURED" xmsg="PHONE_MISCONFIGURED">Error misconfigured</option>
+								<option value="ERROR_NETWORK" xmsg="PHONE_ERROR_NETWORK">Error network</option>
+								<option value="ERROR_REGISTRATION" xmsg="PHONE_ERROR_REGISTRATION">Error registration</option>
+								<option value="QUIESCENT" xmsg="PHONE_QUIESCENT">Quiescent</option>
+								<option value="DISABLED" xmsg="PHONE_DISABLED">Disabled</option>
+							</select>
+						</li>
+						<li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallControl/Lines/Line[Alias='LINE2']/CallStatus">
+							<h3 xmsg="PHONE_CALL_STATUS">Call Status</h3>
+							<p class="gui-status-text">&nbsp;</p>
+							<select>
+								<option value="IDLE" xmsg="PHONE_IDLE">Idle</option>
+								<option value="DIALING" xmsg="PHONE_DIALING">Dialing</option>
+								<option value="DELIVERED" xmsg="PHONE_DELIVERED">Delivered</option>
+								<option value="CONNECTED" xmsg="PHONE_CONNECTED">Connected</option>
+								<option value="ALERTING" xmsg="PHONE_ALERTING">Alerting</option>
+								<option value="DISCONNECTED" xmsg="PHONE_DISCONNECTED">Disconnected</option>
+							</select>
+						</li>
+						<li data-role="fieldcontain" >
+						  <label for="StartRingTestButton2" xmsg="PHONE_TEST">Test</label>
+						  <input id="StartRingTestButton2" data-role="button" type="button" xvalue="PHONE_START_TEST" value="Start test" >
+						  <div id="PhoneCallTestStatus2" class="xmo-item xmo-status" style="display: none" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/POTS/FXSs/FXS[Alias='#FXSALIAS#']/DiagTests/DiagnosticsState" data-xmo-role="status">
+							<select style="display: none;">
+								<option value="REQUESTED">REQUESTED</option>
+								<option value="NONE">NONE</option>
+								<option value="COMPLETE">COMPLETE</option>
+							</select>
+						  </div>
+						</li>
+					</ul>
+                </div>
+            </div>
+            <div id="PhoneCallHistory">
+
+                <h2 xmsg="PHONE_CALL_HISTORY">Call History</h2>
+                <div class="gui-info" >
+                    <ul id="PhoneHistoryList" class="gui-info" data-xmo-role="array" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallLogs" data-icon="arrow-r" data-iconpos="right">
+                    <li data-role="list-divider" xmsg="PHONE_CALL_HISTORY">Call History</li>
+                    </ul>
+                    <div id="phoneHistoryListTable" class="ui-grid-b"></div>
+                </div>
+            </div>
+      </div><!-- /content -->
+
+      <div data-role="footer"  class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

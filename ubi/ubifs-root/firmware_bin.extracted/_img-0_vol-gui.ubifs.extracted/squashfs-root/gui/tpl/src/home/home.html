@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+    <div id="HomePage" class="bgc-network-map container-fluid" data-role="page" data-dom-cache="true">
+        <div class="loading-custom">
+            <span class="ui-icon ui-icon-loading"></span>
+        </div>
+        <div data-role="header" data-theme="a" data-position="fixed">
+            <div id="home-header-infos" class="row nopadding">
+                <div class="col-sm-6 col-xs-3 logo">
+                    <img id="logo" src="../../../img/logo.png">
+                </div>
+                <div class="col-sm-6 col-xs-9 pull-right">
+
+                    <div class="bgc-help-btn" id="bgc-help-btn" xtitle="HOME_HELP_HELP"></div>
+
+                    <div class="gui-login">
+                        <a style="display: inline;text-decoration: none" id="open-popupArrow" class="gui-login-name"></a>
+
+                        <div data-role="popup" id="popupArrow">
+                            <a href="../access/user.html" id="profileSetting" style="cursor: pointer;color: black; text-decoration: none;margin: 0;">
+                                <img src="../../../img/icon-gear-a.png">
+                                <span xmsg="HOME_PROFILE_SETTING">Profile Settings</span>
+                            </a>
+                            <hr/>
+                            <a id="bgc-logout-btn" href="#" xtitle="HOME_HELP_LOGOUT" style="cursor: pointer;color: black; text-decoration: none">
+                                <img src="../../../img/icon-security-a.png">
+                                <span xmsg="HOME_LOGOUT">Logout</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bgc-language">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="LanguageRadio" id="LanguageEN" onclick="changeEN()" value="en" />
+                            <label for="LanguageEN" class="LanguageEN">EN</label>
+                            <input type="radio" name="LanguageRadio" id="LanguageFR" onclick="changeFR()" value="fr" />
+                            <label for="LanguageFR" class="bgc-border-left LanguageFR">FR</label>
+                            <input type="radio" name="LanguageRadio" id="LanguageNL" onclick="changeNL()" value="nl" />
+                            <label for="LanguageNL" class="bgc-border-left LanguageNL">NL</label>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End header -->
+
+        <div data-role="content" class="row top-group-info helpDiv">
+            <div class="col-md-6">
+                <h4 xmsg="HOME_HELP_TOP_INFO"><strong> Heads up !</strong> You enabled the help mode </h4>
+            </div>
+            <div class="col-md-6 text-right">
+                <h4 class="link-hide-help-info" xmsg="HOME_HELP_BACK_LINK">Back to normal mode</h4>
+            </div>
+        </div>
+        <div data-role="content" class="row top-group-info">
+
+            <div class="gui-box-info col-md-4">
+        <a id="Internet" href="../internet/network.html" class="proximus-box-radius">
+          <span class="gearIm pull-right">
+            <img src="../../../img/icon-gear-c.png">
+          </span>
+          <h2 xmsg="HOME_INTERNETCONNECTIVITY">Network Connectivity</h2>
+          <div id="InternetStatus" class="description" data-xmo-role="status" data-status-classes='{ "NETWORK_DOWN": "gui-status-disconnected","INTERNET_DOWN": "gui-status-disconnected", "UNCONFIGURED": "gui-status-disconnected", "BACKUP": "gui-status-3gbackup" }' data-class-target="#Internet">
+            <select>
+              <option value="NETWORK_DOWN" xmsg="INTERNET_NETWORK_DISCONNECTED">Network Disconnected</option>
+              <option value="INTERNET_DOWN" xmsg="INTERNET_INTERNET_DISCONNECTED">Internet Disconnected</option> 
+              <option value="UNCONFIGURED" xmsg="INTERNET_UNCONFIGURED">Internet Login and Password Empty</option>                     
+              <option value="UP" xmsg="HOME_CONNECTEDONPPP">Connected on PPP</option>
+              <option value="UPTITAN" xmsg="DEVICE_CONNECTED">Connected</option>
+              <option value="BACKUP" xmsg="HOME_WORKINGON3GBACKUP">Working on 3G backup</option>
+            </select>
+                    </div>
+                </a>
+                <div class="helpDiv" xmsg="HOME_HELP_NETWORK_CONNX">
+                    <p>Status and configuration of network connections</p>
+                </div>
+                <div id="3GStatus" class="hidden" data-xmo-role="status" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA_BACKUP']/Status"></div>
+                <div id="PPPStatus" class="hidden" data-xmo-role="status" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA']/Status"></div>
+                <div id="NetworkStatus" class="hidden" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[Alias='IP_DATA_ADDRESS']/Status"></div>
+                <div id="PPPLogin" class="hidden" data-xmo-role="status" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA']/Username"></div>
+                <div id="DSLStatus" class="hidden" data-xmo-role="status" data-xpath="Device/DSL/Lines/Line[Alias='DSL0']/Status"></div>
+                <div id="WANStatus" class="hidden" data-xmo-role="status" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY6_WAN_MPTCP']/Status"></div>
+            </div>
+            <span id="NetworkTopologyValue" class="hidden" data-xmo-role="status" data-xpath="Device/Services/BGCNetworkProperties/NetworkTopology"></span>
+            <div class="gui-box-info col-md-4">
+        <a id="Access" href="../access/parental-control.html" class="proximus-box-radius">
+          <span class="gearIm pull-right">
+                        <img src="../../../img/icon-gear-c.png">
+                    </span>
+                    <h2 xmsg="HOME_ACCESSCONTROL">Access Control</h2>
+
+                </a>
+                <div class="helpDiv" xmsg="HOME_HELP_FIREWALL">
+                    <p>Status and configuration of Firewall, NAT, ...</p>
+                </div>
+            </div>
+
+            <div class="gui-box-info col-md-4">
+                <a id="Device" href="../gateway/infos.html" class="proximus-box-radius">
+                    <span class="gearIm pull-right">
+                        <img src="../../../img/icon-gear-c.png">
+                    </span>
+                    <h2 xmsg="HOME_MYGATEWAY">My Modem</h2>
+                    <div class="description" data-class-target="#Access">
+                       <span id="nbConnectedDevices">0</span>
+                    </div>
+
+                </a>
+                <div class="helpDiv" xmsg="HOME_HELP_DHCP_DLNA">
+                    <p>Status and configuration of DHCP, DLNA, ...</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- End row content -->
+        
+        <div class="row content gui-interface-all" style="height: 100%;">
+            <div class="gui-interface-dev" style="overflow-y: scroll; height: 100%;">
+                <div id="MinAddressTV" data-xmo-role="item" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='MLTV_DEVICES_POOL']/MinAddress"></div>
+                <div id="MaxAddressTV" data-xmo-role="item" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='MLTV_DEVICES_POOL']/MaxAddress"></div>
+
+                <div id="HardwareVersion" data-xmo-role="item" data-read-only="true" data-xpath="Device/DeviceInfo/HardwareVersion"></div>
+                <div id="ConnectedDevices" data-xmo-role="array" data-xpath="Device/Hosts/Hosts"></div>
+                <div id="CallExtensions" data-xmo-role="array" data-xpath="Device/Services/VoiceServices/VoiceService[@uid='1']/CallControl/Extensions"></div>
+                <!-- WiFi -->
+                <div class="col-md-6">
+                  <div class="row p-0 m-0">
+                        <!-- E-WiFi -->
+                        <div id="eWifiFeatureStatus" class="hide" data-xmo-role_="statusStatic" data-xpath_="Device/Services/EnhancedWiFi/GUI/ShowEnhancedWiFi"></div>
+                            <!-- @TODO: change XPATH: this XPATH is for test -->
+                            <div id="wiFiUnifiedButton" class="gui-box-info ui-content col-md-12 p-t-0 p-l-0 p-r-0 hide">
+                              <div class="bgc-network">
+                                <a id="eWifi" href="../wifi/enhanced-wifi.html" class="proximus-box-radius">
+                                  <span class="gearIm pull-right">
+                                    <img src="../../../img/icon-gear-c.png">
+                                  </span>
+                                  <h2 id="eWifiName" data-xmo-role_="statusStatic" data-xpath_="Device/Services/EnhancedWiFi/Name"></h2>
+                                  <div id="eWiFiStatus" class="description xmo-item xmo-status">
+                                  <p id="eWiFiStatusSelect"></p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="helpDiv" xmsg="HOME_WIFI">
+                                <p>Status and configuration of Enhanced Wi-Fi</p>
+                              </div>
+                            </div>
+                            <!-- WiFi unified  -->
+                            <div id="wiFiUnifiedSection" class="col-md-12 p-0 hide">
+                              <div class="box-interface">
+                                <div id="wiFiUnifiedFonStatusValue" data-xmo-role="status" data-xpath="Device/Services/BGCHotspotService/Status"></div>
+                                <div id="wiFiUnifiedFonLogoWifi" class="gui-wifi-pub-icon" data-xmo-role="status">
+                                  <div class="fon-status-icon">
+                                    <img src="../../../img/hotspot_20x20.png" />&nbsp;
+                                    <span>Hotspot
+                                      <span id="wiFiUnifiedHotspotStatus" style="float: none; color:#000;">OFF</span>
+                                    </span>
+                                  </div>
+                                </div>
+                                <a id="WiFiUnified" href="../wifi/wifi.html?radio=unified">
+                                  <span class="interface-icon pull-left" style="padding-top: 25px;">
+                                    <img src="../../../img/icon-wifi.png">
+                                  </span>
+                                  <span class="gearImg">
+                                    <img src="../../../img/icon-gear.png">
+                                  </span>
+                                  <span>
+                                    <h2>Wi-Fi</h2>
+                                  </span>
+                                  <span id="WiFiUnifiedLib" class="description" data-xmo-role_="status" data-xpath_="Device/WiFi/SSIDs/SSID[Alias='WL_PRIV']/SSID"></span>
+                                </a>
+                                <ul id="WiFiUnifiedDevices" data-inset="true" class="listDiv ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
+                              </div>
+                              <div id="WiFi24Help" class="helpDiv" xmsg="HOME_HELP_WIFI24">
+                                <p>Use this to check or configure Wi-Fi 2.4Ghz.</p>
+                                <br/>
+                                <p>List of devices connected to Wi-Fi 2.4GHz.</p>
+                              </div>
+                        </div>
+                     <!-- WiFi 2.4G  -->
+                     <div id="wiFi2G4Section" class="col-md-6 p-l-0">
+                       <div class="box-interface" style="margin-bottom: 200px !important;">
+                        <div id="FonStatusValue" data-xmo-role="status" data-xpath="Device/Services/BGCHotspotService/Status"></div>
+                        <div id="FonLogoWifi" class="gui-wifi-pub-icon" data-xmo-role="status">
+                            <div class="fon-status-icon">
+								<img src="../../../img/hotspot_20x20.png" />&nbsp;
+								<span>Hotspot <span id="HotspotStatus" style="float: none; color:#000;">OFF</span></span>
+							</div>
+                        </div>
+
+                        <a id="WiFi2G4" href="../wifi/wifi.html?radio=2G4">
+                            <span class="interface-icon pull-left" style="padding-top: 25px;">
+                                <img src="../../../img/icon-wifi.png">
+                            </span>
+                            <span class="gearImg">
+                                <img src="../../../img/icon-gear.png">
+                            </span>
+                            <span>
+                                <h2 xmsg="HOME_WIFI2G4">Wi-Fi 2.4 GHz</h2>
+                            </span>
+                            <span id="WiFi2G4Lib" class="description xmo-item xmo-status"></span>
+                        </a>
+
+                        <ul id="WiFi2G4Devices" data-inset="true" class="listDiv ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
+
+                    </div>
+                    <div id="WiFi24Help" class="helpDiv" xmsg="HOME_HELP_WIFI24">
+                        <p>Use this to check or configure Wi-Fi 2.4Ghz.</p>
+                        <br/>
+                        <p>List of devices connected to Wi-Fi 2.4GHz.</p>
+                    </div>
+                </div>
+
+                <!-- WiFi 5G  -->
+                <div id="wiFi5GSection" class="col-md-6 p-r-0">
+                    <div class="box-interface">
+                        <a class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-x" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" data-theme="x" data-transition="slidedown" data-role="button" id="WiFi5G" href="../wifi/wifi.html?radio=5G">
+							<span class="ui-btn-inner ui-btn-corner-all">
+								<span class="ui-btn-text">
+                            		<span class="interface-icon pull-left" style="padding-top: 25px;">
+                                        <img src="../../../img/icon-wifi.png">
+                            		</span>
+                            		<span class="gearImg">
+                                		<img src="../../../img/icon-gear.png">
+                            		</span>
+                            		<h2 xmsg="HOME_WIFI5G">Wi-Fi 5 GHz</h2>
+                            		<p>
+                                		<span id="WiFi5GLib" class="description xmo-item xmo-status"></span>
+                            		</p>
+                        		</span>
+							</span>
+						</a>
+                        <ul id="WiFi5GDevices" data-inset="true" class="listDiv ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
+
+                    </div>
+                    <div id="WiFi5Help" class="helpDiv" xmsg="HOME_HELP_WIFI5">Use this to check the state of, or configure, your Wi-Fi 5.0 GHz connectivity.<br><br>List of Wi-Fi 5.0 GHz devices. Click on a device for access to the options specific to that device.</div>
+                </div>
+                  </div>
+                </div>
+                <!-- Ethernet -->
+                <div class="col-md-3">
+                    <div class="box-interface">
+                        <a class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-x" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" data-theme="x" data-transition="slidedown" data-role="button" id="Ethernet" href="../ethernet/ethernet.html">
+							<span class="ui-btn-inner ui-btn-corner-all">
+								<span class="ui-btn-text">
+				                  	<span class="interface-icon pull-left">
+				                    	<img src="../../../img/icon-ethernet.png">
+				                  	</span>
+			                    	<span class="gearImg">
+				                        <img src="../../../img/icon-gear.png">
+				                    </span>
+				                    <h2>Ethernet</h2>
+                        		</span>
+							</span>
+						</a>
+                        <ul id="Ethernet_devices" data-inset="true" class="listDiv ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                       
+                        </ul>
+
+                    </div>
+                    <div id="ethernetHelp" class="helpDiv" xmsg="HOME_HELP_ETHERNET">
+                        <p>Use this to check or configure Ethernet services.</p>
+                        <br/>
+                        <p>List of devices connected to Ethernet ports.</p>
+                    </div>
+                </div>
+
+                <!-- USB -->
+                <div id="usbCard" class="col-md-3">
+                    <div class="box-interface">
+                        <a id="USB">
+                            <span class="interface-icon pull-left">
+                                <img src="../../../img/icon-usb.png">
+                            </span>
+                            <h2>USB</h2>
+                        </a>
+                        <ul id="USB_devices" data-inset="true" class="listDiv ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
+                            
+                    </div>
+                    <div id="USBHelp" class="helpDiv" xmsg="HOME_HELP_USB">
+                        <p>Use this to check or configure USB services.</p>
+                        <br/>
+                        <p>List of devices connected to USB ports.</p>
+                    </div>
+                </div>
+                
+                <!-- Phonebook -->
+                <div id="phonebookCard" class="col-md-3">
+                    <div class="box-interface">
+                        <a id="Phonebook" href="../phonebook/phonebook.html">
+                            <span class="interface-icon pull-left">
+                                <img src="../../../img/icon-phonebook.png">
+                            </span>
+                            <span class="gearImg">
+                                <img src="../../../img/icon-gear.png">
+                            </span>
+                            <h2 xmsg="HOME_PHONEBOOK">Phonebook</h2>
+                        </a>
+                    </div>
+                    <div id="PhonebookHelp" class="helpDiv" xmsg="HOME_HELP_PHONEBOOK">
+                        <p>Use this to consult or configure your contact list.</p>
+                    </div>
+                </div>
+                <div class="clear-right"></div>
+                <!-- Phone -->
+                <div id="fxsCard" class="col-md-3 pull-right">
+                    <div class="box-interface">
+                        <a id="Phones" href="../fxs/settings.html?phone=1">
+                            <span class="interface-icon pull-left">
+                                <img src="../../../img/icon-phone.png">
+                            </span>
+                            <span class="gearImg">
+                                <img src="../../../img/icon-gear.png">
+                            </span>
+                            <h2 xmsg="HOME_VOIP">Telephone</h2>
+                        </a>
+                       <ul class="listDiv ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" id="Phone_lines">                        
+
+                        </ul>
+                    </div>
+                    <div id="VOIPHelp" class="helpDiv" xmsg="HOME_HELP_VOIP">
+                        <p>Use this to check the state of, or configure your VoIP account.</p>
+                        <br/>
+                        <p>Click on one of the phone icons to access to the call history of that line.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End row gui-interface-all -->
+
+    <script id="PhoneLineTmpl" type="text/x-jquery-tmpl">
+      <li>
+        <a href="${page}" data-transition="slidedown">
+          <div class="SC-TelephonyDevice dev-icon"></div>
+          <div class="phone-device-infos">
+              <h4><span xmsg="HOME_PHONE">Phone</span> ${uid}</h4>
+              <p class="gui-device-fxs-number">{{html number}}</p>
+          </div>
+        </a>
+      </li>
+    </script>
+
+    <script id="DectTmpl" type="text/x-jquery-tmpl">
+      <li style="height:80px" class="hidden dectDevices" id="DectId_${uid}" data-uid="${uid}">
+        <div class="SC-Phone-Dect dev-icon"></div>
+        <div class="phone-device-infos" data-url="${page}" data-transition="slidedown">
+          <h4 id="DectName_${uid}" data-xmo-role="statusStatic" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallControl/Extensions/Extension[Alias='EXT${uid}']/Name"></h4>
+          <p class="gui-device-dect-number">
+            {{if lines.length}}
+            <select id="HandsetLineSelect_${uid}" data-enabled-map-id="${enabledMapUid}" data-disabled-map-id="${disabledMapUid}" class="handset-line-select" data-xmo-role="select">
+                <option value="NONE" {{if asscociations.length === 0}} selected="selected" {{/if}}>None</option>
+                <option value="BOTH" {{if asscociations.length === 2}} selected="selected" {{/if}}>Both</option>
+                {{each lines}}
+                    <option value="${Alias}" {{if asscociations.length !== 0 && asscociations.length !== 2 && "Device/Services/VoiceServices/VoiceService[@uid='1']/SIP/Clients/Client[Alias='" + asscociations.Alias + "']" == "Device/Services/VoiceServices/VoiceService[@uid='1']/SIP/Clients/Client[Alias='" + Client.Alias + "']"}} selected="selected" {{/if}}>${Client.Number}</option>
+                {{/each}}
+            </select>
+            {{else}}
+                <span xmsg="HOME_NOREGISTERED_LINE">No Registered Line</span>
+            {{/if}}
+          </p>
+          <div id="DectStatus_${uid}" class="xmo-item xmo-status" style="display: none" data-xpath="Device/Services/VoiceServices/VoiceService[@uid='1']/DECT/Portables/Portable[@uid='${dectUid}']/RegistrationStatus" data-xmo-role="statusStatic">
+            <select style="display: none;">
+                <option value="IN_REACH">IN_REACH</option>
+                <option value="NOT_IN_REACH">NOT_IN_REACH</option>
+            </select>
+          </div>
+          <div id="DectCallStatus_${uid}" class="xmo-item xmo-status" style="display: none" data-xpath="Device/Services/VoiceServices/VoiceService[@uid='1']/CallControl/Extensions/Extension[@uid='${uid}']/CallStatus" data-xmo-role="statusStatic">
+            <select style="display: none;">
+                <option value="IDLE">IDLE</option>
+                <option value="DIALING">DIALING</option>
+                <option value="DELIVERED">DELIVERED</option>
+                <option value="CONNECTED">CONNECTED</option>
+                <option value="ALERTING">ALERTING</option>
+                <option value="DISCONNECTED">DISCONNECTED</option>
+            </select>
+          </div>
+        </div>
+      </li>
+    </script>
+
+  </div>
+  <!-- #HomePage -->
+</body>
+
+</html>

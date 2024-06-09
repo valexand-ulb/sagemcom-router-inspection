@@ -1,0 +1,15 @@
+Package: twonky-resource-belgacom
+Version: v1.5.4-1
+Depends: twonky-media-server
+Provides: 
+Source: feeds/sagemcom/net/twonky-media
+License: Twonky
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/twonky-media
+Installed-Size: 20913
+Description:  This package contains the data ressources (XML, icons...) for Belgacom.

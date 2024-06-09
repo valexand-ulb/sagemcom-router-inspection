@@ -1,0 +1,15 @@
+Package: gsdf-verif
+Version: v2.7.0-1
+Depends: gsdf-libs
+Provides: 
+Source: feeds/sagemcom/utils/gsdf
+License: BSD
+Section: base
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/gsdf-tools
+Installed-Size: 2768
+Description:  Verif firmware image command line tools

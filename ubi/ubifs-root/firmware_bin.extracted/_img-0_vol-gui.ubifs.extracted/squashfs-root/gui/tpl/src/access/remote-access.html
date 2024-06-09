@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+
+    <div data-role="page" id="RemoteAccessPage" class="gui-settings" data-dom-cache="true" >
+
+      <div data-role="header">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-access-ctrl-c.png">
+        </span>
+        <h1 xmsg="ACCESS_ACCESSCONTROL">Access Control</h1>
+        <ul id="Menu" >
+          <li><a href="parental-control.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a></li>        
+          <li><a href="nat.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_PORT_FWD">Port Forwarding</a></li>
+          <li><a href="firewall.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a></li>
+          <li><a href="#" class="ui-btn-active" xmsg="ACCESS_REMOTE_ACCESS">Remote Access</a></li>
+        </ul>
+      </div><!-- /header -->
+
+      <div data-role="content"> 
+
+        <div id="HTTPSRemoteAccess">
+
+          <h2 xmsg="REMOTE_TITLE">HTTPS Remote Access</h2>
+
+          <ul  class="gui-info" >
+            <li data-role="fieldcontain" >
+              <label for="HTTPSRemoteAccessCheck" xmsg="HOME_ENABLE">Enable</label>
+              <select id="HTTPSRemoteAccessCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/UserAccounts/Users/User[Login='User']/RemoteAccesses/RemoteAccess[@Service='HTTPS' and Port='443' or Port='8443']/Enabled" >
+                <option value="false" xmsg="HOME_OFF">Off</option>
+                <option value="true" xmsg="HOME_ON">On</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="HTTPPortInput" xmsg="REMOTE_PORT_NUMBER">Port Number</label>
+              <select id="HTTPPortInput" data-xmo-role="select" data-xpath="Device/UserAccounts/Users/User[Login='User']/RemoteAccesses/RemoteAccess[@Service='HTTPS' and Port='443' or Port='8443']/Port" >
+                <option value="443" >443</option>
+                <option value="8443" >8443</option>
+              </select>
+            </li>
+          </ul>
+
+        </div><!-- /#HTTPSRemoteAccess -->
+
+      </div><!-- /content -->
+
+      <div data-role="footer"  class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+          <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

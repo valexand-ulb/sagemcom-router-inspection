@@ -1,0 +1,3 @@
+/etc/strongswan.d/starter.conf
+/usr/lib/ipsec/plugins/libstrongswan-des.so
+/etc/strongswan.d/charon/des.conf

@@ -1,0 +1,15 @@
+Package: xmo-client
+Version: v1.17.0-1
+Depends: xmt, xmo, gateway-dm, xmo-server
+Provides: 
+Source: feeds/sagemcom/libs/xmo-client
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/xmo-client
+Installed-Size: 43804
+Description:  XMO Client : Client Interface to XMO

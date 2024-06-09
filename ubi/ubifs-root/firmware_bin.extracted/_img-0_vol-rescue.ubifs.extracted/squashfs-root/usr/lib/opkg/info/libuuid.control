@@ -1,0 +1,18 @@
+Package: libuuid
+Version: 2.24.1-1
+Depends: 
+Provides: 
+Source: package/util-linux
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @KERNEL/linux/utils/util-linux/v2.24
+Installed-Size: 7395
+Description:  The UUID library is used to generate unique identifiers for objects
+ that may be accessible beyond the local system. This library
+ generates UUIDs compatible with those created by the Open Software
+ Foundation (OSF) Distributed Computing Environment (DCE) utility.

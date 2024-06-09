@@ -1,0 +1,11 @@
+#!/bin/sh
+if printf "$(/bin/check_qtn)" | grep -qF "11an"; then
+echo "restore default quantenna config"
+quantenna_test 10.1.1.2 restore_default_config &
+sleep 2
+fi
+
+if [ $# -ne 1 ]; then
+    rm /opt/data/refurbish
+    rm /opt/data/reset_after_refurbish
+fi

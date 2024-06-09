@@ -1,0 +1,12 @@
+/usr/lib/libxmo.so.1.0.0
+/etc/catalogs/ident/xmo/description.cat
+/etc/catalogs/ident/xmo/xmo-msg.cat
+/etc/catalogs/fr/xmo/xmo-msg.cat
+/usr/lib/libxmo-api.so.1
+/usr/lib/libxmo.so.1
+/usr/lib/libxmoext.so.1.0.0
+/etc/catalogs/en/xmo/description.cat
+/etc/catalogs/fr/xmo/description.cat
+/etc/catalogs/en/xmo/xmo-msg.cat
+/usr/lib/libxmoext.so.1
+/usr/lib/libxmo-api.so.1.0.0

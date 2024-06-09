@@ -1,0 +1,2 @@
+# Disable XMO server to boot time
+BOOT_HG6D_ENABLE=yes

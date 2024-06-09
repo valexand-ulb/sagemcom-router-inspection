@@ -1,0 +1,15 @@
+Package: firmware-upgrade-libs
+Version: v2.6.0-1
+Depends: devel-utils, evlp, evlp-download, gsdf-libs
+Provides: 
+Source: feeds/sagemcom/utils/firmware-upgrade
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/firmware-upgrade
+Installed-Size: 7113
+Description:  Firmware upgrade API library

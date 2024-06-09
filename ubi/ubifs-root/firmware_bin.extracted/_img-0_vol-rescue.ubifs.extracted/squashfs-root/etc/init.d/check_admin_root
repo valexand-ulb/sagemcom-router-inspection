@@ -1,0 +1,16 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+START=06
+
+. /etc/sysdirs.conf
+
+start() {
+adminGpeId=`id -g -n Admin`
+      if [ ! $? -eq 0 -o "$adminGpeId" != "root" ]; then
+           rm /opt/filesystem2/rootfs/etc/passwd
+           rm /opt/filesystem2/rootfs/etc/shadow
+           rm /opt/filesystem2/rootfs/etc/group
+           rm /opt/filesystem2/rootfs/etc/group-
+        fi
+} 
+

@@ -1,0 +1,366 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+
+    <div data-role="page" id="NetworkPage" class="gui-settings gui-device-settings gui-internet-page" data-dom-cache="true" >
+        <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+        <script src="../../../js/jquery.ezpz_hint.js"></script>
+      <div data-role="header" data-theme="a" >
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-internet-c.png">
+        </span>
+        <h1 xmsg="NETWORK_TITLE">Network Connectivity</h1>
+        <h1 class="gui-device gui-device-usb gui-device-3g" xmsg="HOME_3G_DONGLE">3G Dongle</h1>
+		<div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+		<div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+        <ul id="Menu" >
+
+          <li class="gui-user-settings" ><a href="#" class="ui-btn-active" xmsg="HOME_GENERAL_INFO">General Info</a></li>
+          <li style="display: none"><a href="wan.html" data-transition="none" xmsg="INTERNET_WAN">WAN</a></li>
+          <li style="display: none" id="VLAN10"><a href="vlan.html?vlanid=10" data-transition="none" xmsg="INTERNET_VLAN10">VLAN 10</a></li>
+          <li style="display: none" id="VLAN20"><a href="vlan.html?vlanid=20" data-transition="none" xmsg="INTERNET_VLAN20">VLAN 20</a></li>
+          <li style="display: none" id="VLAN30"><a href="vlan.html?vlanid=30" data-transition="none" xmsg="INTERNET_VLAN30">VLAN 30</a></li>
+          <li style="display: none" id="VLAN2"><a href="vlan.html?vlanid=2" data-transition="none" xmsg="INTERNET_VLAN2">VLAN 2</a></li>
+		  <li style="display: none" id="VLAN4080"><a href="vlan.html?vlanid=4080" data-transition="none" xmsg="INTERNET_VLAN4080">VLAN 4080</a></li>
+		  <li style="display: none" id="VLAN4081"><a href="vlan.html?vlanid=4081" data-transition="none" xmsg="INTERNET_VLAN4081">VLAN 4081</a></li>
+          <li class="gui-device gui-device-usb gui-device-3g" ><a href="../usb/device.html?host=uid&interf=if&type=type" data-prefetch="true" data-transition="none" xmsg="HOME_DEVICE">Device</a></li>
+          <li class="gui-device gui-device-usb gui-device-3g" ><a href="#" class="ui-btn-active" xmsg="INTERNET_NETWORK">Network</a></li>
+          <li class="gui-user-settings" style="display: none" id="MPTCP"><a href="mptcp.html" data-transition="none" xmsg="MPTCP_MPTCP">MPTCP</a></li>
+		  <li class="gui-user-settings" style="display: none" id="WANBACKUP"><a href="wan-backup.html" data-transition="none" xmsg="INTERNET_GENERAL_SERVICE_CONTINUITY">General Service Continuity</a></li>
+          <li class="gui-user-settings gui-internet-disconnected" style="display: none"><a href="intercepte.html" xmsg="INTERCEPTE_TITLE">Internet disconnected: Help page</a></li>
+
+        </ul>
+      </div> <!-- header -->
+
+      <div data-role="content" > 
+
+        <div id="xDSL" >
+
+          <h2>xDSL</h2>
+
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/DSL/Lines/Line[Alias='DSL0']/Status" >  
+              <h3 xmsg="NETWORK_DSL_LINE_STATUS">DSL Line Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UNKNOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="NOTPRESENT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="LOWERLAYERDOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="ERROR" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="DOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UP" xmsg="INTERNET_CONNECTED">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="timestatus" data-xpath="Device/DSL/Lines/Line[Alias='DSL0']/LastChange" >
+              <h3 xmsg="NETWORK_DSL_UPTIME">DSL Uptime</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" id="bw1">
+            </li>
+            <li data-role="fieldcontain" id="bw2">
+            </li>
+          </ul>
+        </div> <!-- #xDSL -->
+
+        <div id="WANEthernet" >
+
+          <h2 xmsg="NETWORK_ETH_WAN_CONNX">Ethernet WAN connection</h2>
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY6_WAN_MPTCP']/Status" >
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UNKNOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="NOTPRESENT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="LOWERLAYERDOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="ERROR" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="DOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UP" xmsg="INTERNET_CONNECTED">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="timestatus" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY6_WAN_MPTCP']/LastChange" >
+              <h3 xmsg="NETWORK_UPTIME">Uptime</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" id="bw3">
+            </li>
+            <li data-role="fieldcontain" id="bw4">
+            </li>
+          </ul>
+        </div> <!-- #WANEthernet -->
+
+        <div id="3GBackup" >
+
+          <h2 xmsg="NETWORK_3G_BACKUP">3G Backup</h2>
+
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA_BACKUP']/Status">
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UNKNOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="NOTPRESENT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="LOWERLAYERDOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="ERROR" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="DOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UP" xmsg="INTERNET_CONNECTED">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="timestatus" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA_BACKUP']/LastChange">
+              <h3 xmsg="HOME_UPTIME">Uptime</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="statistic" data-xpath="" >
+              <h3 xmsg="NETWORK_SIGNAL_LEVEL">Signal Level</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_BACKUP']/IPv4Addresses/IPv4Address[1]/IPAddress" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_IPV4_ADDR">IPv4 Address</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="" class="gui-advanced-info" >
+              <h3 xmsg="NETWORK_BRAND">Brand</h3>
+              <p class="gui-status-text" >Huawei K4605 VMB USB Stick</p>
+            </li>
+          </ul>
+          <a href="#" class="gui-advanced-btn" xmsg="HOME_ADVANCED">Advanced</a>
+        </div> <!-- #3GBackup -->
+
+        <div id="Internet" >
+
+          <h2 id="InternetLegacy"></h2>
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/Status" >
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UNKNOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="NOTPRESENT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="LOWERLAYERDOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="ERROR" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="DOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UP" xmsg="INTERNET_CONNECTED">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="timestatus" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/LastChange" >
+              <h3 xmsg="HOME_UPTIME">Uptime</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>           
+            <li data-role="fieldcontain" class="gui-advanced-info PPPUsername" >
+              <label for="PPPLoginInput" xmsg="HOME_USERNAME">Username</label>
+              <input id="PPPLoginInput" type="text" data-xmo-role="input" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA']/Username" />
+              <p id="PPPEmptyWarning" class="gui-advanced-info gui-status-warning text-danger" xmsg="NETWORK_PPP_ERROR">PPP Login and Password must be filled</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info PPPPassword" >
+              <label for="PPPPasswdInput" xmsg="HOME_PASSWORD">Password</label>
+              <input type="text" style="display:none" />
+              <input type="password" style="display:none" />
+              <input id="PPPPasswdInput" type="password" data-xmo-role="input" data-write-only="true" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA']/Password" autocomplete="off"/>
+            </li>
+           <li id="PPPEnable" data-role="fieldcontain" class="gui-advanced-info unobx-pppenable" >
+             <label for="PPPEnableCheck" xmsg="NETWORK_PPP_ENABLE">PPP Enable</label>
+             <select id="PPPEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/PPP/Interfaces/Interface[Alias='PPP_DATA']/Enable" >
+               <option value="false" xmsg="HOME_OFF">Off</option>
+               <option value="true" xmsg="HOME_ON">On</option>
+             </select>
+           </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="NETWORK_VLAN_ID">VLAN Id</h3>
+              <p class="gui-status-text vlanidtitan">&nbsp;</p>
+            </li>
+
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="HOME_PROTOCOL">Protocol</h3>
+              <p class="gui-status-text" id="PPPProtocol">&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/IPAddress" class="gui-advanced-info" data-default-value="0.0.0.0" >
+              <h3 xmsg="INTERNET_IPV4_ADDR">IPv4 Address</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/SubnetMask" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_MASK">Subnet Mask</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li id="networkLiIPv6Addr" data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv6Addresses/IPv6Address[1]/IPAddress" class="gui-advanced-info" >
+              <h3  xmsg="INTERNET_IPV6_ADDR">IPv6 Address</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_DATA']/IPv4Addresses/IPv4Address[1]/Dns" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_DNS_SERVER">DNS Servers</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_DNS_IPV6_SERVER">DNS IPv6 Servers</h3>
+             <p class="gui-status-text" ><span data-xmo-role="status" data-xpath="Device/DNS/Relay/Forwardings/Forwarding[Alias='DHCPV6_1']/DNSServer"></span>&nbsp;<span data-xmo-role="status" data-xpath="Device/DNS/Relay/Forwardings/Forwarding[Alias='DHCPV6_2']/DNSServer"></span></p>
+           </li>
+            <li data-role="fieldcontain" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_NTP_SERVER">NTP Servers</h3>
+              <p class="gui-status-text" ><span data-xmo-role="status" data-xpath="Device/Time/NTPServer1"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer2"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer3"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer4"></span> <span data-xmo-role="status" data-xpath="Device/Time/NTPServer5"></span></p>
+            </li>
+          </ul>
+          <a href="#" class="gui-advanced-btn"  xmsg="HOME_ADVANCED">Advanced</a>
+        </div> <!-- #PPP -->
+
+        <div id="Video" >
+
+          <h2 xmsg="NETWORK_VIDEO">Video</h2>
+
+          <ul class="gui-info" > 
+            <li id="DeviceConnectionModeStatusLi" data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_IPTV']/Status" >
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UNKNOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="NOTPRESENT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="LOWERLAYERDOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="ERROR" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="DOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UP" xmsg="INTERNET_CONNECTED">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/BGCTV/Mode" >
+                <h3 xmsg="DEVICE_CONNECT_MODE">Connection Mode</h2>
+                <p id="connectionStatus" class="gui-status-text" >&nbsp;</p>
+                <select>
+					<option value="ROUTED" xmsg="DEVICE_ROUTED">Routed</option>
+					<option value="BRIDGED" xmsg="DEVICE_BRIDGED">Bridged</option>
+				</select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="timestatus" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_IPTV']/LastChange" >
+              <h3 xmsg="HOME_UPTIME">Uptime</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[Alias='VLAN_IPTV']/VLANID" class="gui-advanced-info" >
+              <h3 xmsg="NETWORK_VLAN_ID">VLAN Id</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_IPTV']/IPv4Addresses/IPv4Address[1]/AddressingType" class="gui-advanced-info" >
+              <h3 xmsg="HOME_PROTOCOL">Protocol</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+				<option value="DHCP">IPoE</option>
+				<option value="AUTOIP">IPoE</option>
+				<option value="STATIC">IPoE</option>
+                <option value="IPCP">PPPoE</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_IPTV']/IPv4Addresses/IPv4Address[1]/IPAddress" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_IPV4_ADDR">IPv4 Address</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_IPTV']/IPv4Addresses/IPv4Address[1]/SubnetMask" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_MASK">Subnet Mask</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+          </ul>
+          <a href="#" class="gui-advanced-btn"  xmsg="HOME_ADVANCED">Advanced</a>
+        </div> <!-- #Video -->
+        <!-- #VOIP -->
+        <div id="VoIP" >
+
+          <h2 xmsg="NETWORK_VOICE">Voice</h2>
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_VOIP']/Status" >
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DORMANT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UNKNOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="NOTPRESENT" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="LOWERLAYERDOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="ERROR" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="DOWN" xmsg="INTERNET_DISCONNECTED">Disconnected</option>
+                <option value="UP" xmsg="INTERNET_CONNECTED">Connected</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="timestatus" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_VOIP']/LastChange" >
+              <h3 xmsg="HOME_UPTIME">Uptime</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Ethernet/VLANTerminations/VLANTermination[Alias='VLAN_VOIP']/VLANID" class="gui-advanced-info" >
+              <h3 xmsg="NETWORK_VLAN_ID">VLAN Id</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_VOIP']/IPv4Addresses/IPv4Address[1]/AddressingType" class="gui-advanced-info" >
+              <h3 xmsg="HOME_PROTOCOL">Protocol</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+				<option value="DHCP">IPoE</option>
+				<option value="AUTOIP">IPoE</option>
+				<option value="STATIC">IPoE</option>
+                <option value="IPCP">PPPoE</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_VOIP']/IPv4Addresses/IPv4Address[1]/IPAddress" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_IPV4_ADDR">IPv4 Address</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_VOIP']/IPv4Addresses/IPv4Address[1]/SubnetMask" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_MASK">Subnet Mask</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_VOIP']/IPv4Addresses/IPv4Address[1]/IPGateway" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_GATEWAY">Gateway</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/DHCPv4/Clients/Client[Alias='DHCLIENT_VOIP']/DNSServers" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_DNS_SERVER">DNS Servers</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/DHCPv4/Clients/Client[Alias='DHCLIENT_VOIP']/ReqOptions/ReqOption[Alias='ntp-servers']/Value" class="gui-advanced-info" >
+              <h3 xmsg="INTERNET_NTP_SERVER">NTP Servers</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+            </li>
+          </ul>
+          <a href="#" class="gui-advanced-btn"  xmsg="HOME_ADVANCED">Advanced</a>
+        </div> 
+        <!-- #VOIP-->
+      </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d" >  
+        <div class="gui-submit" >
+          <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

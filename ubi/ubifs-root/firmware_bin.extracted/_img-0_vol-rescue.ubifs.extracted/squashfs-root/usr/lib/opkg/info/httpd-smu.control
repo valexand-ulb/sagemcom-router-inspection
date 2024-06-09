@@ -1,0 +1,15 @@
+Package: httpd-smu
+Version: v4.3.5-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-user-interface, xmo-server, smu-utils, firewall-utils, intf-httpd, lighttpd, gui-core, intf-xmos
+Provides: 
+Source: feeds/sagemcom/smu/httpd-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/httpd-smu
+Installed-Size: 11641
+Description:  HTTPD smu plugin

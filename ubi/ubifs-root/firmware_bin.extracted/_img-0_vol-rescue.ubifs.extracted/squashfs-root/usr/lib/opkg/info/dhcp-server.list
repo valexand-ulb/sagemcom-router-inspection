@@ -1,0 +1,3 @@
+/usr/bin/omshell
+/etc/init.d/isc-dhcp
+/usr/sbin/dhcpd

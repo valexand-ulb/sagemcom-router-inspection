@@ -1,0 +1,15 @@
+Package: libusb-1.0
+Version: 1.0.8-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/libusb-1.0
+License: LGPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://downloads.sourceforge.net/project/libusb/libusb-1.0/libusb-1.0.8
+Installed-Size: 22126
+Description:  libusb-1.0

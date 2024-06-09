@@ -1,0 +1,2 @@
+/etc/modules.d/65-usb-serial-option
+/lib/modules/3.4.11-rt19/option.ko

@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+<body>
+    <div data-role="page" id="InterceptPage" class="gui-settings gui-device-settings gui-internet-page" data-dom-cache="true" >
+        <div data-role="header" data-theme="a" >
+            <span class="gui-settings-icon"> 
+                <img src="../../../img/icon-help-a.png">
+            </span>
+            <h1 xmsg="INTERCEPTE_TITLE">Internet disconnected: Help page</h1>
+            <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+			<div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+            <ul id="Menu">
+                <li class="gui-user-settings"><a href="network.html" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General Info</a></li>
+                <li style="display: none"><a href="wan.html" data-transition="none" xmsg="INTERNET_WAN">WAN</a></li>
+                <li style="display: none" id="VLAN10"><a href="vlan.html?vlanid=10" data-transition="none" xmsg="INTERNET_VLAN10">VLAN 10</a></li>
+                <li style="display: none" id="VLAN20"><a href="vlan.html?vlanid=20" data-transition="none" xmsg="INTERNET_VLAN20">VLAN 20</a></li>
+                <li style="display: none" id="VLAN30"><a href="vlan.html?vlanid=30" data-transition="none" xmsg="INTERNET_VLAN30">VLAN 30</a></li>
+                <li style="display: none" id="VLAN2"><a href="vlan.html?vlanid=2" data-transition="none" xmsg="INTERNET_VLAN2">VLAN 2</a></li>
+                <li style="display: none" id="VLAN4080"><a href="vlan.html?vlanid=4080" data-transition="none" xmsg="INTERNET_VLAN4080">VLAN 4080</a></li>
+                <li style="display: none" id="VLAN4081"><a href="vlan.html?vlanid=4081" data-transition="none" xmsg="INTERNET_VLAN4081">VLAN 4081</a></li>
+                <li class="gui-device gui-device-usb gui-device-3g"><a href="../usb/device.html?host=uid&interf=if&type=type" data-prefetch="true" data-transition="none" xmsg="HOME_DEVICE">Device</a></li>
+                <li class="gui-device gui-device-usb gui-device-3g"><a href="#" class="ui-btn-active" xmsg="INTERNET_NETWORK">Network</a></li>
+                <li class="gui-user-settings" style="display: none" id="MPTCP"><a href="mptcp.html" data-transition="none" xmsg="MPTCP_MPTCP">MPTCP</a></li>
+                <li class="gui-user-settings" style="display: none" id="WANBACKUP"><a href="wan-backup.html" data-transition="none" xmsg="INTERNET_GENERAL_SERVICE_CONTINUITY">General Service Continuity</a></li>
+                <li class="gui-user-settings"><a href="#" class="ui-btn-active" xmsg="INTERCEPTE_TITLE">Internet disconnected: Help page</a></li>
+            </ul>
+        </div>
+        <!-- header -->
+        <div data-role="content" class="internet-disconnected">
+            <!-- div class="help-logo">
+                <img src="../../../img/bel_logo.png">
+            </div -->
+            <p class="boldtxt" xmsg="INTERCEPTE_DERAR_CUSTOMER">
+                Dear customer,
+                <br>Your internet connection seems to be down.
+            </p>
+            <p class="boldtxt" xmsg="INTERCEPTE_HOW_RECOVER">How to recover it ?</p>
+            <p id="dslConnectivity" xmsg="INTERCEPTE_LED_INFO_DSL">Please make sure the 'Internet' and 'DSL' leds of your b-box modem are constantly on: </p>
+            <p id="wanConnectivity" xmsg="INTERCEPTE_LED_INFO_WAN">Please make sure the 'Internet' and 'WAN' leds of your b-box modem are constantly on: </p>
+            <p>
+				<img id="connectionWay1" src="../../../img/LED_DSL_Internet_Voice_WithoutPhones.png">
+				<img id="connectionWay2" src="../../../img/LED_WAN_Internet_Voice_WithoutPhones.png" style="display:none;">
+            </p>
+            <p xmsg="INTERCEPTE_RESTART_BROWSER">If so, please restart your internet browser.</p>
+            <p xmsg="INTERCEPTE_NOT_THE_CASE">If it is not the case:</p>
+            <ul class="steps">
+                <li id="phoneConnection" xmsg="INTERCEPTE_VERIFY_CONNECTION">Verify that the cabling between your b-box modem and the phone socket is well connected</li>
+                <li id="ontConnection" xmsg="INTERCEPTE_VERIFY_ONT">Verify that the cabling between your b-box modem and the ONT is well connected</li>
+                <li xmsg="INTERCEPTE_REBOOT">Reboot your modem by unplugging the power supply and plugging it back</li>
+            </ul>
+            <p class="boldtxt" xmsg="INTERCEPTE_STILL_NOT_UP">
+                Should your internet connection still not be up &amp; running after a few minutes, trigger a more in-depth testing of your line on the web:
+            </p>
+            <ul class="mainlist">
+                <li xmsg="INTERCEPTE_VIA_FON">Via the hotspot network or</li>
+                <li xmsg="INTERCEPTE_VIA_3G">Via mobile internet (3G)</li>
+            </ul>
+            <ul class="mainlist">
+                <!--<li>
+                    <span class="bigtxt" xmsg="INTERCEPTE_VIA_FONT_IMG">Via the hotspot network&nbsp;
+                    <ul class="steps">
+                        <li xmsg="INTERCEPTE_FON_BELGACOM_1">Search for a FON_BELGACOM Hotspot in your neighborhood by triggering a wireless network search.</li>
+                        <li xmsg="INTERCEPTE_FON_BELGACOM_2">If a FON_BELGACOM hotspot shows up in the list, double click on it to get connected. Otherwise, <span class="underlinedtxt">move forward to point II.</span>
+                        </li>
+                        <li>
+                            <span xmsg="INTERCEPTE_FON_BELGACOM_3">Once connected to the FON_BELGACOM network, browse following URL: </span>
+                            <br>
+                            <a href="https://admit.belgacom.be/eshop/mysupport">https://admit.belgacom.be/eshop/mysupport</a>
+                        </li>
+                        <li xmsg="INTERCEPTE_FON_BELGACOM_4">Log on to the MyProximus and launch a line check.</li>
+                    </ul>
+                </li>-->
+                <li>
+					<span class="bigtxt" xmsg="INTERCEPTE_VIA_FONT_IMG">Via the hotspot network&nbsp;</span>
+					<ul class="noliststyle">
+						<li xmsg="INTERCEPTE_FON_SEARCH_1">Search for a Hotspot in your neighborhood by triggering a wireless network search.</li>
+						<li xmsg="INTERCEPTE_FON_SEARCH_2">If a Hotspot shows up in the list, double click on it to get connected.</li>
+						<li>
+							<span  xmsg="INTERCEPTE_FON_SEARCH_3">Once connected to the hotspot network, browse to the following URL:</span>
+							<br />
+							<a class="ui-link" href="https://admit.belgacom.be/eshop/mysupport">https://admit.belgacom.be/eshop/mysupport</a>
+						</li>
+						<li xmsg="INTERCEPTE_FON_SEARCH_4">Log on to MyProximus and launch a line check.</li>
+					</ul>
+				</li>
+                <p class="italictxt underlinedtxt" xmsg="INTERCEPTE_TO_KNOW">Good to know: </p>
+                <ul>
+                    <li xmsg="INTERCEPTE_FON_LOGIN">If you have a hotspot Login and Password, you can use this connection until your home internet connection is up and running again</li>
+                    <li xmsg="INTERCEPTE_FONT_NO_ACCOUNT">If you don't have a hotspot account, you can set up your login and password via the MyProximus.</li>
+                </ul>
+                <li>
+                    <span class="bigtxt" xmsg="INTERCEPTE_3G_IMG">Via mobile internet (3G)</span>
+                    <ul class="steps">
+                        <li>
+                            <span xmsg="INTERCEPTE_3G_DEVICE">If you have a device (smartphone/tablet) connected to the 3G network, go to</span>
+                            <br>
+                            <a href="https://admit.belgacom.be/eshop/mysupport">https://admit.belgacom.be/eshop/mysupport</a>
+                        </li>
+                        <li xmsg="INTERCEPTE_3G_ESERVICE">Log on to the MyProximus and launch a line check.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p xmsg="INTERCEPTE_3G_SESSION">
+                NB: The 3G session will be at your own charge. If you don't have a 3G mobile data subscription, please verify the charges before making the connection.
+            </p>
+            <p class="boldtxt"> <span xmsg="INTERCEPTE_PROBLEM_PERSIST">Should your problem persist, feel free to call our technical support on</span></p>
+
+        </div>
+        <!-- content -->
+        <div data-role="footer" class="ui-footer ui-bar-d">
+            <div class="gui-submit">
+                <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+            </div>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- page -->
+</body>
+
+</html>

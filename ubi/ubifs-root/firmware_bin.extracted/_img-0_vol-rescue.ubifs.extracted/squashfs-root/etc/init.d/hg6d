@@ -1,0 +1,28 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+START=50
+
+DEFAULTS=/etc/default/hg6d
+
+# Include hg6d defaults if available
+[ -r "$DEFAULTS" ] && . "$DEFAULTS"
+
+
+start() {
+	if [ "$BOOT_HG6D_ENABLE" != "no" ]
+	then
+		echo Run hg6d
+		start-stop-daemon -S -b -x hg6d_start
+	else
+		echo No start hg6d
+	fi
+}
+
+stop() {
+	echo Stop hg6d
+
+	while killall -q hg6d; do
+		sleep 1
+	done
+}
+

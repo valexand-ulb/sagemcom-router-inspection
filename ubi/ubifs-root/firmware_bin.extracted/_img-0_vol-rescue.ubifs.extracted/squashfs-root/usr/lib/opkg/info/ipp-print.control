@@ -1,0 +1,15 @@
+Package: ipp-print
+Version: 1.4.1-1
+Depends: libpthread
+Provides: 
+Source: feeds/sagemcom/net/ipp-print
+License: Sagemcom
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://downloads.digium.com/pub/asterisk/releases/
+Installed-Size: 14271
+Description:  ipp-print

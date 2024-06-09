@@ -1,0 +1,15 @@
+Package: intf-tunl2
+Version: v1.3.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-tunl2
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-tunl2
+Installed-Size: 7841
+Description:  Interface Tunnel Layer2

@@ -1,0 +1,15 @@
+Package: lighttpd-mod-setenv
+Version: 1.4.26-3
+Depends: lighttpd
+Provides: 
+Source: feeds/sagemcom/net/lighttpd
+License: BSD
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://download.lighttpd.net/lighttpd/releases-1.4.x/
+Installed-Size: 2969
+Description:  Environment variable setting module

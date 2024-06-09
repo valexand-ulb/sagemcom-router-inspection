@@ -1,0 +1,15 @@
+Package: ism-remote
+Version: v12.2.1-1
+Depends: ism-core
+Provides: 
+Source: feeds/scheduler/libs/ism-remote
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ism-remote
+Installed-Size: 48869
+Description:  Inter Service Message

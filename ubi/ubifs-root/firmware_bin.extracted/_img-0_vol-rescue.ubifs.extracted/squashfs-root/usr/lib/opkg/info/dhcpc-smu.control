@@ -1,0 +1,15 @@
+Package: dhcpc-smu
+Version: v8.13.4-1
+Depends: evlp, xmt, xmo, xmo-server, firewall-utils, smu-utils, ism-intf, gateway-dm-dhcp, dhcp-client, intf-bf2dhcpc, intf-dhcpc4conf, intf-routingconf
+Provides: 
+Source: feeds/sagemcom/smu/dhcpc-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dhcpc-smu
+Installed-Size: 34630
+Description:  DHCP client smu plugin

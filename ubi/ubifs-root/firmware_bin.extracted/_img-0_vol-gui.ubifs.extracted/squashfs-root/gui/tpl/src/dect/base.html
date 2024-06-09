@@ -1,0 +1,176 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+    <div data-role="page" id="DectBaseSettingsPage" class="gui-settings" data-dom-cache="true" >
+	  <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+      <div data-role="header">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-telephone-c.png">
+        </span>
+        <h1 xmsg="SETTINGS_TELEPHONE">Telephones</h1>
+
+        <ul id="Menu" >
+			<li id="Phone1"><a href="../fxs/settings.html?phone=1" data-prefetch="true" data-transition="none" xmsg="SETTINGS_LINE_ONE">Line 1</a></li>
+			<li id="Phone2"><a href="../fxs/settings.html?phone=2" data-prefetch="true" data-transition="none" xmsg="SETTINGS_LINE_TWO">Line 2</a></li>
+			<li><a href="matrix.html" data-prefetch="true" data-transition="none" xmsg="DECT_TELEPHONES_MATRIX">Telephones Matrix</a></li>
+			<li><a href="call-settings.html" data-prefetch="true" data-transition="none" xmsg="VOICESETTINGS_CALLSETTINGS">Voice Settings</a></li>
+			<li class="gui-tab-active"><a class="ui-btn-active" href="#" data-prefetch="true" data-transition="none" xmsg="DECTBASE_SETTINGS">Dect Base Settings</a></li>
+        </ul>
+      </div><!-- /header -->
+      <div data-role="content"> 
+            <div id="DectHandsetSettings">
+                <h2 xmsg="DECTBASE_SETTINGS">Dect Base Settings</h2>
+                <div class="gui-info" >
+					<ul>
+						<li data-role="fieldcontain" >
+						 <label for="DectBaseEnableCheck" xmsg="HOME_ENABLE">Enable</label>
+						 <select id="DectBaseEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/Enable" >
+						   <option value="false" xmsg="HOME_OFF">Off</option>
+						   <option value="true" xmsg="HOME_ON">On</option>
+						 </select>
+					   </li>
+					   <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/Status" >
+						  <h3 xmsg="HOME_STATUS">Status</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+						  <select>
+							<option value="UP" xmsg="DECTBASE_STATUS_UP">Up</option>
+							<option value="ERROR" xmsg="DECTBASE_STATUS_ERROR">Error</option>
+							<option value="TESTING" xmsg="DECTBASE_STATUS_TESTING">Testing</option>
+							<option value="DISABLED" xmsg="DECTBASE_STATUS_DISABLED">Disabled</option>
+						  </select>
+					   </li>
+					   <li data-role="fieldcontain"  class="gui-advanced-info" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/Standard" >
+						  <h3 xmsg="DECTBASE_STANDARD">Standard</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+					   </li>
+					   <li data-role="fieldcontain" class="gui-advanced-info">
+						 <label for="DectDescriptionInput" xmsg="DECTBASE_DESCRIPTION">Description</label>
+						 <input id="DectDescriptionInput" type="text" data-xmo-role="input" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/Name" />
+					   </li>
+					   <li data-role="fieldcontain" class="unbox-clockmastered gui-advanced-info">
+						 <label for="DectBaseClockMasteredCheck" xmsg="DECTBASE_CLOCKMASTERED">Clock Mastered</label>
+						 <select id="DectBaseClockMasteredCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/ClockMastered" >
+						   <option value="false" xmsg="HOME_OFF">Off</option>
+						   <option value="true" xmsg="HOME_ON">On</option>
+						 </select>
+					   </li>
+					   <li data-role="fieldcontain"  class="gui-advanced-info" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/RFPI" >
+						  <h3>RFPI</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+					   </li>
+					   <li data-role="fieldcontain"  class="gui-advanced-info" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/FirmwareVersion" >
+						  <h3 xmsg="DECTBASE_FIRMWAREVERSION">Firmware Version</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+					   </li>
+					   <li data-role="fieldcontain"  class="gui-advanced-info" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/FUPercent" >
+						  <h3 xmsg="DECTBASE_FIRMWARE_UPGRADE_STATUS">Firmware Upgrade Status</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+					   </li>
+					   <li data-role="fieldcontain"  class="gui-advanced-info" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/EepromVersion" >
+						  <h3 xmsg="DECTBASE_EEPROM_VERSION">EEPROM Version</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+					   </li>
+					   <li data-role="fieldcontain"  class="gui-advanced-info" data-xmo-role="status" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/HardwareVersion" >
+						  <h3 xmsg="DECTBASE_HARDWARE_VERSION">Hardware Version</h3>
+						  <p class="gui-status-text" >&nbsp;</p>
+					   </li>
+					   <li data-role="fieldcontain">
+						  <label for="ResetBaseButton" xmsg="DECTBASE_RESET">Reset</label>
+						  <input id="ResetBaseButton" data-role="button" type="button" xvalue="DECTBASE_RESET" value="Reset" >
+						</li>
+					   
+					</ul>
+                </div>
+                <a href="#" class="gui-advanced-btn" xmsg="HOME_ADVANCED">Advanced</a>
+            </div>
+            <!-- Paring -->
+            <div id="DectHandsetParing">
+                <h2 xmsg="DECTBASE_PARING">Paring</h2>
+                <div class="gui-info" >
+					<ul>
+						<li id="ConnectedDectsLi" data-role="fieldcontain">
+							<h3 xmsg="DECTBASE_CONNECTED_HANDSET_COUNT">Number Connected Dects</h3>
+							<p>
+								<span id="ConnectedDectsCount">0</span>
+								<span xmsg="DECTBASE_HANDSET_MAXCOUNT"> on a maximum of</span>
+								<span> 4</span>
+							</p>
+					   </li>
+					   <li data-role="fieldcontain">
+						 <label for="DectPinCodeInput" xmsg="DECTBASE_PINCODE">Pin Code</label>
+						 <input id="DectPinCodeInput" type="text" maxlength="4" data-xmo-role="input" data-control-type="PIN" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/PIN" />
+					   </li>
+					   <li data-role="fieldcontain">
+						  <label for="StartPairingButton" xmsg="DECTBASE_PARING">Pairing</label>
+						  <input id="StartPairingButton" data-role="button" type="button" xvalue="DECTBASE_START_PARING" value="Start Paring" >
+						  <div id="DectPairingTestStatus" class="xmo-item xmo-status" style="display: none" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/DECT/Bases/Base[Alias='DECT_FP1']/StatusDetails" data-xmo-role="status">
+							<select style="display: none;">
+								<option value="None">None</option>
+								<option value="Eco">Eco</option>
+								<option value="Updating">Updating</option>
+								<option value="Pairing">Pairing</option>
+								<option value="Resetting">Resetting</option>
+								<option value="RFPI_Regeneration">RFPI regeneration</option>
+							</select>
+						  </div>
+						</li>
+					</ul>
+                </div>
+            </div>
+            <!-- Paging -->
+			<div id="DectHandsetPaging">
+                <h2 xmsg="DECTBASE_PAGING">Paring</h2>
+                <div class="gui-info" >
+					<ul>
+						<li data-role="fieldcontain">
+						  <label for="HandsetSelect" xmsg="DECTBASE_HANDSET">Handset</label>
+						  <select id="HandsetSelect">
+							<option value="ALL" xmsg="DECTBASE_ALL_DEVICES">All devices</option>
+						  </select>
+						</li>
+					   <li data-role="fieldcontain">
+						  <label for="StartPagingButton" xmsg="DECTBASE_PAGING">Paging</label>
+						  <input id="StartPagingButton" data-role="button" type="button" xvalue="DECTBASE_PAGING" value="Paging" >
+						</li>
+					</ul>
+                </div>
+            </div>
+      </div><!-- /content -->
+
+      <div data-role="footer"  class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+		  <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

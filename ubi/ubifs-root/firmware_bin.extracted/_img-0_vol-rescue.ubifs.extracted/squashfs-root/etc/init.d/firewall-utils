@@ -1,0 +1,44 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+START=48
+
+start() {
+        #BGC security - pentest report - 2.3.2 : Unidentified port exposed to LAN - 1990:wpsmon 5916:acsd 
+        sleep 2
+        firewall-cli add -6 iptables --order -1 -t mangle -- "-N mproxy_filter"
+        firewall-cli add iptables --order -1 -t mangle -- "-N mproxy_filter"
+        firewall-cli add iptables -t mangle --order -30 -- "-N BYPASS"
+        firewall-cli add iptables -t mangle --order -30 -- "-A BYPASS -j MARK --set-xmark 0x821"
+        firewall-cli add iptables -t mangle --order -30 -- "-A BYPASS -m length --length :100 -j MARK --set-xmark 0x801" 
+        firewall-cli add iptables -t mangle --order -30 -- "-A BYPASS -j ACCEPT"            
+        firewall-cli -6 add iptables -t mangle --order -30 -- "-N BYPASS"                      
+        firewall-cli -6 add iptables -t mangle --order -30 -- "-A BYPASS -j MARK --set-xmark 0x821"
+        firewall-cli -6 add iptables -t mangle --order -30 -- "-A BYPASS -m length --length :100 -j MARK --set-xmark 0x801" 
+        firewall-cli -6 add iptables -t mangle --order -30 -- "-A BYPASS -j ACCEPT"
+        firewall-cli add iptables -t filter -- "-A INPUT -i BR_LAN -p tcp --dport 5916 -j DROP"
+        firewall-cli add iptables -t filter -- "-A INPUT -i BR_LAN -p tcp --dport 1990 -j DROP"
+        firewall-cli add outgoing -x IP_BR_LAN -p tftp
+        firewall-cli add outgoing -x IP_BR_LAN -p ping
+        firewall-cli add outgoing -x IP_LTE -p tftp
+        firewall-cli add outgoing -x IP_LTE -p ping
+
+        firewall-cli add ingoing -x IP_BR_LAN -p ping
+        firewall-cli add ingoing -6 -x IP_BR_LAN -p ping
+        firewall-cli add ingoing -x IP_LTE -p ping
+
+
+        firewall-cli add iptables -t filter -- "-A FORWARD -i BR_MNGT_LTE -o atm0.40 -j ACCEPT"
+        firewall-cli add iptables -t filter -- "-A FORWARD -i BR_MNGT_LTE -o ptm0.20 -j ACCEPT"
+        firewall-cli add iptables -t filter -- "-A FORWARD -i BR_MNGT_LTE -o eth5.20 -j ACCEPT"
+        firewall-cli add iptables -t filter -- "-A FORWARD -i atm0.40 -o BR_MNGT_LTE -m state --state ESTABLISHED,RELATED -j ACCEPT"
+        firewall-cli add iptables -t filter -- "-A FORWARD -i ptm0.20 -o BR_MNGT_LTE -m state --state ESTABLISHED,RELATED -j ACCEPT"
+        firewall-cli add iptables -t filter -- "-A FORWARD -i eth5.20 -o BR_MNGT_LTE -m state --state ESTABLISHED,RELATED -j ACCEPT"
+        firewall-cli add forwarding -f IP_MNGT_LTE -t IP_BUSINESS_CONTINUITY --target accept
+        firewall-cli add forwarding -f IP_MNGT_LTE -t IP_DATA -p ntp --target accept
+        firewall-cli add forwarding -f IP_MNGT_LTE -t IP_DATA --target drop
+        firewall-cli add forwarding -f IP_MNGT_LTE -t IP_BACKUP --target drop
+
+
+
+}
+

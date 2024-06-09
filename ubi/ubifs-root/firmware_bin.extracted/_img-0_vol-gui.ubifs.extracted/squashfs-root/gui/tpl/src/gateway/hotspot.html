@@ -1,0 +1,187 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body> 
+
+  <div data-role="page" id="LANSharing" class="gui-settings" data-dom-cache="true">
+    <div data-role="header" data-theme="a">
+        <span class="gui-settings-icon"> 
+            <img src="../../../img/icon-gtw-c.png">
+        </span>
+      <h1 xmsg="HOME_MYGATEWAY">My Modem</h1>
+      <ul id="Menu" >
+        <li><a href="infos.html" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General Info</a></li>
+        <li><a href="mass-storages.html" data-prefetch="true" data-transition="none" xmsg="GATEWAY_MASS_STORAGE">Mass Storages</a></li>
+        <li><a href="dhcp.html" data-prefetch="true" data-transition="none" >DHCP</a></li>
+        <li><a href="dyndns.html" data-prefetch="true" data-transition="none" >DynDNS</a></li>
+        <li class="gui-maintenance" ><a href="maintenance.html" data-prefetch="true" data-transition="none" xmsg="GATEWAY_MAINTENANCE">Maintenance</a></li>
+        <li id="FONTab"><a href="#" class="ui-btn-active" data-transition="none" xmsg="GATEWAY_HOTSPOT" >Hotspot</a></li>
+      </ul>
+    </div><!-- /header -->
+
+    <div data-role="content"> 
+
+      <div id="FON" >
+
+        <h2 xmsg="FON_SERVICE" ></h2>
+        <ul class="gui-info">
+          <li id="FonEnableTxt" data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/BGCHotspotService/Enable" >
+            <h3 xmsg="FON_ACTIVATION"></h3>
+            <p class="gui-status-text" >&nbsp;</p>
+            <select>
+              <option value="false" selected xmsg="HOME_OFF">Off</option>
+              <option value="true" xmsg="HOME_ON">On</option>
+            </select>
+          </li>
+          <li id="FonEnableSlider" data-role="fieldcontain">
+            <label for="HotspotEnable" xmsg="FON_ACTIVATION">Service</label>
+            <select id="HotspotEnable" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/BGCHotspotService/Enable" >
+              <option value="false" xmsg="HOME_OFF">Off</option>
+              <option value="true" xmsg="HOME_ON">On</option>
+            </select>
+          </li>
+          <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/BGCHotspotService/Status" >
+            <h3 xmsg="FON_GSTATUS">General Status</h3>
+            <p class="gui-status-text" >&nbsp;</p>
+            <select>
+              <option value="Enabled" xmsg="FON_ENABLED">enabled</option>
+              <option selected value="Disabled" xmsg="FON_DISABLEDD">disabled</option>
+              <option value="Error" xmsg="FON_ERROR">error</option>
+            </select>
+          </li>
+        </ul>
+
+        <h2 id="HotspotSSID3"></h2>
+        <ul class="gui-info-cp gui-info">
+          <li id="WLANGWCP_Status" data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/BGCHotspotService/WlanGWs/WlanGW[@uid='1']/Status" >  <!--  @TODO verifie xpath  -->
+            <h3 xmsg="FON_STATUS">Status</h3>
+            <p class="gui-status-text" >&nbsp;</p>
+            <select>
+              <option value="Up" xmsg="FON_GRE_UP">Hotspot is up : running</option>
+              <option value="Disabled" xmsg="FON_GRE_DISABLED">Hotspot is down : disabled</option>
+              <option value="Initializing" xmsg="FON_GRE_INITIALIZING">Hotspot is down : system initialisation</option>
+              <option value="Error_WlanGWInstanceMissing" xmsg="FON_GRE_ERROR_WLANGWINSTANCEMISSING"> </option>
+              <option value="Error_RadiusConfigMissing" xmsg="FON_GRE_ERROR_RADIUSCONFIGMISSING"> </option>
+              <option value="Error_RemoteTunnelEndpointsMissing" xmsg="FON_GRE_ERROR_REMOTETUNNELENDPOINTSMISSING"> </option>
+              <option value="Error_GethWanNotAllowed" xmsg="FON_GRE_ERROR_GETHWANNOTALLOWED"> </option>
+              <option value="Error_3gOr4gNotAllowed" xmsg="FON_GRE_ERROR_3GOR4GNOTALLOWED"> </option>
+              <option value="Error_XdslDown" xmsg="FON_GRE_ERROR_XDSLDOWN"> </option>
+              <option value="Error_Ppp0Down" xmsg="FON_GRE_ERROR_PPP0DOWN"> </option>
+              <option value="Error_PrivateWifiDeactivated" xmsg="FON_GRE_ERROR_PRIVATEWIFIDEACTIVATED"> </option>
+              <option value="Error_PrivateWifiDown" xmsg="FON_GRE_ERROR_PRIVATEWIFIDOWN"> </option>
+              <option value="Error_PrivateWifiSecurityLevelTooLow" xmsg="FON_GRE_ERROR_PRIVATEWIFISECURITYLEVELTOOLOW"> </option>
+              <option value="Error_NotAnEnterpriseWifiAccessPoint" xmsg="FON_GRE_ERROR_NOTANENTERPRISEWIFIACCESSPOINT"> </option>
+              <option value="Error_InternalError" xmsg="FON_GRE_ERROR_INTERNALERROR"> </option>
+              <option value="Error_TunnelDown" xmsg="FON_GRE_ERROR_TUNNELDOWN"> </option>
+            </select>
+          </li>
+
+          <li data-role="fieldcontain" id="LoggedInGuestsNumberCP">
+            <h3 xmsg="FON_NB_GUEST">Number of guests (Current / Max) </h3>
+            <p>
+              <!--  @TODO verifie xpath  -->
+              <!-- Device/WiFi/AccessPoints/AccessPoint[@uid='5']/AssociatedDevices/AssociatedDeviceNumberOfEntries -->
+              <span class="gui-status-text" id="NbGuestsCP" >&nbsp; </span> / <span id="NbMaxGuestsCP" >&nbsp;</span>
+              <span class="gui-status-text" id="CurrentNbLoggedGuestsCP" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[@uid='3']/AssociatedDevices">&nbsp;</span>
+              <span class="gui-status-text" id="CurrentMaxCP" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[@uid='3']/MaxAssociatedDevices" >&nbsp;</span>
+            </p>
+          </li>
+
+          <li data-role="fieldcontain">
+            <ul id="LoggedInGuestListCP" data-xmo-role="array" data-icon="arrow-r" data-iconpos="right" data-xpath="Device/WiFi/AccessPoints/AccessPoint[@uid='3']/AssociatedDevices" data-read-only="true">
+              <li data-role="list-divider" xmsg="FON_CONNECTED_DEVICES">Connected devices list</li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <h2 id="HotspotSSID4"></h2>
+        <ul class="gui-info-eap gui-info">
+          <li id="WLANGWEAP_Status" data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/BGCHotspotService/WlanGWs/WlanGW[@uid='2']/Status" > <!--  @TODO verifie xpath  -->
+            <h3 xmsg="FON_STATUS">Status</h3>
+            <p class="gui-status-text" >&nbsp;</p>
+            <select>
+              <option value="Up" xmsg="FON_GRE_UP">Hotspot is up : running</option>
+              <option value="Disabled" xmsg="FON_GRE_DISABLED">Hotspot is down : disabled</option>
+              <option value="Initializing" xmsg="FON_GRE_INITIALIZING">Hotspot is down : system initialisation</option>
+              <option value="Error_WlanGWInstanceMissing" xmsg="FON_GRE_ERROR_WLANGWINSTANCEMISSING"> </option>
+              <option value="Error_RadiusConfigMissing" xmsg="FON_GRE_ERROR_RADIUSCONFIGMISSING"> </option>
+              <option value="Error_RemoteTunnelEndpointsMissing" xmsg="FON_GRE_ERROR_REMOTETUNNELENDPOINTSMISSING"> </option>
+              <option value="Error_GethWanNotAllowed" xmsg="FON_GRE_ERROR_GETHWANNOTALLOWED"> </option>
+              <option value="Error_3gOr4gNotAllowed" xmsg="FON_GRE_ERROR_3GOR4GNOTALLOWED"> </option>
+              <option value="Error_XdslDown" xmsg="FON_GRE_ERROR_XDSLDOWN"> </option>
+              <option value="Error_Ppp0Down" xmsg="FON_GRE_ERROR_PPP0DOWN"> </option>
+              <option value="Error_PrivateWifiDeactivated" xmsg="FON_GRE_ERROR_PRIVATEWIFIDEACTIVATED"> </option>
+              <option value="Error_PrivateWifiDown" xmsg="FON_GRE_ERROR_PRIVATEWIFIDOWN"> </option>
+              <option value="Error_PrivateWifiSecurityLevelTooLow" xmsg="FON_GRE_ERROR_PRIVATEWIFISECURITYLEVELTOOLOW"> </option>
+              <option value="Error_NotAnEnterpriseWifiAccessPoint" xmsg="FON_GRE_ERROR_NOTANENTERPRISEWIFIACCESSPOINT"> </option>
+              <option value="Error_InternalError" xmsg="FON_GRE_ERROR_INTERNALERROR"> </option>
+              <option value="Error_TunnelDown" xmsg="FON_GRE_ERROR_TUNNELDOWN"> </option>
+            </select>
+          </li>
+          <li data-role="fieldcontain" id="LoggedInGuestsNumberEAP">
+            <h3 xmsg="FON_NB_GUEST">Number of guests (Current / Max)</h3>
+            <p>
+              <!--  @TODO verifie xpath  -->
+              <span class="gui-status-text" id="NbGuestsEAP" >&nbsp; </span> / <span id="NbMaxGuestsEAP" >&nbsp;</span>
+              <span class="gui-status-text" id="CurrentNbLoggedGuestsEAP" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[@uid='4']/AssociatedDevices">&nbsp;</span> 
+						<span class="gui-status-text" id="CurrentMaxEAP" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[@uid='4']/MaxAssociatedDevices" >&nbsp;</span>
+            </p>
+          </li>
+
+          <li data-role="fieldcontain">
+            <ul id="LoggedInGuestListEAP" data-xmo-role="array" data-icon="arrow-r" data-iconpos="right" data-xpath="Device/WiFi/AccessPoints/AccessPoint[@uid='4']/AssociatedDevices" data-read-only="true">
+              <li data-role="list-divider" xmsg="FON_CONNECTED_DEVICES">Connected devices list</li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div> <!-- #FON -->
+
+    </div>  
+
+    <div data-role="footer" class="ui-footer ui-bar-d">  
+      <div class="gui-submit">
+        <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+        <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+      </div>
+    </div> <!-- /footer -->
+
+    <script id="LoggedInGuestTmpl" type="text/x-jquery-tmpl">
+    <li data-role="fieldcontain" >
+    {{if (mac !== '') }}<h4><span xmsg="HOME_MAC_ADDR">MAC Address</span>: ${mac}</h4>
+    <p><span xmsg="HOME_NAME">Name</span>: <span data-xpath="Device/Hosts/Hosts/Host[PhysAddress='${mac}']/UserFriendlyName" xmsg="HOME_NONE">none</span></p>
+    <p><span xmsg="HOME_IP_ADDR">IP Address</span>: <span data-xpath="Device/Hosts/Hosts/Host[PhysAddress='${mac}']/IPAddress" xmsg="HOME_NONE">none</span></p>
+    </li>
+
+    </script>
+  </div><!-- /page -->
+
+</body>
+</html>

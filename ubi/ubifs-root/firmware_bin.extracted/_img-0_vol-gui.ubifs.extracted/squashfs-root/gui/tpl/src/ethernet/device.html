@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body>
+
+    <div data-role="page" id="EthernetDevicePage" class="gui-settings gui-device-settings" data-dom-cache="true">
+
+      <div data-role="header" data-theme="a">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-laptop-c.png">
+        </span>
+        <h1 class="gui-device-ethernet gui-device-wifi gui-device-other" id="DeviceName">Device Name</h1>
+        <h1 class="gui-device-ethernet gui-device-wifi gui-device-decoder" xmsg="HOME_TVDECODER">TV Decoder</h1>
+
+        <ul id="Menu" >
+          <li class="gui-device-ethernet gui-device-wifi gui-device-decoder gui-device-other" ><a href="#" class="ui-btn-active" xmsg="HOME_GENERAL_INFO">General</a></li>
+          <li class="gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/parental-control.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a></li>
+          <li class="gui-device-ethernet gui-device-wifi gui-device-other" ><a href="../access/nat.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_PORT_FWD">Port Forwarding</a></li>
+          <li class="gui-device-ethernet gui-device-wifi gui-device-other" ><a href="../access/firewall_device.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a></li>
+        </ul>
+
+      </div> <!-- header -->
+
+      <div data-role="content"> 
+
+        <div id="Device" >
+
+                <h2 xmsg="HOME_INFO">Information</h2>
+                <ul class="gui-info">
+                    <li data-role="fieldcontain" id="connectionStatus" data-xmo-role="status" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/Active">
+                        <h3 xmsg="HOME_STATUS">Status</h3>
+                        <p class="gui-status-text">&nbsp;</p>
+                        <select>
+                            <option value="false" selected xmsg="DEVICE_DISCONNECTED">Disconnected</option>
+                            <option value="true" xmsg="DEVICE_CONNECTED">Connected</option>
+                        </select>
+                    </li>
+                    <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/PhysAddress">
+                        <h3 xmsg="HOME_MAC_ADDR">MAC Address</h3>
+                        <p class="gui-status-text">&nbsp;</p>
+                    </li>
+                    <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/IPAddress" data-default-value="none">
+                        <h3 xmsg="HOME_IP_ADDR">IP Address</h3>
+                        <p class="gui-status-text">&nbsp;</p>
+                    </li>
+
+                    <li data-role="fieldcontain" id="DeviceConnectionModeLib" data-xmo-role="status" data-xpath="Device/Services/BGCTV/Mode">
+                        <h3 xmsg="DEVICE_CONNECT_MODE">Connection Mode</h3>
+                        <p class="gui-status-text">&nbsp;</p>
+                        <select>
+                            <option value="ROUTED" xmsg="DEVICE_ROUTED">Routed</option>
+                            <option value="BRIDGED" xmsg="DEVICE_BRIDGED">Bridged</option>
+                        </select>
+                    </li>
+                    <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/HostName" data-default-value="none">
+                        <h3 xmsg="HOME_HOSTNAME">Host Name</h3>
+                        <p id="DeviceHostName" class="gui-status-text">&nbsp;</p>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label for="DeviceUserName" xmsg="DEVICE_FRIENDLY_NAME">Friendly Name</label>
+                        <input id="DeviceUserName" type="text" data-xmo-role="input" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/UserFriendlyName" />
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label class="gui-label-icon" for="DeviceUserType" xmsg="DEVICE_DEV_TYPE">Device Type</label>
+                        <select id="DeviceUserType" data-xmo-role="select" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/UserDeviceType">
+                            <option value="MISCELLANEOUS" xmsg="DEVICE_MISC">Generic</option>
+                            <option value="COMPUTER" xmsg="DEVICE_COMPUTER">Desktop Computer</option>
+                            <option value="NOTEBOOKS" xmsg="DEVICE_NOTEBOOK">Notebook</option>
+                            <option value="TABLET" xmsg="DEVICE_TABLET">Tablet</option>
+                            <option value="MOBILE_PHONE" xmsg="DEVICE_MOBILE_PHONE">Mobile Phone</option>
+                            <option value="PHONE" xmsg="DEVICE_PHONE">IP Phone</option>
+                            <option value="TV_DECODER" xmsg="DEVICE_TVDECODER">TV Decoder</option>
+                            <option value="PRINTER" xmsg="HOME_PRINTER">Printer</option>
+                            <option value="STORAGE" xmsg="DEVICE_STORAGE">Storage</option>
+                            <option value="AUDIOVIDEO" xmsg="DEVICE_AUDIO_VIDEO">Audio / Video</option>
+                            <option value="GAMECONSOLE" xmsg="DEVICE_CONSOLE">Game Console</option>
+                            <option value="NETWORKACCESSPOINT" xmsg="DEVICE_NET_ACCESS_PT">Network Access Point</option>
+                            <option value="WIFI_BRIDGE" xmsg="DEVICE_WIFI_BRIDGE">WiFi Bridge</option>
+                            <option value="WIFI_REPEATER" xmsg="DEVICE_WIFI_REPEATER">WiFi Repeater</option>
+                            <option value="PLC" xmsg="DEVICE_PLC">PLC</option>
+                        </select>
+                    </li>
+                </ul>
+                <div id="deviceButtonDelete" style="display: none">
+                    <input id="DeviceDeleteBtn" type="button" xvalue="DEVICE_DELETE" value="Delete" />
+                </div>
+            </div>
+            <!-- #Device -->
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer" class="ui-footer ui-bar-d">
+            <div class="gui-submit">
+                <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+                <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+            </div>
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

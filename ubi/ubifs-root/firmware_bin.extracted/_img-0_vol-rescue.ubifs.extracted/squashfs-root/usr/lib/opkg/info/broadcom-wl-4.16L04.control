@@ -1,0 +1,15 @@
+Package: broadcom-wl-4.16L04
+Version: v12.25.10-1
+Depends: liblogoper
+Provides: 
+Source: feeds/wifi/chipsetter/broadcom-wl-4.16L04
+License: Broadcom Corporate
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/broadcom-wl
+Installed-Size: 731612
+Description:  Broadcom wireless for MS4.16L04

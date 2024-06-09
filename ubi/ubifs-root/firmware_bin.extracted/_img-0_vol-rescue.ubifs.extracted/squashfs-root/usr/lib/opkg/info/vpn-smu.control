@@ -1,0 +1,15 @@
+Package: vpn-smu
+Version: v3.21.11-1
+Depends: strongswan5, devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-vpn, xmo-server, smu-utils
+Provides: 
+Source: feeds/sagemcom/smu/vpn-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/vpn-smu
+Installed-Size: 70984
+Description:  VPN smu plugin

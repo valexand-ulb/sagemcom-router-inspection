@@ -1,0 +1,15 @@
+Package: wan-bgc-osm
+Version: v4.244.0-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, hal-bsp
+Provides: 
+Source: feeds/sagemcom/osm/wan-bgc-osm
+License: Sagemcom
+Section: osm
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wan-bgc-osm
+Installed-Size: 233320
+Description:  Various SMU implementations.

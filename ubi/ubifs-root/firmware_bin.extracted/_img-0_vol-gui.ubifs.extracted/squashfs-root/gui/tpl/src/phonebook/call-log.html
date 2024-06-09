@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+    <div data-role="page" id="CallLogPage" class="gui-settings gui-phonehistory-settings" data-dom-cache="true" >
+	  <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+      <div data-role="header">
+        <span class="gui-settings-icon"> 
+          <img src="../../../img/big-icon-phonebook.png">
+        </span>
+        <h1 xmsg="PHONEBOOK_PHONEBOOK">Phonebook</h1>
+
+        <ul id="Menu" >
+          <li><a href="phonebook.html" data-prefetch="true" data-transition="none" xmsg="PHONEBOOK_PHONEBOOK">Phonebook</a></li>
+          <li class="gui-tab-active"><a class="ui-btn-active" href="#" data-prefetch="true" data-transition="none" xmsg="CALLLOG_CALLLOG">Call Log</a></li>
+        </ul>
+      </div><!-- /header -->
+
+      <div data-role="content"> 
+		<div id="PhoneCallHistory">
+			<h2 xmsg="CALLLOG_CALLLOG">Call Log</h2>
+			<div class="gui-info" >
+				<ul id="CallLogList" class="gui-info" data-xmo-role="array" data-xpath="Device/Services/VoiceServices/VoiceService[Alias='VOICESERVICE1']/CallLogs" data-icon="arrow-r" data-iconpos="right">
+				<li data-role="list-divider" xmsg="CALLLOG_CALLLOG">Call Log</li>
+				</ul>
+			</div>
+		</div>
+      </div><!-- /content -->
+
+      <div data-role="footer"  class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+		  <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

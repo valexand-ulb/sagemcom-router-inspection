@@ -1,0 +1,15 @@
+Package: webaccess-smu
+Version: v2.10.0.03-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-nat, gateway-dm-webaccess, xmo-server, smu-utils, firewall-utils
+Provides: 
+Source: feeds/sagemcom/smu/webaccess-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/webaccess-smu
+Installed-Size: 26245
+Description:  WEBACCESS smu plugin to manage WEBACCESS rules

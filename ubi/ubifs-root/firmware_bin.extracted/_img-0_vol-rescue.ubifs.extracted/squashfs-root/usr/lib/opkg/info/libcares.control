@@ -1,0 +1,16 @@
+Package: libcares
+Version: 1.7.5-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/c-ares
+License: MIT like
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://c-ares.haxx.se
+Installed-Size: 27680
+Description:  c-ares is a C library that performs DNS requests and name resolves
+ asynchronously.

@@ -1,0 +1,2 @@
+/lib/modules/3.4.11-rt19/drv_gpio.ko
+/etc/modules.d/34-hal-gpio

@@ -1,0 +1,15 @@
+Package: libncurses
+Version: 5.7-3
+Depends: 
+Provides: 
+Source: package/ncurses
+License: MIT
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @GNU/ncurses
+Installed-Size: 126498
+Description:  Terminal handling library

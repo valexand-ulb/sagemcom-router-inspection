@@ -1,0 +1,28 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+START=11
+
+DEFAULTS=/etc/default/swmdk
+
+# Include swmdk defaults if available
+[ -r "$DEFAULTS" ] && . "$DEFAULTS"
+
+
+start() {
+	if [ "$BOOT_SWMDK_ENABLE" != "no" ]
+	then
+		echo Run swmdk
+		/usr/bin/swmdk >& /dev/null &
+	else
+		echo No start swmdk
+	fi
+}
+
+stop() {
+	echo Stop swmdk
+
+	while killall -q swmdk; do
+		sleep 1
+	done
+}
+

@@ -1,0 +1,15 @@
+Package: libblobmsg-json
+Version: eebe3fc-1
+Depends: libjson, libubox
+Provides: 
+Source: feeds/sagemcom/libs/libubox
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/libubox
+Installed-Size: 4507
+Description:  blobmsg <-> json conversion library

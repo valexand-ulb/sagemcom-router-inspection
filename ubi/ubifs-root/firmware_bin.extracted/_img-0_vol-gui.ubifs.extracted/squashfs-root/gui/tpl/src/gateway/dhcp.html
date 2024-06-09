@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body>
+
+    <div data-role="page" id="DHCPDNSPage" class="gui-settings" data-dom-cache="true">
+        <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+        <div data-role="header" data-theme="a">
+            <span class="gui-settings-icon"> 
+        <img src="../../../img/icon-gtw-c.png">
+      </span>
+            <h1 xmsg="HOME_MYGATEWAY">My Modem</h1>
+
+            <ul id="Menu">
+                <li><a href="infos.html" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General Info</a>
+                </li>
+                <li><a href="mass-storages.html" data-prefetch="true" data-transition="none" xmsg="GATEWAY_MASS_STORAGE">Mass Storages</a>
+                </li>
+                <li><a href="#" class="ui-btn-active" data-prefetch="true" data-transition="none">DHCP</a>
+                </li>
+                <li><a href="dyndns.html" data-prefetch="true" data-transition="none">DynDNS</a>
+                </li>
+                <li class="gui-maintenance"><a href="maintenance.html" data-prefetch="true" data-transition="none" xmsg="GATEWAY_MAINTENANCE">Maintenance</a>
+                </li>
+                <li id="FONTab"><a href="hotspot.html" data-transition="none" xmsg="GATEWAY_HOTSPOT">Hotspot</a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+
+            <div id="DHCP" class="gui-content">
+
+                <h2 xmsg="DHCP_TITLE">DHCPv4 Server</h2>
+                <div id="UserState"></div>
+                <ul class="gui-info">
+                    <li data-role="fieldcontain">
+                        <label for="DHCPEnableCheck" xmsg="HOME_ENABLE">Enable</label>
+                        <select id="DHCPEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/Enable">
+                            <option value="false" xmsg="HOME_OFF">Off</option>
+                            <option value="true" xmsg="HOME_ON">On</option>
+                        </select>
+                    </li>
+
+                    <!-- Keep it or the Ok button will be workink when it shouldn't-->
+                    <li style="display:none" data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/Status">
+                        <label xmsg="HOME_STATUS">Status</label>
+                        <p class="gui-status-text style-applicable">&nbsp;</p>
+                        <select>
+                            <option value="DISABLED" xmsg="GATEWAY_DISABLED">Disabled</option>
+                            <option value="ENABLED" xmsg="GATEWAY_ENABLED">Enabled</option>
+                            <option value="ERROR_MISCONFIGURED" xmsg="DHCP_INVALID_CONF">Invalid Configuration</option>
+                            <option value="ERROR" xmsg="DHCP_SYS_ERROR">System Error</option>
+                        </select>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label xmsg="DHCP_GATEWAY_IP" for="DHCPIPAddrInput">Gateway IP</label>
+                        <p class="style-applicable">
+                            <span id="DHCPIPAddrBefore">&nbsp;</span>
+                            <input id="DHCPIPAddrInput" type="text" data-xmo-role="input" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_BR_LAN']/IPv4Addresses/IPv4Address[1]/IPAddress" />
+                            <span id="DHCPIPAddrAfter">&nbsp;</span>
+                            <div class="gui-dhcp-ip-addr hide" data-xmo-role="item" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/IPRouters" data-write-only="true" />
+                            <div class="gui-dhcp-ip-addr hide" data-xmo-role="item" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/DNSServers" data-write-only="true" />
+                            <div class="gui-dhcp-ip-addr hide" data-xmo-role="item" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='MLTV_DEVICES_POOL']/IPRouters" data-write-only="true" />
+                            <!--<div class="gui-dhcp-ip-addr" data-xmo-role="item" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='MLTV_DEVICES_POOL']/DNSServers" data-write-only="true" />-->
+                        </p>
+                    </li>
+                    <li data-role="list-divider" class="gui-advanced-info sub-list-title" xmsg="DHCP_SUBMENU">Network COnfiguration</li>
+                    <li data-role="fieldcontain" class="gui-advanced-info fix-height">
+                        <label for="DHCPSubnetMaskInput" xmsg="INTERNET_MASK">Subnet Mask</label>
+                        <input id="DHCPSubnetMaskInput" type="text" data-xmo-role="input" data-xpath="Device/IP/Interfaces/Interface[Alias='IP_BR_LAN']/IPv4Addresses/IPv4Address[1]/SubnetMask" />
+                    </li>
+                    <li data-role="fieldcontain" class="gui-advanced-info fix-height">
+                        <label for="DHCPPoolIPStartInput" xmsg="DHCP_IPV4_POOL_START">IPv4 Pool Start</label>
+                        <P class="style-applicable">
+                            <span class="gui-dhcp-pool-before">&nbsp;</span>
+                            <input id="DHCPPoolIPStartInput" class="gui-dhcp-pool-range" type="text" data-xmo-role="input" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/MinAddress" />
+                        </P>
+                    </li>
+                    <li data-role="fieldcontain" class="gui-advanced-info fix-height">
+                        <label for="DHCPPoolIPEndInput" xmsg="DHCP_IPV4_POOL_END">IPv4 Pool End</label>
+                        <p class="style-applicable">
+                            <input id="DHCPPoolIPEndInput" class="gui-dhcp-pool-range" type="text" data-xmo-role="input" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/MaxAddress" />
+                        </p>
+                    </li>
+                    <li data-role="fieldcontain" class="gui-advanced-info fix-height" id="tvpoolstart">
+                        <label for="DHCPTVPoolIPStartInput" xmsg="DHCP_IPV4_TV_START">IPv4 TV Pool Start</label>
+                        <p class="style-applicable">
+                            <input id="DHCPTVPoolIPStartInput" class="gui-dhcp-pool-range" type="text" data-xmo-role="input" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='MLTV_DEVICES_POOL']/MinAddress" />
+                        </p>
+                    </li>
+                    <li data-role="fieldcontain" class="gui-advanced-info fix-height" id="tvpoolend">
+                        <label for="DHCPTVPoolIPEndInput" xmsg="DHCP_IPV4_TV_END">IPv4 TV Pool End</label>
+                        <p class="style-applicable">
+                            <input id="DHCPTVPoolIPEndInput" class="gui-dhcp-pool-range" type="text" data-xmo-role="input" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='MLTV_DEVICES_POOL']/MaxAddress" />
+                        </p>
+                    </li>
+                    <li data-role="fieldcontain" class="gui-advanced-info fix-height">
+                        <label for="IPv4LeaseTime" xmsg="DHCP_IPV4_LEASE_TIME">IPv4 Lease time
+                            <br/> (in seconds)</label>
+                        <input id="IPv4LeaseTime" type="text" data-xmo-role="input" data-control-type="NUMBER" maxlength="5" style="width: 4.5em;" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/LeaseTime" />
+                    </li>
+                    <li data-role="fieldcontain" class="gui-advanced-info" style="height:90px">
+                        <label for="DHCPRestoreBtn" xmsg="DHCP_RESTORE_CONF">Restore Default Configuration</label>
+                        <input id="DHCPRestoreBtn" type="button" value="Restore" xvalue="DHCP_RESTORE" />
+                    </li>
+                    <li data-role="list-divider" class="gui-advanced-info sub-list-title" xmsg="DHCP_STATIC_ADDR">Static Addresses</li>
+                    <li>
+                        <label id="AddrFormatWarning" class="gui-advanced-info">
+                            <h3 xmsg="DHCP_MACC_ADDR_FORMAT">MAC Address format is AA:BB:CC:DD:EE:FF.</h3>
+                            <h3 xmsg="DHCP_IPV4_FORMAT">IPv4 Address format is X.X.X.X (X between 0 and 255)</h3>
+                            <br>
+                            <h3 xmsg="HOME_PRESS_ENTER">Press Enter to confirm changes</h3>
+                            <br>
+                        </label>
+                    </li>
+                    <li>
+                        <ul id="DHCPStaticAddrList" class="gui-info gui-advanced-info" data-xmo-role="array" data-xpath="Device/DHCPv4/Server/Pools/Pool[Alias='DEFAULT_POOL']/StaticAddresses" data-icon="arrow-r" data-iconpos="right">
+                            <li data-role="list-divider" xmsg="DHCP_STATIC_ADDR">Static Addresses</li>
+                        </ul>
+                        <a id="DHCPStaticAddrAdd" data-role="button" href="#" class="gui-add-btn gui-advanced-info" data-mini="true" data-inline="true" xmsg="DHCP_ADD_STATIC_ADDR">Add Static Address</a>
+                    </li>
+                </ul>
+                <a href="#" class="gui-advanced-btnDHCP" xmsg="HOME_ADVANCED">Advanced</a>
+            </div>
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer" class="ui-footer ui-bar-d">
+            <div class="gui-submit">
+                <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+                <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+            </div>
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

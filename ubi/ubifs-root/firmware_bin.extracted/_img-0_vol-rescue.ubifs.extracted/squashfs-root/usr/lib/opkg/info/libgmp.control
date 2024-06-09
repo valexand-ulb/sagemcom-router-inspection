@@ -1,0 +1,16 @@
+Package: libgmp
+Version: 4.2.1-2
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/gmp
+License: LGPL
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @GNU/gmp
+Installed-Size: 116714
+Description:  GMP is a free library for arbitrary precision arithmetic, operating on
+ signed integers, rational numbers, and floating point numbers.

@@ -1,0 +1,15 @@
+Package: rpc-tools-smu
+Version: v3.15.0-1
+Depends: curl, devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, intf-ifcprops
+Provides: 
+Source: feeds/sagemcom/smu/rpc-tools-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/rpc-tools-smu
+Installed-Size: 24236
+Description:  rpc tools smu plugin

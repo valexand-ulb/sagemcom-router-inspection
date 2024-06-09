@@ -1,0 +1,15 @@
+Package: quantenna-smu
+Version: BBOX3_WDR_v1.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, hal-wifi, intf-wifiradio, tftpd-hpa, quantenna
+Provides: 
+Source: feeds/wifi/smu/quantenna-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/quantenna-smu
+Installed-Size: 17220
+Description:  Description of my package

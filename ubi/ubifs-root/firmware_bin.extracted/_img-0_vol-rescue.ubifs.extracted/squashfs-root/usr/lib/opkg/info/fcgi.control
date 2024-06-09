@@ -1,0 +1,17 @@
+Package: fcgi
+Version: 2.4.0-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/fcgi
+License: Open Market, Inc
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.fastcgi.com/dist/
+Installed-Size: 25894
+Description:  FastCGI is a language independent, scalable, open extension to 
+ CGI that provides high performance without the limitations of 
+ server specific APIs.

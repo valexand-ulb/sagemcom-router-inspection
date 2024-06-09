@@ -1,0 +1,15 @@
+Package: intf-bridge
+Version: v0.2.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-bridge
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-bridge
+Installed-Size: 7334
+Description:  Interface Bridge

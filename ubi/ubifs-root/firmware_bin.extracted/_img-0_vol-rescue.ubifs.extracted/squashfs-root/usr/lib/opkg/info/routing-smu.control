@@ -1,0 +1,15 @@
+Package: routing-smu
+Version: v4.22.7-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, firewall-utils, intf-routingconf
+Provides: 
+Source: feeds/sagemcom/smu/routing-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/routing-smu
+Installed-Size: 26536
+Description:  Routing Smu implementation.

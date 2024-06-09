@@ -1,0 +1,189 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+  <body> 
+
+    <div data-role="page" id="DynDNSPage"  class="gui-settings" data-dom-cache="true" >
+
+      <div data-role="header" data-theme="a">
+        <span class="gui-settings-icon"> 
+            <img src="../../../img/icon-gtw-c.png">
+        </span>
+        <h1 xmsg="HOME_MYGATEWAY">My Modem</h1>
+        <ul id="Menu" >
+          <li><a href="infos.html" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General Info</a></li>
+          <li><a href="mass-storages.html" data-prefetch="true" data-transition="none" xmsg="GATEWAY_MASS_STORAGE">Mass Storages</a></li>
+          <li><a href="dhcp.html" data-prefetch="true" data-transition="none" >DHCP</a></li>
+          <li><a href="#" class="ui-btn-active" data-prefetch="true" data-transition="none" >DynDNS</a></li>
+          <li class="gui-maintenance" ><a href="maintenance.html" data-prefetch="true" data-transition="none" xmsg="GATEWAY_MAINTENANCE">Maintenance</a></li>
+          <li id="FONTab"><a href="hotspot.html" data-transition="none" xmsg="GATEWAY_HOTSPOT" >Hotspot</a></li>
+        </ul>
+      </div><!-- /header -->
+
+      <div data-role="content"> 
+
+        <div id="DynDNS" class="gui-content" >
+
+          <h2 xmsg="DYNDNS_TITLE">Dynamic DNS Client</h2>
+
+          <div class="gui-info" > 
+          <ul>
+            <li data-role="fieldcontain" >
+              <label for="DynDNSEnableCheck" xmsg="HOME_ENABLE">Enable</label>
+              <select id="DynDNSEnableCheck" data-role="slider" data-xmo-role="select" data-xpath="Device/Services/DynamicDNS/Clients/Client[1]/Enable" >
+                <option value="false" xmsg="HOME_OFF">Off</option>
+                <option value="true" xmsg="HOME_ON">On</option>
+              </select>
+            </li>
+
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Services/DynamicDNS/Clients/Client[1]/Status" >
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+                <option value="DISABLED" xmsg="DYNDNS_DISABLED">Disabled</option>
+                <option value="ENABLED" xmsg="DYNDNS_ENABLED">Enabled</option>
+                <option value="RESOLVING" xmsg="DYNDNS_RESOLVING">Resolving</option>   
+                <option value="ERROR_MISCONFIGURED" xmsg="DYNDNS_ERROR_MISCONF">Error misconfigured</option>   
+                <option value="CONNECTING" xmsg="DYNDNS_CONNECTING">Connecting</option>
+                <option value="CONNECTED" xmsg="DYNDNS_CONNECTED">Connected</option>
+                <option value="UPDATING" xmsg="DYNDNS_UPDATING">Updating</option>   
+                <option value="AUTHENTICATING" xmsg="DYNDNS_AUTHENTIFICATING">Authenticating</option>
+                <option value="ERROR" xmsg="DYNDNS_ERROR">Error</option>
+              </select>
+            </li>
+
+            <li data-role="fieldcontain" >
+              <label for="DynDNSProviderSelect" xmsg="DYNDNS_PROVIDER">Provider</label>
+              <select id="DynDNSProviderSelect" class="gui-dyndns-config" data-xmo-role="select" data-xpath="Device/Services/DynamicDNS/Clients/Client[1]/ServiceReference" data-options-xpath="Device/Services/DynamicDNS/Services/Service" >
+              </select>
+            </li>
+
+            <li data-role="fieldcontain" >
+              <label for="usernameDynDNS" class="gui-dyndns-config" xmsg="DYNDNS_USERNAME">User Name</label>
+              <input id="usernameDynDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Clients/Client[1]/Username " />
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="passwordDynDNS" class="gui-dyndns-config" xmsg="HOME_PASSWORD">Password</label>
+              <input type="text" style="display:none" />
+              <input type="password" style="display:none" />
+              <input id="passwordDynDNS" class="gui-dyndns-config" type="password" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Clients/Client[1]/Password" autocomplete="off"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="HostNameDynDNS" class="gui-dyndns-config" xmsg="DYNDNS_HOSTNAME">Host Name</label>
+              <input id="HostNameDynDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-control-type="URL" data-xpath="Device/Services/DynamicDNS/Clients/Client[1]/Hostnames/Hostname[1]/Name" />
+            </li>	
+
+          </ul>
+
+          <ul class="data-read" > 
+
+            <li data-role="fieldcontain" >
+              <label for="serverCustomDNS" class="gui-dyndns-config" xmsg="DYNDNS_SERVER">Server</label>
+              <input id="serverCustomDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/Server " data-read-only="true" />
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="portDynDNS" class="gui-dyndns-config" xmsg="HOME_PORT">Port</label>
+              <input id="portDynDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/ServerPort" data-read-only="true"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="requestCustomDNS" class="gui-dyndns-config" xmsg="DYNDNS_REQUEST">Request</label>
+              <input id="requestCustomDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/Request" data-read-only="true"/>
+            </li>
+             <li data-role="fieldcontain">
+             <label for="dynDNSauthentification" xmsg="DYNDNS_AUTHENTIFICATION">Authentification</label>
+             <select id="dynDNSauthentification" data-xmo-role="select" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/Authentication" data-read-only="true">
+               <option value="BASIC" xmsg="DYNDNS_BASIC">Basic</option>
+               <option value="NONE" xmsg="HOME_NONE">None</option>
+             </select>
+           </li>
+
+            <li data-role="fieldcontain" >
+              <label for="updateIntervalDynDNS" class="gui-dyndns-config" xmsg="DYNDNS_UPDATE_INT">Update Interval</label>
+              <input id="updateIntervalDynDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/UpdateInterval" data-read-only="true"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="retryIntervalDynDNS" class="gui-dyndns-config" xmsg="DYNDNS_RETRY_INT">Retry Interval</label>
+              <input id="retryIntervalDynDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/RetryInterval" data-read-only="true"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="maxRetriesDynDNS" class="gui-dyndns-config" xmsg="DYNDNS_MAX_RETRIES">Max Retries</label>
+              <input id="maxRetriesDynDNS" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="	Device/Services/DynamicDNS/Services/Service[Name='Custom']/MaxRetries" />
+            </li>
+          </ul>
+          
+           <ul class="data-write" style="display: none"> 
+
+            <li data-role="fieldcontain" >
+              <label for="serverCustomDNSCustom" class="gui-dyndns-config" xmsg="DYNDNS_SERVER">Server</label>
+              <input id="serverCustomDNSCustom" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/Server" />
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="portDynDNSCustom" class="gui-dyndns-config" xmsg="HOME_PORT">Port</label>
+              <input id="portDynDNSCustom" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/ServerPort"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="requestCustomDNSCustom" class="gui-dyndns-config" xmsg="DYNDNS_REQUEST">Request</label>
+              <input id="requestCustomDNSCustom" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/Request"/>
+            </li>
+             <li data-role="fieldcontain">
+             <label for="dynDNSauthentificationCustom" xmsg="DYNDNS_AUTHENTIFICATION">Authentification</label>
+             <select id="dynDNSauthentificationCustom" data-xmo-role="select" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/Authentication">
+               <option value="BASIC" xmsg="DYNDNS_BASIC">Basic</option>
+               <option value="NONE" xmsg="HOME_NONE">None</option>
+             </select>
+           </li>
+
+            <li data-role="fieldcontain" >
+              <label for="updateIntervalDynDNSCustom" class="gui-dyndns-config" xmsg="DYNDNS_UPDATE_INT">Update Interval</label>
+              <input id="updateIntervalDynDNSCustom" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/UpdateInterval"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="retryIntervalDynDNSCustom" class="gui-dyndns-config" xmsg="DYNDNS_RETRY_INT">Retry Interval</label>
+              <input id="retryIntervalDynDNSCustom" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/RetryInterval"/>
+            </li>
+            <li data-role="fieldcontain" >
+              <label for="maxRetriesDynDNSCustom" class="gui-dyndns-config" xmsg="DYNDNS_MAX_RETRIES">Max Retries</label>
+              <input id="maxRetriesDynDNSCustom" class="gui-dyndns-config" type="text" data-xmo-role="input" data-xpath="Device/Services/DynamicDNS/Services/Service[Name='Custom']/MaxRetries" />
+            </li>
+          </ul>
+          
+          </div>
+        </div><!-- /gui-content -->
+      </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d">  
+        <div class="gui-submit">
+          <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

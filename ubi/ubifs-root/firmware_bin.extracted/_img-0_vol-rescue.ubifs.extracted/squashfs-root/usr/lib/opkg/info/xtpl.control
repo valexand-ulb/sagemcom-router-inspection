@@ -1,0 +1,15 @@
+Package: xtpl
+Version: v0.6.0-1
+Depends: xmt
+Provides: 
+Source: feeds/sagemcom/libs/xtpl
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/xtpl-utils
+Installed-Size: 10375
+Description:  XTPL

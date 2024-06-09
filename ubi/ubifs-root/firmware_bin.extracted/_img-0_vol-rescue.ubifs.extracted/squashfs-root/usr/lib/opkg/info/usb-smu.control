@@ -1,0 +1,15 @@
+Package: usb-smu
+Version: v14.3.0.2-1
+Depends: ntfs-3g, libblkid, libsysfs, devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-usb, gateway-dm-storage-service, xmo-server, firewall-utils, ipp-print, diskdev_cmds, intf-usb, intf-esata, intf-bf2usb
+Provides: 
+Source: feeds/sagemcom/smu/usb-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/usb-smu
+Installed-Size: 58124
+Description:  USB smu plugin

@@ -1,0 +1,44 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+START=06
+
+
+start() {
+	mknod /dev/initctl p
+
+
+	# Create Broadcom specific devices
+	mknod /dev/bcmatm0 c 205 0
+	mknod /dev/brcmboard c 206 0
+	mknod /dev/bcmvdsl0 c 207 0
+	mknod /dev/bcmadsl0 c 208 0
+	mknod /dev/bcmadsl1 c 208 1
+	mknod /dev/bcmendpoint0 c 209 0
+	mknod /dev/bcmaal20 c 210 0
+	mknod /dev/bcmles0 c 211 0
+	mknod /dev/bcm c 212 0
+	mknod /dev/bounce c 213 0
+	mknod /dev/pmon c 214 0
+	mknod /dev/pcmshim0 c 217 0
+	mknod /dev/ac97 c 222 0
+	mknod /dev/slac c 223 0
+	mknod /dev/bcmprof c 224 0
+	mknod /dev/bcmatmb0 c 226 0
+	mknod /dev/p8021ag0 c 227 0
+	mknod /dev/bcmxtmcfg0 c 228 0
+	mknod /dev/pktcmf c 232 0
+	mknod /dev/spu c 233 0
+	mknod /dev/bcmvlan c 238 0
+	mknod /dev/pwrmngt c 240 0
+	mknod /dev/bcmfap c 241 0
+	mknod /dev/fcache c 242 0
+	mknod /dev/ingqos c 243 0
+	mknod /dev/bpm c 244 0
+	mknod /dev/bcmarl c 245 0
+	mknod /dev/gmac c 249 0
+	mknod /dev/tms c 250 0
+
+	mknod /dev/linux-uk-proxy c 125 0
+	mknod /dev/linux-user-bde c 126 0
+}
+

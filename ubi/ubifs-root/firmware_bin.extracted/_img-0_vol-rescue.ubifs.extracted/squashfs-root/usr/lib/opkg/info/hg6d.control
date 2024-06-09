@@ -1,0 +1,15 @@
+Package: hg6d
+Version: v2.5.1-1
+Depends: xmo-server, evlp, ism-core, ism-remote, ism-intf, smu-utils, hal-network
+Provides: 
+Source: feeds/sagemcom/utils/hg6d
+License: Sagemcom
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hg6-daemon
+Installed-Size: 7766
+Description:  HG6 gateway daemon

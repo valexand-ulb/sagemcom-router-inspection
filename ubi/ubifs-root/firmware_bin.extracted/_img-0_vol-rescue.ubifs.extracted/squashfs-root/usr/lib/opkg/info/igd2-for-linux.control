@@ -1,0 +1,20 @@
+Package: igd2-for-linux
+Version: v4.14.0.01-1
+Depends: libupnp, libpthread
+Provides: 
+Source: feeds/sagemcom/net/igd2-for-linux
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/igd2-for-linux
+Installed-Size: 45825
+Description:  It implements the UPnP Internet Gateway Device version 2
+ specification (IGDv2) and allows UPnP aware clients, such
+ as MSN Messenger, Azureus or Miranda to work properly from
+ behind a NAT firewall.
+ 
+ Please edit /etc/upnpd.conf before using upnpd!

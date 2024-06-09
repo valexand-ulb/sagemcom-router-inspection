@@ -1,0 +1,15 @@
+Package: firewall-smu
+Version: v4.23.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-firewall, xmo-server, smu-utils, firewall-utils
+Provides: 
+Source: feeds/sagemcom/smu/firewall-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/firewall-smu
+Installed-Size: 18597
+Description:  FireWall smu plugin to manage firewall rules (on LAN side)

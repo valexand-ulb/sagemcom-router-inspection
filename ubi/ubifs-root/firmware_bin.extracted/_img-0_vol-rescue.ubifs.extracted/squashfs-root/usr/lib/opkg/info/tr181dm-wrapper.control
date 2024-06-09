@@ -1,0 +1,15 @@
+Package: tr181dm-wrapper
+Version: v1.62.1-1
+Depends: gateway-dm, gateway-dm-ip, xmo-server, lib-wrapper, gateway-dm-wifi
+Provides: 
+Source: feeds/sagemcom/libs/tr181dm-wrapper
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/tr181dm-wrapper
+Installed-Size: 34763
+Description:  TR 181 DataModel Wrapper

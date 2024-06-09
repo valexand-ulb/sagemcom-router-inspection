@@ -1,0 +1,15 @@
+Package: dhcp-client
+Version: v2.49.0.8-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/net/isc-dhcp
+License: ISC Internet Software Consortium
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/isc-dhcp
+Installed-Size: 185887
+Description:  ISC's DHCP client

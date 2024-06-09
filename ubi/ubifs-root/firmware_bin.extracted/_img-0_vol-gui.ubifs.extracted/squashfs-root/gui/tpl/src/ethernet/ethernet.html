@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+ <body> 
+
+    <div data-role="page" id="EthernetPage" class="gui-settings gui-device-settings" data-dom-cache="true" >
+
+        <div data-role="header" data-theme="a">
+            <span class="gui-settings-icon"> 
+              <img src="../../../img/icon-ethernet-c.png">
+            </span>
+            <h1>Ethernet</h1>
+            <h1 class="gui-device gui-device-ethernet gui-device-other" xmsg="HOME_ETH_DEV">Ethernet Device</h1>
+            <h1 class="gui-device gui-device-ethernet gui-device-wifi gui-device-decoder" xmsg="HOME_TVDECODER">TV Decoder</h1>
+            <h1 class="gui-device gui-device-wifi gui-device-other" xmsg="HOME_WIFI_SPAN">Wi-Fi <span class="gui-wifi-radio" >2.4</span> GHz Device</h1>
+
+            <ul id="Menu">
+                <li><a href="#" class="ui-btn-active">Ethernet</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-decoder gui-device-other"><a href="../ethernet/device.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="HOME_DEVICE">Device</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/parental-control.html?host=uid&interf=if&radio=freq&type=type" data-transition="none" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/nat.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_PORT_FWD">Port Forwarding</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/firewall.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a>
+                </li>
+                <!--<li class="gui-device gui-device-ethernet gui-device-decoder gui-device-other" ><a href="#" class="ui-btn-active" xmsg="HOME_STATISTIC">Statistics</a></li>-->
+            </ul>
+
+        </div>
+        <!-- header -->
+
+        <div data-role="content">
+            <div id="BridgedPortsRO" data-xmo-role="item" data-xpath="Device/Services/BGCTV/BridgedPorts" data-read-only="true"></div>
+		<div id="BridgedPortsWO" data-xmo-role="item" data-xpath="Device/Services/BGCTV/BridgedPorts" data-write-only="true"></div>
+		<div id="BGCTVMode" data-xmo-role="item" data-xpath="Device/Services/BGCTV/Mode"></div>
+        <script id="EthernetPortTmpl" type="text/x-jquery-tmpl">
+          <div id="Port${port}"> 
+            <h2><span xmsg="HOME_PORT">Port</span> ${port}</h2>
+
+          <ul class="gui-info" > 
+            <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Status" >  
+              <h3 xmsg="HOME_STATUS">Status</h3>
+              <p class="gui-status-text" >&nbsp;</p>
+              <select>
+				<option value="DOWN" xmsg="ETHERNET_DOWN">Down</option>
+				<option value="DORMANT" xmsg="ETHERNET_DOWN">Down</option>
+				<option value="UNKNOWN" xmsg="ETHERNET_DOWN">Down</option>
+				<option value="NOTPRESENT" xmsg="ETHERNET_DOWN">Down</option>
+				<option value="ERROR" xmsg="ETHERNET_DOWN">Down</option>
+				<option value="LOWERLAYERDOWN" xmsg="ETHERNET_DOWN">Down</option>
+                <option value="UP" xmsg="ETHERNET_UP">Up</option>
+              </select>
+            </li>
+            <li data-role="fieldcontain" id="ConnectionModeSection${port}" style="display: none">
+                            <h3 xmsg="DEVICE_CONNECT_MODE">Connection Mode</h3> {{if port == "1"}}
+				<p xmsg="DEVICE_ROUTED">Routed</p>
+				{{else}}
+				<p>
+					<select id="ConnectionModePort${port}">
+						<option value="ROUTED" xmsg="DEVICE_ROUTED">Routed</option>
+						<option value="BRIDGED" xmsg="DEVICE_BRIDGED">Bridged</option>
+					</select>
+				</p>
+				{{/if}}
+           </li>
+            <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_BYTES">Total Bytes</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/BytesSent">&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/BytesReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_PACKETS">Total Packets</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/PacketsSent">&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/PacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_ERRORS">Total Errors</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/ErrorsSent" >&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/ErrorsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_DISCARD">Total Discard Packets</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/DiscardPacketsSent" >&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/DiscardPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_UNICAST">Total Unicast Packets</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/UnicastPacketsSent" >&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/UnicastPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_MULTICAST">Total Multicast Packets</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/MulticastPacketsSent" >&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/MulticastPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+             <h3 xmsg="INTERNET_TOTAL_BROADCAST">Total Broadcast Packets</h3>
+             <p>
+             <span class="gui-sent" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/BroadcastPacketsSent" >&nbsp;</span>/
+             <span class="gui-received" data-xmo-role="statistic" data-xpath="Device/Ethernet/Interfaces/Interface[Alias='PHY${port}']/Stats/BroadcastPacketsReceived" >&nbsp;</span>
+             </p>
+           </li>
+           <li data-role="fieldcontain" class="gui-advanced-info">
+           <input id="resetCounters" type="button" xvalue="ETHERNET_RESET_COUNTER" value="Reset Counters" />
+           </li>
+           </ul>
+           <a href="#" class="gui-advanced-btn" xmsg="HOME_ADVANCED">Advanced</a>
+          </div>
+        </script>
+
+      </div><!-- /content -->
+
+      <div data-role="footer" class="ui-footer ui-bar-d" >  
+        <div class="gui-submit" >
+          <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+          <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>  
+        </div>
+      </div> <!-- /footer -->
+
+    </div><!-- /page -->
+
+  </body>
+</html>

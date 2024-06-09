@@ -1,0 +1,12 @@
+/etc/linuxigd/gateEthlcfgSCPD.xml
+/etc/linuxigd/wanipconnSCPD.xml
+/etc/linuxigd/layer3forwardingSCPD.xml
+/usr/sbin/upnpd
+/etc/linuxigd/gatedesc1.xml
+/etc/linuxigd/wanipv6fwctrlSCPD.xml
+/etc/linuxigd/wanpppconnSCPD.xml
+/etc/linuxigd/wancomicfgSCPD.xml
+/etc/upnpd.conf
+/etc/linuxigd/gatedesc.xml
+/etc/linuxigd/ligd.png
+/etc/linuxigd/lanhostconfigSCPD.xml

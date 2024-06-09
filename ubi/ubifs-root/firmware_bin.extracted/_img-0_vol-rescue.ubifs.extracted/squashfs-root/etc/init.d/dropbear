@@ -1,0 +1,20 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2010 OpenWrt.org
+# Copyright (C) 2006 Carlos Sobrinho
+
+START=70
+
+start()
+{
+	[ -f /etc/dropbear/dropbear_rsa_host_key -a -f /etc/dropbear/dropbear_rsa_host_key ] && exit 0
+
+	mkdir -p /tmp/dropbear
+	[ -s /etc/dropbear/dropbear_rsa_host_key ] || /usr/bin/dropbearkey -t rsa -f /tmp/dropbear/dropbear_rsa_host_key 2>&- >&-
+	[ -s /etc/dropbear/dropbear_dss_host_key ] || /usr/bin/dropbearkey -t dss -f /tmp/dropbear/dropbear_dss_host_key 2>&- >&-
+
+	lock /tmp/.switch2jffs
+	mv /tmp/dropbear/dropbear_* /etc/dropbear/
+	lock -u /tmp/.switch2jffs
+	chmod 0700 /etc/dropbear
+}
+

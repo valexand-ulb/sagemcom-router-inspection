@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title xmsg="LOGIN_WELCOME">Welcome Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/gui-core.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.css" />
+    <link rel="stylesheet" href="css/gui-gen.css" />
+    <!--[if IE]>
+    <link rel="stylesheet" href="css/gui-belgacom-ie.css" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+	<![endif]-->
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery-1.7.2-sc.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-utils.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.js"></script>
+    <script src="js/gui-core.js"></script>
+    <script src="js/gui-api.js"></script>
+    <script src="js/gui-widgets.js"></script>
+    <script src="js/gui-gen.js"></script>
+    <script src="js/jquery.mobile.js"></script>
+    <script src="js/jquery.ezpz_hint.js"></script>
+    <script src="js/jquery.mobile.simpledialog2.js"></script>
+
+	<script type="text/javascript">
+		jQuery(function($) {
+			var gui = $.gui, target = gui.currentTarget;
+			gui.i18n.add(/*"msg/%L/gui-api-msg.json",*/
+				"msg/%L/gui-gen-msg.json");
+			gui.init();
+			$(this).guiTranslate();
+	  });
+	</script>
+	<noscript>
+		<div class="noscript">
+			<p>Javascript is disabled in your browser. Please enable it and try again.</p>
+            <p>Javascript est désactivé dans votre navigateur Internet. Veuillez l'activer et essayer de nouveau.</p>
+            <p>Javascript is uitgeschakeld in uw browser. Gelieve het in te schakelen en opnieuw te proberen.</p>
+		</div>
+	</noscript>  
+  
+  </head> 
+  <body> 
+
+     <div id="IndexPage" data-role="page" >
+     </div>
+
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body>
+  <div data-role="page" id="EnhancedWiFiPage" class="gui-settings" data-dom-cache="true">
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    <div data-role="header" data-theme="a">
+      <span class="gui-settings-icon"> 
+        <img src="../../../img/icon-wifi.png" style="width: 50px; top: 5px; position: relative;">
+      </span>
+      <h1><span id="eWiFiName" data-xmo-role="status" data-xpath="Device/Services/EnhancedWiFi/Name">Wave</span></h1>
+      <ul id="Menu">
+        <li>
+          <a href="#" class="ui-btn-active" data-prefetch="true" data-transition="none" xmsg="WIFI_GENERAL">General</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /header -->
+    <div id="eWiFiStatus" class="hide" data-xmo-role="status" data-xpath="Device/Services/EnhancedWiFi/Status"></div>
+    <div data-role="content">
+      <!-- section to show when is E-WiFi is disabled -->
+      <div id="eWiFiActivation">        
+        <h2 style="font-size: 20px;margin-bottom: 20px;" xmsg="E_WIFI_ACTIVATION_INFO">You will benefit from one single Wi-Fi network optimized for all your devices. Please find below the name and password of your network:</h2>
+        <div class="gui-info">
+          <ul>
+            <li data-role="fieldcontain">
+              <label for="WiFiSSIDUnifiedInput" xmsg="E_WIFI_WIFI_NAME">Name (SSID)</label>
+              <input readonly id="WiFiSSIDUnifiedInput" class="gui-wifi-config" type="text" data-xmo-role="input" data-control-type="SSID" data-xpath="Device/WiFi/SSIDs/SSID[Alias='WL_PRIV']/SSID" />
+            </li>
+            <li data-role="fieldcontain">
+              <label for="WiFiPassphraseUnifiedInput" xmsg="E_WIFI_WIFI_PASSWD">Passphrase</label>
+              <input readonly id="WiFiPassphraseUnifiedInputClear" class="gui-wifi-security hide" type="text" autocomplete="off" />
+              <input readonly id="WiFiPassphraseUnifiedInput" class="gui-wifi-security" type="password" autocomplete="off" />
+              <div class="hide xpath-password" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/Security/KeyPassphrase"></div>
+            </li>
+            <li class="show-password" data-role="fieldcontain">
+              <label class="ui-input-text"></label>
+              <input class="checkboxShowPassword" type="checkbox" data-target-id-input="WiFiPassphraseUnifiedInput"/>
+              <span xmsg="E_WIFI_SHOW_PASSWD">Show Passphrase</span>
+            </li>
+          </ul>
+        </div>
+        <h2 style="font-size: 20px; margin-bottom: 20px; border-bottom: none !important;">
+          <span style="float: left; padding-right: 20px;"><img src="../../../img/warning-v2.png" style="width: 40px; top: -10px; position: relative;"></span>
+          <span xmsg="E_WIFI_RECONNECT_INFO">It could be necessary to reconnect some of the devices connected to your current network</span>
+        </h2>
+      </div>
+      <!-- section to show when is E-WiFi is enabled -->
+      <div id="eWiFiDeactivation">
+        <h2 style="font-size: 20px;margin-bottom: 20px;" xmsg="E_WIFI_DEACTIVATION_INFO">Here are the names and passwords of two Wi-Fi networks in the 2.4 GHz and 5.0 GHz bands:</h2>
+        <h2>2.4GHz Wi-Fi</h2>
+        <div class="gui-info">
+          <ul>
+            <li data-role="fieldcontain">
+              <label for="WiFiSSID24GInput" xmsg="E_WIFI_WIFI_NAME">Name (SSID)</label>
+              <input readonly id="WiFiSSID24GInput" class="gui-wifi-config" type="text" data-xmo-role="input" data-control-type="SSID" data-xpath="Device/WiFi/SSIDs/SSID[Alias='WL_PRIV']/SSID" />
+            </li>
+            <li data-role="fieldcontain">
+              <label for="WiFiPassphrase24GInput" xmsg="E_WIFI_WIFI_PASSWD">Passphrase</label>
+              <input readonly id="WiFiPassphrase24GInputClear" class="gui-wifi-security hide" type="text" autocomplete="off" />
+              <input readonly id="WiFiPassphrase24GInput" class="gui-wifi-security" type="password" autocomplete="off" />
+              <div class="hide xpath-password" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='PRIV0']/Security/KeyPassphrase" ></div>
+            </li>
+            <li class="show-password" data-role="fieldcontain">
+              <label class="ui-input-text"></label>
+              <input class="checkboxShowPassword" type="checkbox" data-target-id-input="WiFiPassphrase24GInput"/>
+              <span xmsg="E_WIFI_SHOW_PASSWD">Show Passphrase</span>
+            </li>
+          </ul>
+        </div>
+        <h2>5.0GHz Wi-Fi</h2>
+        <div class="gui-info">
+          <ul>
+            <li data-role="fieldcontain">
+              <label for="WiFiSSID5GInput" xmsg="E_WIFI_WIFI_NAME">Name (SSID)</label>
+              <input readonly id="WiFiSSID5GInput" class="gui-wifi-config" type="text"/>
+              <div id="eWiFIMacAddressPrefix" class="hide" data-xmo-role="status" data-xpath="Device/Ethernet/Links/Link[@uid='2']/MACAddress"></div>
+            </li>
+            <li data-role="fieldcontain">
+              <label for="WiFiPassphrase5GInput" xmsg="E_WIFI_WIFI_PASSWD">Password</label>
+              <input readonly id="WiFiPassphrase5GInputClear" class="gui-wifi-security hide" type="text" autocomplete="off" />
+              <input readonly id="WiFiPassphrase5GInput" class="gui-wifi-security" type="password" autocomplete="off" />
+              <div class="hide xpath-password" data-xmo-role="status" data-xpath="Device/WiFi/AccessPoints/AccessPoint[Alias='VID1']/Security/KeyPassphrase"></div>
+            </li>
+            <li class="show-password" data-role="fieldcontain">
+              <label class="ui-input-text"></label>
+              <input class="checkboxShowPassword" type="checkbox" data-target-id-input="WiFiPassphrase5GInput"/>
+              <span xmsg="E_WIFI_SHOW_PASSWD">Show Password</span>
+            </li>
+          </ul>
+        </div>
+        <h2 style="font-size: 20px;margin-bottom: 20px; border-bottom: none !important;">
+          <span style="float: left; padding-right: 20px;"><img src="../../../img/warning-v2.png" style="width: 40px; top: -10px; position: relative;"></span>
+          <span xmsg="E_WIFI_RECONNECT_INFO">It could be necessary to reconnect some of the devices connected to your current network</span>
+        </h2>       
+      </div>
+    </div>
+    <!-- /content -->
+    <div data-role="footer" class="ui-footer ui-bar-d">
+      <div class="pull-left">
+        <div id="eWiFiHelpLink" class="hide" data-xmo-role="status" data-xpath="Device/Services/EnhancedWiFi/GUI/HelpPage"></div>
+        <a id="eWiFiHelpButton" href="#" xmsg="E_WIFI_HELP">Help</a>
+      </div>
+      <div class="gui-submit">
+        <a id="eWiFiApplyButton" href="#" xmsg="HOME_OK">Ok</a>
+        <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+      </div>
+    </div>
+    <!-- /footer -->
+  </div>
+  <!-- /page -->
+</body>
+
+</html>

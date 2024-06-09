@@ -1,0 +1,15 @@
+Package: libltdl
+Version: 2.4.2-1
+Depends: 
+Provides: 
+Source: package/libtool
+License: LGPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @GNU/libtool
+Installed-Size: 14435
+Description:  A generic dynamic object loading library

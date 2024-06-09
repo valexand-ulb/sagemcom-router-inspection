@@ -1,0 +1,15 @@
+Package: twonky-media-server
+Version: v1.5.4-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/net/twonky-media
+License: Twonky
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/twonky-media
+Installed-Size: 234947
+Description:  This package contains the UPnP AV stack by Twonky Media Server

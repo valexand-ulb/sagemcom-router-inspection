@@ -1,0 +1,15 @@
+Package: ism-core
+Version: v7.1.0-1
+Depends: evlp
+Provides: 
+Source: feeds/scheduler/libs/ism-core
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ism-core
+Installed-Size: 26622
+Description:  Inter Service Message

@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 Sagemcom
+
+start() {
+  # Create default SMU config
+  mkdir -p /tmp/www/download
+  mkdir -p /tmp/www/upload
+  # Start server
+  /usr/sbin/lighttpd-angel -f /etc/lighttpd/lighttpd.conf
+}
+
+stop() {
+  kill -term `pgrep lighttpd-angel`
+}
+
+restart() {
+  stop
+  start
+}
+
+reload() {
+  kill -HUP `pgrep lighttpd-angel`
+
+}

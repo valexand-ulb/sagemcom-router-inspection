@@ -1,0 +1,17 @@
+Package: htop
+Version: 0.9-1
+Depends: libncurses
+Provides: 
+Source: feeds/tools/admin/htop
+License: GPLv2
+Section: admin
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/htop
+Installed-Size: 52525
+Description:  Htop is an ncursed-based process viewer similar to top, but
+ it allows to scroll the list vertically and horizontally to
+ see all processes and their full command lines.

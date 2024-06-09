@@ -1,0 +1,15 @@
+Package: intf-rdisc6conf
+Version: v2.5.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-rdisc6conf
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-rdisc6conf
+Installed-Size: 9509
+Description:  Interface Rdisc6conf

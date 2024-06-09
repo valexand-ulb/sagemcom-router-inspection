@@ -1,0 +1,15 @@
+Package: config-voice
+Version: v8.4.0-1
+Depends: evlp, devel-utils, smu-utils, intf-voicepri
+Provides: 
+Source: feeds/voipHG6/libs/config-voice
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/config-voice
+Installed-Size: 34149
+Description:  VOICE BF smu and config API 

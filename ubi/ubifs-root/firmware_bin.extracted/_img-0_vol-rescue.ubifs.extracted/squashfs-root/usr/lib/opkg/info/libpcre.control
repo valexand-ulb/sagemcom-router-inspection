@@ -1,0 +1,15 @@
+Package: libpcre
+Version: 8.10-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/pcre
+License: PCRE Licence
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/pcre
+Installed-Size: 57123
+Description:  A Perl Compatible Regular Expression library

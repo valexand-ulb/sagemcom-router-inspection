@@ -1,0 +1,15 @@
+Package: libjson-script
+Version: eebe3fc-1
+Depends: libubox
+Provides: 
+Source: feeds/sagemcom/libs/libubox
+License: 
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/libubox
+Installed-Size: 6368
+Description:  Minimalistic JSON based scripting engine

@@ -1,0 +1,15 @@
+Package: intf-firewallapp
+Version: v0.1.2-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-firewallapp
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-firewall-app
+Installed-Size: 18406
+Description:  Interface to communicate with Firewall-App application

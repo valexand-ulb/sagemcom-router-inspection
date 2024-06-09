@@ -1,0 +1,16 @@
+Package: libsysfs
+Version: 2.1.0-2
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/sysfsutils
+License: GPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/linux-diag
+Installed-Size: 12054
+Description:  The library's purpose is to provide a consistant and stable interface for
+ querying system device information exposed through sysfs.

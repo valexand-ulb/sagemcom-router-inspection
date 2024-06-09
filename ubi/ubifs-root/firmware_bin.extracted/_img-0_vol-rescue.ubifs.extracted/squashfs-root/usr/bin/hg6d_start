@@ -1,0 +1,7 @@
+#!/bin/sh
+ulimit -s 2048
+rm -rf /opt/filesystem1/rootfs/*core
+rm -rf /opt/data/dumpcore_*
+hg6d || /usr/bin/reboot.sh prod
+
+#reboot

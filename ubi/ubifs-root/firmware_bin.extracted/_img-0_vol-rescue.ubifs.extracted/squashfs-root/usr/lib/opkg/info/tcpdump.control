@@ -1,0 +1,15 @@
+Package: tcpdump
+Version: 4.0.0-3
+Depends: libpcap
+Provides: 
+Source: feeds/tools/net/tcpdump
+License: 
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.tcpdump.org/release/ http://ftp.gwdg.de/pub/misc/tcpdump/ http://www.at.tcpdump.org/ http://www.br.tcpdump.org/
+Installed-Size: 258589
+Description:  Network monitoring and data acquisition tool

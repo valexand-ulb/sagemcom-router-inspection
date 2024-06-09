@@ -1,0 +1,32 @@
+#!/bin/sh /etc/rc.common
+
+start() {
+    local mod
+    
+    KERNELVER=$(uname -r)
+
+    for mod in usb-common usbcore \
+        ehci-hcd ohci-hcd xhci-hcd \
+        bcm63xx_usb \
+        usblp usb-storage; do
+        test -e /lib/modules/$KERNELVER/$mod.ko && insmod /lib/modules/$KERNELVER/$mod.ko
+    done
+
+}
+
+stop() {
+    local mod
+
+    for mod in usb-common usbcore \
+        ehci-hcd ohci-hcd xhci-hcd \
+        bcm63xx_usb \
+        usblp usb-storage; do
+        rmmod $mod
+    done
+}
+
+restart() {
+    stop
+    start
+}
+

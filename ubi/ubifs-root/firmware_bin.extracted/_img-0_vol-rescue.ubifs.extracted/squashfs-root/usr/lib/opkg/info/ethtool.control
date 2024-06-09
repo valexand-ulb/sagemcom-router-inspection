@@ -1,0 +1,15 @@
+Package: ethtool
+Version: 2.6.35-1
+Depends: 
+Provides: 
+Source: feeds/tools/net/ethtool
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/gkernel
+Installed-Size: 60204
+Description:  ethtool is used for querying settings of an ethernet device and changing them.

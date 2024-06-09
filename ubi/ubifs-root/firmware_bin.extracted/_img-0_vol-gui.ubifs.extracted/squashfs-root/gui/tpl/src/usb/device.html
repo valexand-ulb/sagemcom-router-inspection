@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body>
+
+    <div data-role="page" id="USBDevicePage" class="gui-settings gui-device-settings" data-dom-cache="true">
+        <script src="../../../js/jquery.ezpz_hint.js"></script>
+        <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+        <div data-role="header" data-theme="a">
+            <span class="gui-settings-icon"> 
+                <img src="../../../img/icon-usb-c.png">
+            </span>
+            <h1 class="gui-device-usb gui-device-other" xmsg="HOME_USB_DEVICE">USB Device</h1>
+            <h1 class="gui-device-usb gui-device-printer" xmsg="HOME_PRINTER">Printer</h1>
+            <h1 class="gui-device-usb gui-device-storage" id="usb_title">USB Device</h1>
+            <h1 class="gui-device-usb gui-device-3g" xmsg="HOME_3G_DONGLE">3G Dongle</h1>
+
+            <ul id="Menu">
+                <li class="gui-device-usb gui-device-storage gui-device-printer gui-device-3g gui-device-other"><a href="#" class="ui-btn-active"  xmsg="HOME_GENERAL_INFO">General</a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- header -->
+
+        <div data-role="content">
+
+            <div id="DeviceInfo">
+
+                <h2 xmsg="HOME_INFO">Information</h2>
+                <ul class="gui-info">
+                    <li data-role="fieldcontain" id="deviceConnectionStatus" data-xmo-role="status" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/Active">
+                        <h3 xmsg="HOME_STATUS">Status</h3>
+                        <p class="gui-status-text connection-status">&nbsp;</p>
+                        <select>
+                            <option value="false" selected xmsg="DEVUSB_DISCONNECTED">Disconnected</option>
+                            <option value="true" xmsg="DEVUSB_CONNECTED">Connected</option>
+                        </select>
+                    </li>
+                    <li data-role="fieldcontain" data-default-value="NONE">
+                        <h3 xmsg="HOME_PORT">Port</h3>
+                        <p id="UsbPort">&nbsp;</p>
+                    </li>
+                    <li data-role="fieldcontain" data-xmo-role="status" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/PhysAddress">
+                        <h3 xmsg="DEVUSB_PHYS_ADDR">Physical Address</h3>
+                        <p class="gui-status-text physical-address">&nbsp;</p>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label for="DeviceUserName" xmsg="HOME_NAME">Name</label>
+                        <input id="DeviceUserName" type="text" data-xmo-role="input" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/UserFriendlyName" />
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label for="DeviceUserType" xmsg="DEVICE_DEV_TYPE">Device Type</label>
+                        <select id="DeviceUserType" style="width: 100%" data-xmo-role="select" data-xpath="Device/Hosts/Hosts/Host[@uid='uid']/UserDeviceType">
+                            <option value="MISCELLANEOUS" xmsg="DEVICE_MISC">Generic</option>
+                            <option value="COMPUTER" xmsg="DEVICE_COMPUTER">Desktop Computer</option>
+                            <option value="NOTEBOOKS" xmsg="DEVICE_NOTEBOOK">Notebook</option>
+                            <option value="TABLET" xmsg="DEVICE_TABLET">Tablet</option>
+                            <option value="MOBILE_PHONE" xmsg="DEVICE_MOBILE_PHONE">Mobile Phone</option>
+                            <option value="PHONE" xmsg="DEVICE_PHONE">IP Phone</option>
+                            <option value="TV_DECODER" xmsg="HOME_TVDECODER">TV Decoder</option>
+                            <option value="PRINTER" xmsg="HOME_PRINTER">Printer</option>
+                            <option value="STORAGE" xmsg="DEVICE_STORAGE">Storage</option>
+                            <option value="AUDIOVIDEO" xmsg="DEVICE_AUDIO_VIDEO">Audio / Video</option>
+                            <option value="GAMECONSOLE" xmsg="DEVICE_CONSOLE">Game Console</option>
+                            <option value="NETWORKACCESSPOINT" xmsg="DEVICE_NET_ACCESS_PT">Network Access Point</option>
+                            <option value="WIFI_BRIDGE" xmsg="DEVICE_WIFI_BRIDGE">WiFi Bridge</option>
+                            <option value="WIFI_REPEATER" xmsg="DEVICE_WIFI_REPEATER">WiFi Repeater</option>
+                            <option value="PLC" xmsg="DEVICE_PLC">PLC</option>
+                        </select>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <table data-role="table" data-mode="columntoggle" class="gui-usb-table">
+                            <thead>
+                                <tr class="ui-state-default">
+                                    <th><span xmsg="DEVUSB_STATE">State</span>
+                                    </th>
+                                    <th><span xmsg="DEVUSB_FILESYS">File System</span>
+                                    </th>
+                                    <th><span xmsg="DEVUSB_SIZE">Size</span>
+                                    </th>
+                                    <th><span xmsg="DEVUSB_EXPLORE">Explore files</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="usbFSTable">
+                            </tbody>
+                        </table>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <p class="usb-actions">
+                            <input id="DeviceEjectBtn" type="button" xvalue="DEVUSB_EJECT" value="Eject" />
+                            <input id="DeviceEjectForceCheck" type="checkbox" class="custom" style="visibility:hidden;" />
+                            <label style="background: none; color: black;"for="DeviceEjectForceCheck" xmsg="DEVUSB_FORCE_EJECT">Force To Eject</label>
+                        </p>
+                    </li>
+                    <li>
+                        <div id="divButtonDelete" style="display: none">
+                            <input id="DeviceDeleteBtn" type="button" xvalue="HOME_DELETE" value="Delete" />
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+            <!-- #DeviceInfo -->
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer" class="ui-footer ui-bar-d">
+            <div class="gui-submit">
+                <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+                <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+            </div>
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

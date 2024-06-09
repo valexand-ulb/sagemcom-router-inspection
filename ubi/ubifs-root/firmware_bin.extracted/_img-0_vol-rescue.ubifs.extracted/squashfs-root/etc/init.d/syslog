@@ -1,0 +1,34 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2016 Sagemcom
+# 
+# init script for syslog-ng
+START=40
+PIDFILE="/var/run/syslog-ng.pid"
+
+start() {
+	syslog-ng -p $PIDFILE
+}
+
+stop() {
+	while killall -q syslog-ng; do
+		sleep 1
+	done
+	[ -f $PIDFILE ] && rm $PIDFILE
+}
+
+restart() {
+	stop
+	start
+}
+
+reload() {
+	[ -f $PIDFILE ] && {
+		kill -HUP `cat $PIDFILE` &>/dev/null
+		exit 0
+	};
+	[ -f $PIDFILE ] || {
+		# echo "syslog-ng not running; start it"
+		start
+	};
+}
+

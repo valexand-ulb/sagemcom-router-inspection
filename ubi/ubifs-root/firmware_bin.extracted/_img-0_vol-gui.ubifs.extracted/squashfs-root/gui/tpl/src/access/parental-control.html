@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="Access-Control-Allow-Origin" content="*"--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+
+ <link rel="stylesheet" href="../../../css/gui-core.css" />
+    <link rel="stylesheet" href="../../../css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../css/jquery.jqGrid.css" />
+    <link rel="stylesheet" href="../../../css/jquery.mobile.css" />
+    <link rel="stylesheet" href="../../../css/gui-gen.css" />
+    <script src="../../../js/jquery-1.7.2-sc.js"></script>
+    <script src="../../../js/jquery-utils.js"></script>
+    <script src="../../../js/jquery-ui.js"></script>
+    <script src="../../../js/grid.locale-en.js"></script>
+    <script src="../../../js/jquery.jqGrid.js"></script>
+    <script src="../../../js/gui-core.js"></script>
+    <script src="../../../js/gui-api.js"></script>
+    <script src="../../../js/gui-widgets.js"></script>
+    <script src="../../../js/gui-gen.js"></script>
+    <script src="../../../js/jquery.mobile.js"></script>
+    <script src="../../../js/jquery.ezpz_hint.js"></script>
+    <script src="../../../js/jquery.mobile.simpledialog2.js"></script>
+    
+  </head> 
+
+<body>
+
+    <div data-role="page" id="ParentalControlPage" class="gui-settings gui-device-settings" data-dom-cache="true">
+
+        <div data-role="header">
+            <span class="gui-settings-icon"> 
+          <img src="../../../img/icon-access-ctrl-c.png"> 
+        </span>
+            <h1 xmsg="ACCESS_ACCESSCONTROL">Access Control</h1>
+            <h1 class="gui-device gui-device-ethernet gui-device-wifi gui-device-other" id="DeviceName">Device Name</h1>
+
+            <ul id="Menu">
+                <li><a href="#" class="ui-btn-active" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a>
+                </li>
+                <li><a href="nat.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_PORT_FWD">Port Forwarding</a>
+                </li>
+                <li><a href="firewall.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a>
+                </li>
+                <li><a href="remote-access.html" data-prefetch="true" data-transition="none" xmsg="ACCESS_REMOTE_ACCESS">Remote Access</a>
+                </li>
+
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../ethernet/device.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="HOME_GENERAL_INFO">General</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="#" class="ui-btn-active" xmsg="ACCESS_PARENTAL_CTL">Parental Control</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/nat.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_PORT_FWD">Port Forwarding</a>
+                </li>
+                <li class="gui-device gui-device-ethernet gui-device-wifi gui-device-other"><a href="../access/firewall_device.html?host=uid&interf=if&radio=freq&type=type" data-prefetch="true" data-transition="none" xmsg="ACCESS_FIREWALL">Firewall</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+
+            <div id="ParentalControlScheduler">
+
+                <h2 xmsg="PARENTAL_INTERNET_ACCESS_CTRL_PLANNING">Internet Access Control Planning</h2>
+
+                <ul class="gui-info">
+                    <li data-role="fieldcontain">
+                        <label class="top-valigned" for="hostsPickerContainer" xmsg="PARENTAL_SELECT_HOST">Select one or more hosts</label>
+                        <div id="hostsPickerContainer">
+							<select id="SchedulerHostsSelect" multiple="multiple" data-native-menu="false" data-xmo-role="select" data-connected="false" data-options-xpath="Device/Hosts/Hosts/Host[InterfaceType='Ethernet' or InterfaceType='WiFi']" data-role="none">
+								<!--<option xmsg="PARENTAL_CHOOSE_HOST" disabled>Choose as many hosts as you'd like</option>-->
+							</select>
+							<div class="scheduler-hosts-actions">
+							<input id="SchedulerSelectAllBtn" type="button" data-inline="true" data-mini="true" xvalue="PARENTAL_SELECT_ALL" value="Select All">
+							<input id="SchedulerUnselectAllBtn" type="button" data-inline="true" data-mini="true" xvalue="PARENTAL_UNSELECT_ALL" value="Unselect All">
+							</div>
+                        </div>
+                    </li>
+                    <li data-role="fieldcontain" class="week-times-slots hidden-schedule">
+                        <label for="SchedulerAlwaysAllowedBtn" xmsg="PARENTAL_WEEK_SLOT">Week Time Slots</label>
+                        <div class="gui-scheduler" id="gui-scheduler-desktop">
+                            <ol class="gui-scheduler-days">
+                                <li class="gui-scheduler-day schedule-hours-header" xmsg="PARENTAL_HOURS">Hours</li>
+                                <li class="gui-scheduler-day" data-day="MONDAY" xmsg="PARENTAL_MONDAY">Monday</li>
+                                <li class="gui-scheduler-day" data-day="TUESDAY" xmsg="PARENTAL_TUESDAY">Tuesday</li>
+                                <li class="gui-scheduler-day" data-day="WEDNESDAY" xmsg="PARENTAL_WEDNESDAY">Wednesday</li>
+                                <li class="gui-scheduler-day" data-day="THURSDAY" xmsg="PARENTAL_THURSDAY">Thursday</li>
+                                <li class="gui-scheduler-day" data-day="FRIDAY" xmsg="PARENTAL_FRIDAY">Friday</li>
+                                <li class="gui-scheduler-day" data-day="SATURDAY" xmsg="PARENTAL_SATURDAY">Saturday</li>
+                                <li class="gui-scheduler-day" data-day="SUNDAY" xmsg="PARENTAL_SUNDAY">Sunday</li>
+                            </ol>
+
+                            <div class="gui-scheduler-week">
+                                <div class="gui-scheduler-header">
+                                    <div class="gui-scheduler-caption">
+                                        <div class="gui-scheduler-0h">0h</div>
+                                        <div class="gui-scheduler-4h">4h</div>
+                                        <div class="gui-scheduler-8h">8h</div>
+                                        <div class="gui-scheduler-12h">12h</div>
+                                        <div class="gui-scheduler-16h">16h</div>
+                                        <div class="gui-scheduler-20h">20h</div>
+                                        <div class="gui-scheduler-24h">24h</div>
+                                    </div>
+                                    <ol class="gui-scheduler-hours"></ol>
+                                </div>
+                                <ol class="gui-scheduler-select"></ol>
+                            </div>
+                            <br/>
+                            <div class="gui-scheduler-legend">
+								<div>
+                                    <div class="gui-scheduler-slot gui-scheduler-mixed">&nbsp;</div>
+                                    <span xmsg="PARENTAL_MIXED">Mixed</span>
+                                </div>
+                                <div>
+                                    <div class="gui-scheduler-slot gui-scheduler-denied">&nbsp;</div>
+                                    <span xmsg="PARENTAL_DENIED">Denied</span>
+                                </div>
+                                <div>
+                                    <div class="gui-scheduler-slot">&nbsp;</div>
+                                    <span xmsg="PARENTAL_ALLOWED">Allowed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scheduler-rules-actions">
+                            <input id="SchedulerAlwayDeniedBtn" type="button" data-inline="true" data-mini="true" xvalue="PARENTAL_DENY_ALL" value="Deny All">
+                            <input id="SchedulerAlwaysAllowedBtn" type="button" data-inline="true" data-mini="true" xvalue="PARENTAL_ALLOW_ALL" value="Allow All">
+                        </div>
+                    </li>
+
+                    <div id="globalMobile">
+                        <!--Mobile HTML-->
+                        <li class="ui-body">
+							<label for="SchedulerAlwaysAllowedBtn" xmsg="PARENTAL_WEEK_SLOT">Week Time Slots</label>
+							<div class="scheduler-rules-actions">
+								<input id="SchedulerAlwayDeniedBtn" type="button" data-inline="true" data-mini="true" xvalue="PARENTAL_DENY_ALL" value="Deny All">
+								<input id="SchedulerAlwaysAllowedBtn" type="button" data-inline="true" data-mini="true" xvalue="PARENTAL_ALLOW_ALL" value="Allow All">
+							</div>
+						</li>
+                        <div id="gui-scheduler-mobile" class="hidden-mobile-schedule">
+                            <li class="gui-scheduler-day" data-day="MONDAY" xmsg="PARENTAL_MONDAY" data-role="fieldcontain" id="mondayParentalControle">Monday</li>
+
+                            <li data-role="fieldcontain" id="mondayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-monday ui-selectee" id="monday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-monday ui-selectee" id="monday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-monday ui-selectee" id="monday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-monday ui-selectee" id="monday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-monday ui-selectee" id="monday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-monday ui-selectee" id="monday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-monday ui-selectee" id="monday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-monday ui-selectee" id="monday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-monday ui-selectee" id="monday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-monday ui-selectee" id="monday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-monday ui-selectee" id="monday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-monday ui-selectee" id="monday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-monday ui-selectee" id="monday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-monday ui-selectee" id="monday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-monday ui-selectee" id="monday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-monday ui-selectee" id="monday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-monday ui-selectee" id="monday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-monday ui-selectee" id="monday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-monday ui-selectee" id="monday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-monday ui-selectee" id="monday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-monday ui-selectee" id="monday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-monday ui-selectee" id="monday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-monday ui-selectee" id="monday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-monday ui-selectee" id="monday24h"> </li>
+
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="gui-scheduler-day" data-day="TUESDAY" xmsg="PARENTAL_TUESDAY" data-role="fieldcontain" id="tuesdayParentalControle">Tuesday</li>
+
+                            <li data-role="fieldcontain" id="tuesdayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-tuesday ui-selectee" id="tuesday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-tuesday ui-selectee" id="tuesday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-tuesday ui-selectee" id="tuesday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-tuesday ui-selectee" id="tuesday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-tuesday ui-selectee" id="tuesday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-tuesday ui-selectee" id="tuesday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-tuesday ui-selectee" id="tuesday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-tuesday ui-selectee" id="tuesday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-tuesday ui-selectee" id="tuesday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-tuesday ui-selectee" id="tuesday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-tuesday ui-selectee" id="tuesday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-tuesday ui-selectee" id="tuesday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-tuesday ui-selectee" id="tuesday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-tuesday ui-selectee" id="tuesday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-tuesday ui-selectee" id="tuesday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-tuesday ui-selectee" id="tuesday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-tuesday ui-selectee" id="tuesday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-tuesday ui-selectee" id="tuesday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-tuesday ui-selectee" id="tuesday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-tuesday ui-selectee" id="tuesday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-tuesday ui-selectee" id="tuesday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-tuesday ui-selectee" id="tuesday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-tuesday ui-selectee" id="tuesday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-tuesday ui-selectee" id="tuesday24h"> </li>
+
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="gui-scheduler-day" data-day="WEDNESDAY" xmsg="PARENTAL_WEDNESDAY" data-role="fieldcontain" id="wednesdayParentalControle">Wednesday</li>
+                            <li data-role="fieldcontain" id="wednesdayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-wednesday ui-selectee" id="wednesday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-wednesday ui-selectee" id="wednesday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-wednesday ui-selectee" id="wednesday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-wednesday ui-selectee" id="wednesday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-wednesday ui-selectee" id="wednesday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-wednesday ui-selectee" id="wednesday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-wednesday ui-selectee" id="wednesday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-wednesday ui-selectee" id="wednesday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-wednesday ui-selectee" id="wednesday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-wednesday ui-selectee" id="wednesday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-wednesday ui-selectee" id="wednesday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-wednesday ui-selectee" id="wednesday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-wednesday ui-selectee" id="wednesday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-wednesday ui-selectee" id="wednesday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-wednesday ui-selectee" id="wednesday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-wednesday ui-selectee" id="wednesday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-wednesday ui-selectee" id="wednesday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-wednesday ui-selectee" id="wednesday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-wednesday ui-selectee" id="wednesday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-wednesday ui-selectee" id="wednesday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-wednesday ui-selectee" id="wednesday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-wednesday ui-selectee" id="wednesday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-wednesday ui-selectee" id="wednesday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-wednesday ui-selectee" id="wednesday24h"> </li>
+
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="gui-scheduler-day" data-day="THURSDAY" xmsg="PARENTAL_THURSDAY" data-role="fieldcontain" id="thursdayParentalControle">Thursday</li>
+                            <li data-role="fieldcontain" id="thursdayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-thursday ui-selectee" id="thursday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-thursday ui-selectee" id="thursday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-thursday ui-selectee" id="thursday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-thursday ui-selectee" id="thursday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-thursday ui-selectee" id="thursday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-thursday ui-selectee" id="thursday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-thursday ui-selectee" id="thursday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-thursday ui-selectee" id="thursday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-thursday ui-selectee" id="thursday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-thursday ui-selectee" id="thursday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-thursday ui-selectee" id="thursday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-thursday ui-selectee" id="thursday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-thursday ui-selectee" id="thursday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-thursday ui-selectee" id="thursday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-thursday ui-selectee" id="thursday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-thursday ui-selectee" id="thursday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-thursday ui-selectee" id="thursday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-thursday ui-selectee" id="thursday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-thursday ui-selectee" id="thursday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-thursday ui-selectee" id="thursday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-thursday ui-selectee" id="thursday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-thursday ui-selectee" id="thursday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-thursday ui-selectee" id="thursday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-thursday ui-selectee" id="thursday24h"> </li>
+
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gui-scheduler-day" data-day="FRIDAY" xmsg="PARENTAL_FRIDAY" data-role="fieldcontain" id="fridayParentalControle">Friday</li>
+                            <li data-role="fieldcontain" id="fridayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-friday ui-selectee" id="friday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-friday ui-selectee" id="friday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-friday ui-selectee" id="friday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-friday ui-selectee" id="friday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-friday ui-selectee" id="friday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-friday ui-selectee" id="friday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-friday ui-selectee" id="friday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-friday ui-selectee" id="friday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-friday ui-selectee" id="friday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-friday ui-selectee" id="friday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-friday ui-selectee" id="friday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-friday ui-selectee" id="friday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-friday ui-selectee" id="friday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-friday ui-selectee" id="friday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-friday ui-selectee" id="friday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-friday ui-selectee" id="friday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-friday ui-selectee" id="friday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-friday ui-selectee" id="friday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-friday ui-selectee" id="friday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-friday ui-selectee" id="friday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-friday ui-selectee" id="friday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-friday ui-selectee" id="friday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-friday ui-selectee" id="friday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-friday ui-selectee" id="friday24h"> </li>
+
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gui-scheduler-day" data-day="SATURDAY" xmsg="PARENTAL_SATURDAY" data-role="fieldcontain" id="saturdayParentalControle">Saturday</li>
+                            <li data-role="fieldcontain" id="saturdayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-saturday ui-selectee" id="saturday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-saturday ui-selectee" id="saturday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-saturday ui-selectee" id="saturday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-saturday ui-selectee" id="saturday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-saturday ui-selectee" id="saturday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-saturday ui-selectee" id="saturday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-saturday ui-selectee" id="saturday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-saturday ui-selectee" id="saturday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-saturday ui-selectee" id="saturday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-saturday ui-selectee" id="saturday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-saturday ui-selectee" id="saturday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-saturday ui-selectee" id="saturday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-saturday ui-selectee" id="saturday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-saturday ui-selectee" id="saturday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-saturday ui-selectee" id="saturday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-saturday ui-selectee" id="saturday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-saturday ui-selectee" id="saturday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-saturday ui-selectee" id="saturday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-saturday ui-selectee" id="saturday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-saturday ui-selectee" id="saturday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-saturday ui-selectee" id="saturday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-saturday ui-selectee" id="saturday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-saturday ui-selectee" id="saturday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-saturday ui-selectee" id="saturday24h"> </li>
+
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gui-scheduler-day" data-day="SUNDAY" xmsg="PARENTAL_SUNDAY" data-role="fieldcontain" id="sundayParentalControle">Sunday</li>
+                            <li data-role="fieldcontain" id="sundayParentalControle">
+                                <div class="gui-scheduler-static">
+                                    <div class="gui-scheduler-week">
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-sunday ui-selectee" id="sunday1h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-sunday ui-selectee" id="sunday2h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-sunday ui-selectee" id="sunday3h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-sunday ui-selectee" id="sunday4h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-sunday ui-selectee" id="sunday5h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-sunday ui-selectee" id="sunday6h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-sunday ui-selectee" id="sunday7h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-sunday ui-selectee" id="sunday8h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-sunday ui-selectee" id="sunday9h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-sunday ui-selectee" id="sunday10h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-sunday ui-selectee" id="sunday11h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-sunday ui-selectee" id="sunday12h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-sunday ui-selectee" id="sunday13h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-sunday ui-selectee" id="sunday14h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-sunday ui-selectee" id="sunday15h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-sunday ui-selectee" id="sunday16h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-sunday ui-selectee" id="sunday17h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-sunday ui-selectee" id="sunday18h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-sunday ui-selectee" id="sunday19h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-sunday ui-selectee" id="sunday20h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-sunday ui-selectee" id="sunday21h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-sunday ui-selectee" id="sunday22h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-sunday ui-selectee" id="sunday23h"> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-sunday ui-selectee" id="sunday24h"> </li>
+
+                                            </div>
+                                        </ol>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile Monday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-monday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="MONDAY" xmsg="PARENTAL_MONDAY" data-role="fieldcontain" id="mondayParentalControle">Monday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-monday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-monday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-monday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-monday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-monday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                        <br/>
+
+                                    </div>
+                                    <br/>
+                                    <div class="ApplyScheduleDiv">
+                                        <button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile tuesday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-tuesday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="TUESDAY" xmsg="PARENTAL_TUESDAY" data-role="fieldcontain" id="tuesdayParentalControle">Tuesday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-tuesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                        <br/>
+                                    </div>
+                                    <br/>
+
+                                    <div class="ApplyScheduleDiv">
+                                        <button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile wednesday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-wednesday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="WEDNESDAY" xmsg="PARENTAL_WEDNESDAY" data-role="fieldcontain" id="wednesdayParentalControle">Wednesday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-wednesday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                        <br/>
+                                    </div>
+                                    <br/>
+                                    <div class="ApplyScheduleDiv">
+                                        <button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+                                    </div>
+
+
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile thursday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-thursday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="THURSDAY" xmsg="PARENTAL_THURSDAY" data-role="fieldcontain" id="thursdayParentalControle">Thursday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-thursday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                        <br/>
+
+                                    </div>
+                                    <br/>
+                                    <div class="ApplyScheduleDiv">
+                                        <button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile Friday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-friday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="FRIDAY" xmsg="PARENTAL_FRIDAY" data-role="fieldcontain" id="fridayParentalControle">Friday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-friday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-friday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-friday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-friday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-friday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                        <br/>
+
+                                    </div>
+                                    <br/>
+                                    <div class="ApplyScheduleDiv">
+                                        <button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile saturday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-saturday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="SATURDAY" xmsg="PARENTAL_SATURDAY" data-role="fieldcontain" id="saturdayParentalControle">Saturday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-saturday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                        <br/>
+                                    </div>
+                                    <br/>
+                                    <div class="ApplyScheduleDiv">
+                                        <button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Mobile Sunday Schduler show when click on Monday (Mobile)-->
+                        <div id="gui-scheduler-sunday" style="display: none">
+                            <li class="gui-scheduler-day schedule-single-day" data-day="SUNDAY" xmsg="PARENTAL_SUNDAY" data-role="fieldcontain" id="sundayParentalControle">Sunday</li>
+                            <li class="ui-field-contain ui-body ui-br" data-role="fieldcontain" style="height: 200px;">
+                                <div id="gui-scheduler-mobile2" class="gui-scheduler">
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-0h gui-left-hour">0h</div>
+                                                <div class="gui-scheduler-5h gui-right-hour">5h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-1h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-2h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-3h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-4h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-5h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-6h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption">
+                                                <div class="gui-scheduler-6h gui-left-hour">6h</div>
+                                                <div class="gui-scheduler-11h gui-right-hour">11h</div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-7h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-8h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-9h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-10h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-11h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-12h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+                                    <!--on saute de ligne -->
+                                    <div class="gui-scheduler-week">
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-12h gui-left-hour">12h</div>
+                                                <div class="gui-scheduler-17h gui-right-hour">17h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-13h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-14h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-15h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-16h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-17h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-18h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                    <br/>
+
+                                    <div class="gui-scheduler-week">
+
+                                        <div class="gui-scheduler-header">
+                                            <div class="gui-scheduler-caption" style="margin-bottom: 17px">
+                                                <div class="gui-scheduler-18h gui-left-hour">18h</div>
+                                                <div class="gui-scheduler-23h gui-right-hour">23h</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <ol class="gui-scheduler-select ui-selectable">
+                                            <div class="gui-scheduler-row">
+                                                <li class="gui-scheduler-slot gui-scheduler-19h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-20h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-21h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-22h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-23h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                                <li class="gui-scheduler-slot gui-scheduler-24h gui-scheduler-sunday ui-selectee" style=""> </li>
+                                            </div>
+                                        </ol>
+										<br/>
+                                    </div>
+                                    <br/>
+									<div class="ApplyScheduleDiv">
+										<button data-theme="b" xmsg="PARENTAL_APPLY">Ok</button>
+									</div>
+                                </div>
+                            </li>
+                            <br/>
+                        </div>
+
+                    </div>
+                    <!-- end of globalMobile -->
+                </ul>
+
+            </div>
+            <!-- /#ParentalControlScheduler -->
+
+            <div id="ParentalControlURLFilter">
+
+                <h2 xmsg="PARENTAL_WEB_SITE_FILTER">Web Site Filter</h2>
+
+                <div class="gui-info">
+                    <a id="WebSiteAddBtn" data-role="button" data-rel="popup" data-position-to="window" href="#WebSiteAddPopup" class="gui-add-btn" data-mini="true" data-inline="true" xmsg="PARENTAL_ADD_ADDR">Add Address(es)</a>
+
+                    <ul id="WebSiteList" class="gui-info" data-xmo-role="array" data-xpath="Device/WebAccesses/WebRestriction" data-icon="arrow-r" data-iconpos="right">
+                        <li data-role="list-divider" xmsg="PARENTAL_WEBSITE_LIST">List of Website Addresses</li>
+                    </ul>
+
+                    <div data-role="popup" id="WebSiteAddPopup" class="ui-corner-all">
+                        <form>
+                            <div style="padding:10px 20px;">
+                                <h3 xmsg="PARENTAL_ADD_WEB_SITE_ADDR">Add Web Site Address(es)</h3>
+                                <ul>
+
+                                    <li data-role="fieldcontain">
+                                        <p xmsg="PARENTAL_COPY_PAST">You can copy/paste one or more Web site addresses here.</p>
+                                        <p xmsg="HOME_CTL_URL" class="text-danger" id="WiFiWebSiteInputWarning"></p>
+                                        <textarea id="WebSiteAddInput" rows="5" cols="40"></textarea>
+                                    </li>
+                                </ul>
+                                <a id="WebSiteAddAddressBtn" href="#" data-role="button" data-rel="back" data-theme="b" data-mini="true" data-icon="check" xmsg="PARENTAL_ADD" style="width:100px">Add</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /#ParentalControlURLFilter -->
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer" class="ui-footer ui-bar-d">
+            <div class="gui-submit">
+                <a id="ApplyButton" href="#" data-xmo-role="submit" xmsg="HOME_OK">Ok</a>
+                <a id="CancelButton" href="../home/home.html" data-direction="reverse" xmsg="HOME_CANCEL">Cancel</a>
+            </div>
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+Package: rdisc6-smu
+Version: v4.10.4-1
+Depends: xmt, xmo, gateway-dm, xmo-server, smu-utils, gateway-dm-neighbor-discovery, rdisc6, intf-routingconf, intf-rdisc6conf, intf-bf2rdisc6
+Provides: 
+Source: feeds/sagemcom/smu/rdisc6-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/rdisc6-smu
+Installed-Size: 17606
+Description:  RDISC6 client smu plugin
