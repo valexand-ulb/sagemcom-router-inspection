@@ -1,0 +1,15 @@
+Package: zlib
+Version: 1.2.8-1
+Depends: 
+Provides: 
+Source: package/zlib
+License: OSI
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.zlib.net @SF/libpng
+Installed-Size: 42099
+Description:  Library implementing the deflate compression method

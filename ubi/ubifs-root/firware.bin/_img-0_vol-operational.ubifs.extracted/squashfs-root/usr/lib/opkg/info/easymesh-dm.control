@@ -1,0 +1,15 @@
+Package: easymesh-dm
+Version: BBOX3_D10_v5.0-1
+Depends: gateway-dm, gateway-device
+Provides: 
+Source: feeds/extender/smu/easymesh-smu
+License: sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/easymesh-smu
+Installed-Size: 3832
+Description:  easymesh 181 managers

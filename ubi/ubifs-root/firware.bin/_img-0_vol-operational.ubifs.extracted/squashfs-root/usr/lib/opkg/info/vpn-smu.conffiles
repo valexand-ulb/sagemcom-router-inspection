@@ -1,0 +1,4 @@
+/etc/ipsec.conf
+/etc/ipsec.secrets
+/etc/strongswan.conf
+/etc/ipsec.user

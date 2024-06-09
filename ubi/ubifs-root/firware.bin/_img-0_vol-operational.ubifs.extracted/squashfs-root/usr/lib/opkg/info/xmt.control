@@ -1,0 +1,15 @@
+Package: xmt
+Version: v6.54.7-1
+Depends: devel-utils, evlp, log-utils
+Provides: 
+Source: feeds/sagemcom/libs/xmt
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/xmt-utils
+Installed-Size: 75717
+Description:  XMT

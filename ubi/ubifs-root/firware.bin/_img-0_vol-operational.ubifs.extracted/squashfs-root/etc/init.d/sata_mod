@@ -1,0 +1,38 @@
+#!/bin/sh /etc/rc.common
+
+find_usb_modules()
+{
+    KERNEL_VERSION=$(uname -r)
+    KERNEL_MODULES_DIR="/lib/modules/$KERNEL_VERSION"
+
+    USB_MODULES=$(ls $KERNEL_MODULES_DIR/[euo]hci-hcd.ko | sed -e 's/^.*\///g' -e 's/\.ko$//' -e 's/-/_/')
+}
+
+kernel_module_path()
+{
+    echo $KERNEL_MODULES_DIR/$(echo $1 | sed -e 's/_/-/').ko
+}
+
+start() {
+    KERNELVER=$(uname -r)
+    test -e /lib/modules/$KERNELVER/libata.ko && insmod /lib/modules/$KERNELVER/libata.ko
+    test -e /lib/modules/$KERNELVER/libahci.ko && insmod /lib/modules/$KERNELVER/libahci.ko
+    test -e /lib/modules/$KERNELVER/ahci.ko && insmod /lib/modules/$KERNELVER/ahci.ko
+    test -e /lib/modules/$KERNELVER/bcm63xx_sata.ko && insmod /lib/modules/$KERNELVER/bcm63xx_sata.ko
+    test -e /lib/modules/$KERNELVER/ahci_platform.ko && insmod /lib/modules/$KERNELVER/ahci_platform.ko
+}
+
+stop() {
+    KERNELVER=$(uname -r)
+    test -e /lib/modules/$KERNELVER/ahci_platform.ko && rmmod ahci_platform
+    test -e /lib/modules/$KERNELVER/bcm63xx_sata.ko && rmmod bcm63xx_sata
+    test -e /lib/modules/$KERNELVER/ahci.ko && rmmod ahci
+    test -e /lib/modules/$KERNELVER/libahci.ko && rmmod libahci
+    test -e /lib/modules/$KERNELVER/libata.ko && rmmod libata
+}
+
+restart() {
+    stop
+    start
+}
+

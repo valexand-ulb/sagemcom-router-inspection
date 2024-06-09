@@ -1,0 +1,16 @@
+Package: busybox
+Version: 1.17.3-2
+Depends: 
+Provides: 
+Source: package/busybox
+License: GPLv2
+Section: base
+Status: unknown ok not-installed
+Essential: yes
+Priority: optional
+Maintainer: Nicolas Thill <nico@openwrt.org>
+Architecture: sagemcom
+URL: http://www.busybox.net/downloads http://distfiles.gentoo.org/distfiles/
+Installed-Size: 265290
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.

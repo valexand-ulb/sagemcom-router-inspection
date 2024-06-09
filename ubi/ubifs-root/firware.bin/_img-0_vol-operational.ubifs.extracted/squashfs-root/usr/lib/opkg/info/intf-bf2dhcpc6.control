@@ -1,0 +1,15 @@
+Package: intf-bf2dhcpc6
+Version: v4.15.6-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/smu/dhcpc6-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dhcpc6-smu
+Installed-Size: 7702
+Description:  Interface Bf2dhcpc6

@@ -1,0 +1,15 @@
+Package: ladb-mgr
+Version: v1.50.0-1
+Depends: 
+Provides: 
+Source: feeds/voipHG6/libs/ladb-mgr
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ladb-mgr
+Installed-Size: 19987
+Description:  Generic Data base Voice API 

@@ -1,0 +1,15 @@
+Package: system-events-smu
+Version: v2.1.0-1
+Depends: devel-utils, smu-utils, evlp, xmt, xmo, gateway-dm, xmo-server, intf-systemevents
+Provides: 
+Source: feeds/sagemcom/smu/system-events-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/system-events-smu
+Installed-Size: 4320
+Description:  SMU to receive system eventss of the gateway

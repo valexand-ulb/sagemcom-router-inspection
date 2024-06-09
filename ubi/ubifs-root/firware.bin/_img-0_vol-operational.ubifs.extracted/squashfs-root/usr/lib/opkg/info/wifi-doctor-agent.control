@@ -1,0 +1,15 @@
+Package: wifi-doctor-agent
+Version: v6.9.35_3-1
+Depends: avro-c, curl, libmosquitto-ssl, libsodium
+Provides: 
+Source: feeds/sagemcom/libs/wifi-doctor-agent
+License: BSD
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wifi-doctor-agent
+Installed-Size: 290145
+Description:  This package contains the wifi-doctor-agent.

@@ -1,0 +1,5 @@
+/usr/bin/wifidrd
+/usr/share/fhcd/get_published_data
+/usr/lib/xmo/plugins/libwifidoctor-smu.so
+/usr/bin/bf2wifidr
+/usr/bin/fhcd_update

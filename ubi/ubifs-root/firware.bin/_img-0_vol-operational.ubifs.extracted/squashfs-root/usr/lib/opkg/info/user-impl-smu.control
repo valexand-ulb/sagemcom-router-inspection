@@ -1,0 +1,15 @@
+Package: user-impl-smu
+Version: v3.19.0.6.1-1
+Depends: devel-utils, xmt, xmo, gateway-dm, gateway-dm-users, xmo-server, smu-utils, firewall-utils, intf-httpd, intf-xmos
+Provides: 
+Source: feeds/sagemcom/smu/user-impl-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/user-impl-smu
+Installed-Size: 43090
+Description:  SMU plugin for user profiles

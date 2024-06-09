@@ -1,0 +1,57 @@
+{
+	"agent_mac": "02:11:22:33:44:55",
+	"ale_mac": "02:11:22:33:44:56",
+	"alternative_id": "",
+	"auth_password": "12345678",
+	"auth_url": "https://foo.bar",
+	"challenge_url": "https://foo.bar",
+	"client_id": "12345678",
+	"client_password": "12345678",
+	"interface_list": "^lo$|^eth.*|^wds.*",
+	"private_key_path": "/tmp/key",
+	"public_cert_path": "/tmp/cert",
+	"ssids": [
+		{
+			"backhaul": true,
+			"bands": "5",
+			"enable": true,
+			"fronthaul": false,
+			"gateway": true,
+			"extender": true,
+			"passphrase": "12345678",
+			"security": "wpa2-psk",
+			"ssid": "ssid-bh",
+			"vlanid": -1,
+			"type": "backhaul",
+			"label": "my backhaul label"
+		},
+		{
+			"backhaul": false,
+			"bands": "2,5",
+			"enable": true,
+			"fronthaul": true,
+			"gateway": true,
+			"extender": true,
+			"passphrase": "12345678",
+			"security": "wpa2-psk",
+			"ssid": "ssid-fh",
+			"vlanid": -1,
+			"type": "home",
+			"label": "my home label"
+		},
+		{
+			"backhaul": false,
+			"bands": "2,5",
+			"enable": true,
+			"fronthaul": true,
+			"gateway": true,
+			"extender": true,
+			"passphrase": "12345678",
+			"security": "wpa2-psk",
+			"ssid": "ssid-guest",
+			"vlanid": -1,
+			"type": "guest",
+			"label": "my guest label"
+		}
+	]
+}

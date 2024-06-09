@@ -1,0 +1,15 @@
+Package: wificom-bgc-osm
+Version: v2.19.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-gre, gateway-dm-wifi, xmo-server, smu-utils, devel-utils, evlp, ism, intf-fonmng, hal-bsp, wificom-fon
+Provides: 
+Source: feeds/sagemcom/osm/wificom-bgc-osm
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wificom-bgc-osm
+Installed-Size: 39378
+Description:  SMU managing wificom function

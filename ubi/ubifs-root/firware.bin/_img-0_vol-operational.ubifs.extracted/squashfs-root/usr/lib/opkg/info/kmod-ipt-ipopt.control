@@ -1,0 +1,28 @@
+Package: kmod-ipt-ipopt
+Version: 3.4.11-rt19-1
+Depends: kernel (=3.4.11-rt19-1), kmod-ipt-core
+Provides: 
+Source: package/kernel
+License: 
+Section: kernel
+Status: unknown hold not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 4461
+Description:  Netfilter (IPv4) modules for matching/changing IP packet options
+ Includes:
+ - CLASSIFY
+ - dscp/DSCP
+ - ecn/ECN
+ - hl/HL (2.6.30 and later)
+ - length
+ - mark/MARK
+ - statistic (2.6)
+ - tcpmss
+ - time
+ - tos/TOS (prior to 2.6.25)
+ - ttl/TTL (prior to 2.6.30)
+ - unclean

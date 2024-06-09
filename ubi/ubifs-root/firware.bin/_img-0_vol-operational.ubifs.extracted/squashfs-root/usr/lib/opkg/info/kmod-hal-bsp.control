@@ -1,0 +1,15 @@
+Package: kmod-hal-bsp
+Version: 3.4.11-rt19+v4.158.18-1
+Depends: kernel (=3.4.11-rt19-1)
+Provides: 
+Source: feeds/sagemcom/driver/hal-bsp
+License: Sagemcom
+Section: kernel
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hal-bsp
+Installed-Size: 28815
+Description:  Kernel module for board information

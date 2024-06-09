@@ -1,0 +1,15 @@
+Package: tr69d
+Version: v4.32.19-1
+Depends: librt, libopenssl, xmo-client, xmo-server
+Provides: 
+Source: feeds/sagemcom/net/tr69
+License: Sagemcom
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/tr69-agent
+Installed-Size: 151919
+Description:  Daemon providing access to XMO through TR-069 (CPE WAN Management Protocol)

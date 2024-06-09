@@ -1,0 +1,6 @@
+/usr/lib/libfirewall.so
+/etc/init.d/firewall-utils
+/usr/lib/libfirewall.so.1.0.0
+/usr/sbin/firewall-app
+/usr/lib/libfirewall.so.1
+/etc/init.d/firewall-app

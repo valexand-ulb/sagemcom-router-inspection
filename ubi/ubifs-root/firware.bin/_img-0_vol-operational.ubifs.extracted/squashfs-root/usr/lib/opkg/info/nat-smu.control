@@ -1,0 +1,15 @@
+Package: nat-smu
+Version: v4.23.0.4.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-nat, xmo-server, smu-utils, firewall-utils, intf-bf2nat
+Provides: 
+Source: feeds/sagemcom/smu/nat-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/nat-smu
+Installed-Size: 27330
+Description:  NAT smu plugin to manage NAT and portmapping rules

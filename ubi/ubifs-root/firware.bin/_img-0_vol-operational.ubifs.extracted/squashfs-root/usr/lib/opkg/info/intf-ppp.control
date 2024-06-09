@@ -1,0 +1,15 @@
+Package: intf-ppp
+Version: v0.5.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-ppp
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-ppp
+Installed-Size: 5842
+Description:  Interface ppp

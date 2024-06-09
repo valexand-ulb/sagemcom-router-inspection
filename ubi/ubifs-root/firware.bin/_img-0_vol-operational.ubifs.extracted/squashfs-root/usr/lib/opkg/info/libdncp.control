@@ -1,0 +1,15 @@
+Package: libdncp
+Version: 1.0.0-1
+Depends: libubox
+Provides: 
+Source: feeds/sagemcom/libs/libdncp
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/libdncp
+Installed-Size: 19541
+Description:  This package contains the ubox library.

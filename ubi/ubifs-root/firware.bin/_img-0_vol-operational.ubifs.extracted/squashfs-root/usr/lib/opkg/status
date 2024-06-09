@@ -1,0 +1,3273 @@
+Package: intf-wifissid
+Version: swan_v1.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941000
+
+Package: gateway-dm-wifidr
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940947
+
+Package: intf-httpd
+Version: v0.1.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940963
+
+Package: syslog-ng
+Version: 1.6.12-6
+Depends: libol, librt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/syslog-ng/syslog-ng.conf d6d607e97857d9c73c874dd0674585f1
+Installed-Time: 1634941024
+
+Package: kmod-usb-storage
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-scsi-core, kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941015
+
+Package: ldconfig
+Version: 0.9.33.2-64
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: gateway-dm-smart-card-reader
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940935
+
+Package: usb-smu
+Version: v14.3.0.2-1
+Depends: ntfs-3g, libblkid, libsysfs, devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-usb, gateway-dm-storage-service, xmo-server, firewall-utils, ipp-print, diskdev_cmds, intf-usb, intf-esata, intf-bf2usb
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940987
+
+Package: libc
+Version: 0.9.33.2-64
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: ipp-print
+Version: 1.4.1-1
+Depends: libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: gateway-dm-dhcpfingerprint
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940922
+
+Package: intf-radv
+Version: v0.6.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940965
+
+Package: gateway-dm-ppp
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940930
+
+Package: reboot-smu
+Version: v5.4.01-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, intf-reboot
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940978
+
+Package: devel-utils
+Version: BBOX3_D10_v2-1
+Depends: log-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940991
+
+Package: gateway-dm-ntp
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940929
+
+Package: opkg
+Version: 576-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/opkg.conf 3ee20c932511e5acb40effbeddffd482
+Installed-Time: 1634941024
+
+Package: iptables-mod-extra
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-extra
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: intf-tunl2
+Version: v1.3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940967
+
+Package: udp-broadcast-relay
+Version: 0.3-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940986
+
+Package: kmod-textsearch
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941011
+
+Package: storage-smu
+Version: v3.6.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-storage-service, xmo-server, smu-utils, firewall-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940981
+
+Package: ip
+Version: 2.6.35-3
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/iproute2/rt_tables a1313318d6778fe6b8c680248ef5a463
+Installed-Time: 1634940969
+
+Package: broadcom-utils-v3.4-L04
+Version: v3.4_v12.22.1.20.1-1
+Depends: libopenssl
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940900
+
+Package: gateway-dm-restore-info
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940933
+
+Package: libpthread
+Version: 0.9.33.2-64
+Depends: librt
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: user-impl-smu
+Version: v3.19.0.6.1-1
+Depends: devel-utils, xmt, xmo, gateway-dm, gateway-dm-users, xmo-server, smu-utils, firewall-utils, intf-httpd, intf-xmos
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940987
+
+Package: dhcp-server
+Version: v2.49.0.9-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940970
+
+Package: dhcps6-smu
+Version: v6.49.4-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-dhcp6, smu-utils, xmo-server, dhcp-server, intf-dhcps6conf, intf-bf2dhcps6
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940906
+
+Package: busybox
+Version: 1.17.3-2
+Provides:
+Status: install user installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940896
+
+Package: lighttpd-mod-cgi
+Version: 1.4.26-3
+Depends: lighttpd
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: intf-wifi
+Version: swan_v1.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941000
+
+Package: contact-smu
+Version: v3.7.0-1
+Depends: devel-utils, evlp, xmt, xmo, xmo-server, gateway-dm, gateway-dm-hosts, gateway-dm-contacts, smu-utils, intf-contact
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940904
+
+Package: libsysfs
+Version: 2.1.0-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: gateway-dm-qos
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940932
+
+Package: ladb-xmo
+Version: v1.50.0-1
+Depends: intf-voicepri, intf-voicepub
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940997
+
+Package: intf-datacollector
+Version: v1.1.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940956
+
+Package: tr181dm-wrapper
+Version: v1.62.2-1
+Depends: gateway-dm, gateway-dm-ip, xmo-server, lib-wrapper, gateway-dm-wifi
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: xmo-client
+Version: v1.17.01-1
+Depends: xmt, xmo, gateway-dm, xmo-server
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940990
+
+Package: kmod-nfnetlink
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941009
+
+Package: hal-bsp
+Version: v4.158.18-1
+Depends: kmod-hal-bsp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940951
+
+Package: hg6d
+Version: v2.5.1-1
+Depends: xmo-server, evlp, ism-core, ism-remote, ism-intf, smu-utils, hal-network
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940953
+
+Package: intf-dslline
+Version: v0.3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940961
+
+Package: ifcstack-smu
+Version: v2.2.0-1
+Depends: devel-utils, evlp, xmt, xmo, xmo-server, gateway-dm-interface, smu-utils, intf-ifcstack
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940954
+
+Package: quantenna
+Version: 1
+Depends: liblogoper
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: gateway-dm-hosts
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940924
+
+Package: gateway-dm-upnp
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940937
+
+Package: conntrack-tools
+Version: 1.0.0-1
+Depends: libnetfilter-conntrack
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/conntrackd/conntrackd.conf 1d6497f4781ca1d72f2f901bd4cdee80
+Installed-Time: 1634940904
+
+Package: ebtables
+Version: 2.0.10-4-1
+Depends: kmod-ebtables
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940896
+
+Package: strace
+Version: 4.5.20-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940993
+
+Package: nat-smu
+Version: v4.23.0.4.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-nat, xmo-server, smu-utils, firewall-utils, intf-bf2nat
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940975
+
+Package: intf-ism
+Version: swan_v2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940992
+
+Package: kmod-bcm-ingqos
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941019
+
+Package: routing-smu
+Version: v4.22.7-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, firewall-utils, intf-routingconf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940979
+
+Package: strongswan5-mod-md5
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: libcurl
+Version: 7.66.0-1
+Depends: libopenssl, zlib, libcares
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940904
+
+Package: lighttpd-mod-setenv
+Version: 1.4.26-3
+Depends: lighttpd
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: kmod-usb-printer
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941013
+
+Package: kmod-ipt-filter
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core, kmod-textsearch
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941005
+
+Package: bgc-wrapper
+Version: v0.29.1-1
+Depends: gateway-dm, gateway-dm-device-info, gateway-dm-wanbackup, gateway-dm-routing, gateway-dm-managers, gateway-dm-wifi, xmo-server, data-collector-smu
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940903
+
+Package: intf-bf2nat
+Version: v4.23.0.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940975
+
+Package: wifidoctor-smu
+Version: v1.25.146.3-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, network-smu, intf-startstop, hal-network, gateway-dm-wifidr, wifi-doctor-agent, xmo-client, intf-wifiap, intf-wifiradio, intf-halwifi, libjson-c
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940989
+
+Package: strongswan5-app-charon
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: intf-bf2usb
+Version: v14.3.0.2-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940987
+
+Package: intf-updninterrupt
+Version: v0.3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940967
+
+Package: kmod-ipt-nat-extra
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core, kmod-ipt-nat
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941007
+
+Package: dns-smu
+Version: v8.12.2-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-dns, smu-utils, xmo-server, firewall-utils, intf-httpd, intf-routingconf, intf-dns
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940907
+
+Package: gsdf-verif
+Version: v2.7.0-1
+Depends: gsdf-libs
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940951
+
+Package: gateway-dm-ptm
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940931
+
+Package: gateway-dm-users
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940938
+
+Package: kmod-gre
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941010
+
+Package: gateway-dm-wanbackup
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940942
+
+Package: intf-bf2dhcpc
+Version: v8.13.4-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940905
+
+Package: broadcom-wl-4.16L04
+Version: v12.25.11-1
+Depends: liblogoper
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940999
+
+Package: ladb-mgr
+Version: v1.50.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940996
+
+Package: evlp-download-tool
+Version: v2.6.1-1
+Depends: evlp, evlp-download
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940908
+
+Package: intf-bf2dhcps
+Version: v4.21.0.5-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940906
+
+Package: intf-dhcps4conf
+Version: v0.11.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940959
+
+Package: strongswan5
+Version: 5.5.0-1
+Depends: libpthread, ip, kmod-crypto-authenc, kmod-ipsec, kmod-ipsec4, kmod-ipsec6, kmod-ipt-ipsec, iptables-mod-ipsec
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940981
+
+Package: rdisc6
+Version: v1.2.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940977
+
+Package: libcap
+Version: 2.24-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941022
+
+Package: intf-bf2dhcpc6
+Version: v4.15.6-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940906
+
+Package: intf-firewallapp
+Version: v0.1.2-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940962
+
+Package: kmod-ipt-conntrack
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941004
+
+Package: samba3
+Version: 3.0.24-7
+Depends: libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940979
+
+Package: quantenna-rpecat
+Version: 9.0.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: strongswan5-mod-nonce
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: intf-deviceinfo
+Version: v0.3.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940958
+
+Package: base-files
+Version: 64-ef5dfb8bf5c9ec20b006753d8e6ef9d1709e516c
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/hosts 0eea71665fb6890c06421fd13aa3f849
+ /etc/inittab bc82ea188ed37a5faa702d8661d3cddb
+ /etc/group 337e754522b1ff507ca968218f10d5c2
+ /etc/passwd fa54cc7818d13a1e79ed9e1b9f9b1ae6
+ /etc/shadow a201b2db1d2712885c18f93d255f69c5
+ /etc/profile f6394146d2f7dd077ea65916f2854948
+ /etc/shells 725ba6f40dff0612f61ecd3f171bb3e1
+ /etc/sysctl.conf 1727250f1c6b32302e62a7ed90a64ec5
+ /etc/rc.local 6f8bfdaf36d3ec4aa9be6e96fa61d32b
+ /etc/config/system 2ffc1db0f83095e4a12d0da7ffd9d245
+ /etc/config/timeserver 7c9118e571e55a6bbc1b419e77883d76
+ /etc/config/network e93532a4bbf699aa1affa01ea827e42c
+Installed-Time: 1634940899
+
+Package: gateway-dm-atm
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940916
+
+Package: libpcre
+Version: 8.10-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940976
+
+Package: gateway-dm-dns
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940921
+
+Package: gateway-dm-bgcsyslog
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940943
+
+Package: gateway-dm-managers
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940927
+
+Package: cson
+Version: 1.0.0-1
+Depends: libsqlite3
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940896
+
+Package: vpn-smu
+Version: v3.21.11-1
+Depends: strongswan5, devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-vpn, xmo-server, smu-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/ipsec.conf f8efa82f2d456832b3d1a3249c690a18
+ /etc/ipsec.secrets 02f61c3d61cc049436e583456572c070
+ /etc/strongswan.conf e91c09a0b3f355706c2f6325f4328082
+ /etc/ipsec.user 507f1ddf5d9ebe00d18d9ce5e389a17b
+Installed-Time: 1634940987
+
+Package: fcgi
+Version: 2.4.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940909
+
+Package: gateway-dm-dlna
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940921
+
+Package: gateway-dm-management-server
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940927
+
+Package: gateway-dm-redirectagent
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940948
+
+Package: libmnl
+Version: 1.0.3-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940972
+
+Package: strongswan5-mod-hmac
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: kmod-hal-bsp
+Version: 3.4.11-rt19+v4.158.18-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940951
+
+Package: ism-core
+Version: v7.1.0-1
+Depends: evlp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940992
+
+Package: kmod-pktflow
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941019
+
+Package: intf-dba
+Version: v0.7.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940957
+
+Package: strongswan5-utils
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: hal-network
+Version: v7.281.39.1-1
+Depends: kmod-hal-bsp, firewall-utils, smu-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940952
+
+Package: kmod-ip6-gre
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941011
+
+Package: kmod-usb-ohci
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941012
+
+Package: dnsmasq
+Version: v0.16.0.1-6
+Depends: liblogoper
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/config/dhcp 7a53b349957db6189b494e9941a8f196
+ /etc/dnsmasq.conf 5bc56c750b9c394f35f3cacc538e9db7
+Installed-Time: 1634940907
+
+Package: gateway-dm-bgchotspot
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940940
+
+Package: intf-wifiradio
+Version: BBOX3_WDR_v3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941000
+
+Package: libblkid
+Version: 2.24.1-1
+Depends: libuuid
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941024
+
+Package: gateway-dm-dvcdisc
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface, gateway-dm-dhcpfingerprint
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940922
+
+Package: xmo-user
+Version: v1.17.01-1
+Depends: xmo-client
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940990
+
+Package: iptables-mod-CT
+Version: 1.4.21-1
+Depends: iptables
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: gateway-dm-router-advertisement
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940920
+
+Package: firmware-upgrade-libs
+Version: v2.6.0-1
+Depends: devel-utils, evlp, evlp-download, gsdf-libs
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940910
+
+Package: quantenna-smu
+Version: BBOX3_WDR_v1.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, hal-wifi, intf-wifiradio, tftpd-hpa, quantenna
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: libtr69ctl
+Version: v4.32.19-1
+Depends: librt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940985
+
+Package: libthread_db
+Version: 0.9.33.2-64
+Depends: libpthread
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: strongswan5-mod-gmpdh
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: airties-smu-emcontroller
+Version: BBOX3_D10_v13.0-1
+Depends: xmt, xmo, gateway-dm, xmo-server, smu-utils, airties-dm, intf-airtiesem, ism-intf, intf-halwifi, intf-dvcdisc, xmo-client, firewall-utils, wifi-smu, easymesh-dm
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940897
+
+Package: libdncp
+Version: 1.0.0-1
+Depends: libubox
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940971
+
+Package: tv-bgc-osm
+Version: v3.25.0-1
+Depends: firewall-utils, devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, hal-network, smu-utils, intf-tr69cli
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940985
+
+Package: iptables-mod-ipsec
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-ipsec
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: kmod-bcm-enet
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941015
+
+Package: gateway-dm-bgcvoip
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940941
+
+Package: lighttpd-mod-expire
+Version: 1.4.26-3
+Depends: lighttpd
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: xtpl
+Version: v0.6.0-1
+Depends: xmt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940991
+
+Package: gateway-dm-interface
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940926
+
+Package: gateway-dm
+Version: v9.159.134-1
+Depends: xmt, xmo
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940916
+
+Package: iptables-mod-conntrack
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-conntrack
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: intf-startstop
+Version: v0.2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940966
+
+Package: webaccess-smu
+Version: v2.10.0.04-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-nat, gateway-dm-webaccess, xmo-server, smu-utils, firewall-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940988
+
+Package: fw-upgrade-smu
+Version: v9.27.13.4-1
+Depends: devel-utils, evlp, evlp-download, firmware-upgrade-libs, xmt, xmo, gateway-dm, smu-utils, xmo-server, firewall-utils, libtr69ctl, intf-fwup
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940974
+
+Package: tr69-smu
+Version: v9.27.13.4-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-management-server, xmo-server, smu-utils, firewall-utils, kmod-hal-bsp, libtr69ctl, intf-tr69cli, intf-tr69, tr69d
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940974
+
+Package: gateway-dm-upa
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940936
+
+Package: nng
+Version: 0.1.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941022
+
+Package: gateway-dm-voice-2-0-0
+Version: v14.14.0-1
+Depends: gateway-dm
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940998
+
+Package: kmod-broadcom-voicedriver-4.16L
+Version: 3.4.11-rt19+v4.142.1-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-hal-bsp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940994
+
+Package: gateway-dm-hsxpa-lte
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940925
+
+Package: mosquitto-ssl
+Version: 1.5-1
+Depends: librt, libuuid, libopenssl
+Provides: mosquitto
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/mosquitto/mosquitto.conf f17ce60f557c2826a9d6b1e7f68ea967
+ /etc/config/mosquitto 73461d1231af87be8b4292f440f2a19e
+Installed-Time: 1634940974
+
+Package: kmod-usb2
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941012
+
+Package: kmod-usb-serial-option
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-usb-serial
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941014
+
+Package: xmo-server
+Version: v7.44.3.1018-1
+Depends: devel-utils, hal-bsp, evlp, ism-core, ism-remote, ism-intf, fcgi, xmt, xmo, gateway-dm, intf-confmgmt, smu-utils, intf-dba, intf-xmos
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940991
+
+Package: twonky-media-server
+Version: v1.5.4-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940985
+
+Package: lighttpd
+Version: 1.4.26-3
+Depends: libopenssl, libpcre, libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/lighttpd/lighttpd.conf ce9d30db2ff446f181c0fa290e8b5deb
+ /etc/lighttpd/conf.d/mimetype.conf cd1483ecb7776b271af74c76f29fe179
+ /etc/lighttpd/conf.d/bind.conf ff42c1fb1eec50a84b8f1c2a82ff3f14
+ /etc/lighttpd/conf.d/wan-ip-addr.conf b446f14332167bb4bb6356dfa2435be4
+ /etc/lighttpd/conf.d/redirection.conf 5f23de65609a25b78fe51e2be1734f99
+ /etc/lighttpd/conf.d/rest.conf b86ff16639561deeef0986b09f32879d
+ /etc/init.d/lighttpd 6e1b8842f38ef3bc6bf9b975c4caf450
+ /etc/lighttpd/ssl/remote/self-signed.pem c0bc7e5b4657e34318b7215d0f899f2d
+Installed-Time: 1634940973
+
+Package: gateway-dm-dsl
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940921
+
+Package: kmod-ipt-conntrack-extra
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core, kmod-ipt-conntrack
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941005
+
+Package: iptables-mod-nfqueue
+Version: 1.4.21-1
+Depends: iptables, kmod-nfnetlink-queue
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: libsodium
+Version: 1.0.16-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940972
+
+Package: rdisc6-smu
+Version: v4.10.4-1
+Depends: xmt, xmo, gateway-dm, xmo-server, smu-utils, gateway-dm-neighbor-discovery, rdisc6, intf-routingconf, intf-rdisc6conf, intf-bf2rdisc6
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940978
+
+Package: dyndns-smu
+Version: v3.10.1-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-dyndns, xmo-server, smu-utils, firewall-utils, evlp-download
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940908
+
+Package: iptables-utils
+Version: 1.4.21-1
+Depends: iptables
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: gateway-dm-firewall
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940923
+
+Package: factory-tools
+Version: v4.62.4-1
+Depends: hal-gpio
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940909
+
+Package: tc
+Version: 2.6.35-3
+Depends: kmod-sched
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: libuci
+Version: 2011-01-19.1-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941024
+
+Package: libupnp
+Version: 1.6.18-1
+Depends: libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: wan-bgc-osm
+Version: v4.249.19.5-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, hal-bsp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940988
+
+Package: easymesh-dm
+Version: BBOX3_D10_v5.0-1
+Depends: gateway-dm, gateway-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940901
+
+Package: tcpdump
+Version: 4.9.3-3
+Depends: libpcap
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940994
+
+Package: intf-voicepri
+Version: v7.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940996
+
+Package: kmod-ip6tables
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipv6
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941009
+
+Package: gateway-dm-periodic-stats
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940929
+
+Package: kmod-watchdog
+Version: 3.4.11-rt19+v4.158.18-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940951
+
+Package: intf-bridge
+Version: v0.2.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940955
+
+Package: libdaemon
+Version: 0.12-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940971
+
+Package: gateway-dm-storage-service
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940918
+
+Package: gateway-dm-vpn
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940919
+
+Package: fhcd
+Version: v3.6.0_0.3-1
+Depends: libubox, libdncp, libjson, libblobmsg_json, libopenssl
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940909
+
+Package: intf-confmgmt
+Version: v2.5.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940955
+
+Package: iptables-mod-ipopt
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-ipopt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: gateway-dm-contacts
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940946
+
+Package: gateway-dm-remoteHealthCheck
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940950
+
+Package: intf-wifiap
+Version: BBOX3_WDR_v2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941000
+
+Package: ethtool
+Version: 2.6.35-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940993
+
+Package: gateway-dm-nat
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940928
+
+Package: intf-wan
+Version: v0.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940968
+
+Package: gateway-dm-routing
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940933
+
+Package: gateway-dm-usb
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940937
+
+Package: libiptc
+Version: 1.4.21-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: intf-contact
+Version: v1.9.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940956
+
+Package: intf-esata
+Version: v0.2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940961
+
+Package: intf-dhcps6conf
+Version: v0.7.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940960
+
+Package: intf-routingconf
+Version: v1.2.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940966
+
+Package: gateway-dm-webaccess
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940939
+
+Package: data-collector
+Version: v1.74.3-1
+Depends: bf-utils, libcurl, gateway-dm, gateway-dm-datacollector, evlp, xmt, xmo, xmo-server, xmo-client, datacollector-smu
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940905
+
+Package: dropbear
+Version: 2012.55
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940907
+
+Package: gateway-dm-neighbor-discovery
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940920
+
+Package: watchdog-smu
+Version: v1.2.0.01-1
+Depends: gateway-dm, gateway-dm-watchdog, smu-utils, hal-bsp, evlp, xmt, xmo, xmo-server
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940988
+
+Package: libnetfilter-conntrack
+Version: 0.9.1-1
+Depends: libnfnetlink, kmod-nf-conntrack-netlink
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940972
+
+Package: curl
+Version: 7.66.0-1
+Depends: libcurl
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940904
+
+Package: kmod-bcm-bpm
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941016
+
+Package: tr69ctl
+Version: v4.32.19-1
+Depends: libtr69ctl
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940985
+
+Package: intf-easymesh
+Version: v1.2.4-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940901
+
+Package: dial-voice
+Version: v1.19.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940995
+
+Package: strongswan5-mod-aes
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: mtd
+Version: 15
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941023
+
+Package: strongswan5-mod-random
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: libltdl
+Version: 2.4.2-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941023
+
+Package: lighttpd-mod-secdownload
+Version: 1.4.26-3
+Depends: lighttpd
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: intf-ppp
+Version: v0.5.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940965
+
+Package: libol
+Version: 0.3.18-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941022
+
+Package: firewall-utils
+Version: v6.71.0.10-1
+Depends: devel-utils, iptables, iptables-utils, ip6tables, ip6tables-utils, intf-firewallapp, xmt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940910
+
+Package: ladb-voice
+Version: v1.53.0-1
+Depends: libsqlite3, devel-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940997
+
+Package: intf-voicepub
+Version: v3.6.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940996
+
+Package: gsdf-libs
+Version: v2.7.0-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940951
+
+Package: kmod-bcmfap
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941017
+
+Package: libgcc
+Version: 4.8.2-64
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: kmod-adsldd
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941017
+
+Package: httpd-smu
+Version: v4.3.5-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-user-interface, xmo-server, smu-utils, firewall-utils, intf-httpd, lighttpd, gui-core, intf-xmos
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940953
+
+Package: gateway-dm-home-plug
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940924
+
+Package: libmosquitto-ssl
+Version: 1.5-1
+Depends: libpthread, librt, libcares, libopenssl
+Provides: libmosquitto
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940974
+
+Package: usb-modeswitch
+Version: 1.2.3-2
+Depends: libusb-compat-0.1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940986
+
+Package: intf-qos
+Version: v0.2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940965
+
+Package: intf-filemgmt
+Version: v0.8.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940962
+
+Package: shared-wifi
+Version: 1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: evlp
+Version: v6.18.1.02-1
+Depends: librt, libpthread, libexpat, libopenssl, libcares
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940992
+
+Package: gateway-dm-ieee8021x
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940925
+
+Package: intf-systemevents
+Version: v0.19.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940966
+
+Package: bgc-restore-osm
+Version: v1.12.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-managers, gateway-dm-wifi, xmo-server, smu-utils, intf-reboot
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940902
+
+Package: gateway-dm-gre
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940946
+
+Package: kmod-bcmvlan
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941018
+
+Package: easymesh-smu
+Version: BBOX3_D10_v5.0-1
+Depends: xmt, xmo, gateway-dm, xmo-server, smu-utils, firewall-utils, intf-easymesh, wifi-smu, easymesh-dm
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940901
+
+Package: intf-wifidr
+Version: v1.25.146.3-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940989
+
+Package: dhcpc-smu
+Version: v8.13.4-1
+Depends: evlp, xmt, xmo, xmo-server, firewall-utils, smu-utils, ism-intf, gateway-dm-dhcp, dhcp-client, intf-bf2dhcpc, intf-dhcpc4conf, intf-routingconf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940905
+
+Package: ipset
+Version: 6.16.1-1
+Depends: iptables-mod-ipset, kmod-ipt-ipset, libmnl
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941002
+
+Package: kmod-hal-gpio
+Version: 3.4.11-rt19+v3.20.2-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-hal-bsp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940952
+
+Package: libuuid
+Version: 2.24.1-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941024
+
+Package: gateway-dm-watchdog
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940944
+
+Package: ppp
+Version: v8.21.1-1
+Depends: kmod-ppp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/ppp/ip-down 1c2d6e9b0dc089ef61d2da3498afb324
+ /etc/ppp/ip-pre-up a32baaa3f4b0a3103724065f840734c4
+ /etc/ppp/ip-up 72e66686f2fd76bbf4172f3abab08fcd
+ /etc/ppp/ipv6-down 298fb18356751973e602cf215f3a4ad6
+ /etc/ppp/ipv6-up e19067692770c1407f7676d6372738c0
+Installed-Time: 1634940976
+
+Package: dhcps-smu
+Version: v4.21.0.5-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, smu-utils, xmo-server, firewall-utils, intf-bf2dhcps, dhcp-server, intf-dvcdisc, intf-dhcps4conf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940906
+
+Package: libubox
+Version: eebe3fc-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940972
+
+Package: dhcpc6-smu
+Version: v4.15.6-1
+Depends: evlp, xmt, xmo, xmo-server, firewall-utils, smu-utils, ism-intf, gateway-dm-dhcp6, intf-bf2dhcpc6, intf-dhcpc6conf, dhcp-client
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940906
+
+Package: gui-core
+Version: v8.6.0-1
+Depends: xtpl, xmt, fcgi
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940902
+
+Package: libusb-1.0
+Version: 1.0.8-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: wifi-doctor-agent
+Version: v6.9.35_3-1
+Depends: avro-c, curl, libmosquitto-ssl, libsodium
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940989
+
+Package: rpc-tools-smu
+Version: v3.15.1-1
+Depends: curl, devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, intf-ifcprops
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940979
+
+Package: gateway-dm-captive-portal
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940917
+
+Package: led-bgc-osm
+Version: v2.28.4-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, xmo-server, smu-utils, hal-gpio, hal-network
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940971
+
+Package: libra
+Version: 2.14.1-1
+Depends: libsodium
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940972
+
+Package: libjson
+Version: 0.12.1-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940970
+
+Package: gateway-dm-bgcwake
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940948
+
+Package: smu-utils
+Version: v17.43.15.33-1
+Depends: devel-utils, evlp, ism-core, ism-intf, xmt, xmo, gateway-dm, gsdf-libs, intf-confmgmt, intf-rdisc6conf, intf-dhcpc4conf, intf-dhcpc6conf, intf-dhcps6conf, intf-ipconf, liblogoper, intf-systemevents, intf-updninterrupt, intf-startstop, intf-wan, intf-ifcprops, intf-osmglobal
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940980
+
+Package: gateway-dm-bgctv
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940940
+
+Package: config-voice
+Version: v8.4.0-1
+Depends: evlp, devel-utils, smu-utils, intf-voicepri
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940994
+
+Package: kmod-bcm-wl
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941022
+
+Package: librt
+Version: 0.9.33.2-64
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: intf-arp
+Version: v1.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940954
+
+Package: intf-upnp
+Version: v0.1.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940968
+
+Package: ism-remote
+Version: v12.2.1-1
+Depends: ism-core
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940993
+
+Package: sal-voice
+Version: v10.12.0-1
+Depends: devel-utils, evlp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940998
+
+Package: iptables-mod-tproxy
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-tproxy
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: lib-wrapper
+Version: 1.4.0-1
+Depends: xmo, xmt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940971
+
+Package: global-bgc-osm
+Version: v0.10.3-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, devel-utils, ism, hal-bsp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940950
+
+Package: intf-reboot
+Version: v1.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940966
+
+Package: gateway-dm-wifi
+Version: BBOX3_D10_v8.0-1
+Depends: gateway-dm
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: kmod-usb-serial
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941013
+
+Package: radv-smu
+Version: v1.29.2-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-router-advertisement, smu-utils, xmo-server, firewall-utils, radvd, intf-radv
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940977
+
+Package: hal-wifi
+Version: BBOX3_D10_v16.2-1
+Depends: shared-wifi, firewall-utils, intf-halwifi, smu-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940999
+
+Package: libjson-script
+Version: eebe3fc-1
+Depends: libubox
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: ntp-smu
+Version: v2.14.0.1-1
+Depends: ntpdate, devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-ntp, xmo-server, smu-utils, firewall-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940976
+
+Package: usb-modeswitch-data
+Version: 20120531-1
+Depends: usb-modeswitch
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940986
+
+Package: intf-ipconf
+Version: v1.8.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940964
+
+Package: redirectagent-smu
+Version: v0.4.5-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-redirectagent, xmo-server, smu-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940978
+
+Package: libblobmsg-json
+Version: eebe3fc-1
+Depends: libjson, libubox
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: swan-easymesh
+Version: BBOX3_D10_75.8-1
+Depends: smu-utils, evlp, intf-easymesh
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940901
+
+Package: ip6tables-utils
+Version: 1.4.21-1
+Depends: ip6tables
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: moff
+Version: 2.14.1-1
+Depends: libra
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940974
+
+Package: system-events-smu
+Version: v2.1.0-1
+Depends: devel-utils, smu-utils, evlp, xmt, xmo, gateway-dm, xmo-server, intf-systemevents
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: upnpscand
+Version: v3.2.0-1
+Depends: devel-utils, evlp, smu-utils, evlp-download, libexpat, intf-upnp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940986
+
+Package: libusb-compat-0.1
+Version: 0.1.4-1
+Depends: libusb-1.0
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: intf-devmodem
+Version: v1.2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940958
+
+Package: hal-gpio
+Version: v3.20.2-1
+Depends: kmod-hal-gpio
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940952
+
+Package: iptables
+Version: 1.4.21-1
+Depends: kmod-ipt-core, libiptc, libxtables
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: iptables-mod-filter
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-filter
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: kmod-ipt-nathelper
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core, kmod-ipt-nat
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941008
+
+Package: gateway-dm-ip
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940926
+
+Package: evlp-download
+Version: v2.6.1-1
+Depends: evlp, curl
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940908
+
+Package: gateway-dm-dhcp
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940919
+
+Package: kmod-nf-conntrack-netlink
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-nfnetlink, kmod-ipt-conntrack
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941010
+
+Package: intf-osmglobal
+Version: v0.1.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940964
+
+Package: strongswan5-mod-attr
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: strongswan5-mod-des
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: ntfs-3g
+Version: 2010.5.22-4-fuseint
+Depends: kmod-fuse, libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940975
+
+Package: intf-dns
+Version: v0.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940960
+
+Package: intf-bf2rdisc6
+Version: v4.10.4-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940978
+
+Package: intf-ifcprops
+Version: v0.8.3-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940964
+
+Package: lighttpd-mod-alias
+Version: 1.4.26-3
+Depends: lighttpd
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: gateway-dm-bgcbutton
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940943
+
+Package: strongswan5-mod-uci
+Version: 5.5.0-1
+Depends: strongswan5, libuci
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: kmod-fuse
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: libdjbdns
+Version: 1.05.orig-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940971
+
+Package: bridge
+Version: 1.4-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940896
+
+Package: dspg-cmbs_4.12_b15RC2
+Version: v1.16.4-1
+Depends: kmod-hal-bsp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940995
+
+Package: jshn
+Version: eebe3fc-1
+Depends: libjson, libubox, libblobmsg-json
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: kmod-bcmxtmcfg
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941019
+
+Package: strongswan5-mod-pubkey
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: procps
+Version: 3.2.8-1
+Depends: libncurses
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940976
+
+Package: config-smu
+Version: v7.19.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-device-info, gateway-dm-wifi, xmo-server, smu-utils, intf-reboot, intf-deviceinfo
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940903
+
+Package: intf-dhcpc4conf
+Version: v0.7.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940959
+
+Package: libncurses
+Version: 5.7-3
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941023
+
+Package: easymesh-framework
+Version: BBOX3_D10_v8.0-1
+Depends: ebtables, libnl-core, libnl-genl, libopenssl, libpthread, librt, libjson, libnng
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940900
+
+Package: kmod-ipt-core
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941004
+
+Package: libpcap
+Version: 1.0.0-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941023
+
+Package: libcares
+Version: 1.7.5-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940903
+
+Package: kmod-ipt-ipsec
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941006
+
+Package: avro-c
+Version: 1.7.7-1
+Depends: jansson, zlib, liblzma
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940902
+
+Package: gateway-dm-tunneling
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940945
+
+Package: logoper-renderer
+Version: v1.46.2-1
+Depends: xmo-server, gateway-dm
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940974
+
+Package: intf-bf2dhcps6
+Version: v6.49.4-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940906
+
+Package: libnfnetlink
+Version: 1.0.0-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940972
+
+Package: gateway-dm-bgcnetworkproperties
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940944
+
+Package: datacollector-smu
+Version: v0.27.3-1
+Depends: gateway-dm, gateway-dm-datacollector, smu-utils, hal-bsp, evlp, xmt, xmo, xmo-server, intf-datacollector
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940905
+
+Package: gateway-dm-bridging
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940916
+
+Package: intf-xmos
+Version: v0.1.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940968
+
+Package: kmod-bcmarl
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941016
+
+Package: network-smu
+Version: v13.128.52-1
+Depends: devel-utils, evlp, hal-network, xmt, xmo, xmo-server, smu-utils, firewall-utils, ip, intf-rdisc6conf, intf-dvcdisc, intf-ipconf, intf-bridge, intf-wifissid, intf-routingconf, intf-ifcprops, gateway-dm, gateway-dm-ip, gateway-dm-ethernet, gateway-dm-gre, intf-radv, intf-dslline, intf-atmlink, intf-usb, intf-devmodem, intf-ppp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940975
+
+Package: gateway-dm-dhcp6
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940919
+
+Package: igd2-for-linux
+Version: v4.14.0.01-1
+Depends: libupnp, libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Conffiles:
+ /etc/upnpd.conf dcd772cf7660c61039cd6e9b65c94bda
+Installed-Time: 1634940954
+
+Package: gateway-dm-bgcztc
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940949
+
+Package: voice-manager
+Version: v13.8.0-1
+Depends: h2al-voice, config-voice, sal-voice, dial-voice, libcap
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940998
+
+Package: iptables-mod-conntrack-extra
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-conntrack-extra
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: intf-bf2ppp
+Version: v13.128.52-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940975
+
+Package: ip6tables
+Version: 1.4.21-1
+Depends: kmod-ip6tables, libiptc, libxtables
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: libxtables
+Version: 1.4.21-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: lighttpd-mod-redirect
+Version: 1.4.26-3
+Depends: lighttpd, libpcre
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: intf-rdisc6conf
+Version: v2.5.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940965
+
+Package: zlib
+Version: 1.2.8-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941024
+
+Package: button-bgc-osm
+Version: v0.28.0-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, gateway-dm-bgcbutton, gateway-dm-voice, xmo-server, smu-utils, hal-gpio, intf-wifiap, intf-reboot, intf-voicepub
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940903
+
+Package: intf-tr69
+Version: v0.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940967
+
+Package: qos-smu
+Version: v6.30.3-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, firewall-utils, intf-ifcprops
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940977
+
+Package: gateway-dm-user-interface
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940938
+
+Package: htop
+Version: 0.9-1
+Depends: libncurses
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940993
+
+Package: strongswan5-isakmp
+Version: 5.5.0-1
+Depends: strongswan5, strongswan5-app-charon, strongswan5-mod-aes, strongswan5-mod-des, strongswan5-mod-gmpdh, strongswan5-mod-hmac, strongswan5-mod-kernel-netlink, strongswan5-mod-md5, strongswan5-mod-nonce, strongswan5-mod-pubkey, strongswan5-mod-random, strongswan5-mod-sha1, strongswan5-mod-socket-default, strongswan5-mod-stroke, strongswan5-mod-uci, strongswan5-mod-updown, strongswan5-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: mount.ntfs-3g
+Version: 2010.5.22-4-fuseint
+Depends: ntfs-3g
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940975
+
+Package: gateway-dm-device-info
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940918
+
+Package: h2al-voice
+Version: v16.13.0-1
+Depends: devel-utils, evlp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940995
+
+Package: dhcp-client
+Version: v2.49.0.9-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940970
+
+Package: gateway-dm-dyndns
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940924
+
+Package: tr69d
+Version: v4.32.19-1
+Depends: librt, libopenssl, xmo-client, xmo-server
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940985
+
+Package: crda
+Version: 1.1.1-1
+Depends: libnl-tiny
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940896
+
+Package: gateway-dm-ethernet
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940923
+
+Package: kmod-ipt-ipopt
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941006
+
+Package: intf-airtiesem
+Version: BBOX3_D10_v13.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940897
+
+Package: intf-halwifi
+Version: BBOX3_WDR_v24.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940999
+
+Package: kmod-ipt-nathelper-extra
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core, kmod-ipt-nat, kmod-textsearch
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941008
+
+Package: ism-intf
+Version: v15.7.51-1
+Depends: ism-core
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940993
+
+Package: tftpd-hpa
+Version: 0.48-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: intf-atmlink
+Version: v0.3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940955
+
+Package: radvd
+Version: 2.6-1
+Depends: kmod-ipv6
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940977
+
+Package: libgmp
+Version: 4.2.1-2
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940950
+
+Package: libsqlite3
+Version: 3071000-1
+Depends: libpthread
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940981
+
+Package: firmware-upgrade-tool
+Version: v2.6.0-1
+Depends: devel-utils, evlp, evlp-download, firmware-upgrade-libs
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940910
+
+Package: intf-dvcdisc
+Version: v2.15.2-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940961
+
+Package: intf-fwup
+Version: v0.3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940963
+
+Package: strongswan5-mod-updown
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: arp-smu
+Version: v7.5.0-1
+Depends: devel-utils, evlp, xmt, xmo, xmo-server, gateway-dm, smu-utils, hal-network, intf-arp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940902
+
+Package: wol-bgc-osm
+Version: v0.4.0-1
+Depends: xmt, xmo, gateway-dm, xmo-server, smu-utils, udp-broadcast-relay
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940990
+
+Package: kmod-tms
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941020
+
+Package: iptables-mod-nat
+Version: 1.4.21-1
+Depends: iptables, kmod-ipt-nat
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940969
+
+Package: gateway-dm-bgcbridgedlanhost
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940949
+
+Package: gateway-dm-self-test-diag
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940934
+
+Package: libexpat
+Version: 2.0.1-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940908
+
+Package: firewall-cli
+Version: v6.71.0.10-1
+Depends: firewall-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940910
+
+Package: kernel
+Version: 3.4.11-rt19-1
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941003
+
+Package: libnl-tiny
+Version: 0.1-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941022
+
+Package: gateway-dm-hpna
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940925
+
+Package: intf-usb
+Version: v1.4.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940968
+
+Package: kmod-pcmshim
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941021
+
+Package: intf-tr69cli
+Version: v0.4.1-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940967
+
+Package: kmod-pwrmngtd
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941018
+
+Package: ntpdate
+Version: 4.2.6p2-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940976
+
+Package: wifi-smu
+Version: BBOX3_D10_v8.0-1
+Depends: devel-utils, evlp, hal-network, hal-wifi, hal-gpio, xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, intf-wifiap, intf-wifiradio, intf-wifissid, intf-wifi, intf-ifcprops, intf-dvcdisc, gateway-dm-dhcp6
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941001
+
+Package: gateway-dm-types
+Version: v9.159.134-1
+Depends: gateway-dm
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940936
+
+Package: ldd
+Version: 0.9.33.2-64
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: sagemcom
+Installed-Time: 1634940899
+
+Package: lighttpd-mod-fastcgi
+Version: 1.4.26-3
+Depends: lighttpd
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: lighttpd-mod-rewrite
+Version: 1.4.26-3
+Depends: lighttpd, libpcre
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940973
+
+Package: strongswan5-mod-socket-default
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: upnp-smu
+Version: v7.8.7-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-upnp, xmo-server, smu-utils, firewall-utils, intf-dhcps4conf, intf-upnp, upnpscand, twonky-media-server, igd2-for-linux
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940986
+
+Package: intf-ifcstack
+Version: v0.3.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940964
+
+Package: kmod-usb-wwan
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941014
+
+Package: strongswan5-mod-sha1
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: strongswan5-mod-sha2
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: firewall-smu
+Version: v4.23.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-firewall, xmo-server, smu-utils, firewall-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940909
+
+Package: voice-smu
+Version: v14.14.0-1
+Depends: xmt, xmo, info-utils, gateway-dm, gateway-dm-voice, gateway-dm-voice-2-0-0, gateway-dm-voice-wt104, smu-utils, xmo-server, libopenssl, firewall-utils, intf-dvcdisc, intf-reboot, intf-voicepri, intf-voicepub, dvcdisc-smu
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940998
+
+Package: intf-dhcpc6conf
+Version: v2.2.0-1
+Depends: ism-intf
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940959
+
+Package: gateway-dm-moca
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device, gateway-dm-interface
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940928
+
+Package: wificom-bgc-osm
+Version: v2.19.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-gre, gateway-dm-wifi, xmo-server, smu-utils, devel-utils, evlp, ism, intf-fonmng, hal-bsp, wificom-fon
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940989
+
+Package: liblogoper
+Version: v1.43.3-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940971
+
+Package: lan-bgc-osm
+Version: v1.5.0-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, xmo-server, smu-utils, gateway-dm-wifi
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940970
+
+Package: airties-edge
+Version: Release_4.112.0.0.434-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940897
+
+Package: xmo
+Version: v4.9.6-1
+Depends: xmt
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940990
+
+Package: xmt
+Version: v6.54.7-1
+Depends: devel-utils, evlp, log-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940991
+
+Package: libopenssl
+Version: 1.0.2o-1
+Depends: zlib
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634941023
+
+Package: strongswan5-mod-stroke
+Version: 5.5.0-1
+Depends: strongswan5, strongswan5-app-charon, strongswan5-utils
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940984
+
+Package: dvcdisc-smu
+Version: v8.52.32-1
+Depends: devel-utils, evlp, xmt, xmo, xmo-server, gateway-dm, gateway-dm-hosts, gateway-dm-dvcdisc, smu-utils, firewall-utils, hal-network, arp-smu, intf-dvcdisc, intf-wifiap, intf-dhcps4conf, intf-dns, intf-esata, intf-usb
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940908
+
+Package: strongswan5-mod-blowfish
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940982
+
+Package: strongswan5-mod-kernel-netlink
+Version: 5.5.0-1
+Depends: strongswan5
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940983
+
+Package: twonky-resource-belgacom
+Version: v1.5.4-1
+Depends: twonky-media-server
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940985
+
+Package: device-info-smu
+Version: v4.27.8.2-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-device-info, xmo-server, smu-utils, libexpat, hal-bsp, intf-deviceinfo, intf-tr69cli, firewall-utils, intf-filemgmt, intf-fwup
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940905
+
+Package: gateway-dm-device
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-types
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940917
+
+Package: ppp-mod-pppoe
+Version: v8.21.1-1
+Depends: ppp
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940976
+
+Package: diskdev_cmds
+Version: 332.14-1
+Provides:
+Status: install user installed
+Architecture: sagemcom
+Installed-Time: 1634940907
+
+Package: kmod-ipt-nat
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1), kmod-ipt-core, kmod-ipt-conntrack
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941007
+
+Package: kmod-bcmxtmrtdrv
+Version: 3.4.11-rt19-1
+Depends: kernel (= 3.4.11-rt19-1)
+Provides:
+Status: install hold installed
+Architecture: sagemcom
+Installed-Time: 1634941020
+

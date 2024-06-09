@@ -1,0 +1,15 @@
+Package: base-files
+Version: 64-ef5dfb8bf5c9ec20b006753d8e6ef9d1709e516c
+Depends: 
+Provides: 
+Source: feeds/base/base-files
+License: Sagemcom
+Section: base
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 11516021
+Description:  This package contains a base filesystem and system scripts for OpenWrt.

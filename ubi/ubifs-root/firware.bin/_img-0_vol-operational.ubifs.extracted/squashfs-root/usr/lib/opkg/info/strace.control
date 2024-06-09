@@ -1,0 +1,16 @@
+Package: strace
+Version: 4.5.20-1
+Depends: 
+Provides: 
+Source: feeds/tools/utils/strace
+License: GPLv2
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/strace
+Installed-Size: 125162
+Description:  A useful diagnostic, instructional, and debugging tool. Allows you to track what
+ system calls a program makes while it is running.

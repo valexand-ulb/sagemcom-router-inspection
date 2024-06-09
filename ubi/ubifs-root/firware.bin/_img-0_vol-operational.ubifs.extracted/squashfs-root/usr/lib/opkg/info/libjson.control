@@ -1,0 +1,15 @@
+Package: libjson
+Version: 0.12.1-2
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/json-c
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://s3.amazonaws.com/json-c_releases/releases/json-c-0.12.1-nodoc.tar.gz
+Installed-Size: 18470
+Description:  This package contains a library for javascript object notation backends.

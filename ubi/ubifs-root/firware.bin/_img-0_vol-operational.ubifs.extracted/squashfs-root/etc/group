@@ -1,0 +1,17 @@
+root:x:0:
+nogroup:x:65534:
+xmo-user:x:1002:lighttpd,tr69,wifidr
+lighttpd:x:1003:
+media:x:1004:
+firewall:x:1005:tr69,voice,ipsec
+tr69:x:1006:
+voice:x:1007:
+confedit:x:1008:voice,dhcpd
+ism:x:1009:voice,dhcpd,upnp,tr69,dhclient,tinyproxy,lighttpd,wifidr
+ipsec:x:1010:
+dhcpd:x:1011:
+dhclient:x:1014:
+upnp:x:1012:
+hg6:x:1013:voice
+wifidr:x:1016:
+mosquitto:x:1021:

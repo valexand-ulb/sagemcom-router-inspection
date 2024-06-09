@@ -1,0 +1,176 @@
+#!/bin/sh
+
+if [ -f /etc/edge_platform_params ]; then
+	. /etc/edge_platform_params
+fi
+
+if [ -z ${ENV_EDGE_STORAGE_FOLDER} ]; then
+	echo "WARNING: ENV_EDGE_STORAGE_FOLDER is not provided! Using /tmp/airties-edge..."
+	ENV_EDGE_STORAGE_FOLDER=/tmp/airties-edge
+fi
+
+if [ -z ${ENV_EDGE_TMP_FOLDER} ]; then
+	echo "WARNING: ENV_EDGE_TMP_FOLDER is not provided! Using /tmp/airties-edge..."
+	ENV_EDGE_TMP_FOLDER=/tmp/airties-edge
+fi
+
+STATUS_FILE=${ENV_EDGE_TMP_FOLDER}/.status
+OVERLAY_DIR=/airties-edge
+CDF_PIDFILE=${ENV_EDGE_TMP_FOLDER}/cdfwatcher.pid
+
+export LD_LIBRARY_PATH=${OVERLAY_DIR}/lib
+export PATH=${OVERLAY_DIR}/usr/sbin:${PATH}
+
+airbus_mknod() {
+	if [ ! -c /dev/airbus-command ]; then
+		major=`cat /sys/class/airbus/airbus-command/dev | cut -d':' -f1`
+
+		if [ -z "$major" ]; then
+			major=${AIRBUS_COMMAND_MAJOR}
+		fi
+
+		mknod /dev/airbus-command c $major 0
+	fi
+}
+
+cdf_start() {
+	LPID=`pidof aircdf-daemon`
+	if [ ! -z $LPID ]; then
+		echo "CDF daemon is already running"
+		return 0;
+	fi
+
+	if [ -f $CDF_PIDFILE ]; then
+		kill "$(cat $CDF_PIDFILE)"
+		rm $CDF_PIDFILE
+	fi
+
+	echo "executing aircdf-daemon"
+	(
+		CDF_DAEMON_ARGS="--parser.path_ro ${OVERLAY_DIR}/etc/cdf/data.xml --parser.path_xsd ${OVERLAY_DIR}/etc/cdf/data.xsd --parser.path_wr ${ENV_EDGE_STORAGE_FOLDER}/aircdf-writable-config.xml --debug-file ${ENV_EDGE_TMP_FOLDER}/aircdf-daemon.log --debug-level 1"
+		if [ -n "${ENV_BIND_IFNAME_INSIDE_CONTAINER}" ]; then
+			CDF_DAEMON_ARGS="${CDF_DAEMON_ARGS} --bind-iface=${ENV_BIND_IFNAME_INSIDE_CONTAINER}"
+		fi
+
+		while [ 1 ]; do
+			${OVERLAY_DIR}/usr/sbin/aircdf-daemon $CDF_DAEMON_ARGS
+			RET=$?
+			echo "CDF Daemon died with $RET Restarting in 5 seconds..."
+			sleep 5
+		done
+	) &
+	echo $! > $CDF_PIDFILE
+	# Wait for cdf-daemon to initialize
+	while [ 1 ]; do
+		echo "Wait for cdf-daemon to become reachable..."
+		sleep 1
+		aircdf-client -a -e "get /" >> /dev/null 2>&1
+		if [ "$?" -eq "0" ]; then break; fi
+	done
+	echo "Init airdata"
+	airdata-cli -e "EnvironmentSynchronization"
+	airdata-cli -e "setpv Device.X_AIRTIES_Obj.Storage.Path ${ENV_EDGE_STORAGE_FOLDER}"
+	airdata-cli -e "setpv Device.X_AIRTIES_Obj.Storage.TempPath ${ENV_EDGE_TMP_FOLDER}"
+}
+
+cdf_stop() {
+	CDFPID=`pidof aircdf-daemon`
+	killall aircdf-daemon
+
+	if [ ! -z "$CDFPID" ]; then
+		echo "wait for pid $CDFPID"
+		while [ -e "/proc/$CDFPID" ]; do
+			if ! SLEEP="$(type -p usleep)"; then
+				sleep 1
+			else
+				usleep 50000
+			fi
+		done
+	fi
+
+	if [ -f $CDF_PIDFILE ]; then
+		kill "$(cat $CDF_PIDFILE)"
+		rm $CDF_PIDFILE
+	fi
+
+	echo "aircdf-daemon stopped"
+}
+
+launcher_start() {
+	echo "executing airlauncher-daemon";
+	if [ -z ${ENV_BIND_IFNAME_INSIDE_CONTAINER} ]; then
+		${OVERLAY_DIR}/usr/sbin/airlauncher-daemon --dormant &
+	else
+		${OVERLAY_DIR}/usr/sbin/airlauncher-daemon --dormant --cdf-dyn-host &
+	fi
+}
+
+launcher_stop() {
+	LPID=`pidof airlauncher-daemon`
+	killall -15 airlauncher-daemon
+
+	if [ ! -z "$LPID" ]; then
+		echo "wait for pid $LPID"
+		while [ -e "/proc/$LPID" ]; do
+			if ! SLEEP="$(type -p usleep)"; then
+				sleep 1
+			else
+				usleep 50000
+			fi
+		done
+	fi
+	echo "airlauncher-daemon stopped"
+}
+
+start() {
+	current_status=$(status)
+	if [ "${current_status}" = "running" ]; then
+		echo "${current_status}"
+		return 0;
+	fi
+	mkdir -p ${ENV_EDGE_STORAGE_FOLDER}
+	mkdir -p ${ENV_EDGE_TMP_FOLDER}
+	airbus_mknod
+	cdf_start
+	launcher_start
+	echo "running" > ${STATUS_FILE}
+}
+
+stop() {
+	launcher_stop
+	cdf_stop
+	rm -f ${ENV_EDGE_TMP_FOLDER}/airdata_internal
+	rm -f ${STATUS_FILE}
+}
+
+status() {
+	if [ -f ${STATUS_FILE} ]; then
+		cat ${STATUS_FILE}
+	else
+		echo "not running"
+	fi
+}
+
+case "$1" in
+	start)
+		start
+		;;
+
+	stop)
+		stop
+		;;
+
+	restart)
+		stop
+		start
+		;;
+
+	status)
+		status
+		;;
+
+	*)
+		echo "unknown command. [start|stop|restart|status]"
+		exit 1
+		;;
+esac

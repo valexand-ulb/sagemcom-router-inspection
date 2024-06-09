@@ -1,0 +1,16 @@
+Package: evlp-download
+Version: v2.6.1-1
+Depends: evlp, curl
+Provides: 
+Source: feeds/sagemcom/libs/evlp-download
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/evlp-download
+Installed-Size: 3857
+Description:  Librarie to download data from remote host using HTTP, HTTPS, FTP...
+ You need to evlp scheduler to use this librarie. Indeed, evlp is used to don't be blocking.

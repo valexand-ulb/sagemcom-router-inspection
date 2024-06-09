@@ -1,0 +1,15 @@
+Package: cson
+Version: 1.0.0-1
+Depends: libsqlite3
+Provides: 
+Source: package/cson
+License: Sagemcom
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: http://downloads.openwrt.org/sources/
+Installed-Size: 204088
+Description:  Lib CSON

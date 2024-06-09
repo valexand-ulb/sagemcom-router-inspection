@@ -1,0 +1,3 @@
+/etc/hotplug.d/platform/10-regulatory
+/usr/lib/crda/regulatory.bin
+/sbin/crda

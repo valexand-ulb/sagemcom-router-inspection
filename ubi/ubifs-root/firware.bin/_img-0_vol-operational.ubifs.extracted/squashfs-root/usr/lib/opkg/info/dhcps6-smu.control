@@ -1,0 +1,15 @@
+Package: dhcps6-smu
+Version: v6.49.4-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-dhcp6, smu-utils, xmo-server, dhcp-server, intf-dhcps6conf, intf-bf2dhcps6
+Provides: 
+Source: feeds/sagemcom/smu/dhcps6-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dhcps6-smu
+Installed-Size: 34770
+Description:  DHCP6 server smu plugin

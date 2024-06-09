@@ -1,0 +1,15 @@
+Package: gateway-dm-periodic-stats
+Version: v9.159.134-1
+Depends: gateway-dm, gateway-dm-device
+Provides: 
+Source: feeds/sagemcom/libs/gateway-dm
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/gateway-dm
+Installed-Size: 7152
+Description:  Periodic Statistiques

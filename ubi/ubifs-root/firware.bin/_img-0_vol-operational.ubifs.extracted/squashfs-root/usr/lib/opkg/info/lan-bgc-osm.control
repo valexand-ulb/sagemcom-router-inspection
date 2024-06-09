@@ -1,0 +1,15 @@
+Package: lan-bgc-osm
+Version: v1.5.0-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, xmo-server, smu-utils, gateway-dm-wifi
+Provides: 
+Source: feeds/sagemcom/osm/lan-bgc-osm
+License: Sagemcom
+Section: osm
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/lan-bgc-osm
+Installed-Size: 14345
+Description:  Various SMU implementations.

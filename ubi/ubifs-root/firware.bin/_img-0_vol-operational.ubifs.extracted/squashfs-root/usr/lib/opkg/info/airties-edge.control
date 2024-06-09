@@ -1,0 +1,15 @@
+Package: airties-edge
+Version: Release_4.112.0.0.434-1
+Depends: 
+Provides: 
+Source: feeds/airties/airties-edge
+License: 
+Section: airties
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://
+Installed-Size: 2883553
+Description:  Binary package from AirTies + edge-lib headers

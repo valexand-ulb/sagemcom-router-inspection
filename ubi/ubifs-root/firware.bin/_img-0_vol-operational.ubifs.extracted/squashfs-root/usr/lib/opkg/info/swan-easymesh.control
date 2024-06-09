@@ -1,0 +1,15 @@
+Package: swan-easymesh
+Version: BBOX3_D10_75.8-1
+Depends: smu-utils, evlp, intf-easymesh
+Provides: 
+Source: feeds/extender/utils/swan-easymesh
+License: Sagemcom
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/swan-easymesh
+Installed-Size: 1057352
+Description:  Sagemcom Easy Mesh adapter

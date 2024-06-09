@@ -1,0 +1,4 @@
+/usr/lib/xmo/plugins/libairties-edge-dm.so
+/usr/lib/xmo/plugins/libairties-smu.so
+/usr/bin/airties_manager
+/usr/sbin/airties.sh

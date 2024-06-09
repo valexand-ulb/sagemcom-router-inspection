@@ -1,0 +1,15 @@
+Package: librt
+Version: 0.9.33.2-64
+Depends: 
+Provides: 
+Source: feeds/base/base-files
+License: GPLv2
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 5490
+Description:  POSIX.1b RealTime extension library

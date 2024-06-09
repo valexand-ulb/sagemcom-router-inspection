@@ -1,0 +1,15 @@
+Package: global-bgc-osm
+Version: v0.10.3-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, devel-utils, ism, hal-bsp
+Provides: 
+Source: feeds/sagemcom/osm/global-bgc-osm
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/global-bgc-osm
+Installed-Size: 18756
+Description:  OSM managing global function

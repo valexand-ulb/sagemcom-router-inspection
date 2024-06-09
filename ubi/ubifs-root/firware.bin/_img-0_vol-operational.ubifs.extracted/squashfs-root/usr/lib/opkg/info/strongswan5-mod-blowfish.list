@@ -1,0 +1,3 @@
+/etc/strongswan.d/starter.conf
+/usr/lib/ipsec/plugins/libstrongswan-blowfish.so
+/etc/strongswan.d/charon/blowfish.conf

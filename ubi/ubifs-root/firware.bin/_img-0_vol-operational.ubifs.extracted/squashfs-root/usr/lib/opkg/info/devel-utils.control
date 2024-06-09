@@ -1,0 +1,15 @@
+Package: devel-utils
+Version: BBOX3_D10_v2-1
+Depends: log-utils
+Provides: 
+Source: feeds/scheduler/devel/devel-utils
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/devel-utils
+Installed-Size: 46652
+Description:  Devel libraries package

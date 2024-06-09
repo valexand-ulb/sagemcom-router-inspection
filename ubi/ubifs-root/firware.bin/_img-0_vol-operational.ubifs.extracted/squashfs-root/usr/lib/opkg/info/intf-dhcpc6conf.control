@@ -1,0 +1,15 @@
+Package: intf-dhcpc6conf
+Version: v2.2.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-dhcpc6conf
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-dhcpc6conf
+Installed-Size: 9611
+Description:  Interface Dhcpc6Conf

@@ -1,0 +1,16 @@
+Package: strongswan5-utils
+Version: 5.5.0-1
+Depends: strongswan5
+Provides: 
+Source: feeds/sagemcom/net/strongswan5
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://download.strongswan.org/
+Installed-Size: 39053
+Description:  StrongSwan is an OpenSource IPsec implementation for the Linux operating system.
+ This package contains the pki & scepclient utilities.

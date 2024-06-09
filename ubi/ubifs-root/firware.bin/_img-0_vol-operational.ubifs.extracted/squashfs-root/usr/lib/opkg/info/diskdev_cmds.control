@@ -1,0 +1,15 @@
+Package: diskdev_cmds
+Version: 332.14-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/utils/diskdev_cmds
+License: GPLv2
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: ftp://ftp.fi.debian.org/pub/gentoo/distfiles/
+Installed-Size: 81728
+Description:  Supplies fsck for HFS and HFS+ volumes. Ported from OSX.

@@ -1,0 +1,15 @@
+Package: ladb-voice
+Version: v1.53.0-1
+Depends: libsqlite3, devel-utils
+Provides: 
+Source: feeds/voipHG6/libs/ladb-voice
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ladb-voice
+Installed-Size: 21647
+Description:  Generic Data base Voice API 

@@ -1,0 +1,78 @@
+<X_AIRTIES_Device_211>
+	<Device>
+		<X_AIRTIES_Obj>
+			<Bus>
+				<Enable>true</Enable>
+				<Backends>AirBus MQTT</Backends>
+				<Instances>(Local:AirBus.1)</Instances>
+				<AirBusNumberOfEntries>1</AirBusNumberOfEntries>
+				<AirBus index="0">
+					<Alias></Alias>
+					<Enable>true</Enable>
+					<MessageFormat>JSON</MessageFormat>
+				</AirBus>
+			</Bus>
+			<MultiAPController>
+				<IsMaster>true</IsMaster>
+				<LeadershipPrecedence>0</LeadershipPrecedence>
+				<SSIDProfileNumberOfEntries>16</SSIDProfileNumberOfEntries>
+				<SSIDProfile index="0"></SSIDProfile>
+				<SSIDProfile index="1"></SSIDProfile>
+				<SSIDProfile index="2"></SSIDProfile>
+				<SSIDProfile index="3"></SSIDProfile>
+				<SSIDProfile index="4"></SSIDProfile>
+				<SSIDProfile index="5"></SSIDProfile>
+				<SSIDProfile index="6"></SSIDProfile>
+				<SSIDProfile index="7"></SSIDProfile>
+				<SSIDProfile index="8"></SSIDProfile>
+				<SSIDProfile index="9"></SSIDProfile>
+				<SSIDProfile index="10"></SSIDProfile>
+				<SSIDProfile index="11"></SSIDProfile>
+				<SSIDProfile index="12"></SSIDProfile>
+				<SSIDProfile index="13"></SSIDProfile>
+				<SSIDProfile index="14"></SSIDProfile>
+				<SSIDProfile index="15"></SSIDProfile>
+			</MultiAPController>
+			<SteeringUnified>
+				<AlgoTOSEnable>false</AlgoTOSEnable>
+				<AlgoRSSIEnable>true</AlgoRSSIEnable>
+				<AlgoLinkCapEnable>true</AlgoLinkCapEnable>
+				<AlgoPreemptiveBlockEnable>true</AlgoPreemptiveBlockEnable>
+				<AlgoBandsteerEnable>true</AlgoBandsteerEnable>
+				<AlgoLoadBalanceEnable>true</AlgoLoadBalanceEnable>
+				<TopoEnable>true</TopoEnable>
+			</SteeringUnified>
+		</X_AIRTIES_Obj>
+	</Device>
+	<launcher>
+		<options>
+			<log>
+				<maximum-size>64000</maximum-size>
+				<stderr>true</stderr>
+				<file>false</file>
+				<syslog>true</syslog>
+				<app-start-stop>true</app-start-stop>
+			</log>
+		</options>
+		<applications>
+			<application index="0">
+				<name>multiap-controller</name>
+				<enable>true</enable>
+				<log>false</log>
+				<executable>multiap_controller</executable>
+			</application>
+			<application index="1">
+				<name>air-steer-ng</name>
+				<enable>true</enable>
+				<log>false</log>
+				<executable>air-steer-ng-daemon</executable>
+			</application>
+			<application index="2">
+				<name>cloud-comm</name>
+				<enable>true</enable>
+				<log>false</log>
+				<executable>cloud-comm</executable>
+			</application>
+		</applications>
+	</launcher>
+</X_AIRTIES_Device_211>

@@ -1,0 +1,15 @@
+Package: intf-tr69cli
+Version: v0.4.1-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-tr69cli
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-tr69-cli
+Installed-Size: 17160
+Description:  Interface TR69-cli

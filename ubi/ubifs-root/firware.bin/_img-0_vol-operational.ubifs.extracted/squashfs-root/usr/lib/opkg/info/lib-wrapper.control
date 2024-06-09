@@ -1,0 +1,15 @@
+Package: lib-wrapper
+Version: 1.4.0-1
+Depends: xmo, xmt
+Provides: 
+Source: feeds/sagemcom/libs/lib-wrapper
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/lib-wrapper
+Installed-Size: 7032
+Description:  Wrapper library

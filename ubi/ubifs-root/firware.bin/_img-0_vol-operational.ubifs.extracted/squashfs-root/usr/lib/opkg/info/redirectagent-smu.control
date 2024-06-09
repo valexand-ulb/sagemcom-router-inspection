@@ -1,0 +1,15 @@
+Package: redirectagent-smu
+Version: v0.4.5-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-redirectagent, xmo-server, smu-utils
+Provides: 
+Source: feeds/sagemcom/smu/redirectagent-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/redirectagent-smu
+Installed-Size: 20771
+Description:  Description of my package

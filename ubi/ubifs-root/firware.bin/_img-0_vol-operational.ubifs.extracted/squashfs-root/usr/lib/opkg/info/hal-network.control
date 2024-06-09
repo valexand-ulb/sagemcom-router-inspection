@@ -1,0 +1,15 @@
+Package: hal-network
+Version: v7.281.39.1-1
+Depends: kmod-hal-bsp, firewall-utils, smu-utils
+Provides: 
+Source: feeds/sagemcom/libs/hal-network
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hal-network
+Installed-Size: 54412
+Description:  HAL network

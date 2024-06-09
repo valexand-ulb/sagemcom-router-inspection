@@ -1,0 +1,15 @@
+Package: strongswan5-mod-stroke
+Version: 5.5.0-1
+Depends: strongswan5, strongswan5-app-charon, strongswan5-utils
+Provides: 
+Source: feeds/sagemcom/net/strongswan5
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://download.strongswan.org/
+Installed-Size: 72369
+Description:  StrongSwan Stroke plugin

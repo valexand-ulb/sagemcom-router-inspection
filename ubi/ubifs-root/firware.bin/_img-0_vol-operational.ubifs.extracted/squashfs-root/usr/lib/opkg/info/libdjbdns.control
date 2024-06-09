@@ -1,0 +1,15 @@
+Package: libdjbdns
+Version: 1.05.orig-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/libdjbdns
+License: BSD
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Debian
+Architecture: sagemcom
+URL: http://ftp.dedibox.fr/pool/main/libd/libdjbdns/
+Installed-Size: 18548
+Description:  DNS resolution client library from the djbdns project

@@ -1,0 +1,16 @@
+Package: kmod-fuse
+Version: 3.4.11-rt19-1
+Depends: kernel (=3.4.11-rt19-1)
+Provides: 
+Source: package/fuse
+License: 
+Section: kernel
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/fuse
+Installed-Size: 105
+Description:  FUSE (Filesystem in UserSpacE)
+ This package contains the FUSE kernel module.

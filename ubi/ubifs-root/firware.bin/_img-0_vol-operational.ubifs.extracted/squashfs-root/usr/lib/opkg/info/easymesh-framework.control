@@ -1,0 +1,18 @@
+Package: easymesh-framework
+Version: BBOX3_D10_v8.0-1
+Depends: ebtables, libnl-core, libnl-genl, libopenssl, libpthread, librt, libjson, libnng
+Provides: 
+Source: feeds/extender/utils/easymesh-framework
+License: 
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: SAGEMCOM
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/easymesh-framework
+Installed-Size: 968900
+Description:  The easyMesh framework contains an implementation of the IEEE 1905.1 protocol. It  is a mechanism for home devices to discover each
+ other and communicate, so that they can use optimal paths for transmission.
+ This package implements the IEEE 1905.1 and 1905.1a protocol, as well as the
+ WFA Multi-AP protocol.

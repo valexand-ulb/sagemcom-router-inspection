@@ -1,0 +1,17 @@
+Package: usb-modeswitch-data
+Version: 20120531-1
+Depends: usb-modeswitch
+Provides: 
+Source: feeds/sagemcom/utils/usb-modeswitch-data
+License: GPLv2
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.draisberghof.de/usb_modeswitch/
+Installed-Size: 11466
+Description:  Configuration database for usb-modeswitch.
+ Contains definitions for many USB devices required to
+ autoswitch "flip flop" gear.

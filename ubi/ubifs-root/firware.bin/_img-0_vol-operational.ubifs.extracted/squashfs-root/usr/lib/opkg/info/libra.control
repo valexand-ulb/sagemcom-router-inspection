@@ -1,0 +1,15 @@
+Package: libra
+Version: 2.14.1-1
+Depends: libsodium
+Provides: 
+Source: feeds/sagemcom/libs/libra
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://
+Installed-Size: 413520
+Description:  Libra

@@ -1,0 +1,15 @@
+Package: kmod-hal-gpio
+Version: 3.4.11-rt19+v3.20.2-1
+Depends: kernel (=3.4.11-rt19-1), kmod-hal-bsp
+Provides: 
+Source: feeds/sagemcom/libs/hal-gpio
+License: Sagemcom
+Section: kernel
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hal-gpio
+Installed-Size: 8304
+Description:  Kernel module GPIO (Leds, buttons...)

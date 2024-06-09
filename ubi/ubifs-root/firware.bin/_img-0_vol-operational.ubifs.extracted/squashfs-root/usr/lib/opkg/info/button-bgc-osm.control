@@ -1,0 +1,15 @@
+Package: button-bgc-osm
+Version: v0.28.0-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, gateway-dm-bgcbutton, gateway-dm-voice, xmo-server, smu-utils, hal-gpio, intf-wifiap, intf-reboot, intf-voicepub
+Provides: 
+Source: feeds/sagemcom/osm/button-bgc-osm
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/button-bgc-osm
+Installed-Size: 13754
+Description:  Manager for Buttons.

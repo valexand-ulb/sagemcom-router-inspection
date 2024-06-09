@@ -1,0 +1,15 @@
+Package: hal-gpio
+Version: v3.20.2-1
+Depends: kmod-hal-gpio
+Provides: 
+Source: feeds/sagemcom/libs/hal-gpio
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hal-gpio
+Installed-Size: 4924
+Description:  HAL Led button and GPIO

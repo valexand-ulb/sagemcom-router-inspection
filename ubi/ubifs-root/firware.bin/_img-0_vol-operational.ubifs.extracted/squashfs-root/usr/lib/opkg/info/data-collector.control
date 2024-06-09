@@ -1,0 +1,15 @@
+Package: data-collector
+Version: v1.74.3-1
+Depends: bf-utils, libcurl, gateway-dm, gateway-dm-datacollector, evlp, xmt, xmo, xmo-server, xmo-client, datacollector-smu
+Provides: 
+Source: feeds/sagemcom/utils/data-collector
+License: Sagemcom
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/data-collector
+Installed-Size: 681925
+Description:  Sagemcom Data Collector 

@@ -1,0 +1,16 @@
+Package: usb-modeswitch
+Version: 1.2.3-2
+Depends: libusb-compat-0.1
+Provides: 
+Source: feeds/sagemcom/utils/usb-modeswitch
+License: GPLv2
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.draisberghof.de/usb_modeswitch
+Installed-Size: 18240
+Description:  A mode switching tool for controlling
+ "flip flop" (multiple device) USB gear.

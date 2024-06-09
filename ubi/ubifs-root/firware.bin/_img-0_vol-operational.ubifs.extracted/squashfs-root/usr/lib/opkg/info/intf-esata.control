@@ -1,0 +1,15 @@
+Package: intf-esata
+Version: v0.2.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-esata
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-esata
+Installed-Size: 6799
+Description:  Interface Esata

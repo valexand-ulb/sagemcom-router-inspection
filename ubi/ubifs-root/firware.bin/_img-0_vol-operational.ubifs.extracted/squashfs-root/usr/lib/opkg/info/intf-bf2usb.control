@@ -1,0 +1,15 @@
+Package: intf-bf2usb
+Version: v14.3.0.2-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/smu/usb-smu
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/usb-smu
+Installed-Size: 10007
+Description:  Interface Bf2usb

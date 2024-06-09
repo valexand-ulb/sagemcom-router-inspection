@@ -1,0 +1,15 @@
+Package: libxtables
+Version: 1.4.21-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/net/iptables
+License: GPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.netfilter.org/projects/iptables/files ftp://ftp.be.netfilter.org/pub/netfilter/iptables/ ftp://ftp.de.netfilter.org/pub/netfilter/iptables/ ftp://ftp.no.netfilter.org/pub/netfilter/iptables/
+Installed-Size: 20497
+Description:  IPv4/IPv6 firewall - shared xtables library

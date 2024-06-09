@@ -1,0 +1,23 @@
+Package: kmod-ipt-core
+Version: 3.4.11-rt19-1
+Depends: kernel (=3.4.11-rt19-1)
+Provides: 
+Source: package/kernel
+License: 
+Section: kernel
+Status: unknown hold not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 25869
+Description:  Netfilter core kernel modules
+ Includes:
+ - comment (2.6)
+ - limit
+ - LOG
+ - mac
+ - multiport
+ - REJECT
+ - TCPMSS

@@ -1,0 +1,15 @@
+Package: dhcps-smu
+Version: v4.21.0.5-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, smu-utils, xmo-server, firewall-utils, intf-bf2dhcps, dhcp-server, intf-dvcdisc, intf-dhcps4conf
+Provides: 
+Source: feeds/sagemcom/smu/dhcps-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dhcps-smu
+Installed-Size: 41151
+Description:  DHCP server smu plugin

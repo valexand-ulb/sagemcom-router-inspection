@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+START=40
+
+start() {
+	if [ -f /bin/check_voice ] ;then
+	check_voice
+	if [ "$?" != "1" ]; then 
+	rm -fr /usr/lib/xmo/plugins/libvoice-2-0-0-dm.so
+	rm -fr /usr/lib/xmo/plugins/libvoice-2-0-0-dm.so.dep
+	rm -fr /usr/lib/xmo/plugins/libvoice-smu.so
+	fi
+	fi
+}
+
+stop() {
+	echo stop devices
+}

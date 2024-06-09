@@ -1,0 +1,15 @@
+Package: libcap
+Version: 2.24-1
+Depends: 
+Provides: 
+Source: package/libcap
+License: GPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @KERNEL/linux/libs/security/linux-privs/libcap2
+Installed-Size: 6315
+Description:  Linux capabilities library

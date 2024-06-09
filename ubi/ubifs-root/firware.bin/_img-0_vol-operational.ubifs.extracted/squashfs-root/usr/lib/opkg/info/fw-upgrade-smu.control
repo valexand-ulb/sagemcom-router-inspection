@@ -1,0 +1,16 @@
+Package: fw-upgrade-smu
+Version: v9.27.13.4-1
+Depends: devel-utils, evlp, evlp-download, firmware-upgrade-libs, xmt, xmo, gateway-dm, smu-utils, xmo-server, firewall-utils, libtr69ctl, intf-fwup
+Provides: 
+Source: feeds/sagemcom/smu/mgmt-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/mgmt-smu
+Installed-Size: 32588
+Description:  Firmware upgrade smu plugin
+ RPC download management

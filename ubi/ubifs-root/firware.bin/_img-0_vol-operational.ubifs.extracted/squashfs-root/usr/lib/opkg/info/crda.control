@@ -1,0 +1,20 @@
+Package: crda
+Version: 1.1.1-1
+Depends: libnl-tiny
+Provides: 
+Source: package/crda
+License: ISC Internet Software Consortium
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://wireless.kernel.org/download/crda
+Installed-Size: 5904
+Description:  This is the Central Regulatory Domain Agent for Linux. It serves one
+ purpose: tell Linux kernel what to enforce. In essence it is a udev
+ helper for communication between the kernel and userspace. You only
+ need to run this manually for debugging purposes. For manual changing
+ of regulatory domains use iw (iw reg set) or wpa_supplicant (feature
+ yet to be added).

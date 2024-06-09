@@ -1,0 +1,15 @@
+Package: intf-contact
+Version: v1.9.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-contact
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-contact
+Installed-Size: 28710
+Description:  Interface Contact

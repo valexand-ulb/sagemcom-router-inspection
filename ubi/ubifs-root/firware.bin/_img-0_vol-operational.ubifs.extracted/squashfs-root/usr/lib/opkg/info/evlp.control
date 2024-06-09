@@ -1,0 +1,15 @@
+Package: evlp
+Version: v6.18.1.02-1
+Depends: librt, libpthread, libexpat, libopenssl, libcares
+Provides: 
+Source: feeds/scheduler/libs/evlp
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/scheduler-evlp
+Installed-Size: 142648
+Description:  Event loop library : provide a generic event loop

@@ -1,0 +1,8 @@
+/usr/lib/iptables/libxt_dscp.so
+/usr/lib/iptables/libxt_MARK.so
+/usr/lib/iptables/libxt_length.so
+/usr/lib/iptables/libxt_mark.so
+/usr/lib/iptables/libxt_TOS.so
+/usr/lib/iptables/libxt_tos.so
+/usr/lib/iptables/libxt_DSCP.so
+/usr/lib/iptables/libxt_tcpmss.so

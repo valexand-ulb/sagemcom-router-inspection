@@ -1,0 +1,15 @@
+Package: watchdog-smu
+Version: v1.2.0.01-1
+Depends: gateway-dm, gateway-dm-watchdog, smu-utils, hal-bsp, evlp, xmt, xmo, xmo-server
+Provides: 
+Source: feeds/sagemcom/smu/watchdog-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/watchdog-smu
+Installed-Size: 6675
+Description:  WATCHDOG SMU Implementation

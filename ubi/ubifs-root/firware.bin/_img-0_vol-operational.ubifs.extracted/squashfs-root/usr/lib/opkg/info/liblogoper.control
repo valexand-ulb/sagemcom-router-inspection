@@ -1,0 +1,15 @@
+Package: liblogoper
+Version: v1.43.3-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/liblogoper
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/lib-logoper
+Installed-Size: 6365
+Description:  Log operator libs

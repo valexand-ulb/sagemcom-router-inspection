@@ -1,0 +1,15 @@
+Package: libcurl
+Version: 7.66.0-1
+Depends: libopenssl, zlib, libcares
+Provides: 
+Source: feeds/sagemcom/libs/curl
+License: MIT/X derivate license
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://curl.haxx.se/download/ http://www.mirrorspace.org/curl/ http://curl.mirror.internet.tp/download/ ftp://ftp.sunet.se/pub/www/utilities/curl/ ftp://ftp.planetmirror.com/pub/curl/ http://www.mirrormonster.com/curl/download/ http://curl.mirrors.cyberservers.net/download/
+Installed-Size: 203309
+Description:  A client-side URL transfer library

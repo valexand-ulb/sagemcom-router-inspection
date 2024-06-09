@@ -1,0 +1,16 @@
+Package: mtd
+Version: 15
+Depends: 
+Provides: 
+Source: package/mtd
+License: GPLv2
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 9014
+Description:  This package contains an utility useful to upgrade from other firmware or 
+ older OpenWrt releases.

@@ -1,0 +1,15 @@
+Package: libuci
+Version: 2011-01-19.1-1
+Depends: 
+Provides: 
+Source: package/uci
+License: GPLv2
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: git://nbd.name/uci.git
+Installed-Size: 19198
+Description:  C library for the Unified Configuration Interface (UCI)

@@ -1,0 +1,15 @@
+Package: dnsmasq
+Version: v0.16.0.1-6
+Depends: liblogoper
+Provides: 
+Source: feeds/sagemcom/net/dnsmasq
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dnsmasq-daemon
+Installed-Size: 82902
+Description:  It is intended to provide coupled DNS and DHCP service to a LAN.

@@ -1,0 +1,15 @@
+Package: wifidoctor-smu
+Version: v1.25.146.3-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-wifi, xmo-server, smu-utils, network-smu, intf-startstop, hal-network, gateway-dm-wifidr, wifi-doctor-agent, xmo-client, intf-wifiap, intf-wifiradio, intf-halwifi, libjson-c
+Provides: 
+Source: feeds/sagemcom/smu/wifidoctor-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/wifidoctor-smu
+Installed-Size: 128336
+Description:  telstra WifiDr plugin description.

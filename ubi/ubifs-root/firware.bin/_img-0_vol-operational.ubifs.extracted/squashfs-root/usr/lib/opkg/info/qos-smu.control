@@ -1,0 +1,15 @@
+Package: qos-smu
+Version: v6.30.3-1
+Depends: devel-utils, evlp, xmt, xmo, gateway-dm, xmo-server, smu-utils, firewall-utils, intf-ifcprops
+Provides: 
+Source: feeds/sagemcom/smu/qos-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/qos-smu
+Installed-Size: 45966
+Description:  Routing Smu implementation.

@@ -1,0 +1,15 @@
+Package: led-bgc-osm
+Version: v2.28.4-1
+Depends: devel-utils, evlp, ism, xmt, xmo, gateway-dm, xmo-server, smu-utils, hal-gpio, hal-network
+Provides: 
+Source: feeds/sagemcom/osm/led-bgc-osm
+License: Sagemcom
+Section: osm
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/led-bgc-osm
+Installed-Size: 27635
+Description:  Manager for Led Wan.

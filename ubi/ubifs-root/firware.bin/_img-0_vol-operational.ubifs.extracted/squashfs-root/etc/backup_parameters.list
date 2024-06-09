@@ -1,0 +1,7 @@
+Device/UserAccounts/Users/User[Login='Admin']/ClearTextPassword
+Device/UserAccounts/Users/User[Login='Admin']/Password
+Device/UserAccounts/Users/User[Login='Expert']/ClearTextPassword
+Device/UserAccounts/Users/User[Login='Expert']/Password
+Device/Services/OneSSID/Refurbished
+Device/Services/OneSSID/SSIDPrefix
+

@@ -1,0 +1,1082 @@
+<?xml version="1.0"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               elementFormDefault="qualified"
+               attributeFormDefault="unqualified">
+  <xs:simpleType name="Alias">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StatsCounter64">
+    <xs:restriction base="xs:unsignedLong">
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MACAddress">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="17"/>
+      <xs:pattern value=""/>
+      <xs:pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])"/>
+    </xs:restriction>
+  </xs:simpleType>
+<xs:simpleType name="ListRadarDetections">
+    <xs:list itemType="xs:unsignedInt"/>
+  </xs:simpleType>
+<xs:simpleType name="List093OperatingStandards">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="List094PossibleChannels">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="ListCapabilityRequesters">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="ListAllowedChannelList2G">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="ListAllowedChannelList5G">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="ListDefault2GPreferredChannelList">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="ListDefault5GPreferredChannelList">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="X_AIRTIES_TypeLogLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emerge"/>
+      <xs:enumeration value="alert"/>
+      <xs:enumeration value="crit"/>
+      <xs:enumeration value="error"/>
+      <xs:enumeration value="warn"/>
+      <xs:enumeration value="notice"/>
+      <xs:enumeration value="info"/>
+      <xs:enumeration value="debug"/>
+    </xs:restriction>
+  </xs:simpleType>
+<xs:simpleType name="ListFrequencyBands">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+<xs:simpleType name="List092MACAddress">
+    <xs:list itemType="MACAddress"/>
+  </xs:simpleType>
+<xs:simpleType name="ListAlgoBlacklistMAC">
+    <xs:list itemType="MACAddress"/>
+  </xs:simpleType>
+  <xs:simpleType name="OUI">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="8"/>
+      <xs:pattern value=""/>
+      <xs:pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){2}([0-9A-Fa-f][0-9A-Fa-f])"/>
+    </xs:restriction>
+  </xs:simpleType>
+<xs:simpleType name="ListAlgoBlacklistOUI">
+    <xs:list itemType="OUI"/>
+  </xs:simpleType>
+<xs:simpleType name="ListMACList">
+    <xs:list itemType="MACAddress"/>
+  </xs:simpleType>
+<xs:simpleType name="List090OUIList">
+    <xs:list itemType="OUI"/>
+  </xs:simpleType>
+
+	<xs:element name="X_AIRTIES_Device_211">
+		<xs:complexType>
+			<xs:sequence>
+<xs:element name="Device" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="DeviceInfo" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Manufacturer" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="ModelName" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="ModelNumber" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="SerialNumber" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="SoftwareVersion" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="X_AIRTIES_ProductClass" default="extender">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="gw"/>
+      <xs:enumeration value="extender"/>
+      <xs:enumeration value="stb"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="Users" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="User" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Alias" type="Alias" default="">
+</xs:element>
+<xs:element name="Username" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="UserNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="WiFi" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="MultiAP" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="APDevice" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AssocIEEE1905DeviceRef" type="xs:string" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="BackhaulBytesReceived" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="BackhaulBytesSent" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="BackhaulLinkType" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Wi-Fi"/>
+      <xs:enumeration value="MoCA"/>
+      <xs:enumeration value="Ethernet"/>
+      <xs:enumeration value="G.hn"/>
+      <xs:enumeration value="HPNA"/>
+      <xs:enumeration value="HomePlug"/>
+      <xs:enumeration value="UPA"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="BackhaulLinkUtilization" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="BackhaulMACAddress" type="MACAddress" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="BackhaulSignalStrength" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="DFSEnable" type="xs:boolean" default="false" noCDFWrite="1">
+</xs:element>
+<xs:element name="LastContactTime" type="xs:dateTime" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="MACAddress" type="MACAddress" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="Manufacturer" type="xs:string" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="ManufacturerOUI" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="6"/>
+      <xs:maxLength value="6"/>
+      <xs:pattern value="[0-9A-F]{6}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="ProductClass" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="RadarDetections" type="ListRadarDetections" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="Radio" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AP" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AssociatedDevice" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Active" type="xs:boolean" default="false" noCDFWrite="1">
+</xs:element>
+<xs:element name="AssociationTime" type="xs:dateTime" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="LastDataDownlinkRate" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="LastDataUplinkRate" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="MACAddress" type="MACAddress" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="Noise" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="OperatingStandard" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="a"/>
+      <xs:enumeration value="b"/>
+      <xs:enumeration value="g"/>
+      <xs:enumeration value="n"/>
+      <xs:enumeration value="ac"/>
+      <xs:enumeration value="ax"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="SignalStrength" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Stats" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="BytesReceived" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="BytesSent" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="ErrorsReceived" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="ErrorsSent" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="PacketsReceived" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="PacketsSent" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="RetransCount" type="StatsCounter64" default="0" noCDFWrite="1">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="X_AIRTIES_MaxPhyRate" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="AssociatedDeviceNumberOfEntries" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="BSSID" type="MACAddress" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="SSID" type="xs:string" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="X_AIRTIES_Backhaul" type="xs:boolean" default="false" noCDFWrite="1">
+</xs:element>
+<xs:element name="X_AIRTIES_Fronthaul" type="xs:boolean" default="false" noCDFWrite="1">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="APNumberOfEntries" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="Channel" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="CurrentOperatingChannelBandwidth" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="20MHz"/>
+      <xs:enumeration value="40MHz"/>
+      <xs:enumeration value="80MHz"/>
+      <xs:enumeration value="160MHz"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="ExtensionChannel" default="None" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="AboveControlChannel"/>
+      <xs:enumeration value="BelowControlChannel"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="MACAddress" type="MACAddress" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="MCS" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="OperatingFrequencyBand" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="2.4GHz"/>
+      <xs:enumeration value="5GHz"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="OperatingStandards" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="List093OperatingStandards">
+      <xs:enumeration value="a"/>
+      <xs:enumeration value="b"/>
+      <xs:enumeration value="g"/>
+      <xs:enumeration value="n"/>
+      <xs:enumeration value="ac"/>
+      <xs:enumeration value="ax"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="PossibleChannels" type="List094PossibleChannels" default="" noCDFWrite="1">
+</xs:element>
+<xs:element name="TransmitPower" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-1"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="TransmitPowerLimit" default="0" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-90"/>
+      <xs:maxInclusive value="36"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="X_AIRTIES_ConfiguredBandwidth" default="Auto" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="20MHz"/>
+      <xs:enumeration value="40MHz"/>
+      <xs:enumeration value="80MHz"/>
+      <xs:enumeration value="160MHz"/>
+      <xs:enumeration value="Auto"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="X_AIRTIES_ConfiguredChannel" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="RadioNumberOfEntries" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+<xs:element name="SerialNumber" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="SoftwareVersion" default="" noCDFWrite="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="X_AIRTIES_Onboarded" type="xs:boolean" default="false" noCDFWrite="1">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="APDeviceNumberOfEntries" type="xs:unsignedInt" default="0" noCDFWrite="1">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="X_AIRTIES_Obj" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AirDPPMap" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="DebugLevel" default="error">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="error"/>
+      <xs:enumeration value="warning"/>
+      <xs:enumeration value="info"/>
+      <xs:enumeration value="debug"/>
+      <xs:enumeration value="trace"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="EnableConfigurator" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="EnableEnrollee" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Enrollee" minOccurs="1" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Alias" type="xs:string" default="">
+</xs:element>
+<xs:element name="MacAddress" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:hexBinary">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="PublicKey" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="EnrolleeNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+<xs:element name="FlushData" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="PrivateKey" default="" encrypt="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="Bus" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AirBus" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Alias" type="xs:string" default="">
+</xs:element>
+<xs:element name="ClientIdentifiers" type="xs:string" default="">
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="MessageFormat" type="xs:string" default="">
+</xs:element>
+<xs:element name="Topicmaps" type="xs:string" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="AirBusNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+<xs:element name="Backends" type="xs:string" default="">
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Instances" type="xs:string" default="">
+</xs:element>
+<xs:element name="MQTT" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Alias" type="xs:string" default="">
+</xs:element>
+<xs:element name="BrokerIP" type="xs:string" default="">
+</xs:element>
+<xs:element name="BrokerPort" type="xs:unsignedInt" default="1883">
+</xs:element>
+<xs:element name="ClientIdentifiers" type="xs:string" default="">
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="MessageFormat" type="xs:string" default="">
+</xs:element>
+<xs:element name="Topicmaps" type="xs:string" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="MQTTNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="CapabilityRequesters" default="aircdf-daemon statistics-collector event-dispatcher wireless-controller air-cloud-agent jsonrpc2 agent parental-control app_configurator app_enrollee air-ssch aircdf-parser aircdf-client airdata-cli rm-client">
+  <xs:simpleType>
+    <xs:restriction base="ListCapabilityRequesters">
+      <xs:maxLength value="128"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="CloudComm">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AlternativeID" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="4"/>
+      <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AuthPassword" type="xs:string" default="" encrypt="1">
+</xs:element>
+<xs:element name="AuthURL" type="xs:string" default="">
+</xs:element>
+<xs:element name="ChallengeURL" type="xs:string" default="">
+</xs:element>
+<xs:element name="ClientID" type="xs:string" default="">
+</xs:element>
+<xs:element name="ClientPassword" type="xs:string" default="" encrypt="1">
+</xs:element>
+<xs:element name="DevicePrivateKeyPath" type="xs:string" default="">
+</xs:element>
+<xs:element name="DevicePublicCertPath" type="xs:string" default="">
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="LogDestination" default="syslog">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="syslog"/>
+      <xs:enumeration value="stderr"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="LogLevel" default="2">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="UUID" type="xs:string" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="DefaultUserAlias" type="xs:string" default="">
+</xs:element>
+<xs:element name="MultiAPController">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="ChanSel">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AllowedChannelList2G" type="ListAllowedChannelList2G" default="">
+</xs:element>
+<xs:element name="AllowedChannelList5G" type="ListAllowedChannelList5G" default="">
+</xs:element>
+<xs:element name="BandLock5G" default="disabled">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="disabled"/>
+      <xs:enumeration value="low"/>
+      <xs:enumeration value="high"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Default2GPreferredChannelList" type="ListDefault2GPreferredChannelList" default="">
+</xs:element>
+<xs:element name="Default5GPreferredChannelList" type="ListDefault5GPreferredChannelList" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="ConfigRenewInterval" default="5">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3600"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="ConfigRenewMaxRetry" default="3">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="ConfigureBackhaulStation" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="DeadAgentDetectionInterval" default="30">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3600"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="DefaultPCP" default="0">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="InterfaceList" type="xs:string" default=".^">
+</xs:element>
+<xs:element name="IsMaster" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="LeaderPollTimeout" default="90">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3600"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="LeadershipPrecedence" default="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="LinkMetricsQueryInterval" default="20">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3600"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="LocalAgentMACAddress" type="MACAddress" default="">
+</xs:element>
+<xs:element name="Logging">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="ControllerLevel" type="X_AIRTIES_TypeLogLevel" default="error">
+</xs:element>
+<xs:element name="IEEE1905Level" type="X_AIRTIES_TypeLogLevel" default="error">
+</xs:element>
+<xs:element name="Output" default="stderr">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="syslog"/>
+      <xs:enumeration value="stderr"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="PlatformLevel" type="X_AIRTIES_TypeLogLevel" default="error">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="MACAddress" type="MACAddress" default="">
+</xs:element>
+<xs:element name="PrimaryVLANID" default="-1">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-1"/>
+      <xs:maxInclusive value="4094"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="PrimaryVLANInterfacePattern" type="xs:string" default="">
+</xs:element>
+<xs:element name="SSIDProfile" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Backhaul" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Extender" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="FrequencyBands" type="ListFrequencyBands" default="">
+</xs:element>
+<xs:element name="Fronthaul" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Gateway" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="KeyPassphrase" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Label" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Priority" type="xs:int" default="-1">
+</xs:element>
+<xs:element name="SSID" default="">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="SecurityMode" default="wpa2-psk">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="wpa2-psk"/>
+      <xs:enumeration value="wpa-wpa2-psk"/>
+      <xs:enumeration value="wpa3-psk"/>
+      <xs:enumeration value="wpa2-wpa3-psk"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Type" default="other">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="home"/>
+      <xs:enumeration value="guest"/>
+      <xs:enumeration value="video"/>
+      <xs:enumeration value="backhaul"/>
+      <xs:enumeration value="other"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="VLANID" default="-1">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-1"/>
+      <xs:maxInclusive value="4094"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="SSIDProfileNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+<xs:element name="TopologyQueryInterval" default="60">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3600"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="TopologyStableCheckInterval" default="120">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3600"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="RemoteLogging">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Compress" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="EndTime" type="xs:dateTime" default="">
+</xs:element>
+<xs:element name="ExtendedFormat" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Facility" default="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="23"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Password" type="xs:string" default="">
+</xs:element>
+<xs:element name="Relays" type="xs:string" default="!cc-log-relay">
+</xs:element>
+<xs:element name="RemoteURL" type="xs:string" default="">
+</xs:element>
+<xs:element name="Severity" default="5">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Username" type="xs:string" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="SteeringUnified">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="AlgoBandsteer2GThreshold" default="-55">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-110"/>
+      <xs:maxInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoBandsteer5GThreshold" default="-75">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-110"/>
+      <xs:maxInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoBandsteerEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoBlacklistEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoBlacklistMAC" type="ListAlgoBlacklistMAC" default="">
+</xs:element>
+<xs:element name="AlgoBlacklistOUI" type="ListAlgoBlacklistOUI" default="">
+</xs:element>
+<xs:element name="AlgoEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoLinkCap2GThreshold" type="xs:unsignedInt" default="3000">
+</xs:element>
+<xs:element name="AlgoLinkCap5GThreshold" type="xs:unsignedInt" default="6000">
+</xs:element>
+<xs:element name="AlgoLinkCapEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoLoadBalanceEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoLoadBalanceMaxSta" type="xs:unsignedInt" default="15">
+</xs:element>
+<xs:element name="AlgoPreemptiveBlockEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoPreemptiveBlockHighThreshold" default="20">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoPreemptiveBlockLowThreshold" default="15">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoRSSI2GThreshold" default="-83">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-110"/>
+      <xs:maxInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoRSSI5GThreshold" default="-83">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-110"/>
+      <xs:maxInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoRSSIEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="AlgoTOSActiveThreshold" type="xs:unsignedInt" default="50">
+</xs:element>
+<xs:element name="AlgoTOSCostRatio" type="xs:unsignedInt" default="150">
+</xs:element>
+<xs:element name="AlgoTOSEnable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="AlgoTOSInferenceValue" type="xs:int" default="20">
+</xs:element>
+<xs:element name="AlgoTOSLowRSSISteerThreshold" default="-80">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-110"/>
+      <xs:maxInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="AlgoTOSTargetRSSIThreshold" default="-75">
+  <xs:simpleType>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-110"/>
+      <xs:maxInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="DebugLevel" default="error">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="error"/>
+      <xs:enumeration value="notice"/>
+      <xs:enumeration value="info"/>
+      <xs:enumeration value="debug"/>
+      <xs:enumeration value="trace"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="DebugLogger" default="stderr">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="syslog"/>
+      <xs:enumeration value="stderr"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Enable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="NorthboundEnable" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="NorthboundHomeID" type="xs:string" default="">
+</xs:element>
+<xs:element name="NorthboundPublishBackbone" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Roamer11vCapOnly" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="Roamer11vDisassoc" type="xs:boolean" default="false">
+</xs:element>
+<xs:element name="Roamer11vEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="RoamerDeauthEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="StationPolicies" type="xs:string" default="{}">
+</xs:element>
+<xs:element name="StationProfile" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="MACList" type="ListMACList" default="">
+</xs:element>
+<xs:element name="Name" type="xs:string" default="">
+</xs:element>
+<xs:element name="OUIList" type="List090OUIList" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="StationProfileNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+<xs:element name="TopoBadQualEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="TopoChangeEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="TopoEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="TopoMaintenanceEnable" type="xs:boolean" default="true">
+</xs:element>
+<xs:element name="TopoMaintenancePeriod" default="24">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="168"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="TopoMaintenanceTime" default="1">
+  <xs:simpleType>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="23"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="TopoMinMediumAvailable" type="xs:unsignedInt" default="50">
+</xs:element>
+<xs:element name="TopoUnassocCostTuneFactor" type="xs:unsignedInt" default="100">
+</xs:element>
+<xs:element name="TopoWirelessHopCost" type="xs:unsignedInt" default="750">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="Storage" minOccurs="1">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Path" type="xs:string" default="">
+</xs:element>
+<xs:element name="TempPath" type="xs:string" default="/tmp">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="UserFriendlyNameTable">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="Entry" maxOccurs="unbounded">
+<xs:complexType>
+    <xs:sequence>
+<xs:element name="FriendlyName" type="xs:string" default="">
+</xs:element>
+<xs:element name="MACAddress" type="MACAddress" default="">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="EntryNumberOfEntries" type="xs:unsignedInt" default="0">
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+				<xs:any/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

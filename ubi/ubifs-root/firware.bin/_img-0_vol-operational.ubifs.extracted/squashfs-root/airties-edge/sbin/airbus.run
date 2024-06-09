@@ -1,0 +1,84 @@
+#!/bin/sh
+
+if [ -f /etc/edge_platform_params ]; then
+	. /etc/edge_platform_params
+fi
+
+if [ -z ${ENV_EDGE_TMP_FOLDER} ]; then
+	echo "WARNING: ENV_EDGE_TMP_FOLDER is not provided! Using /tmp/airties-edge..."
+	ENV_EDGE_TMP_FOLDER=/tmp/airties-edge
+fi
+
+OVERLAY_DIR=/airties-edge
+
+airbus_start() {
+	echo "insmod air-bus modules"
+	if [ -z "$(grep -e '^airbus_event' /proc/modules)" ]; then
+		insmod ${OVERLAY_DIR}/lib/modules/airties/airbus-event.ko
+	fi
+
+	if [ -z "$(grep -e '^airbus_command' /proc/modules)" ]; then
+		insmod ${OVERLAY_DIR}/lib/modules/airties/airbus-command.ko
+		# wait for mdev to create the device automatically
+		sleep 1
+	fi
+
+	if [ ! -c /dev/airbus-command ]; then
+		major=`cat /sys/class/airbus/airbus-command/dev | cut -d':' -f1`
+
+		if [ -z "$major" ]; then
+			major=${AIRBUS_COMMAND_MAJOR}
+		fi
+
+		mknod /dev/airbus-command c $major 0
+	fi
+}
+
+airbus_stop() {
+	if [ -z ${KEEP_MODULES} ]; then
+		echo "rmmod air-bus modules"
+		rmmod airbus-command
+		rmmod airbus-event
+	fi
+}
+
+start() {
+	mkdir -p ${ENV_EDGE_TMP_FOLDER}
+	airbus_start
+}
+
+stop () {
+	airbus_stop
+}
+
+status() {
+	if [ ! -c /dev/airbus-command ]; then
+		echo "not running"
+	else
+		echo "running"
+	fi
+}
+
+case "$1" in
+	start)
+		start
+		;;
+
+	stop)
+		stop
+		;;
+
+	restart)
+		stop
+		start
+		;;
+
+	status)
+		status
+		;;
+
+	*)
+		echo "unknown command. [start|stop|restart|status]"
+		exit 1
+		;;
+esac

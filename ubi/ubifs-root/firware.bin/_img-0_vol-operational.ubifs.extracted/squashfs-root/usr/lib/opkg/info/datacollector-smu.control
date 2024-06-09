@@ -1,0 +1,15 @@
+Package: datacollector-smu
+Version: v0.27.3-1
+Depends: gateway-dm, gateway-dm-datacollector, smu-utils, hal-bsp, evlp, xmt, xmo, xmo-server, intf-datacollector
+Provides: 
+Source: feeds/sagemcom/smu/data-collector-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/datacollector-smu
+Installed-Size: 32462
+Description:  Data collector SMU Implementation

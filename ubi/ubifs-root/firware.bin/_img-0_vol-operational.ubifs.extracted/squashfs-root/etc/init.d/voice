@@ -1,0 +1,23 @@
+#!/bin/sh /etc/rc.common
+START=40
+
+start() {
+
+    # This script can be located in "target/linux/sagemcom/***/base-files/etc/enable-voice.sh"
+    /etc/enable-voice.sh
+    if [ "$?" = "1" ]; then
+        echo "[VOICE] enable"
+        test -e /lib/modules/*/endpointdd.ko && insmod /lib/modules/*/endpointdd.ko
+        chown root:voice /dev/bcmendpoint0
+        chmod 660 /dev/bcmendpoint0
+        chown root:voice /dev/pcmshim0
+        chmod 660 /dev/pcmshim0
+    else
+        echo "[VOICE] disable"
+    fi
+
+}
+
+stop() {
+    echo stop devices
+}

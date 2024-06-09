@@ -1,0 +1,7 @@
+/usr/bin/dbclient
+/usr/bin/scp
+/etc/init.d/dropbear
+/usr/bin/dropbearkey
+/usr/sbin/dropbear
+/lib/upgrade/keep.d/dropbear
+/usr/bin/ssh

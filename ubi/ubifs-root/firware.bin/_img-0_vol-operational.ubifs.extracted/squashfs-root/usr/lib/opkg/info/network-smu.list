@@ -1,0 +1,7 @@
+/usr/bin/pppd2smuPppAdaptor
+/etc/ppp/ip-up.d/ipv4-up-to-smu
+/etc/ppp/ppp-conn-failed
+/usr/lib/xmo/plugins/libnetwork-smu.so
+/etc/ppp/ipv6-up.d/ipv6-up-to-smu
+/etc/ppp/ip-down.d/ipv4-down-to-smu
+/etc/ppp/ipv6-down.d/ipv6-down-to-smu

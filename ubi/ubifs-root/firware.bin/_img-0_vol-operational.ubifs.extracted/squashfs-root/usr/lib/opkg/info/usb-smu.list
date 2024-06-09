@@ -1,0 +1,4 @@
+/usr/bin/usb2smu
+/etc/init.d/usb_mod
+/usr/lib/xmo/plugins/libusb-smu.so
+/etc/init.d/sata_mod

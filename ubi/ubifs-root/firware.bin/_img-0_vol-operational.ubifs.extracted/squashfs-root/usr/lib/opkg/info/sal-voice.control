@@ -1,0 +1,15 @@
+Package: sal-voice
+Version: v10.12.0-1
+Depends: devel-utils, evlp
+Provides: 
+Source: feeds/voipHG6/libs/sal-voice
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/sal-voice
+Installed-Size: 1242242
+Description:  Generic SAL (Stack Abstraction Layer) API to manage VOIP Protocols (SIP,H323,MGCP)

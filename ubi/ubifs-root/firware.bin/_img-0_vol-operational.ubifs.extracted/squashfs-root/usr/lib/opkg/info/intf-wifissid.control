@@ -1,0 +1,15 @@
+Package: intf-wifissid
+Version: swan_v1.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/wifi/libs/intf-wifissid
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-wifissid
+Installed-Size: 12750
+Description:  Interface Wifi AccessPoint

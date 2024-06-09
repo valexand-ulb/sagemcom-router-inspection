@@ -1,0 +1,16 @@
+Package: kmod-nf-conntrack-netlink
+Version: 3.4.11-rt19-1
+Depends: kernel (=3.4.11-rt19-1), kmod-nfnetlink, kmod-ipt-conntrack
+Provides: 
+Source: package/kernel
+License: 
+Section: kernel
+Status: unknown hold not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: 
+Installed-Size: 10866
+Description:  Kernel modules support for a netlink-based connection tracking 
+ userspace interface

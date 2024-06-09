@@ -1,0 +1,16 @@
+Package: bridge
+Version: 1.4-1
+Depends: 
+Provides: 
+Source: package/bridge-utils
+License: GPLv2
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/bridge
+Installed-Size: 14022
+Description:  Manage ethernet bridging: a way to connect networks together to 
+ form a larger network.

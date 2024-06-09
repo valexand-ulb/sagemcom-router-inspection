@@ -1,0 +1,15 @@
+Package: intf-confmgmt
+Version: v2.5.1-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-confmgmt
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-confmgmt
+Installed-Size: 18008
+Description:  Interface ConfMgmt

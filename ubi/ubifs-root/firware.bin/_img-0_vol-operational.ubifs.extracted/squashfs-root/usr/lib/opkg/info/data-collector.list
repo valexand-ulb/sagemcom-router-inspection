@@ -1,0 +1,12 @@
+/usr/lib/libdcformatter.so.1.0.0
+/usr/lib/libdcsystemcollector.so.1
+/usr/bin/data-collector-httpd
+/usr/lib/libdcutilities.so.1
+/usr/bin/data-collector
+/usr/lib/libdcsystemcollector.so.1.0.0
+/usr/lib/libdcformatter.so.1
+/usr/lib/libdcutilities.so.1.0.0
+/usr/lib/libdcsystemcollector.so
+/usr/lib/libdcformatter.so
+/usr/lib/libdcutilities.so
+/usr/bin/httpd2datacollector

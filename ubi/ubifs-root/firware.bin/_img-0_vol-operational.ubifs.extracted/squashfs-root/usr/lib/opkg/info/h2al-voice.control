@@ -1,0 +1,15 @@
+Package: h2al-voice
+Version: v16.13.0-1
+Depends: devel-utils, evlp
+Provides: 
+Source: feeds/voipHG6/libs/h2al-voice
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/h2al-voice
+Installed-Size: 467329
+Description:  Generic Sagemcom API to manage FXS,FXO,DECT,RTP

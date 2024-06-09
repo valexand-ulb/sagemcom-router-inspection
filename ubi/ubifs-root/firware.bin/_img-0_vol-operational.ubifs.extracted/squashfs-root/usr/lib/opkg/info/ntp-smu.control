@@ -1,0 +1,15 @@
+Package: ntp-smu
+Version: v2.14.0.1-1
+Depends: ntpdate, devel-utils, evlp, xmt, xmo, gateway-dm, gateway-dm-ntp, xmo-server, smu-utils, firewall-utils
+Provides: 
+Source: feeds/sagemcom/smu/ntp-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ntp-smu
+Installed-Size: 33208
+Description:  NTP smu plugin

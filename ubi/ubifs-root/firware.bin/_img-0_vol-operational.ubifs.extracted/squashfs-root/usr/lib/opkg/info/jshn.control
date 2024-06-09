@@ -1,0 +1,15 @@
+Package: jshn
+Version: eebe3fc-1
+Depends: libjson, libubox, libblobmsg-json
+Provides: 
+Source: feeds/sagemcom/libs/libubox
+License: 
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @SF/libubox
+Installed-Size: 7175
+Description:  Library for parsing and generating JSON from shell scripts

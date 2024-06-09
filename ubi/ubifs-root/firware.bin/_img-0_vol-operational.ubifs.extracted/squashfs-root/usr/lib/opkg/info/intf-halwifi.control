@@ -1,0 +1,15 @@
+Package: intf-halwifi
+Version: BBOX3_WDR_v24.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/wifi/libs/intf-halwifi
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-halwifi
+Installed-Size: 109986
+Description:  Interface HalWifi

@@ -1,0 +1,15 @@
+Package: dial-voice
+Version: v1.19.0-1
+Depends: 
+Provides: 
+Source: feeds/voipHG6/libs/dial-voice
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/dial-voice
+Installed-Size: 7045
+Description:  Dial voice Library

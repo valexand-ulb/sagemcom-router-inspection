@@ -1,0 +1,104 @@
+
+<html>
+<head>
+
+<style>
+td {
+  padding: 5px;
+  font-size: 12px;
+}
+
+.pp_path {
+  background: #1a75ff;
+  color: white;
+}
+
+.p_path {
+  background: #b3d1ff;
+}
+
+.pp_cell {
+  white-space: nowrap;
+}
+
+</style>
+
+</head>
+
+<body>
+<table><thead><tr><th colspan='2' style='font-size: 20px;'>AirTies Features</th></tr><tr style='background: #e6f0ff'><td colspan='2'>
+- Feature column may have parent and subfeatures together. For example, USB is a parent feature and Samba is a subfeature of USB<br/>
+- Parent feature and following subfeatures are divided by '/' character<br/>
+- The first path existing in Paths column may be used to understand whether feature is installed to the device<br/>
+- <span style='color: orange'>Look at exclude array listed in input.json to see which features are excluded from this release</span><br/>
+</tr>
+<tr style='background: #0052cc; color: white; font-size: 14px;'><th>Feature</th><th>Paths</th></tr></thead>
+<tbody>
+<tr class='p_path'><td class='pp_cell'>USB</td><td class='pp_cell'>Device.USB.<br/>Device.X_AIRTIES_Obj.Instances.USB<br/>Device.X_AIRTIES_Obj.WebUI.{i}.USBHostRelease</td></tr>
+<tr class='p_path'><td class='pp_cell'>USB/Samba</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Samba.</td></tr>
+<tr class='p_path'><td class='pp_cell'>USB/Printer</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Printer.</td></tr>
+<tr class='p_path'><td class='pp_cell'>USB/Media Server</td><td class='pp_cell'>Device.X_AIRTIES_Obj.MediaServer.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Audio</td><td class='pp_cell'>Device.X_AIRTIES_Obj.AirPlay.<br/>Device.X_AIRTIES_Obj.Instances.Audio</td></tr>
+<tr class='p_path'><td class='pp_cell'>HTTP Upgrade</td><td class='pp_cell'>Device.X_AIRTIES_Obj.HTTPUpgrade.<br/>Device.X_AIRTIES_Obj.Warranty.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Resolver</td><td class='pp_cell'>Device.DNS.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Web UI</td><td class='pp_cell'>Device.X_AIRTIES_Obj.WebUI.<br/>Device.X_AIRTIES_Obj.WebUINumberOfEntries<br/>Device.X_AIRTIES_Obj.UI.</td></tr>
+<tr class='p_path'><td class='pp_cell'>NTP</td><td class='pp_cell'>Device.Time.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.TimeSettings</td></tr>
+<tr class='p_path'><td class='pp_cell'>QoS</td><td class='pp_cell'>Device.X_AIRTIES_Obj.QoS.</td></tr>
+<tr class='p_path'><td class='pp_cell'>L2FX Config Share</td><td class='pp_cell'>Device.X_AIRTIES_Obj.L2FX.</td></tr>
+<tr class='p_path'><td class='pp_cell'>LLDP</td><td class='pp_cell'>Device.LLDP.</td></tr>
+<tr class='p_path'><td class='pp_cell'>UPnP</td><td class='pp_cell'>Device.UPnP.</td></tr>
+<tr class='p_path'><td class='pp_cell'>IGMP Snooping</td><td class='pp_cell'>Device.X_AIRTIES_Obj.IGMPSnooping.</td></tr>
+<tr class='p_path'><td class='pp_cell'>IO Management</td><td class='pp_cell'>Device.X_AIRTIES_Obj.IO.<br/>Device.LEDs.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Timer (Energy Saver)</td><td class='pp_cell'>Device.X_AIRTIES_Obj.WiFiTimer.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.Wireless.Timer</td></tr>
+<tr class='p_path'><td class='pp_cell'>Client Prioritization</td><td class='pp_cell'>Device.WiFi.X_AIRTIES_EnableClientPrioritization<br/>Device.WiFi.X_AIRTIES_PrioritizedClientNumberOfEntries<br/>Device.WiFi.X_AIRTIES_PrioritizedClient.{i}.</td></tr>
+<tr class='p_path'><td class='pp_cell'>MESH</td><td class='pp_cell'>Device.WiFi.X_AIRTIES_EnableWDS<br/>Device.WiFi.X_AIRTIES_WDSNumberOfEntries<br/>Device.WiFi.Radio.{i}.X_AIRTIES_WDSAliases<br/>Device.WiFi.X_AIRTIES_WDS.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Dynamic WDS</td><td class='pp_cell'>Device.WiFi.X_AIRTIES_DWDS.<br/>Device.WiFi.X_AIRTIES_DWDSNumberOfEntries<br/>Device.WiFi.Radio.{i}.X_AIRTIES_DWDSAliases</td></tr>
+<tr class='p_path'><td class='pp_cell'>Dynamic Channel Selection</td><td class='pp_cell'>Device.X_AIRTIES_Obj.DynamicChannelSelection.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Parental Control</td><td class='pp_cell'>Device.X_AIRTIES_Obj.ParentalControl.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Captive Portal</td><td class='pp_cell'>Device.CaptivePortal.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Steering</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Steering.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.Wireless.Steering<br/>Device.X_AIRTIES_Obj.PresenceDetection.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Data Collector</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Statistics.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.Consent</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR069</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Instances.TR069<br/>Device.ManagementServer.<br/>Device.IP.Diagnostics.<br/>Device.XMPP.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.TR069</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR069/TR069 Script</td><td class='pp_cell'>Device.ManagementServer.X_AIRTIES_Script.</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR069/TR069 Remote Monitor Plugin</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Statistics.RemoteMonitor.Logs.</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR069/Power Led</td><td class='pp_cell'>Device.LEDs.X_AIRTIES_EnablePower</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR069/WLAN Led</td><td class='pp_cell'>Device.LEDs.X_AIRTIES_EnableWLAN</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR069/LAN Led</td><td class='pp_cell'>Device.LEDs.X_AIRTIES_EnableLAN</td></tr>
+<tr class='p_path'><td class='pp_cell'>Companion (Mobile App)</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Companion.</td></tr>
+<tr class='p_path'><td class='pp_cell'>DHCP Server</td><td class='pp_cell'>Device.DHCPv4.Server.</td></tr>
+<tr class='p_path'><td class='pp_cell'>DHCP Server/Auto DHCP Mode</td><td class='pp_cell'>Device.DHCPv4.Server.Pool.{i}.X_AIRTIES_AutoOpmode.</td></tr>
+<tr class='p_path'><td class='pp_cell'>D-BUS</td><td class='pp_cell'>Device.X_AIRTIES_Obj.DBus.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Multicast DNS (mDNS)</td><td class='pp_cell'>Device.X_AIRTIES_Obj.MDNS.</td></tr>
+<tr class='p_path'><td class='pp_cell'>SSH</td><td class='pp_cell'>Device.X_AIRTIES_Obj.SSH.</td></tr>
+<tr class='p_path'><td class='pp_cell'>P1905</td><td class='pp_cell'>Device.IEEE1905.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.Wireless.P1905</td></tr>
+<tr class='p_path'><td class='pp_cell'>Scan Scheduler</td><td class='pp_cell'>Device.X_AIRTIES_Obj.ScanScheduler.<br/>Device.X_AIRTIES_Obj.ChannelAdvisor.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Cloud</td><td class='pp_cell'>Device.X_AIRTIES_Obj.CloudAgent.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Device Provisioning (DPP)</td><td class='pp_cell'>Device.X_AIRTIES_Obj.DeviceProvisioning.<br/>Device.X_AIRTIES_Obj.WebUI.{i}.Show.Wireless.DeviceProvisioning</td></tr>
+<tr class='p_path'><td class='pp_cell'>Steering (Public To Private Handover)</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Steering.PublicToPrivateHandover.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Channel Advisor</td><td class='pp_cell'>Device.X_AIRTIES_Obj.ChannelAdvisor.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Multi AP (EasyMesh)</td><td class='pp_cell'>Device.WiFi.Radio.{i}.X_AIRTIES_EnableMultiAP<br/>Device.WiFi.Radio.{i}.X_AIRTIES_BackhaulSupported<br/>Device.WiFi.Radio.{i}.X_AIRTIES_BackhaulSSIDAlias</td></tr>
+<tr class='p_path'><td class='pp_cell'>Multi AP (Backhaul)</td><td class='pp_cell'>Device.WiFi.Radio.{i}.X_AIRTIES_BackhaulSupported<br/>Device.WiFi.Radio.{i}.X_AIRTIES_BackhaulSSIDAlias</td></tr>
+<tr class='p_path'><td class='pp_cell'>SSID Prioritization</td><td class='pp_cell'>Device.WiFi.SSID.{i}.X_AIRTIES_Priority</td></tr>
+<tr class='p_path'><td class='pp_cell'>TR181 QoS Configuration</td><td class='pp_cell'>Device.QoS.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Router configurations</td><td class='pp_cell'>Device.PPP.<br/>Device.UPnP.<br/>Device.IP.Interface.{i}.X_AIRTIES_IGMPEnabled<br/>Device.IP.Interface.{i}.X_AIRTIES_IGMP_SOURCEEnabled<br/>Device.DNS.Client.X_AIRTIES_StaticAddresses<br/>Device.Firewall.<br/>Device.NAT.<br/>Device.X_AIRTIES_Obj.Installation.<br/>Device.IP.Diagnostics.DownloadDiagnostics.<br/>Device.IP.Diagnostics.UploadDiagnostics.<br/>Device.X_AIRTIES_Obj.BackupRestore.<br/>Device.UserInterface.RemoteAccess.<br/>Device.X_AIRTIES_Obj.RPCMethods.OperatorReset.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Non-Router configurations</td><td class='pp_cell'>Device.X_AIRTIES_Obj.DeviceProvisioning.EnableEnrollee</td></tr>
+<tr class='p_path'><td class='pp_cell'>WiFiDoctor Applications</td><td class='pp_cell'>Device.X_AIRTIES_Obj.FHCD.<br/>Device.X_AIRTIES_Obj.WifiDrAgent.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Edge Applications</td><td class='pp_cell'>Device.WiFi.MultiAP.<br/>Device.X_AIRTIES_Obj.MultiAPController.<br/>Device.X_AIRTIES_Obj.SteeringUnified.<br/>Device.X_AIRTIES_Obj.CloudComm.<br/>Device.X_AIRTIES_Obj.Bus.<br/>Device.X_AIRTIES_Obj.UserFriendlyNameTable.<br/>Device.X_AIRTIES_Obj.Storage.<br/>Device.X_AIRTIES_Obj.AirDPPMap.<br/>Device.X_AIRTIES_Obj.RemoteLogging.</td></tr>
+<tr class='p_path'><td class='pp_cell'>EdgeTelstra Applications</td><td class='pp_cell'>Device.WiFi.MultiAP.X_TELSTRA_MultiAP.<br/>Device.WiFi.MultiAP.APDevice.{i}.X_TELSTRA_MultiAP.<br/>Device.WiFi.MultiAP.APDevice.{i}.Radio.{i}.AP.{i}.X_TELSTRA_MultiAP.<br/>Device.WiFi.MultiAP.APDevice.{i}.Radio.{i}.AP.{i}.AssociatedDevice.{i}.X_TELSTRA_MultiAP.<br/>Device.X_AIRTIES_Obj.MultiAPController.SSIDProfile.{i}.Hide<br/>Device.X_AIRTIES_Obj.MultiAPController.SSIDProfile.{i}.PMF<br/>Device.X_AIRTIES_Obj.MultiAPController.SSIDProfile.{i}.WPS<br/>Device.X_AIRTIES_Obj.MultiAPController.SSIDProfile.{i}.MACAclList<br/>Device.X_AIRTIES_Obj.MultiAPController.SSIDProfile.{i}.MACAclMode<br/>Device.X_AIRTIES_Obj.MultiAPController.ConfigSyncDone<br/>Device.X_AIRTIES_Obj.MultiAPController.RadioProfileNumberOfEntries<br/>Device.X_AIRTIES_Obj.MultiAPController.RadioProfile.{i}.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Legacy Features</td><td class='pp_cell'>Device.DeviceSummary<br/>Device.DeviceInfo.SpecVersion</td></tr>
+<tr class='p_path'><td class='pp_cell'>AirTies First Installation Helper</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Installer.</td></tr>
+<tr class='p_path'><td class='pp_cell'>AirTies Service Activation Configuration</td><td class='pp_cell'>Device.X_AIRTIES_Obj.ServiceActivation.</td></tr>
+<tr class='p_path'><td class='pp_cell'>AirTies Link Monitor Configuration</td><td class='pp_cell'>Device.X_AIRTIES_Obj.LinkMonitor.</td></tr>
+<tr class='p_path'><td class='pp_cell'>CPE MESH-NG Configurations</td><td class='pp_cell'>controller.<br/>Device.X_AIRTIES_Obj.DataShare.<br/>Device.X_AIRTIES_Obj.WirelessController.<br/>Device.X_AIRTIES_Obj.Tethering.<br/>Device.X_AIRTIES_Obj.Metrics.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Manager Applications Configuration</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Product.<br/>Device.X_AIRTIES_Obj.NXLog.<br/>Device.X_AIRTIES_Obj.MPD.<br/>Device.X_AIRTIES_Obj.DnsmasqDhcps.<br/>Device.X_AIRTIES_Obj.NetworkVisualizer.<br/>Device.X_AIRTIES_Obj.Instances.<br/>Device.X_AIRTIES_Obj.IsWaooDevice.<br/>Device.X_AIRTIES_Obj.Warranty.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Airlog Application Configurations</td><td class='pp_cell'>Device.X_AIRTIES_Obj.Debugging.</td></tr>
+<tr class='p_path'><td class='pp_cell'>CPE Core Applications</td><td class='pp_cell'>Device.Security.<br/>Device.X_AIRTIES_Obj.ProcessManager.</td></tr>
+<tr class='p_path'><td class='pp_cell'>AirTies LUS-NG Configurations</td><td class='pp_cell'>Device.X_AIRTIES_Obj.HTTPUpgrade.AWSIoT.</td></tr>
+<tr class='p_path'><td class='pp_cell'>CPE Incomplete</td><td class='pp_cell'>Device.X_AIRTIES_Obj.BootDelay<br/>Device.X_AIRTIES_Obj.ConfigChangeTracker.<br/>Device.X_AIRTIES_Obj.ConnectionTracker.<br/>Device.X_AIRTIES_Obj.Controller.<br/>Device.X_AIRTIES_Obj.CyberSecureAI.<br/>Device.X_AIRTIES_Obj.DMR.</td></tr>
+<tr class='p_path'><td class='pp_cell'>Airties Link Monitor Daemon</td><td class='pp_cell'>Device.X_AIRTIES_Obj.LinkMonitor.</td></tr>
+</tbody>
+</table>
+
+</body>
+
+</html>

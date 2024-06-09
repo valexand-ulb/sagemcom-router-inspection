@@ -1,0 +1,3 @@
+/etc/strongswan.d/starter.conf
+/usr/lib/ipsec/plugins/libstrongswan-kernel-netlink.so
+/etc/strongswan.d/charon/kernel-netlink.conf

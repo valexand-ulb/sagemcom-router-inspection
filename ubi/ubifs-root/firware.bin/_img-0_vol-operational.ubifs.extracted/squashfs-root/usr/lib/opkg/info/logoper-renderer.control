@@ -1,0 +1,15 @@
+Package: logoper-renderer
+Version: v1.46.2-1
+Depends: xmo-server, gateway-dm
+Provides: 
+Source: feeds/sagemcom/libs/logoper-renderer
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/logoper-renderer
+Installed-Size: 9129
+Description:  Log operator libs

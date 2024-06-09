@@ -1,0 +1,15 @@
+Package: intf-dhcps4conf
+Version: v0.11.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-dhcps4conf
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-dhcps4conf
+Installed-Size: 15472
+Description:  Interface Dhcps4Conf

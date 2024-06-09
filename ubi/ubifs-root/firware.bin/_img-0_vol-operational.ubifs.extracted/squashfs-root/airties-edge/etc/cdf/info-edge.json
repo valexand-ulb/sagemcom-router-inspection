@@ -1,0 +1,917 @@
+{
+   "Device" : {
+      "DeviceInfo" : {
+         "Manufacturer" : {
+            "ctl" : 0,
+            "id_c" : "CtlDeviceInfoManufacturer"
+         },
+         "ModelName" : {
+            "ctl" : 0,
+            "id_c" : "CtlDeviceInfoModelName"
+         },
+         "ModelNumber" : {
+            "ctl" : 0,
+            "id_c" : "CtlDeviceInfoModelNumber"
+         },
+         "SerialNumber" : {
+            "ctl" : 0,
+            "id_c" : "CtlDeviceInfoSerialNumber"
+         },
+         "SoftwareVersion" : {
+            "ctl" : 0,
+            "id_c" : "CtlDeviceInfoSoftwareVersion"
+         },
+         "X_AIRTIES_ProductClass" : {
+            "ctl" : 0,
+            "id_c" : "CtlSystemProductClass"
+         }
+      },
+      "Users" : {
+         "User" : {
+            "Alias" : {
+               "ctl" : 0,
+               "id_c" : "CtlUserAlias"
+            },
+            "Username" : {
+               "ctl" : 0,
+               "id_c" : "CtlUserName"
+            },
+            "ctl" : 0,
+            "id_c" : "CtlUserInstance",
+            "noe" : "UserNumberOfEntries"
+         },
+         "UserNumberOfEntries" : {
+            "ctl" : 0,
+            "id_c" : "CtlUserNOE"
+         }
+      },
+      "WiFi" : {
+         "MultiAP" : {
+            "APDevice" : {
+               "AssocIEEE1905DeviceRef" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevAssocIeee1905DeviceRef"
+               },
+               "BackhaulBytesReceived" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevBackhaulBytesReceived"
+               },
+               "BackhaulBytesSent" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevBackhaulBytesSent"
+               },
+               "BackhaulLinkType" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevBackhaulLinkType"
+               },
+               "BackhaulLinkUtilization" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevBackhaulLinkUtilization"
+               },
+               "BackhaulMACAddress" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevBackhaulMACAddress"
+               },
+               "BackhaulSignalStrength" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevBackhaulSignalStrength"
+               },
+               "DFSEnable" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevDfsEnable"
+               },
+               "LastContactTime" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevLastContactTime"
+               },
+               "MACAddress" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevMACAddress"
+               },
+               "Manufacturer" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevManufacturer"
+               },
+               "ManufacturerOUI" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevManufacturerOUI"
+               },
+               "ProductClass" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevProductClass"
+               },
+               "RadarDetections" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevRadarDetections"
+               },
+               "Radio" : {
+                  "AP" : {
+                     "AssociatedDevice" : {
+                        "Active" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevActive"
+                        },
+                        "AssociationTime" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevAssociationTime"
+                        },
+                        "LastDataDownlinkRate" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevLastDataDownlinkRate"
+                        },
+                        "LastDataUplinkRate" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevLastDataUplinkRate"
+                        },
+                        "MACAddress" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevMACAddress"
+                        },
+                        "Noise" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevNoise"
+                        },
+                        "OperatingStandard" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevOperatingStandard"
+                        },
+                        "SignalStrength" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevSignalStrength"
+                        },
+                        "Stats" : {
+                           "BytesReceived" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevBytesReceived"
+                           },
+                           "BytesSent" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevBytesSent"
+                           },
+                           "ErrorsReceived" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevErrorsReceived"
+                           },
+                           "ErrorsSent" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevErrorsSent"
+                           },
+                           "PacketsReceived" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevPacketsReceived"
+                           },
+                           "PacketsSent" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevPacketsSent"
+                           },
+                           "RetransCount" : {
+                              "ctl" : 0,
+                              "id_c" : "CtlWiFiMultiAPAssocDevRetransCount"
+                           }
+                        },
+                        "X_AIRTIES_MaxPhyRate" : {
+                           "ctl" : 0,
+                           "id_c" : "CtlWiFiMultiAPAssocDevMaxPhyRate"
+                        },
+                        "ctl" : 0,
+                        "id_c" : "CtlWiFiMultiAPAssocDevInstance",
+                        "noe" : "AssociatedDeviceNumberOfEntries"
+                     },
+                     "AssociatedDeviceNumberOfEntries" : {
+                        "ctl" : 0,
+                        "id_c" : "CtlWiFiMultiAPAssocDevNOE"
+                     },
+                     "BSSID" : {
+                        "ctl" : 0,
+                        "id_c" : "CtlWiFiMultiAPApBssid"
+                     },
+                     "SSID" : {
+                        "ctl" : 0,
+                        "id_c" : "CtlWiFiMultiAPApSsid"
+                     },
+                     "X_AIRTIES_Backhaul" : {
+                        "ctl" : 0,
+                        "id_c" : "CtlWiFiMultiAPApBackhaul"
+                     },
+                     "X_AIRTIES_Fronthaul" : {
+                        "ctl" : 0,
+                        "id_c" : "CtlWiFiMultiAPApFronthaul"
+                     },
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPApInstance",
+                     "noe" : "APNumberOfEntries"
+                  },
+                  "APNumberOfEntries" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPApNOE"
+                  },
+                  "Channel" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioChannel"
+                  },
+                  "CurrentOperatingChannelBandwidth" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioCurrentOperatingChannelBandwidth"
+                  },
+                  "ExtensionChannel" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioExtensionChannel"
+                  },
+                  "MACAddress" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioMACAddress"
+                  },
+                  "MCS" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioMcs"
+                  },
+                  "OperatingFrequencyBand" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioOperatingFrequencyBand"
+                  },
+                  "OperatingStandards" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioOperatingStandards"
+                  },
+                  "PossibleChannels" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioPossibleChannels"
+                  },
+                  "TransmitPower" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioTransmitPower"
+                  },
+                  "TransmitPowerLimit" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioTransmitPowerLimit"
+                  },
+                  "X_AIRTIES_ConfiguredBandwidth" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioConfiguredBandwidth"
+                  },
+                  "X_AIRTIES_ConfiguredChannel" : {
+                     "ctl" : 0,
+                     "id_c" : "CtlWiFiMultiAPRadioConfiguredChannel"
+                  },
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPRadioInstance",
+                  "noe" : "RadioNumberOfEntries"
+               },
+               "RadioNumberOfEntries" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPRadioNOE"
+               },
+               "SerialNumber" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevSerialNumber"
+               },
+               "SoftwareVersion" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevSoftwareVersion"
+               },
+               "X_AIRTIES_Onboarded" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlWiFiMultiAPApDevOnboarded"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlWiFiMultiAPApDevInstance",
+               "noe" : "APDeviceNumberOfEntries"
+            },
+            "APDeviceNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlWiFiMultiAPApDevNOE"
+            }
+         }
+      },
+      "X_AIRTIES_Obj" : {
+         "AirDPPMap" : {
+            "DebugLevel" : {
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapDebugLevel"
+            },
+            "EnableConfigurator" : {
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapEnableConfigurator"
+            },
+            "EnableEnrollee" : {
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapEnableEnrollee"
+            },
+            "Enrollee" : {
+               "Alias" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlAirDPPMapEnrolleeAlias"
+               },
+               "MacAddress" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlAirDPPMapEnrolleeMacAddress"
+               },
+               "PublicKey" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlAirDPPMapEnrolleePublicKey"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapEnrolleeInstance",
+               "noe" : "EnrolleeNumberOfEntries"
+            },
+            "EnrolleeNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapEnrolleeNOE"
+            },
+            "FlushData" : {
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapFlushData"
+            },
+            "PrivateKey" : {
+               "ctl" : 0,
+               "id_c" : "CtlAirDPPMapPrivateKey"
+            }
+         },
+         "Bus" : {
+            "AirBus" : {
+               "Alias" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusAirBusAlias"
+               },
+               "ClientIdentifiers" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusAirBusClientIdentifiers"
+               },
+               "Enable" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusAirBusEnable"
+               },
+               "MessageFormat" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusAirBusMessageFormat"
+               },
+               "Topicmaps" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusAirBusTopicmaps"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlBusAirBusInstance",
+               "noe" : "AirBusNumberOfEntries"
+            },
+            "AirBusNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlBusAirBusNOE"
+            },
+            "Backends" : {
+               "ctl" : 0,
+               "id_c" : "CtlBusBackends"
+            },
+            "Enable" : {
+               "ctl" : 0,
+               "id_c" : "CtlBusEnable"
+            },
+            "Instances" : {
+               "ctl" : 0,
+               "id_c" : "CtlBusInstances"
+            },
+            "MQTT" : {
+               "Alias" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTAlias"
+               },
+               "BrokerIP" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTBrokerIP"
+               },
+               "BrokerPort" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTBrokerPort"
+               },
+               "ClientIdentifiers" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTClientIdentifiers"
+               },
+               "Enable" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTEnable"
+               },
+               "MessageFormat" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTMessageFormat"
+               },
+               "Topicmaps" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlBusMQTTTopicmaps"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlBusMQTTInstance",
+               "noe" : "MQTTNumberOfEntries"
+            },
+            "MQTTNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlBusMQTTNOE"
+            }
+         },
+         "CapabilityRequesters" : {
+            "ctl" : 0,
+            "id_c" : "CtlCfgCapabilityRequesters"
+         },
+         "CloudComm" : {
+            "AlternativeID" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommAlternativeID"
+            },
+            "AuthPassword" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommAuthPassword"
+            },
+            "AuthURL" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommAuthURL"
+            },
+            "ChallengeURL" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommChallengeURL"
+            },
+            "ClientID" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommClientID"
+            },
+            "ClientPassword" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommClientPassword"
+            },
+            "DevicePrivateKeyPath" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommDevicePrivateKeyPath"
+            },
+            "DevicePublicCertPath" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommDevicePublicCertPath"
+            },
+            "Enable" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommEnable"
+            },
+            "LogDestination" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommLogDestination"
+            },
+            "LogLevel" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommLogLevel"
+            },
+            "UUID" : {
+               "ctl" : 0,
+               "id_c" : "CtlCloudCommUUID"
+            }
+         },
+         "DefaultUserAlias" : {
+            "ctl" : 0,
+            "id_c" : "CtlCfgDefaultUserAlias"
+         },
+         "MultiAPController" : {
+            "ChanSel" : {
+               "AllowedChannelList2G" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerChanSelAllowedChannelList2G"
+               },
+               "AllowedChannelList5G" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerChanSelAllowedChannelList5G"
+               },
+               "BandLock5G" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerChanSelBandLock5G"
+               },
+               "Default2GPreferredChannelList" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerChanSelDefault2GPreferredChannelList"
+               },
+               "Default5GPreferredChannelList" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerChanSelDefault5GPreferredChannelList"
+               }
+            },
+            "ConfigRenewInterval" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerConfigRenewInterval"
+            },
+            "ConfigRenewMaxRetry" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerConfigRenewMaxRetry"
+            },
+            "ConfigureBackhaulStation" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerConfigureBackhaulStation"
+            },
+            "DeadAgentDetectionInterval" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerDeadAgentDetectionInterval"
+            },
+            "DefaultPCP" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerDefaultPCP"
+            },
+            "Enable" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerEnable"
+            },
+            "InterfaceList" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerInterfaceList"
+            },
+            "IsMaster" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerIsMaster"
+            },
+            "LeaderPollTimeout" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerLeaderPollTimeout"
+            },
+            "LeadershipPrecedence" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerLeadershipPrecedence"
+            },
+            "LinkMetricsQueryInterval" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerLinkMetricsQueryInterval"
+            },
+            "LocalAgentMACAddress" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerLocalAgentMACAddress"
+            },
+            "Logging" : {
+               "ControllerLevel" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerLoggingControllerLevel"
+               },
+               "IEEE1905Level" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerLoggingIEEE1905Level"
+               },
+               "Output" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerLoggingOutput"
+               },
+               "PlatformLevel" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerLoggingPlatformLevel"
+               }
+            },
+            "MACAddress" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerMACAddress"
+            },
+            "PrimaryVLANID" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerPrimaryVLANID"
+            },
+            "PrimaryVLANInterfacePattern" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerPrimaryVLANInterfacePattern"
+            },
+            "SSIDProfile" : {
+               "Backhaul" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileBackhaul"
+               },
+               "Enable" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileEnable"
+               },
+               "Extender" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileExtender"
+               },
+               "FrequencyBands" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileFrequencyBands"
+               },
+               "Fronthaul" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileFronthaul"
+               },
+               "Gateway" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileGateway"
+               },
+               "KeyPassphrase" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileKeypassphrase"
+               },
+               "Label" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileLabel"
+               },
+               "Priority" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfilePriority"
+               },
+               "SSID" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileSSID"
+               },
+               "SecurityMode" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileSecurityMode"
+               },
+               "Type" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileType"
+               },
+               "VLANID" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlMultiAPControllerProfileVLANID"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerProfileInstance",
+               "noe" : "SSIDProfileNumberOfEntries"
+            },
+            "SSIDProfileNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerProfileNOE"
+            },
+            "TopologyQueryInterval" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerTopologyQueryInterval"
+            },
+            "TopologyStableCheckInterval" : {
+               "ctl" : 0,
+               "id_c" : "CtlMultiAPControllerTopologyStableCheckInterval"
+            }
+         },
+         "RemoteLogging" : {
+            "Compress" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingCompress"
+            },
+            "Enable" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingEnable"
+            },
+            "EndTime" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingEndTime"
+            },
+            "ExtendedFormat" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingExtended"
+            },
+            "Facility" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingFacility"
+            },
+            "Password" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingPassword"
+            },
+            "Relays" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingRelays"
+            },
+            "RemoteURL" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingRemoteURL"
+            },
+            "Severity" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingSeverity"
+            },
+            "Username" : {
+               "ctl" : 0,
+               "id_c" : "CtlRemoteLoggingUsername"
+            }
+         },
+         "SteeringUnified" : {
+            "AlgoBandsteer2GThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoBandsteer2GThreshold"
+            },
+            "AlgoBandsteer5GThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoBandsteer5GThreshold"
+            },
+            "AlgoBandsteerEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoBandsteerEnable"
+            },
+            "AlgoBlacklistEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoBlacklistEnable"
+            },
+            "AlgoBlacklistMAC" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoBlacklistMAC"
+            },
+            "AlgoBlacklistOUI" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoBlacklistOUI"
+            },
+            "AlgoEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoEnable"
+            },
+            "AlgoLinkCap2GThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoLinkCap2GThreshold"
+            },
+            "AlgoLinkCap5GThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoLinkCap5GThreshold"
+            },
+            "AlgoLinkCapEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoLinkCapEnable"
+            },
+            "AlgoLoadBalanceEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoLoadBalanceEnable"
+            },
+            "AlgoLoadBalanceMaxSta" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoLoadBalanceMaxSta"
+            },
+            "AlgoPreemptiveBlockEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoPreemptiveBlockEnable"
+            },
+            "AlgoPreemptiveBlockHighThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoPreemptiveBlockHighThreshold"
+            },
+            "AlgoPreemptiveBlockLowThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoPreemptiveBlockLowThreshold"
+            },
+            "AlgoRSSI2GThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoRSSI2GThreshold"
+            },
+            "AlgoRSSI5GThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoRSSI5GThreshold"
+            },
+            "AlgoRSSIEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoRSSIEnable"
+            },
+            "AlgoTOSActiveThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoTOSActiveThreshold"
+            },
+            "AlgoTOSCostRatio" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoTOSCostRatio"
+            },
+            "AlgoTOSEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoTOSEnable"
+            },
+            "AlgoTOSInferenceValue" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoTOSInferenceValue"
+            },
+            "AlgoTOSLowRSSISteerThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoTOSLowRSSISteerThreshold"
+            },
+            "AlgoTOSTargetRSSIThreshold" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedAlgoTOSTargetRSSIThreshold"
+            },
+            "DebugLevel" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedDebugLevel"
+            },
+            "DebugLogger" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedDebugLogger"
+            },
+            "Enable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedEnable"
+            },
+            "NorthboundEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedNorthboundEnable"
+            },
+            "NorthboundHomeID" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedNorthboundHomeID"
+            },
+            "NorthboundPublishBackbone" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedNorthboundPublishBackbone"
+            },
+            "Roamer11vCapOnly" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedRoamer11vCapOnly"
+            },
+            "Roamer11vDisassoc" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedRoamer11vDisassoc"
+            },
+            "Roamer11vEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedRoamer11vEnable"
+            },
+            "RoamerDeauthEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedRoamerDeauthEnable"
+            },
+            "StationPolicies" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedStationPolicies"
+            },
+            "StationProfile" : {
+               "MACList" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlSteeringUnifiedProfilesMACList"
+               },
+               "Name" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlSteeringUnifiedProfilesName"
+               },
+               "OUIList" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlSteeringUnifiedProfilesOUIList"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedProfilesStationProfileInstance",
+               "noe" : "StationProfileNumberOfEntries"
+            },
+            "StationProfileNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedStationProfileNOE"
+            },
+            "TopoBadQualEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoBadQualEnable"
+            },
+            "TopoChangeEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoChangeEnable"
+            },
+            "TopoEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoEnable"
+            },
+            "TopoMaintenanceEnable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoMaintenanceEnable"
+            },
+            "TopoMaintenancePeriod" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoMaintenancePeriod"
+            },
+            "TopoMaintenanceTime" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoMaintenanceTime"
+            },
+            "TopoMinMediumAvailable" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoMinMediumAvailable"
+            },
+            "TopoUnassocCostTuneFactor" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoUnassocCostTuneFactor"
+            },
+            "TopoWirelessHopCost" : {
+               "ctl" : 0,
+               "id_c" : "CtlSteeringUnifiedTopoWirelessHopCost"
+            }
+         },
+         "Storage" : {
+            "Path" : {
+               "ctl" : 0,
+               "id_c" : "CtlStoragePath"
+            },
+            "TempPath" : {
+               "ctl" : 0,
+               "id_c" : "CtlStorageTempPath"
+            }
+         },
+         "UserFriendlyNameTable" : {
+            "Entry" : {
+               "FriendlyName" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlUserFriendlyNameTableName"
+               },
+               "MACAddress" : {
+                  "ctl" : 0,
+                  "id_c" : "CtlUserFriendlyNameTableMAC"
+               },
+               "ctl" : 0,
+               "id_c" : "CtlUserFriendlyNameTableEntryInstance",
+               "noe" : "EntryNumberOfEntries"
+            },
+            "EntryNumberOfEntries" : {
+               "ctl" : 0,
+               "id_c" : "CtlUserFriendlyNameTableNOE"
+            }
+         }
+      }
+   },
+   "Internal" : {
+      "TR069" : {
+         "ctl" : 0,
+         "id_c" : "CtlTR069"
+      }
+   }
+}

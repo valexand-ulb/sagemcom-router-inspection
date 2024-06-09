@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: LIBCSON
+Description: URD-44 lib-cson
+URL: http://www.sagemcom.com/
+Version: @VERSION@
+Libs: -L${libdir} -lcson
+Cflags: -I${includedir}/cson
+Requires: sqlite3
+

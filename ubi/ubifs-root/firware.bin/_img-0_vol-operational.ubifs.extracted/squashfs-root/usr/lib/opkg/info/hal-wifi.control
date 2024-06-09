@@ -1,0 +1,15 @@
+Package: hal-wifi
+Version: BBOX3_D10_v16.2-1
+Depends: shared-wifi, firewall-utils, intf-halwifi, smu-utils
+Provides: 
+Source: feeds/wifi/libs/hal-wifi
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/hal-wifi
+Installed-Size: 156292
+Description:  Generic API to manage wifi radio and interfaces independently from the wifi chip reference and provider (Atheros, Broadcom, Ralink, ...)

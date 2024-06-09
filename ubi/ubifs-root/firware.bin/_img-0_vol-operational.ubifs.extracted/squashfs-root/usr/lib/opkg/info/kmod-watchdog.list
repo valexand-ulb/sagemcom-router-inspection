@@ -1,0 +1,2 @@
+/lib/modules/3.4.11-rt19/hard_watchdog.ko
+/etc/modules.d/33-watchdog

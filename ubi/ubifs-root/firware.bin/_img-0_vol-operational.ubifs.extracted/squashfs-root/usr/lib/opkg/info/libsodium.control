@@ -1,0 +1,15 @@
+Package: libsodium
+Version: 1.0.16-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/libs/libsodium
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Damiano Renfer <damiano.renfer@gmail.com>
+Architecture: sagemcom
+URL: https://
+Installed-Size: 140906
+Description:  P(ortable|ackageable) NaCl-based crypto library

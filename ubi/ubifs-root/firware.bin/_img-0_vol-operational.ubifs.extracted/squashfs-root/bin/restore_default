@@ -1,0 +1,14 @@
+#!/bin/sh
+# Copyright (C) 2011 Sagemcom
+
+if [ -x /bin/restore_default_product ]; then
+	restore_default_product $*
+fi
+
+. /etc/sysdirs.conf
+
+rm -fr $SYSCONF_DIR/*
+find /opt/filesystem2/rootfs -type f | xargs rm -f
+find /opt/filesystem2/rootfs -type l | xargs rm -f
+
+touch $SYSCONF_DIR/conf_erased

@@ -1,0 +1,15 @@
+Package: intf-easymesh
+Version: v1.2.4-1
+Depends: ism-intf
+Provides: 
+Source: feeds/extender/libs/intf-easymesh
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-easymesh
+Installed-Size: 11437
+Description:  easymesh ISMv2 interface

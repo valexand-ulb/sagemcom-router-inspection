@@ -1,0 +1,15 @@
+Package: intf-ifcprops
+Version: v0.8.3-1
+Depends: ism-intf
+Provides: 
+Source: feeds/sagemcom/libs/intf-ifcprops
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-ifcprops
+Installed-Size: 11869
+Description:  Interface IfcProps

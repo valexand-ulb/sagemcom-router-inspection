@@ -1,0 +1,15 @@
+Package: device-info-smu
+Version: v4.27.8.2-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-device-info, xmo-server, smu-utils, libexpat, hal-bsp, intf-deviceinfo, intf-tr69cli, firewall-utils, intf-filemgmt, intf-fwup
+Provides: 
+Source: feeds/sagemcom/smu/device-info-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/device-info-smu
+Installed-Size: 32382
+Description:  DeviceInfo smu plugin

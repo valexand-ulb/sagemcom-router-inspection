@@ -1,0 +1,5 @@
+/bin/check_voice
+/bin/quantenna_test
+/bin/check_qtn
+/bin/check_reset
+/bin/show.sh

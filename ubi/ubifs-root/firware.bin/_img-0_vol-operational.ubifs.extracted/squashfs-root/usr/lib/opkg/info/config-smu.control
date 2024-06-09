@@ -1,0 +1,15 @@
+Package: config-smu
+Version: v7.19.0-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-device-info, gateway-dm-wifi, xmo-server, smu-utils, intf-reboot, intf-deviceinfo
+Provides: 
+Source: feeds/sagemcom/smu/config-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/config-smu
+Installed-Size: 12463
+Description:  Device info SMU plugin to manage vendor config files

@@ -1,0 +1,15 @@
+Package: airties-smu-emcontroller
+Version: BBOX3_D10_v13.0-1
+Depends: xmt, xmo, gateway-dm, xmo-server, smu-utils, airties-dm, intf-airtiesem, ism-intf, intf-halwifi, intf-dvcdisc, xmo-client, firewall-utils, wifi-smu, easymesh-dm
+Provides: 
+Source: feeds/airties/airties-smu-emcontroller
+License: Sagemcom
+Section: airties
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/airties-smu-emcontroller
+Installed-Size: 25648
+Description:  airties-smu-emcontroller

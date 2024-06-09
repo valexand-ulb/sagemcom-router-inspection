@@ -1,0 +1,15 @@
+Package: firewall-utils
+Version: v6.71.0.10-1
+Depends: devel-utils, iptables, iptables-utils, ip6tables, ip6tables-utils, intf-firewallapp, xmt
+Provides: 
+Source: feeds/sagemcom/net/firewall-utils
+License: Sagemcom
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/firewall-utils
+Installed-Size: 75045
+Description:  This package contains the firewall daemon management

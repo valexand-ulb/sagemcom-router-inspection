@@ -1,0 +1,15 @@
+Package: ifcstack-smu
+Version: v2.2.0-1
+Depends: devel-utils, evlp, xmt, xmo, xmo-server, gateway-dm-interface, smu-utils, intf-ifcstack
+Provides: 
+Source: feeds/sagemcom/smu/ifcstack-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/ifcstack-smu
+Installed-Size: 9736
+Description:  Device Discovery smu plugin

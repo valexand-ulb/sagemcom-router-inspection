@@ -1,0 +1,4 @@
+/lib/modules/3.4.11-rt19/ts_fsm.ko
+/lib/modules/3.4.11-rt19/ts_bm.ko
+/etc/modules.d/20-textsearch
+/lib/modules/3.4.11-rt19/ts_kmp.ko

@@ -1,0 +1,16 @@
+Package: firewall-cli
+Version: v6.71.0.10-1
+Depends: firewall-utils
+Provides: 
+Source: feeds/sagemcom/net/firewall-utils
+License: Sagemcom
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/firewall-utils
+Installed-Size: 32610
+Description:  This package contains a CLI utility to create / manage firewall rules.
+ This command line permits to test the firewall daemon.

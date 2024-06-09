@@ -1,0 +1,15 @@
+Package: voice-smu
+Version: v14.14.0-1
+Depends: xmt, xmo, info-utils, gateway-dm, gateway-dm-voice, gateway-dm-voice-2-0-0, gateway-dm-voice-wt104, smu-utils, xmo-server, libopenssl, firewall-utils, intf-dvcdisc, intf-reboot, intf-voicepri, intf-voicepub, dvcdisc-smu
+Provides: 
+Source: feeds/voipHG6/smu/voice-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/voice-smu
+Installed-Size: 222017
+Description:  VOICE ARCHIV1/ARCHIV2 smu and osm plugin

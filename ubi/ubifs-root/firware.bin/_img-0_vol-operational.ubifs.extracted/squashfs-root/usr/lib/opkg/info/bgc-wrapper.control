@@ -1,0 +1,15 @@
+Package: bgc-wrapper
+Version: v0.29.1-1
+Depends: gateway-dm, gateway-dm-device-info, gateway-dm-wanbackup, gateway-dm-routing, gateway-dm-managers, gateway-dm-wifi, xmo-server, data-collector-smu
+Provides: 
+Source: feeds/sagemcom/libs/bgc-wrapper
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/bgc-wrapper
+Installed-Size: 38742
+Description:  FT 181 DataModel Wrapper

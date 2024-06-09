@@ -1,0 +1,15 @@
+Package: intf-ism
+Version: swan_v2.0-1
+Depends: ism-intf
+Provides: 
+Source: feeds/scheduler/libs/intf-ism
+License: Sagemcom
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/intf-ism
+Installed-Size: 23186
+Description:  Interface Ism

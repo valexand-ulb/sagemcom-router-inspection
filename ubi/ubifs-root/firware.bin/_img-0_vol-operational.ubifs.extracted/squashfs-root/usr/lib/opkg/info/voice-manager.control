@@ -1,0 +1,15 @@
+Package: voice-manager
+Version: v13.8.0-1
+Depends: h2al-voice, config-voice, sal-voice, dial-voice, libcap
+Provides: 
+Source: feeds/voipHG6/net/voice-manager
+License: Sagemcom
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/voice-manager
+Installed-Size: 230448
+Description:  call-manager/register-manager/subscribe-manager

@@ -1,0 +1,15 @@
+Package: tr69-smu
+Version: v9.27.13.4-1
+Depends: xmt, xmo, gateway-dm, gateway-dm-management-server, xmo-server, smu-utils, firewall-utils, kmod-hal-bsp, libtr69ctl, intf-tr69cli, intf-tr69, tr69d
+Provides: 
+Source: feeds/sagemcom/smu/mgmt-smu
+License: Sagemcom
+Section: smu
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/mgmt-smu
+Installed-Size: 36243
+Description:  This SMU handles the tr69d daemon and the Device/ManagementServer XMO subtree

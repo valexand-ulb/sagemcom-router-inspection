@@ -1,0 +1,15 @@
+Package: tftpd-hpa
+Version: 0.48-2
+Depends: 
+Provides: 
+Source: feeds/sagemcom/net/tftp-hpa
+License: 
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: @KERNEL/software/network/tftp
+Installed-Size: 13296
+Description:  An enhanced version of the BSD TFTP server

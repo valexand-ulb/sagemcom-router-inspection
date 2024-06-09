@@ -1,0 +1,15 @@
+Package: radvd
+Version: 2.6-1
+Depends: kmod-ipv6
+Provides: 
+Source: feeds/sagemcom/ipv6/radvd
+License: old-style BSD license
+Section: ipv6
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://v6web.litech.org/radvd/dist http://download.sourcemage.org/mirror
+Installed-Size: 49646
+Description:  IPv6 Routing Advertisement Daemon.

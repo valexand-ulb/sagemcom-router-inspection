@@ -1,0 +1,15 @@
+Package: libol
+Version: 0.3.18-2
+Depends: 
+Provides: 
+Source: package/libol
+License: 
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: sagemcom
+URL: http://www.balabit.com/downloads/files/libol/0.3
+Installed-Size: 19936
+Description:  Support library for syslog-ng

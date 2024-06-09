@@ -1,0 +1,15 @@
+Package: rdisc6
+Version: v1.2.0-1
+Depends: 
+Provides: 
+Source: feeds/sagemcom/ipv6/rdisc6
+License: 
+Section: ipv6
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Sagemcom
+Architecture: sagemcom
+URL: https://forge-urd2.vzy.sagem/git/rdisc6-daemon
+Installed-Size: 6442
+Description:  IPv6 Router Discovery Daemon.

@@ -1,0 +1,3 @@
+/etc/init.d/syslogfirewall
+/usr/lib/xmo/plugins/libdevice-info-smu.so
+/etc/init.d/syslog
